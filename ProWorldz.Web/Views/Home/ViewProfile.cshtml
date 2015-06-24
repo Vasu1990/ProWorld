@@ -1,0 +1,164 @@
+﻿@model ProWorldz.Web.Models.ViewProfileModel
+@{
+    ViewBag.Title = "ViewProfile";
+}
+
+<div class="container">
+    <div class="clear-fix">
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="col-md-12">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading panel-heading-gray">
+                    <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                    <i class="fa fa-fw fa-info-circle"></i>About
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled profile-about margin-none">
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Image</span>
+                                </div>
+                                <div class="col-sm-8" id="dvImage" data-bind="text:viewModel.Image">12 January 1990</div>
+                                <input type="text" data-bind="value:viewModel.Image" />
+                            </div>
+                        </li>
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Community</span>
+                                </div>
+                                <div class="col-sm-8" id="dvCommunity" data-bind="text:viewModel.Community">Specialist</div>
+                            </div>
+                        </li>
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Sub-Community</span>
+                                </div>
+                                <div class="col-sm-8" id="dvSubCommunity">Male</div>
+                            </div>
+                        </li>
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Lives in</span>
+                                </div>
+                                <div class="col-sm-8">Miami, FL, USA</div>
+                            </div>
+                        </li>
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Credits</span>
+                                </div>
+                                <div class="col-sm-8">249</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading panel-heading-gray">
+                    <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                    <i class="fa fa-fw fa-info-circle"></i>About
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled profile-about margin-none">
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Date of Birth</span>
+                                </div>
+                                <div class="col-sm-8">12 January 1990</div>
+                            </div>
+                        </li>
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Job</span>
+                                </div>
+                                <div class="col-sm-8">Specialist</div>
+                            </div>
+                        </li>
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Gender</span>
+                                </div>
+                                <div class="col-sm-8">Male</div>
+                            </div>
+                        </li>
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Lives in</span>
+                                </div>
+                                <div class="col-sm-8">Miami, FL, USA</div>
+                            </div>
+                        </li>
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Credits</span>
+                                </div>
+                                <div class="col-sm-8">249</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+<script src="~/Scripts/knockout-2.2.0.js"></script>
+<script type="text/javascript">
+    var viewModel = {};
+    viewModel.Image = ko.observable();
+    viewModel,Community = ko.observable();
+    ko.applyBindings(viewModel);
+    $(document).ready(function () {
+        LoadUserGeneralDetail();
+        LoadUserPersonalDetail();
+        LoadUserProfessionalDetail();
+        LoadUserQualificationalDetail();
+        LoadUserVideoDetail();
+    })
+    function LoadUserGeneralDetail() {
+        $.get('/Home/GetUserGeneralDetail', function (data) {
+            console.log(data)
+        })
+    }
+    function LoadUserPersonalDetail() {
+        $.get('/Home/LoadUserPersonalDetail', function (data) {
+            console.log(data)
+        })
+    }
+    function LoadUserProfessionalDetail() {
+        $.get('/Home/LoadUserProfessionalDetail', function (data) {
+            console.log(data)
+        })
+    }
+    function LoadUserQualificationalDetail() {
+        $.get('/Home/GetUserQualificationalDetail', function (data) {
+            console.log(data)
+        })
+    }
+    function LoadUserVideoDetail() {
+        $.get('/Home/LoadUserVideoDetail', function (data) {
+            console.log(data)
+        })
+    }
+    </script>

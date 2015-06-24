@@ -1,0 +1,122 @@
+﻿@model ProWorldz.Web.Models.LoginModel
+@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<html class="hide-sidebar ls-bottom-footer" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login</title>
+
+    @* Activate this bundle in production not in Dev
+    @Styles.Render("~/Content/themes/social-3/login/loginstyles")*@
+
+
+    @Styles.Render("~/Content/themes/social-3/css/theme-core.min.css")
+    @Styles.Render("~/Content/themes/social-3/css/module-layout.min.css")
+    
+    @Styles.Render("~/Content/themes/custom/Proworldz.login.css")    
+        
+       <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="login">
+    
+    <div class="row">
+        <div id="content">
+            <div class="col-md-12 text-center" id="divMessageContainer" onclick="proWorld.login.hideMessage(this);">
+                <div class="row">
+                    @if (Model != null && !string.IsNullOrEmpty(Model.SucessMessage))
+                    {
+                        <div class="alert alert-success" role="alert">@Model.SucessMessage</div>
+                    }
+                    @if (Model != null && !string.IsNullOrEmpty(Model.ErrorMessage))
+                    {
+                        <div class="alert alert-danger" role="alert">@Model.ErrorMessage</div>
+                    }
+                </div>
+            </div>
+            @using (Html.BeginForm("LoginUser", "Account", FormMethod.Post))
+            {
+
+                <div class="container-fluid">
+                    <div class="lock-container">
+                        <h1>Account Access</h1>
+                        <div class="panel panel-default text-center">
+                            <img src="~/Content/themes/social-3/images/people/110/guy-5.jpg" class="img-circle">
+                            <div class="panel-body login-div">
+                                <div class="input-div">
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email" })
+                                    @Html.ValidationMessageFor(model => model.Email)
+                                </div>
+                                <div class="input-div">
+                                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "Password" })
+                                    @Html.ValidationMessageFor(model => model.Password)
+                                </div>
+                                <div>
+                                    <input type="submit" value="Login" class="btn btn-primary" />
+                                    <a href="/Account/Register" class="btn btn-default" style="margin-bottom: 13px;">Sign Up</a>
+                                </div>
+
+                                <a href="#myModal" class="forgot-password" data-toggle="modal">Forgot password?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        @using (Html.BeginForm("ForgotPassword", "Account", FormMethod.Post))
+        {
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Forgot Password</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <label for="exampleInputFirstName">Email</label>
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Email" })
+                                    @Html.ValidationMessageFor(model => model.Email)
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <strong>ThemeKit</strong> v3.6.3 &copy; Copyright 2015
+    </footer>
+    
+   
+    @Scripts.Render("~/bundles/loginScripts")   
+    
+</body>
+
+
+</html>
+

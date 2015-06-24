@@ -1,0 +1,136 @@
+﻿@model ProWorldz.Web.Models.UserModel
+@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+        <div class="st-pusher" id="content">
+            <!-- sidebar effects INSIDE of st-pusher: -->
+            <!-- st-effect-3, st-effect-6, st-effect-7, st-effect-8, st-effect-14 -->
+            <!-- this is the wrapper for the content -->
+            <div class="st-content">
+                <!-- extra div for emulating position:fixed of the menu -->
+                <div class="st-content-inner">
+                    <div class="container-fluid">
+                        <div class="jumbotron bg-transparent text-center margin-none">
+                            <h1>Forms</h1>
+                            <p>ThemeKit includes all the form controls shipped with Bootstrap, as well as custom form components that cover various usage scenarios, all themed for modern websites.</p>
+                        </div>
+                        @using (Html.BeginForm("Test", "Account", FormMethod.Post))
+                        {
+                            <div class="page-section">
+                                <div class="row">
+                                    <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+                                        <h4 class="page-section-heading">Basic example</h4>
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <form>
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-control-default">
+                                                                <label for="exampleInputFirstName">First name</label>
+                                                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Your name" })
+                                                                @Html.ValidationMessageFor(model=>model.Name)
+                                                                @*<input type="email" class="form-control" id="exampleInputFirstName" placeholder="Your first name">*@
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-control-default">
+                                                                <label for="exampleInputLastName">Email</label>
+                                                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email" })
+                                                                @*<input type="email" class="form-control" id="exampleInputLastName" placeholder="Your last name">*@
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-control-default">
+                                                                <label for="exampleInputFirstName">Password</label>
+                                                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "Password" })
+                                                                @*<input type="email" class="form-control" id="exampleInputFirstName" placeholder="Your first name">*@
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-control-default">
+                                                                <label for="exampleInputLastName">DOB</label>
+                                                                @Html.TextBoxFor(model => model.DOB, new { @class = "form-control", @placeholder = "DOB" })
+                                                                @*<input type="email" class="form-control" id="exampleInputLastName" placeholder="Your last name">*@
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-control-default">
+                                                                <label for="exampleInputFirstName">Gender</label>
+                                                                Male
+                                                                <input type="radio" name="gender" value="M">
+                                                                Femail
+                                                                <input type="radio" name="gender" value="F">
+                                                                @*@Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Your name" })*@
+                                                                @*<input type="email" class="form-control" id="exampleInputFirstName" placeholder="Your first name">*@
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-control-default">
+                                                                <label for="exampleInputLastName">Community</label>
+                                                                @Html.DropDownListFor(x => x.CommunityId, new SelectList(Model.CommunityList, "ID", "Name", Model.CommunityId), "- - Select - -", new { @class = "dropdown form-control" })
+                                                                @*<input type="email" class="form-control" id="exampleInputLastName" placeholder="Your last name">*@
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-control-default">
+                                                                <label for="exampleInputLastName">User Type</label>
+                                                                <select class="dropdown form-control" data-val="true" data-val-number="The field CommunityId must be a number." data-val-required="The CommunityId field is required." id="UserTypeId" name="UserType">
+                                                                    <option value="">- - Select - -</option>
+                                                                    <option value="1">Employee</option>
+                                                                    <option value="2">User</option>
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-control-default">
+                                                                <label for="exampleInputLastName">Sub Community</label>
+                                                                @Html.DropDownListFor(x => x.SubCommunityId, new SelectList(Model.SubCommunityList, "ID", "Name", Model.SubCommunityId), "- - Select - -", new { @class = "dropdown form-control" })
+                                                                @*<input type="email" class="form-control" id="exampleInputLastName" placeholder="Your last name">*@
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <!-- /st-content-inner -->
+            </div>
+            <!-- /st-content -->
+        </div>
+  

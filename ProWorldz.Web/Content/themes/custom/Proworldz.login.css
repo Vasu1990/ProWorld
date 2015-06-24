@@ -1,0 +1,14 @@
+﻿body {
+}
+.login-div  input.form-control  {
+    margin-bottom:0px !important;
+}
+
+.login-div  div.input-div{
+    margin-bottom:7px;
+}
+
+.input-div .field-validation-error > span{
+    color:red;
+    font-size :12px
+}

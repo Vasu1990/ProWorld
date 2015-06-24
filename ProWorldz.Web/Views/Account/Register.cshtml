@@ -1,0 +1,130 @@
+﻿@model ProWorldz.Web.Models.UserModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="st-pusher" id="content">
+    
+    <div class="st-content">
+    
+        <div class="st-content-inner">
+            <div class="container-fluid">
+
+                @using (Html.BeginForm("Signup", "Account", FormMethod.Post))
+                {
+                    <div class="page-section">
+                        <div class="row">
+                            <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+                                <h1 class="page-section-heading">Register</h1>
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <form>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-control-default">
+                                                        <label for="exampleInputFirstName">First name</label>
+                                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Your name" })
+                                                        @Html.ValidationMessageFor(model => model.Name)
+                                                        @*<input type="email" class="form-control" id="exampleInputFirstName" placeholder="Your first name">*@
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-control-default">
+                                                        <label for="exampleInputLastName">Email</label>
+                                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email" })
+                                                        @Html.ValidationMessageFor(model => model.Email)
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-control-default">
+                                                        <label for="exampleInputFirstName">Password</label>
+                                                        @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "Password" })
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-control-default">
+                                                        <label for="exampleInputLastName">DOB</label>
+                                                        
+                                                        @Html.TextBoxFor(model => model.DateOfBirth, new { @id = "datepicker", @class = "form-control datepicker", @placeholder = "DOB",@value="" })
+                                                        @Html.ValidationMessageFor(model => model.DateOfBirth)
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-control-default">
+                                                        <label for="exampleInputLastName">Gender</label>
+                                                        <select class="dropdown form-control" id="UserTypeId" name="gender">
+
+                                                            <option value="M">Male</option>
+                                                            <option value="F">Female</option>
+                                                        </select>
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-control-default">
+                                                            <label for="exampleInputLastName">User Type</label>
+                                                            <select class="dropdown form-control" data-val="true" data-val-number="The field CommunityId must be a number." data-val-required="The CommunityId field is required." id="UserTypeId" name="UserType">
+
+                                                                <option value="1">Employee</option>
+                                                                <option value="2">User</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-control-default">
+                                                        <label for="exampleInputLastName">Community</label>
+                                                        @Html.DropDownListFor(x => x.CommunityId, new SelectList(Model.CommunityList, "ID", "Name", Model.CommunityId), "- - Select - -", new { @class = "dropdown form-control" })
+                                                        @Html.ValidationMessageFor(model => model.CommunityId)
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-control-default">
+                                                        <label for="exampleInputLastName">Sub Community</label>
+                                                        @Html.DropDownListFor(x => x.SubCommunityId, new SelectList(Model.SubCommunityList, "ID", "Name", Model.SubCommunityId), "- - Select - -", new { @class = "dropdown form-control" })
+                                                       @Html.ValidationMessageFor(model => model.SubCommunityId)
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row text-center">
+
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- /st-content-inner -->
+    </div>
+    <!-- /st-content -->
+</div>
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+

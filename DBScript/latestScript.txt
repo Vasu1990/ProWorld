@@ -1,0 +1,71 @@
+
+SET IDENTITY_INSERT [dbo].[Countries] ON 
+
+GO
+INSERT [dbo].[Countries] ([CountryId], [Name], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy],[IsDeleted]) VALUES (1, N'India', 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1,0)
+GO
+INSERT [dbo].[Countries] ([CountryId], [Name], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy],[IsDeleted]) VALUES (2, N'Pakistan', 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1,0)
+GO
+INSERT [dbo].[Countries] ([CountryId], [Name], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy],[IsDeleted]) VALUES (3, N'US', 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 2, 2,0)
+GO
+SET IDENTITY_INSERT [dbo].[Countries] OFF
+GO
+SET IDENTITY_INSERT [dbo].[States] ON 
+
+GO
+INSERT [dbo].[States] ([StateId], [CountryId], [Name]) VALUES (1, 1, N'UP')
+GO
+INSERT [dbo].[States] ([StateId], [CountryId], [Name]) VALUES (2, 1, N'MP')
+GO
+INSERT [dbo].[States] ([StateId], [CountryId], [Name]) VALUES (3, 1, N'Rajasthan')
+GO
+INSERT [dbo].[States] ([StateId], [CountryId], [Name]) VALUES (4, 1, N'Bihar')
+GO
+INSERT [dbo].[States] ([StateId], [CountryId], [Name]) VALUES (5, 1, N'Uttranchal')
+GO
+INSERT [dbo].[States] ([StateId], [CountryId], [Name]) VALUES (6, 1, N'Punjab')
+GO
+SET IDENTITY_INSERT [dbo].[States] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Cities] ON 
+
+GO
+INSERT [dbo].[Cities] ([Id], [Name], [StateId], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy],[IsDeleted]) VALUES (1, N'Meerut', 1, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1,0)
+GO
+INSERT [dbo].[Cities] ([Id], [Name], [StateId], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy],[IsDeleted]) VALUES (2, N'SPN', 1, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1,0)
+GO
+INSERT [dbo].[Cities] ([Id], [Name], [StateId], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy],[IsDeleted]) VALUES (3, N'MBD', 1, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1,0)
+GO
+INSERT [dbo].[Cities] ([Id], [Name], [StateId], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy],[IsDeleted]) VALUES (4, N'Chambal', 2, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1,0)
+GO
+SET IDENTITY_INSERT [dbo].[Cities] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Communities] ON 
+
+GO
+INSERT [dbo].[Communities] ([Id], [Name], [ParentId],[CountryId],[IsDeleted], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy]) VALUES (2, N'Btech', 0,1,0, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1)
+GO
+INSERT [dbo].[Communities] ([Id], [Name], [ParentId],[CountryId],[IsDeleted], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy]) VALUES (3, N'MBA', 0,1,0, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1)
+GO
+INSERT [dbo].[Communities] ([Id], [Name], [ParentId],[CountryId],[IsDeleted], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy]) VALUES (4, N'CS', 2,1,0, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1)
+GO
+INSERT [dbo].[Communities] ([Id], [Name], [ParentId],[CountryId],[IsDeleted], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy]) VALUES (5, N'EC', 2,1,0, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1)
+GO
+INSERT [dbo].[Communities] ([Id], [Name], [ParentId],[CountryId],[IsDeleted], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy]) VALUES (6, N'IT', 2,1,0, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1)
+GO
+INSERT [dbo].[Communities] ([Id], [Name], [ParentId],[CountryId],[IsDeleted], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy]) VALUES (7, N'HR', 3,1,0, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1)
+GO
+INSERT [dbo].[Communities] ([Id], [Name], [ParentId],[CountryId],[IsDeleted], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy]) VALUES (8, N'Finance', 3,1,0, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1)
+GO
+INSERT [dbo].[Communities] ([Id], [Name], [ParentId],[CountryId],[IsDeleted], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy]) VALUES (9, N'Marketing', 3,1,0, 1, CAST(0x00009FEB00000000 AS DateTime), CAST(0x00009FEB00000000 AS DateTime), 1, 1)
+GO
+SET IDENTITY_INSERT [dbo].[Communities] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Users] ON 
+
+GO
+INSERT [dbo].[Users] ([Id], [Name], [Email], [Password], [UserTypeId], [DOB], [Gender], [CommunityId], [SubCommunityId], [CommunityName], [SubCommunityName], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy],[IsDeleted],[CityId],[StateId],[CountryName]) VALUES (1, N'Himanshu', N'himanshu.rastogi@infomatrixinc.com', N'123456', 2, CAST(0x0000A48200F62AC9 AS DateTime), N'M', 3, 4, 1, 1, 1, CAST(0x0000A48200000000 AS DateTime), CAST(0x0000A48200000000 AS DateTime), 1, 1,0,1,1,1)
+GO
+
+SET IDENTITY_INSERT [dbo].[Users] OFF
+GO
