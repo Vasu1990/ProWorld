@@ -97,10 +97,14 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!-- /st-container -->
     </header>
     <div class="container" id="body">
-        @RenderBody()
+        
+                @RenderBody()
+        
     </div>
-
-
+    
+            <footer class="footer">
+                <strong>ThemeKit</strong> v3.6.3 © Copyright 2015
+            </footer>
     
     
     <script src="~/Content/themes/social-3/js/vendor-core.min.js"></script>
@@ -121,5 +125,6 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
     
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
 </body>

@@ -15,13 +15,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <h4>
+            <h1>
                 Post Comment
-            </h4>
+            </h1>
             <hr />
-        </div>
-    </div>
-
+      
     @using (Html.BeginForm("PostComment", "Home", FormMethod.Post))
     {
         <div class="panel panel-default">
@@ -34,14 +32,11 @@
                             @Html.ValidationMessageFor(model => model.UserPost.Subject)
                         </div>
                     </div>
-
                     <br /><br />
-
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Usere Post</label>
                         <div class="col-sm-9">
                             @Html.TextAreaFor(model => model.UserPost.Post, new { @class = "form-control", @placeholder = "Type Your Post Here........", @rows = "5" })
-
                         </div>
                     </div>
                     <br /><br /><br /><br /><br /><br />
@@ -56,11 +51,6 @@
 
     }
 
-
-
-
-
-
     <div class="panel panel-default">
         <!-- Data table -->
         <table data-toggle="data-table" class="table" cellspacing="0" width="100%">
@@ -70,39 +60,38 @@
                     <th>Subject</th>
                     <th>User Name</th>
                     <th>Creation Date</th>
-
                 </tr>
             </thead>
-
             <tbody>
                 @foreach (var item in Model.UserPostList)
                 {
                     <tr>
                         <td>@item.Post</td>
                         <td>@item.Subject</td>
-                    <td>@item.UserName</td>
-                    <td>@item.CreationDate</td>
-
-                </tr>
+                        <td>@item.UserName</td>
+                        <td>@item.CreationDate</td>
+                    </tr>
                 }
-
             </tbody>
         </table>
     </div>
+</div>
+        </div>
 
 
-<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+@*<script src="~/Scripts/jquery-1.9.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        // alert("hi")
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // alert("hi")
 
-    })
-    function hideMessage(data) {
-        $(data).hide("slow")
+        })
+        function hideMessage(data) {
+            $(data).hide("slow")
 
+        }
+    </script>
     }
-</script>
-
