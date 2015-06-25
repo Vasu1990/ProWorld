@@ -1,27 +1,27 @@
 ﻿@model ProWorldz.Web.Models.PostCommentModel
-<div class="container">
 
-    <br /><br /><br /><br /><br />
-    <div class="clear-fix"></div>
-    @if (Model != null && !string.IsNullOrEmpty(Model.SucessMessage))
-    {
-        <div class="col-md-12" id="successMessage" onclick="hideMessage(this);">
-            <div class="alert alert-success" role="alert">@Model.SucessMessage</div>
+
+    <div class="row">
+        <div class="col-md-12" id="divMessage" onclick="hideMessage(this);">
+            @if (Model != null && !string.IsNullOrEmpty(Model.SucessMessage))
+        {
+                <div class="alert alert-success" role="alert">@Model.SucessMessage</div>
+        }
+            @if (Model != null && !string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+                <div class="alert alert-success" role="alert">@Model.ErrorMessage</div>
+        }
         </div>
-    }
-    @if (Model != null && !string.IsNullOrEmpty(Model.ErrorMessage))
-    {
-        <div class="col-md-12" id="successMessage" onclick="hideMessage(this);">
-            <div class="alert alert-success" role="alert">@Model.ErrorMessage</div>
-        </div>
-    }
-    <div class="clear-fix"></div>
-    <div class="col-md-12">
-        <h4>
-            Post Comment
-        </h4>
-        <hr />
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4>
+                Post Comment
+            </h4>
+            <hr />
+        </div>
+    </div>
+
     @using (Html.BeginForm("PostComment", "Home", FormMethod.Post))
     {
         <div class="panel panel-default">
@@ -89,7 +89,7 @@
             </tbody>
         </table>
     </div>
-</div>
+
 
 <script src="~/Scripts/jquery-1.9.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
