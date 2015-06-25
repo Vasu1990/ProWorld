@@ -22,7 +22,7 @@ namespace ProWorldz.Web
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/jquery.validate.js",
                 "~/Scripts/jquery.validate.unobtrusive.js",
-                "~/Scripts/ProWorldz.login.js"
+                "~/Scripts/Custom/ProWorldz.login.js"
                 ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

@@ -1,0 +1,23 @@
+﻿.title{
+    border-bottom:1px solid black;
+    padding:10px;
+}
+
+.margin-bottom10 {
+margin-bottom:10px;
+}
+input:focus {
+    outline: none;
+    border-color: #2fc8c0 !important;
+    box-shadow: 0 0 5px #2fc8c0 !important;
+}
+.padding-All30 {
+padding:30px;
+}
+
+table{
+    text-align:center;
+}
+    table th {
+    text-align:center;
+    }

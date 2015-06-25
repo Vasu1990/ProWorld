@@ -15,10 +15,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <h1>
-                Post Comment
-            </h1>
-            <hr />
+            <h3 class="title">
+                <i class="fa fa-fw fa-plus-circle"></i>
+                Create New Post
+            </h3>
+            
       
     @using (Html.BeginForm("PostComment", "Home", FormMethod.Post))
     {
@@ -34,9 +35,9 @@
                     </div>
                     <br /><br />
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Usere Post</label>
-                        <div class="col-sm-9">
-                            @Html.TextAreaFor(model => model.UserPost.Post, new { @class = "form-control", @placeholder = "Type Your Post Here........", @rows = "5" })
+                        <label class="col-sm-3 control-label">Content</label>
+                        <div class="col-sm-9 margin-bottom10">
+                            @Html.TextAreaFor(model => model.UserPost.Post, new { @class = "form-control", Id = "editor1", placeholder = "Type Your Post Here........", @rows = "5" })
                         </div>
                     </div>
                     <br /><br /><br /><br /><br /><br />
@@ -50,11 +51,14 @@
         </div>
 
     }
-
-    <div class="panel panel-default">
+            <h3 class="title">
+                <i class="fa fa-fw fa-list"></i>
+                Post Listing
+            </h3>
+    <div class="panel panel-default padding-All30">
         <!-- Data table -->
-        <table data-toggle="data-table" class="table" cellspacing="0" width="100%">
-            <thead>
+        <table data-toggle="data-table" class="table table-bordered table-hover table-responsive table-striped" cellspacing="0" width="100%">
+            <thead >
                 <tr>
                     <th>Post</th>
                     <th>Subject</th>
@@ -79,13 +83,6 @@
         </div>
 
 @section scripts{
-    <script type="text/javascript">
-        $(document).ready(function () {
-            // alert("hi")
-
-        })
-        function hideMessage(data) {
-            $(data).hide("slow")
-        }
-    </script>
-    }
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>  
+@Scripts.Render("~/Scripts/Custom/ProWorldz.UserPost.js")
+}
