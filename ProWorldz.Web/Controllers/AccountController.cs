@@ -86,6 +86,7 @@ namespace ProWorldz.Web.Controllers
             {
 
                 UserBM CurrentUser = (UserBM)Session["User"];
+                ViewBag.CurrentUser = CurrentUser.Name;
                 List<UserGeneralInformationBM> GenerealInfoList = UserGeneralInformationBL.GetGeneralInformation().Where(p => p.UserId == CurrentUser.Id).ToList();
                 if (GenerealInfoList.Count > 0)
                     Model.UserGeneralInformationModel = GenerealInfoList.FirstOrDefault();
@@ -108,7 +109,7 @@ namespace ProWorldz.Web.Controllers
                     Model.UserPersonalInformationModel = PersoalInfoList.FirstOrDefault();
                 if (Model.UserPersonalInformationModel == null)
                     Model.UserPersonalInformationModel = new UserPersonalInformationBM();
-
+               
                
 
 
@@ -442,7 +443,7 @@ namespace ProWorldz.Web.Controllers
             userBM.Email = model.Email;
             userBM.Password = model.Password;
             userBM.UserTypeId = Convert.ToInt32(collection["UserType"].ToString());
-            userBM.DOB =Convert.ToDateTime(model.DateOfBirth);
+            userBM.DOB = model.DOB;
           
             userBM.CreationDate = DateTime.Now.Date;
             userBM.ModificationDate = DateTime.Now.Date;

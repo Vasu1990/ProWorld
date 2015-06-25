@@ -52,7 +52,7 @@
                                                     <div class="form-group form-control-default">
                                                         <label for="exampleInputLastName">DOB</label>
                                                         
-                                                        @Html.TextBoxFor(model => model.DateOfBirth, new { @id = "datepicker", @class = "form-control datepicker", @placeholder = "DOB",@value="" })
+                                                        @Html.TextBoxFor(model => model.DOB, new { @id = "datepicker", @class = "form-control datepicker", @placeholder = "DOB",@value="" })
                                                         @Html.ValidationMessageFor(model => model.DateOfBirth)
                                                     </div>
                                                 </div>
@@ -120,10 +120,6 @@
     </div>
     <!-- /st-content -->
 </div>
-<script src="~/Scripts/jquery-1.9.1.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
 
 

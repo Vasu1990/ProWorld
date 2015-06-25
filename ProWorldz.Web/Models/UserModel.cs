@@ -27,7 +27,7 @@ namespace ProWorldz.Web.Models
     }
 
 
-    public class ProfileModel : BaseModel
+    public class    ProfileModel : BaseModel
     {
         public UserGeneralInformationBM UserGeneralInformationModel { get; set; }
         public UserPersonalInformationBM UserPersonalInformationModel { get; set; }
@@ -69,7 +69,7 @@ namespace ProWorldz.Web.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Name enter please")]
+        [Required(ErrorMessage = "Please enter Name")]
         public string Name { get; set; }
         [Required]
         [EmailAddress]
