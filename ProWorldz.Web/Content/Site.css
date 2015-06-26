@@ -761,3 +761,7 @@ tr.pager td {
             margin: 0;
         }
 }
+
+label.control-label {
+font-size:15px;
+}

@@ -21,3 +21,6 @@ table{
     table th {
     text-align:center;
     }
+    .cursor{
+    cursor:pointer;
+}

@@ -14,43 +14,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
-            <h3 class="title">
-                <i class="fa fa-fw fa-plus-circle"></i>
-                Create New Post
-            </h3>
-            
-      
-    @using (Html.BeginForm("PostComment", "Home", FormMethod.Post))
-    {
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">Subject</label>
-                        <div class="col-sm-9">
-                            @Html.TextBoxFor(model => model.UserPost.Subject, new { @class = "form-control", @placeholder = "Subject" })
-                            @Html.ValidationMessageFor(model => model.UserPost.Subject)
-                        </div>
-                    </div>
-                    <br /><br />
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">Content</label>
-                        <div class="col-sm-9 margin-bottom10">
-                            @Html.TextAreaFor(model => model.UserPost.Post, new { @class = "form-control", Id = "editor1", placeholder = "Type Your Post Here........", @rows = "5" })
-                        </div>
-                    </div>
-                    <br /><br /><br /><br /><br /><br />
-                    <div class="form-group margin-none">
-                        <div class="col-sm-offset-3 col-sm-9">
-                            <button type="submit" class="btn btn-primary">Post Comment</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-    }
+   
             <h3 class="title">
                 <i class="fa fa-fw fa-list"></i>
                 Post Listing
@@ -79,9 +43,47 @@
             </tbody>
         </table>
     </div>
-</div>
-        </div>
 
+        <div class="col-md-12">
+            <h3 class="title cursor" id="createPost">
+                <i class="fa fa-fw fa-plus-circle"></i>
+                Create New Post
+            </h3>
+
+
+            @using (Html.BeginForm("PostComment", "Home", FormMethod.Post))
+            {
+                <div class="panel panel-default" id="divPost">
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Subject</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.UserPost.Subject, new { @class = "form-control", @placeholder = "Subject" })
+                                    @Html.ValidationMessageFor(model => model.UserPost.Subject)
+                                </div>
+                            </div>
+                            <br /><br />
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Content</label>
+                                <div class="col-sm-9 margin-bottom10">
+                                    @Html.TextAreaFor(model => model.UserPost.Post, new { @class = "form-control", Id = "editor1", placeholder = "Type Your Post Here........", @rows = "5" })
+                                </div>
+                            </div>
+                            <br /><br /><br /><br /><br /><br />
+                            <div class="form-group margin-none">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            }
+        </div>
+       
+</div>
 @section scripts{
 <script src="~/Scripts/ckeditor/ckeditor.js"></script>  
 @Scripts.Render("~/Scripts/Custom/ProWorldz.UserPost.js")
