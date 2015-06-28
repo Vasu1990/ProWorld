@@ -63,6 +63,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="main-nav">
                     <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Dashboard","Dashboard","Home")
                         <li><a href="/Home/UserPost">User Post</a>
                         </li>
                         <li><a href="/Account/Profile">Edit Profile</a>
@@ -96,10 +97,23 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
 
     </div>
+       
     <!-- /st-container -->
     </header>
+    @*<div class="row"style="margin-top:50px">
+        <nav class="navbar navbar-subnav navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#subnav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fa fa-ellipsis-h"></span>
+                    </button>
+                </div><div class="collapse navbar-collapse" id="subnav" aria-expanded="false"><ul class="nav navbar-nav"><li class="active"><a href="index.html"><i class="fa fa-fw icon-ship-wheel"></i>My Timeline</a> </li><li><a href="user-private-profile.html"><i class="fa fa-fw icon-user-1"></i>Edit Profile</a> </li><li><a href="user-private-users.html"><i class="fa fa-fw fa-group"></i>Manage Friends</a> </li><li><a href="user-private-messages.html"><i class="fa fa-fw icon-comment-fill-1"></i>Messages</a> </li></ul><ul class="nav navbar-nav hidden-xs navbar-right"><li><a href="login.html">Logout <i class="fa fa-fw icon-unlock-fill"></i></a></li></ul></div>
+            </div>
+        </nav>
+    </div>*@
     <div class="container" id="body">
-        
+       
                 @RenderBody()
         
     </div>
@@ -108,7 +122,31 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                 <strong>ThemeKit</strong> v3.6.3 © Copyright 2015
             </footer>
     
-    
+    <script>
+            var config = {
+        theme: "social-3",
+        skins: {
+            "default": {
+                "primary-color": "#16ae9f"
+            },
+            "orange": {
+                "primary-color": "#e74c3c"
+            },
+            "blue": {
+                "primary-color": "#4687ce"
+            },
+            "purple": {
+                "primary-color": "#af86b9"
+            },
+            "brown": {
+                "primary-color": "#c3a961"
+            },
+            "default-nav-inverse": {
+                "color-block": "#242424"
+            }
+        }
+    };
+    </script>
     <script src="~/Content/themes/social-3/js/vendor-core.min.js"></script>
     <script src="~/Content/themes/social-3/js/vendor-tables.min.js"></script>
     <script src="~/Content/themes/social-3/js/vendor-forms.min.js"></script>

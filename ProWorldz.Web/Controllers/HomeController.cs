@@ -27,6 +27,14 @@ namespace ProWorldz.Web.Controllers
 
             return RedirectToAction("Login", "Account");
         }
+
+        public ActionResult Dashboard()
+        {
+
+            return View();
+
+        }
+
         public ActionResult UserPost()
         {
             PostCommentModel Model = new PostCommentModel();

@@ -24,3 +24,32 @@ table{
     .cursor{
     cursor:pointer;
 }
+.dashboard-count-circle {
+      display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #2fc8c0;
+  border-radius: 50px;
+  vertical-align: middle;
+  line-height: 96px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: #ccc;
+  margin-top:8px;
+}
+
+.dashboard-info{
+    padding: 20px;margin: 20px;min-height: 150px;
+}
+
+.dashboard-count-circle:hover{
+    background-color:lightgray !important;
+    font-size:25px;
+}
+.circle-text {
+font-size:18px;
+}
+.margin-bottom7{
+    margin-bottom: 7px;
+}

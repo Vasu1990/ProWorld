@@ -82,7 +82,6 @@ D:\Projects\ProWorld\ProWorldz.DL\bin\Debug\System.Xml.dll
 D:\Projects\ProWorld\ProWorldz.DL\bin\Debug\System.Xml.Linq.dll
 D:\Projects\ProWorld\ProWorldz.DL\bin\Debug\EntityFramework.xml
 D:\Projects\ProWorld\ProWorldz.DL\bin\Debug\EntityFramework.SqlServer.xml
-D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.csprojResolveAssemblyReference.cache
 D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.Migrations.start.resources
 D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.csproj.GenerateResource.Cache
 D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.dll

@@ -815,6 +815,7 @@
     <Content Include="Views\Account\Test.cshtml" />
     <Content Include="Views\Home\UserPost.cshtml" />
     <Content Include="Views\Home\ViewProfile.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
