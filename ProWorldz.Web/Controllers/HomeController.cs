@@ -1,6 +1,7 @@
 ﻿using ProWorldz.BL.BusinessLayer;
 using ProWorldz.BL.BusinessModel;
 using ProWorldz.Web.Models;
+using ProWorldz.Web.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,8 +31,11 @@ namespace ProWorldz.Web.Controllers
 
         public ActionResult Dashboard()
         {
-
-            return View();
+            PostCommentModel model = new PostCommentModel();
+            UserPostBL blObj = new UserPostBL();
+            model.UserPostList = blObj.GetUserPost();
+            model.User  = SessionManager.InstanceCreator.Get<UserBM>("User");
+            return View(model);
 
         }
 

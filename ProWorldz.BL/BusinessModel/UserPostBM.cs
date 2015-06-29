@@ -21,5 +21,7 @@ namespace ProWorldz.BL.BusinessModel
         public string Subject { get; set; }
         [Required]
         public string Post { get; set; }
+        public string ImageUrl { get; set; }
+        
     }
 }

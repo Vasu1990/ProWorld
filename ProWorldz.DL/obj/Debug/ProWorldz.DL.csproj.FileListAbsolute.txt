@@ -86,3 +86,4 @@ D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.Migrations.start.resour
 D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.csproj.GenerateResource.Cache
 D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.dll
 D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.pdb
+D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.csprojResolveAssemblyReference.cache

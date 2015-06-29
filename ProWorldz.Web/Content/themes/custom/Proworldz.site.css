@@ -44,11 +44,12 @@ table{
 }
 
 .dashboard-count-circle:hover{
-    background-color:lightgray !important;
+    background-color:#F5F5F5  !important;
+    text-decoration:none;
     font-size:25px;
 }
 .circle-text {
-font-size:18px;
+font-size:20px;
 }
 .margin-bottom7{
     margin-bottom: 7px;

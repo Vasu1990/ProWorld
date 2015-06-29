@@ -56,6 +56,13 @@ namespace ProWorldz.DL.Models
 
          public virtual State State { get; set; }
 
+         //problem o multiplicity  Multiplicity is not valid in Role 'UserGeneralInfomation_User_Source' in relationship 'UserGeneralInfomation_User'. 
+        //Because the Dependent Role properties are not the key properties, the upper bound of the multiplicity of the Dependent Role must be '*'
+        //http://stackoverflow.com/questions/26386831/one-fk-works-another-gives-error-multiplicity-is-not-valid
+        //public virtual UserGeneralInfomation UserGeneralInfo { get; set; } 
+
+         //temp soln http://stackoverflow.com/questions/26386831/one-fk-works-another-gives-error-multiplicity-is-not-valid or use fluent api
+        public virtual ICollection<UserGeneralInfomation> UserGeneralInfo { get; set; }
         
     }
 }

@@ -17,7 +17,7 @@ namespace ProWorldz.Web.Models
     public class PostCommentModel : BaseModel
     {
         public UserPostBM UserPost { get; set; }
-
+        public UserBM User { get; set; }
         public List<UserPostBM> UserPostList { get; set; }
     }
 
@@ -27,7 +27,7 @@ namespace ProWorldz.Web.Models
     }
 
 
-    public class    ProfileModel : BaseModel
+    public class ProfileModel : BaseModel
     {
         public UserGeneralInformationBM UserGeneralInformationModel { get; set; }
         public UserPersonalInformationBM UserPersonalInformationModel { get; set; }
@@ -111,4 +111,6 @@ namespace ProWorldz.Web.Models
         public List<CommunityBM> CommunityList { get; set; }
         public List<CommunityBM> SubCommunityList { get; set; }
     }
+
+
 }

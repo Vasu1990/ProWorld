@@ -25,6 +25,7 @@ namespace ProWorldz.BL.BusinessLayer
         }
         public List<UserPostBM> GetUserPost()
         {
+          
             return uow.UserPostRepository.GetAll().ConvertAll<UserPostBM>(new Converter<UserPost, UserPostBM>(ConvertToBM));
         }
 
@@ -50,12 +51,8 @@ namespace ProWorldz.BL.BusinessLayer
                Post=model.Post,
                CreatedBy=model.CreatedBy,
                CreationDate=model.CreationDate,
-                ModifiedBy = model.ModifiedBy,
-                ModificationDate = model.ModificationDate
-
-
-
-
+               ModifiedBy = model.ModifiedBy,
+               ModificationDate = model.ModificationDate
             };
         }
 
@@ -66,15 +63,16 @@ namespace ProWorldz.BL.BusinessLayer
                 Id = model.Id,
                UserId=model.UserId,
                UserName=model.User.Name,
+               ImageUrl = model.User.UserGeneralInfo.Where(x =>x.UserId == model.UserId).Select(x=>x.Image).FirstOrDefault(), 
                Subject=model.Subject,
                Post=model.Post,
                CreatedBy=model.CreatedBy,
                CreationDate=model.CreationDate,
-                ModifiedBy = model.ModifiedBy,
-                ModificationDate = model.ModificationDate
-
+               ModifiedBy = model.ModifiedBy,
+               ModificationDate = model.ModificationDate
 
             };
         }
+       
     }
 }

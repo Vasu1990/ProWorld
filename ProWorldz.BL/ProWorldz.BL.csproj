@@ -75,8 +75,7 @@
     <Compile Include="BusinessModel\CountryBM.cs" />
     <Compile Include="BusinessModel\DegreeBM.cs" />
     <Compile Include="BusinessModel\IndustryBM.cs" />
-  
-    
+    <Compile Include="BusinessModel\PostBM.cs" />
     <Compile Include="BusinessModel\StateBM.cs" />
     <Compile Include="BusinessModel\UserBM.cs" />
     <Compile Include="BusinessModel\UserGeneralInformationBM.cs" />
