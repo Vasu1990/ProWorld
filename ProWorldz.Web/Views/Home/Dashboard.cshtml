@@ -8,37 +8,37 @@
             <div class="col-md-6">
                 <div class="margin-bottom7">
                     <i class="fa fa-envelope-o fa-fw"></i>
-                    <strong data-bind="text:User.Email"></strong>
+                    <span data-bind="text:User.Email"></span>
                 </div>
                 <div class="margin-bottom7">
                     <i class="fa fa-birthday-cake fa-fw"></i>
-                    <strong data-bind="text:User.DOB"></strong>
+                    <span data-bind="text:User.DOB"></span>
                 </div>
                 <div class="margin-bottom7">
                     <i class="fa fa-book fa-fw"></i>
-                    <strong data-bind="text:User.CommunityName"></strong>
+                    <span data-bind="text:User.CommunityName"></span>
                 </div>
                 <div class="margin-bottom7">
                     <i class="fa fa-book fa-fw"></i>
-                    <strong data-bind="text:User.SubCommunityName"></strong>
+                    <span data-bind="text:User.SubCommunityName"></span>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="row">
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-12 text-center div-count-circle">
                         <div class="col-md-4  circle-text">
                             <i class="fa fa-fw  fa-group"></i>Friends
                             <br />
                             <a href="#" class="dashboard-count-circle">0</a>
                         </div><div class="col-md-4  circle-text">
-                            <i class="fa fa-suitcase">    Jobs Applied</i>
+                            <i class="fa fa-suitcase"></i>    Jobs Applied
                             <br />
                             <a href="#" class="dashboard-count-circle">12</a>
                         </div>
                         <div class="col-md-4  circle-text">
-                            <i class="fa fa-envelope-square">    Your Posts</i>
+                            <i class="fa fa-envelope-square"></i>    Your Posts
                             <br />
-                        <a href="#" class="dashboard-count-circle" >0</a>                        
+                            <a href="#" class="dashboard-count-circle" data-bind="text:UserPostList().length"></a>                        
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                         <div class="media-body">
                             <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
                             <a href="#" data-bind="text:UserName"></a>
-                            on <span data-bind="text:CreationDate"></span>
+                            on <span data-bind="text:moment(CreationDate,'yyyy mm dd') "></span>
                         </div>
                     </div>
                 </div>
