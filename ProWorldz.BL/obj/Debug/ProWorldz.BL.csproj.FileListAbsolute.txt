@@ -71,3 +71,19 @@ D:\Projects\ProWorld\ProWorldz.BL\bin\Debug\EntityFramework.xml
 D:\Projects\ProWorld\ProWorldz.BL\obj\Debug\ProWorldz.BL.csprojResolveAssemblyReference.cache
 D:\Projects\ProWorld\ProWorldz.BL\obj\Debug\ProWorldz.BL.dll
 D:\Projects\ProWorld\ProWorldz.BL\obj\Debug\ProWorldz.BL.pdb
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\ProWorldz.BL.dll
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\ProWorldz.BL.pdb
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\Microsoft.CSharp.dll
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\ProWorldz.DL.dll
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\System.ComponentModel.DataAnnotations.dll
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\System.Data.DataSetExtensions.dll
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\System.Data.dll
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\System.dll
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\System.Xml.dll
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\System.Xml.Linq.dll
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\EntityFramework.dll
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\ProWorldz.DL.pdb
+E:\vasu pro new\ProWorld\ProWorldz.BL\bin\Debug\EntityFramework.xml
+E:\vasu pro new\ProWorld\ProWorldz.BL\obj\Debug\ProWorldz.BL.csprojResolveAssemblyReference.cache
+E:\vasu pro new\ProWorld\ProWorldz.BL\obj\Debug\ProWorldz.BL.dll
+E:\vasu pro new\ProWorld\ProWorldz.BL\obj\Debug\ProWorldz.BL.pdb
