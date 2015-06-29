@@ -69,7 +69,7 @@ namespace ProWorldz.Web.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Please enter Name")]
+        [Required(ErrorMessage = "Name enter please")]
         public string Name { get; set; }
         [Required]
         [EmailAddress]
@@ -82,7 +82,7 @@ namespace ProWorldz.Web.Models
 
         [Required]
         public DateTime DOB { get; set; }
-         [Required]
+        [Required]
         public string DateOfBirth { get; set; }
         public bool Active { get; set; }
 
@@ -105,11 +105,33 @@ namespace ProWorldz.Web.Models
 
         public int CommunityName { get; set; }
 
+        public int CountryId { get; set; }
+
+        public int StateId { get; set; }
+
+        public int CityId { get; set; }
+
         public int SubCommunityName { get; set; }
+
+        public List<CountryBM> CountryList { get; set; }
+        public List<StateBM> StateList { get; set; }
+        public List<CityBM> CityList { get; set; }
+
 
 
         public List<CommunityBM> CommunityList { get; set; }
         public List<CommunityBM> SubCommunityList { get; set; }
+        CountryBL countryBL = new CountryBL();
+        StateBL stateBL = new StateBL();
+        CityBL cityBL = new CityBL();
+        public UserModel()
+        {
+            CountryList = countryBL.GetCountry();
+            StateList = new List<StateBM>();
+            CityList = new List<CityBM>();
+            CommunityList = new List<CommunityBM>();
+            SubCommunityList = new List<CommunityBM>();
+        }
     }
 
 

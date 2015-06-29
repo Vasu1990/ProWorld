@@ -443,16 +443,19 @@ namespace ProWorldz.Web.Controllers
             userBM.Email = model.Email;
             userBM.Password = model.Password;
             userBM.UserTypeId = Convert.ToInt32(collection["UserType"].ToString());
-            userBM.DOB = model.DOB;
-          
+            userBM.DOB = Convert.ToDateTime(model.DateOfBirth);
+
             userBM.CreationDate = DateTime.Now.Date;
             userBM.ModificationDate = DateTime.Now.Date;
 
             userBM.Gender = collection["gender"].ToString();
-     
+
             userBM.Active = true;
             userBM.CommunityId = model.CommunityId;
             userBM.SubCommunityId = model.SubCommunityId;
+            userBM.CountryId = model.CountryId;
+            userBM.StateId = model.StateId;
+            userBM.CityId = model.CityId;
             userBM.CommunityName = 1;
             userBM.SubCommunityName = 1;
             userBM.CreatedBy = 1;
@@ -464,6 +467,42 @@ namespace ProWorldz.Web.Controllers
             return RedirectToAction("Login");
         }
 
+
+
+        public JsonResult GetCommunityByCountry(int Id)
+        {
+            List<CommunityBM> communityList = new List<CommunityBM>();
+            CommunityBL communityBL = new CommunityBL();
+            communityList = communityBL.GetCommunityByCountryId(Id);
+            return Json(communityList, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetStateByCountry(int Id)
+        {
+            List<StateBM> stateList = new List<StateBM>();
+            StateBL stateBL = new StateBL();
+            stateList = stateBL.GetStateByCountry(Id);
+            return Json(stateList, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        public JsonResult GetCityByState(int Id)
+        {
+            List<CityBM> cityList = new List<CityBM>();
+            CityBL cityBL = new CityBL();
+            cityList = cityBL.GetCityByState(Id);
+            return Json(cityList, JsonRequestBehavior.AllowGet);
+        }
+
+
+        public JsonResult GetSubCommunityByCommunity(int Id)
+        {
+            List<CommunityBM> communityList = new List<CommunityBM>();
+            CommunityBL communityBL = new CommunityBL();
+            communityList = communityBL.GetSubCommunityByCommunity(Id);
+            return Json(communityList, JsonRequestBehavior.AllowGet);
+        }
         //
         // POST: /Account/Disassociate
 
