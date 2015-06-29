@@ -84,18 +84,47 @@
                                                     </div>
                                                 </div>
 
-                                            <div class="row">
+                                           <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group form-control-default">
-                                                        <label for="exampleInputLastName">Community</label>
-                                                        @Html.DropDownListFor(x => x.CommunityId, new SelectList(Model.CommunityList, "ID", "Name", Model.CommunityId), "- - Select - -", new { @class = "dropdown form-control" })
-                                                        @Html.ValidationMessageFor(model => model.CommunityId)
+                                                        <label for="exampleInputLastName">Country</label>
+                                                        @Html.DropDownListFor(x => x.CountryId, new SelectList(Model.CountryList, "CountryId", "Name", Model.CountryId), "- - Select - -", new { @class = "dropdown form-control",@onchange="LoadCommunity(this.value)"  })
+                                                        @Html.ValidationMessageFor(model => model.CountryId)
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group form-control-default">
+                                                        <label for="exampleInputLastName">State</label>
+                                                        @Html.DropDownListFor(x => x.StateId, new SelectList(Model.StateList, "StateId", "Name", Model.StateId), "- - Select - -", new { @class = "dropdown form-control",@id="ddlState",@onchange="LoadCity(this.value)"  })
+                                                       @Html.ValidationMessageFor(model => model.StateId)
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                             <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-control-default">
+                                                        <label for="exampleInputLastName">City</label>
+                                                        @Html.DropDownListFor(x => x.CityId, new SelectList(Model.CityList, "ID", "Name", Model.CityId), "- - Select - -", new { @class = "dropdown form-control",@id="ddlCity" })
+                                                        @Html.ValidationMessageFor(model => model.CityId)
+                                                    </div>
+                                                </div>
+                                               <div class="col-md-6">
+                                                    <div class="form-group form-control-default">
+                                                        <label for="exampleInputLastName">Community</label>
+                                                        @Html.DropDownListFor(x => x.CommunityId, new SelectList(Model.CommunityList, "ID", "Name", Model.CommunityId), "- - Select - -", new { @class = "dropdown form-control",@id="ddlCommunity",@onchange="LoadSubCommunity(this.value)"  })
+                                                        @Html.ValidationMessageFor(model => model.CommunityId)
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                          
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-control-default">
                                                         <label for="exampleInputLastName">Sub Community</label>
-                                                        @Html.DropDownListFor(x => x.SubCommunityId, new SelectList(Model.SubCommunityList, "ID", "Name", Model.SubCommunityId), "- - Select - -", new { @class = "dropdown form-control" })
+                                                        @Html.DropDownListFor(x => x.SubCommunityId, new SelectList(Model.SubCommunityList, "ID", "Name", Model.SubCommunityId), "- - Select - -", new { @class = "dropdown form-control" ,@id="ddlSubCommunity"})
                                                        @Html.ValidationMessageFor(model => model.SubCommunityId)
                                                     </div>
                                                 </div>
@@ -120,6 +149,10 @@
     </div>
     <!-- /st-content -->
 </div>
+@section scripts{
+
+@Scripts.Render("~/Scripts/Custom/ProWorldz.Register.js")
+}
 
 
 

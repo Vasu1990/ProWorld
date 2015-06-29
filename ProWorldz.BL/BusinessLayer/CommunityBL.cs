@@ -28,7 +28,15 @@ namespace ProWorldz.BL.BusinessLayer
         {
             return uow.CommunityRepository.GetAll().ConvertAll<CommunityBM>(new Converter<Community, CommunityBM>(ConvertToBM));
         }
-
+        public List<CommunityBM> GetSubCommunityByCommunity(int Id)
+        {
+            return uow.CommunityRepository.Find(a => a.ParentId == Id).ConvertAll<CommunityBM>(new Converter<Community, CommunityBM>(ConvertToBM));
+        }
+    
+        public List<CommunityBM> GetCommunityByCountryId(int id)
+        {
+            return uow.CommunityRepository.Find(j => j.CountryId == id && j.ParentId == 0).ConvertAll<CommunityBM>(new Converter<Community, CommunityBM>(ConvertToBM));
+        }
         public CommunityBM GetUserById(int id)
         {
             return ConvertToBM(uow.CommunityRepository.GetByID(id));

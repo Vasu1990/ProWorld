@@ -87,3 +87,22 @@ D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.csproj.GenerateResource
 D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.dll
 D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.pdb
 D:\Projects\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.csprojResolveAssemblyReference.cache
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\ProWorldz.DL.dll.config
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\ProWorldz.DL.dll
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\ProWorldz.DL.pdb
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\EntityFramework.dll
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\EntityFramework.SqlServer.dll
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\Microsoft.CSharp.dll
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\System.ComponentModel.DataAnnotations.dll
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\System.Data.DataSetExtensions.dll
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\System.Data.dll
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\System.dll
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\System.Xml.dll
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\System.Xml.Linq.dll
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\EntityFramework.xml
+E:\vasu pro new\ProWorld\ProWorldz.DL\bin\Debug\EntityFramework.SqlServer.xml
+E:\vasu pro new\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.csprojResolveAssemblyReference.cache
+E:\vasu pro new\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.dll
+E:\vasu pro new\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.pdb
+E:\vasu pro new\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.Migrations.newScript.resources
+E:\vasu pro new\ProWorld\ProWorldz.DL\obj\Debug\ProWorldz.DL.csproj.GenerateResource.Cache

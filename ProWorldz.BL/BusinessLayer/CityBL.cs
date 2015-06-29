@@ -27,7 +27,10 @@ namespace ProWorldz.BL.BusinessLayer
         {
             return uow.CityRepository.GetAll().ConvertAll<CityBM>(new Converter<City, CityBM>(ConvertToBM));
         }
-
+        public List<CityBM> GetCityByState(int Id)
+        {
+            return uow.CityRepository.Find(a => a.StateId == Id).ConvertAll<CityBM>(new Converter<City, CityBM>(ConvertToBM));
+        }
         public CityBM GetCityById(int id)
         {
             return ConvertToBM(uow.CityRepository.GetByID(id));
