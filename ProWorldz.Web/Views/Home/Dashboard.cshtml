@@ -8,19 +8,19 @@
             <div class="col-md-6">
                 <div class="margin-bottom7">
                     <i class="fa fa-envelope-o fa-fw"></i>
-                    <span data-bind="text:User.Email"></span>
+                    <strong data-bind="text:User.Email"></strong>
                 </div>
                 <div class="margin-bottom7">
                     <i class="fa fa-birthday-cake fa-fw"></i>
-                    <span data-bind="text:User.DOB"></span>
+                    <strong data-bind="text:User.DOB"></strong>
                 </div>
                 <div class="margin-bottom7">
                     <i class="fa fa-book fa-fw"></i>
-                    <span data-bind="text:User.CommunityName"></span>
+                    <strong data-bind="text:User.CommunityName"></strong>
                 </div>
                 <div class="margin-bottom7">
                     <i class="fa fa-book fa-fw"></i>
-                    <span data-bind="text:User.SubCommunityName"></span>
+                    <strong data-bind="text:User.SubCommunityName"></strong>
                 </div>
             </div>
             <div class="col-md-6">
@@ -38,7 +38,7 @@
                         <div class="col-md-4  circle-text">
                             <i class="fa fa-envelope-square">    Your Posts</i>
                             <br />
-                            <a href="#" class="dashboard-count-circle">4</a>
+                        <a href="#" class="dashboard-count-circle" >0</a>                        
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
 
 </div>
 
-@*<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>*@
+<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>
 
 @section scripts{
     @Scripts.Render("~/bundles/Knockout")
