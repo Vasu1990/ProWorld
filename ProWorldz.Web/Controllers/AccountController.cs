@@ -12,6 +12,9 @@ using ProWorldz.Web.Filters;
 using ProWorldz.Web.Models;
 using ProWorldz.BL.BusinessLayer;
 using ProWorldz.BL.BusinessModel;
+using ProWorldz.Web.Utils;
+using System.Net.Mail;
+using System.Net;
 
 namespace ProWorldz.Web.Controllers
 {
@@ -56,7 +59,8 @@ namespace ProWorldz.Web.Controllers
                 UserBM User = UserBL.GetUsers().Where(p => p.Email == Model.Email && p.Password == Model.Password).FirstOrDefault();
                 if (User != null)
                 {
-                    Session["User"] = User;
+                    SessionManager.InstanceCreator.Set<UserBM>(User, SessionKey.User);
+                  //  Session["User"] = User;
                     FormsAuthentication.SetAuthCookie(User.Name, false);
                     return RedirectToAction("Profile");
                 }
@@ -82,10 +86,10 @@ namespace ProWorldz.Web.Controllers
             Model.SucessMessage = (TempData["Success"] != null ? TempData["Success"].ToString() : string.Empty).ToString();
             Model.ErrorMessage = (TempData["Error"] != null ? TempData["Error"].ToString() : string.Empty).ToString();
 
-            if (Session["User"] != null)
+            if (SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User) != null)
             {
 
-                UserBM CurrentUser = (UserBM)Session["User"];
+                UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User) ;
                 ViewBag.CurrentUser = CurrentUser.Name;
                 List<UserGeneralInformationBM> GenerealInfoList = UserGeneralInformationBL.GetGeneralInformation().Where(p => p.UserId == CurrentUser.Id).ToList();
                 if (GenerealInfoList.Count > 0)
@@ -129,6 +133,9 @@ namespace ProWorldz.Web.Controllers
             }
             return RedirectToAction("Login");
         }
+
+
+      
         [HttpPost]
         public ActionResult ForgotPassword(LoginModel Model)
         {
@@ -138,7 +145,7 @@ namespace ProWorldz.Web.Controllers
 
         public ActionResult UpdateGeneralInformation(ProfileModel Model, HttpPostedFileBase file)
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             if (CurrentUser != null)
             {
                 if (Model.UserGeneralInformationModel.Id == 0)
@@ -166,7 +173,8 @@ namespace ProWorldz.Web.Controllers
                             UserBL userBL = new UserBL();
                             CurrentUser.CreationDate = DateTime.Now;
                             userBL.UpdateUser(CurrentUser);
-                            Session["User"] = CurrentUser;
+                            SessionManager.InstanceCreator.Set<UserBM>(CurrentUser,SessionKey.User);
+                            
                         }
                         TempData["Success"] = "Record saved Successfully.";
                     }
@@ -204,7 +212,7 @@ namespace ProWorldz.Web.Controllers
 
         public ActionResult UpdatePersonalInformation(ProfileModel Model)
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             if (CurrentUser != null)
             {
 
@@ -232,7 +240,7 @@ namespace ProWorldz.Web.Controllers
 
         public ActionResult UserVideo(ProfileModel Model)
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             if (CurrentUser != null)
             {
                 if (Model.UserVideoModel.Id == 0)
@@ -287,7 +295,7 @@ namespace ProWorldz.Web.Controllers
         }
         public ActionResult UserProfessionalQualification(ProfileModel Model,FormCollection collection)
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             if (CurrentUser != null)
             {
 
@@ -339,7 +347,7 @@ namespace ProWorldz.Web.Controllers
 
         public JsonResult GetProfessionalData()
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             List<UserProfessionalQualificationBM> UserProfessionalQualificationBMList = new List<UserProfessionalQualificationBM>();
             if (CurrentUser != null)
             {
@@ -358,7 +366,7 @@ namespace ProWorldz.Web.Controllers
 
         public JsonResult GetQualificationData()
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             List<UserQualificatinBM> UserQualificatinList = new List<UserQualificatinBM>();
             if (CurrentUser != null)
             {
@@ -377,7 +385,7 @@ namespace ProWorldz.Web.Controllers
 
         public ActionResult UserQualification(ProfileModel Model)
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             if (CurrentUser != null)
             {
 
@@ -443,10 +451,7 @@ namespace ProWorldz.Web.Controllers
             userBM.Email = model.Email;
             userBM.Password = model.Password;
             userBM.UserTypeId = Convert.ToInt32(collection["UserType"].ToString());
-            userBM.DOB = Convert.ToDateTime(model.DateOfBirth);
-
-            userBM.CreationDate = DateTime.Now.Date;
-            userBM.ModificationDate = DateTime.Now.Date;
+            userBM.DOB = Convert.ToDateTime(model.DOB);
 
             userBM.Gender = collection["gender"].ToString();
 
@@ -456,10 +461,13 @@ namespace ProWorldz.Web.Controllers
             userBM.CountryId = model.CountryId;
             userBM.StateId = model.StateId;
             userBM.CityId = model.CityId;
-            userBM.CommunityName = 1;
-            userBM.SubCommunityName = 1;
+           // userBM.CommunityName = 1;
+            //userBM.SubCommunityName = 1;
             userBM.CreatedBy = 1;
             userBM.ModifiedBy = 1;
+
+            userBM.CreationDate = DateTime.Now.Date;
+            userBM.ModificationDate = DateTime.Now.Date;
 
             userBL.Create(userBM);
             TempData["Successs"] = "User Registered Successfully";

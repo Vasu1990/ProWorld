@@ -6,23 +6,30 @@
 <div class="container">
     <div class="clear-fix">
     </div>
-    <br /><br /><br /><br /><br /><br /><br /><br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <div class="col-md-12">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading panel-heading-gray">
                     <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil"></i></a>
-                    <i class="fa fa-fw fa-info-circle"></i>About
+                    <i class="fa fa-fw fa-info-circle"></i>General Info
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" id="dvGeneral">
                     <ul class="list-unstyled profile-about margin-none">
                         <li class="padding-v-5">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <span class="text-muted">Image</span>
                                 </div>
-                                <div class="col-sm-8" id="dvImage" data-bind="text:viewModel.Image">12 January 1990</div>
-                                <input type="text" data-bind="value:viewModel.Image" />
+
+                                <img data-bind="attr: {src:viewModel.Image}" alt="Bill" class="img-circle" style="height: 100px; width: 100px" />
                             </div>
                         </li>
                         <li class="padding-v-5">
@@ -30,7 +37,7 @@
                                 <div class="col-sm-4">
                                     <span class="text-muted">Community</span>
                                 </div>
-                                <div class="col-sm-8" id="dvCommunity" data-bind="text:viewModel.Community">Specialist</div>
+                                <div class="col-sm-8" id="dvCommunity" data-bind="text:viewModel.Community"></div>
                             </div>
                         </li>
                         <li class="padding-v-5">
@@ -38,25 +45,10 @@
                                 <div class="col-sm-4">
                                     <span class="text-muted">Sub-Community</span>
                                 </div>
-                                <div class="col-sm-8" id="dvSubCommunity">Male</div>
+                                <div class="col-sm-8" id="dvSubCommunity" data-bind="text:viewModel.SubCommunity"></div>
                             </div>
                         </li>
-                        <li class="padding-v-5">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <span class="text-muted">Lives in</span>
-                                </div>
-                                <div class="col-sm-8">Miami, FL, USA</div>
-                            </div>
-                        </li>
-                        <li class="padding-v-5">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <span class="text-muted">Credits</span>
-                                </div>
-                                <div class="col-sm-8">249</div>
-                            </div>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -66,48 +58,56 @@
             <div class="panel panel-default">
                 <div class="panel-heading panel-heading-gray">
                     <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil"></i></a>
-                    <i class="fa fa-fw fa-info-circle"></i>About
+                    <i class="fa fa-fw fa-info-circle"></i>Personal Info
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" id="dvPersonal">
                     <ul class="list-unstyled profile-about margin-none">
                         <li class="padding-v-5">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <span class="text-muted">Date of Birth</span>
+                                    <span class="text-muted">Country</span>
                                 </div>
-                                <div class="col-sm-8">12 January 1990</div>
+                                <div class="col-sm-8" id="dvCountry" data-bind="text:viewPersonalModel.Country"></div>
                             </div>
                         </li>
                         <li class="padding-v-5">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <span class="text-muted">Job</span>
+                                    <span class="text-muted">State</span>
                                 </div>
-                                <div class="col-sm-8">Specialist</div>
+                                <div class="col-sm-8" data-bind="text:viewPersonalModel.State"></div>
                             </div>
                         </li>
                         <li class="padding-v-5">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <span class="text-muted">Gender</span>
+                                    <span class="text-muted">City</span>
                                 </div>
-                                <div class="col-sm-8">Male</div>
+                                <div class="col-sm-8" data-bind="text:viewPersonalModel.City"></div>
                             </div>
                         </li>
                         <li class="padding-v-5">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <span class="text-muted">Lives in</span>
+                                    <span class="text-muted">Phone</span>
                                 </div>
-                                <div class="col-sm-8">Miami, FL, USA</div>
+                                <div class="col-sm-8" data-bind="text:viewPersonalModel.Phone"></div>
                             </div>
                         </li>
                         <li class="padding-v-5">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <span class="text-muted">Credits</span>
+                                    <span class="text-muted">Address 1</span>
                                 </div>
-                                <div class="col-sm-8">249</div>
+                                <div class="col-sm-8" data-bind="text:viewPersonalModel.Address1"></div>
+                            </div>
+                        </li>
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Address 2</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewPersonalModel.Address2"></div>
                             </div>
                         </li>
                     </ul>
@@ -117,7 +117,136 @@
 
 
     </div>
+
+    <div class="col-md-12">
+        <div class="col-md-6">
+
+            <div class="panel panel-default">
+                <div class="panel-heading panel-heading-gray">
+                    <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                    <i class="fa fa-fw fa-info-circle"></i>Professional Info
+                </div>
+                <div class="panel-body" id="dvProfessional">
+                    <ul class="list-unstyled profile-about margin-none">
+
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Company Name</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewProfessionalModel.CompanyName"></div>
+                            </div>
+                        </li>
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Start Date</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewProfessionalModel.StartDate"></div>
+                            </div>
+                        </li>
+
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">End Date</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewProfessionalModel.EndDate"></div>
+                            </div>
+                        </li>
+
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Salary</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewProfessionalModel.Salary"></div>
+                            </div>
+                        </li>
+
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Role</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewProfessionalModel.Role"></div>
+                            </div>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+         <div class="col-md-6">
+
+            <div class="panel panel-default">
+                <div class="panel-heading panel-heading-gray">
+                    <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                    <i class="fa fa-fw fa-info-circle"></i>Qualification Info
+                </div>
+                <div class="panel-body" id="dvQualification">
+                    <ul class="list-unstyled profile-about margin-none">
+
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">School Name</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewQualificationModel.SchoolName"></div>
+                            </div>
+                        </li>
+
+                         <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Degree Name</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewQualificationModel.DegreeName"></div>
+                            </div>
+                        </li>
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Start Date</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewQualificationModel.StartDate"></div>
+                            </div>
+                        </li>
+
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">End Date</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewQualificationModel.EndDate"></div>
+                            </div>
+                        </li>
+
+                        <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Percentage</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewQualificationModel.Percentage"></div>
+                            </div>
+                        </li>
+
+                       
+
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
+
 <script src="~/Scripts/jquery-1.9.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
@@ -127,8 +256,47 @@
 <script type="text/javascript">
     var viewModel = {};
     viewModel.Image = ko.observable();
-    viewModel,Community = ko.observable();
-    ko.applyBindings(viewModel);
+    viewModel.Community = ko.observable();
+    viewModel.SubCommunity = ko.observable();
+    ko.applyBindings(viewModel, document.getElementById('dvGeneral'));
+
+    var viewPersonalModel = {};
+    viewPersonalModel.Country = ko.observable();
+    viewPersonalModel.State = ko.observable();
+    viewPersonalModel.City = ko.observable();
+
+    viewPersonalModel.Phone = ko.observable();
+    viewPersonalModel.Address1 = ko.observable();
+    viewPersonalModel.Address2 = ko.observable();
+    ko.applyBindings(viewPersonalModel, document.getElementById('dvPersonal'));
+
+
+    var viewProfessionalModel = {};
+    viewProfessionalModel.CompanyName = ko.observable();
+    viewProfessionalModel.StartDate = ko.observable();
+    viewProfessionalModel.EndDate = ko.observable();
+
+    viewProfessionalModel.Salary = ko.observable();
+    viewProfessionalModel.Role = ko.observable();
+
+    ko.applyBindings(viewProfessionalModel, document.getElementById('dvProfessional'));
+
+
+
+    var viewQualificationModel = {};
+    viewQualificationModel.SchoolName = ko.observable();
+    viewQualificationModel.DegreeName = ko.observable();
+    viewQualificationModel.StartDate = ko.observable();
+    viewQualificationModel.EndDate = ko.observable();
+
+    viewQualificationModel.Percentage = ko.observable();
+
+
+    ko.applyBindings(viewQualificationModel, document.getElementById('dvQualification'));
+
+
+
+
     $(document).ready(function () {
         LoadUserGeneralDetail();
         LoadUserPersonalDetail();
@@ -138,22 +306,59 @@
     })
     function LoadUserGeneralDetail() {
         $.get('/Home/GetUserGeneralDetail', function (data) {
+            debugger;
             console.log(data)
+            viewModel.Image(data.Image)
+            viewModel.Community(data.CommunityName)
+            viewModel.SubCommunity(data.SubCommunityName)
         })
     }
     function LoadUserPersonalDetail() {
         $.get('/Home/LoadUserPersonalDetail', function (data) {
-            console.log(data)
+            console.log(data);
+            viewPersonalModel.Phone(data.Phone);
+            viewPersonalModel.Address1(data.Address1);
+            viewPersonalModel.Address2(data.Address2);
         })
     }
     function LoadUserProfessionalDetail() {
         $.get('/Home/LoadUserProfessionalDetail', function (data) {
+            debugger;
+
             console.log(data)
+
+            var sd = new Date(parseInt(data[0].StartDate.split('(')[1].split(')')[0]));
+
+            var displaystartDate = (sd.getMonth() + 1) + '/' + sd.getDate() + '/' + sd.getFullYear()
+
+
+            var ed = new Date(parseInt(data[0].EndDate.split('(')[1].split(')')[0]));
+
+            var displayendDate = (ed.getMonth() + 1) + '/' + ed.getDate() + '/' + ed.getFullYear()
+            viewProfessionalModel.CompanyName(data[0].CompanyName);
+            viewProfessionalModel.StartDate(displaystartDate);
+            viewProfessionalModel.EndDate(displayendDate);
+            viewProfessionalModel.Salary(data[0].Salary);
+            viewProfessionalModel.Role(data[0].UserRole);
         })
     }
     function LoadUserQualificationalDetail() {
         $.get('/Home/GetUserQualificationalDetail', function (data) {
+            debugger;
             console.log(data)
+            var sd = new Date(parseInt(data[0].StartDate.split('(')[1].split(')')[0]));
+
+            var displaystartDate = (sd.getMonth() + 1) + '/' + sd.getDate() + '/' + sd.getFullYear()
+
+
+            var ed = new Date(parseInt(data[0].EndDate.split('(')[1].split(')')[0]));
+
+            var displayendDate = (ed.getMonth() + 1) + '/' + ed.getDate() + '/' + ed.getFullYear()
+            viewQualificationModel.SchoolName(data[0].CompanyName);
+            viewQualificationModel.StartDate(displaystartDate);
+            viewQualificationModel.EndDate(displayendDate);
+            viewQualificationModel.DegreeName(data[0].Degree);
+            viewQualificationModel.Percentage(data[0].Percentage);
         })
     }
     function LoadUserVideoDetail() {
@@ -161,4 +366,4 @@
             console.log(data)
         })
     }
-    </script>
+</script>

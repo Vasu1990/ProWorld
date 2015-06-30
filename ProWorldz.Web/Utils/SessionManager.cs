@@ -48,4 +48,9 @@ namespace ProWorldz.Web.Utils
             System.Web.HttpContext.Current.Session[key] = null;
         }
     }
+
+    public static class SessionKey
+    {
+        public static string User = "User";
+    }
 }

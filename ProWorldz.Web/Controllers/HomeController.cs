@@ -35,7 +35,7 @@ namespace ProWorldz.Web.Controllers
             PostCommentModel model = new PostCommentModel();
             UserPostBL blObj = new UserPostBL();
             model.UserPostList = blObj.GetUserPost();
-            model.User  = SessionManager.InstanceCreator.Get<UserBM>("User");
+            model.User  = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             return View(model);
 
         }
@@ -57,10 +57,11 @@ namespace ProWorldz.Web.Controllers
             Model.ErrorMessage = (TempData["Error"] != null ? TempData["Error"].ToString() : string.Empty).ToString();
             return View(Model);
         }
-
+        [ValidateInput(false)]
         public ActionResult PostComment(PostCommentModel Model)
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+           // UserBM CurrentUser = (UserBM)Session["User"];
             if (CurrentUser != null)
             {
 
@@ -81,7 +82,7 @@ namespace ProWorldz.Web.Controllers
         }
         public JsonResult GetUserGeneralDetail()
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             UserGeneralInformationBM UserGeneralInformationBM=new UserGeneralInformationBM();
             if (CurrentUser != null)
                 UserGeneralInformationBM = UserGeneralInformationBL.GetGeneralInformationByUserId(CurrentUser.Id);
@@ -90,7 +91,7 @@ namespace ProWorldz.Web.Controllers
 
         public JsonResult LoadUserPersonalDetail()
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             UserPersonalInformationBM UserPersonalInformationBM = new UserPersonalInformationBM();
             if (CurrentUser != null)
                 UserPersonalInformationBM = UserPersonalInformationBL.GetPersonalInformationByUserId(CurrentUser.Id);
@@ -99,7 +100,7 @@ namespace ProWorldz.Web.Controllers
 
         public JsonResult LoadUserProfessionalDetail()
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             List<UserProfessionalQualificationBM> UserProfessionalQualificationList = new List<UserProfessionalQualificationBM>();
             if (CurrentUser != null)
                 UserProfessionalQualificationList = UserProfessionalQualificationBL.GetProfessionalQualificationByUserId(CurrentUser.Id);
@@ -108,7 +109,7 @@ namespace ProWorldz.Web.Controllers
 
         public JsonResult GetUserQualificationalDetail()
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             List<UserQualificatinBM> UserQualificatinBM = new List<UserQualificatinBM>();
             if (CurrentUser != null)
                 UserQualificatinBM = UserQualificationBL.GetUserQualificatinByUserId(CurrentUser.Id);
@@ -117,7 +118,7 @@ namespace ProWorldz.Web.Controllers
 
         public JsonResult LoadUserVideoDetail()
         {
-            UserBM CurrentUser = (UserBM)Session["User"];
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             UserVideoBM UserVideoBM = new UserVideoBM();
             if (CurrentUser != null)
                 UserVideoBM = UserVideoBL.GetByUserId(CurrentUser.Id);
