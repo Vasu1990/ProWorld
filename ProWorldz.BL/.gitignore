@@ -7,7 +7,6 @@
 *.userosscache
 *.sln.docstates
 *.dll
-.force
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -21,6 +20,8 @@ x64/
 x86/
 build/
 bld/
+ProWorldz.BL/bin/
+bin/
 [Bb]in/
 [Oo]bj/
 
