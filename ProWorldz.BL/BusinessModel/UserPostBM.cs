@@ -22,6 +22,7 @@ namespace ProWorldz.BL.BusinessModel
         [Required]
         public string Post { get; set; }
         public string ImageUrl { get; set; }
-        
+        public List<UserPostCommentBM> UserComments { get; set; }
+        public int CommentCount { get; set; }
     }
 }

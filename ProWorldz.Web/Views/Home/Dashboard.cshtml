@@ -2,112 +2,166 @@
 
 @model PostCommentModel
 
-<div class="cover profile">
-    <div class="wrapper">
-        <div class="row dashboard-info">
-            <div class="col-md-6">
-                <div class="margin-bottom7">
-                    <i class="fa fa-envelope-o fa-fw"></i>
-                    <span data-bind="text:User.Email"></span>
-                </div>
-                <div class="margin-bottom7">
-                    <i class="fa fa-birthday-cake fa-fw"></i>
-                    <span data-bind="text:User.DOB"></span>
-                </div>
-                <div class="margin-bottom7">
-                    <i class="fa fa-book fa-fw"></i>
-                    <span data-bind="text:User.CommunityName"></span>
-                </div>
-                <div class="margin-bottom7">
-                    <i class="fa fa-book fa-fw"></i>
-                    <span data-bind="text:User.SubCommunityName"></span>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-12 text-center div-count-circle">
-                        <div class="col-md-4  circle-text">
-                            <i class="fa fa-fw  fa-group"></i>Friends
-                            <br />
-                            <a href="#" class="dashboard-count-circle">0</a>
-                        </div><div class="col-md-4  circle-text">
-                            <i class="fa fa-suitcase"></i>    Jobs Applied
-                            <br />
-                            <a href="#" class="dashboard-count-circle">12</a>
-                        </div>
-                        <div class="col-md-4  circle-text">
-                            <i class="fa fa-envelope-square"></i>    Your Posts
-                            <br />
-                            <a href="#" class="dashboard-count-circle" data-bind="text:UserPostList().length"></a>                        
-                        </div>
+
+<div id="dashBoardWrapper">
+    <div class="cover profile">
+        <div class="wrapper">
+            <div class="row dashboard-info">
+                <div class="col-md-6">
+                    <div class="margin-bottom7">
+                        <i class="fa fa-envelope-o fa-fw"></i>
+                        <span data-bind="text:User.Email"></span>
+                    </div>
+                    <div class="margin-bottom7">
+                        <i class="fa fa-birthday-cake fa-fw"></i>
+                        <span data-bind="text:User.DOB"></span>
+                    </div>
+                    <div class="margin-bottom7">
+                        <i class="fa fa-book fa-fw"></i>
+                        <span data-bind="text:User.CommunityName"></span>
+                    </div>
+                    <div class="margin-bottom7">
+                        <i class="fa fa-book fa-fw"></i>
+                        <span data-bind="text:User.SubCommunityName"></span>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12 text-center div-count-circle">
+                            <div class="col-md-4  circle-text">
+                                <i class="fa fa-fw  fa-group"></i>Friends
+                                <br />
+                                <a href="#" class="dashboard-count-circle">0</a>
+                            </div><div class="col-md-4  circle-text">
+                                <i class="fa fa-suitcase"></i>    Jobs Applied
+                                <br />
+                                <a href="#" class="dashboard-count-circle">12</a>
+                            </div>
+                            <div class="col-md-4  circle-text">
+                                <i class="fa fa-envelope-square"></i>    Your Posts
+                                <br />
+                                <a href="#" class="dashboard-count-circle" data-bind="text:UserPostList().length"></a>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
             </div>
-        </div>
 
-    </div>
-    <div class="cover-info">
-        <div class="avatar">
-            <img src="/Content/themes/social-3/images/people/110/guy-5.jpg" alt="people">
-            @*<img data-bind="attr: { src: User.ImageUrl}" alt="people">*@
         </div>
-        <div class="name">
-            <a href="/Account/Profile" style="color: black;"  data-bind="text:User.Name"></a>
+        <div class="cover-info">
+            <div class="avatar">
+                <img src="/Content/themes/social-3/images/people/110/guy-5.jpg" alt="people">
+                @*<img data-bind="attr: { src: User.ImageUrl}" alt="people">*@
+            </div>
+            <div class="name">
+                <a href="/Account/Profile" style="color: black;" data-bind="text:User.Name"></a>
+            </div>
+            <ul class="cover-nav">
+                <li>
+                    <a href="user-public-timeline.html"><i class="fa fa-fw icon-ship-wheel"></i> Timeline</a>
+                </li>
+                <li>
+                    <a href="user-public-profile.html"><i class="fa fa-fw icon-user-1"></i> About</a>
+                </li>
+                <li>
+                    <a href="user-public-users.html"><i class="fa fa-fw fa-users"></i> Friends</a>
+                </li>
+            </ul>
         </div>
-        <ul class="cover-nav">
-            <li>
-                <a href="user-public-timeline.html"><i class="fa fa-fw icon-ship-wheel"></i> Timeline</a>
-            </li>
-            <li>
-                <a href="user-public-profile.html"><i class="fa fa-fw icon-user-1"></i> About</a>
-            </li>
-            <li>
-                <a href="user-public-users.html"><i class="fa fa-fw fa-users"></i> Friends</a>
-            </li>
-        </ul>
     </div>
-</div>
-<div class="timeline row" data-toggle="isotope" style="position: relative; height: 1850px;">
+    <div class="timeline row" data-toggle="isotope" style="position: relative; height: 1850px;">
 
-    <div data-bind="foreach:dashBoarViewModel.UserPostList">
-    <div class="col-xs-12 col-md-6 col-lg-6 item" style="position: absolute; left: 770px; top: 1261px;">
-        <div class="timeline-block">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="media">
-                        <div class="media-left">
-                            <span>
-                                <img style="height:50px;width:50px" data-bind="attr: { src: ImageUrl}" class="media-object">
+        <div data-bind="foreach:UserPostList">
+            <div class="col-xs-12 col-md-6 col-lg-6 item" style="position: absolute; left: 770px; top: 1261px;">
+                <div class="timeline-block">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="media">
+                                <div class="media-left">
+                                    <span>
+                                        <img style="height:50px;width:50px" data-bind="attr: { src: ImageUrl}" class="media-object">
+                                    </span>
+                                </div>
+                                <div class="media-body">
+                                    <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
+                                    <a href="#" data-bind="text:UserName"></a>
+                                    on <span data-bind="text:moment(CreationDate,'yyyy mm dd') "></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <p data-bind="text:Post"></p>
+                        </div>
+                        <div class="view-all-comments">
+                            <a href="#">
+                                <i class="fa fa-comments-o"></i>
+                            </a>
+
+                            <span data-bind="if:CommentCount() == 1">
+                                <span data-bind="text:CommentCount"></span> comment
+                            </span>
+                            <span data-bind="if:CommentCount() > 1">
+                                <span data-bind="text:CommentCount"></span> comments
                             </span>
                         </div>
-                        <div class="media-body">
-                            <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
-                            <a href="#" data-bind="text:UserName"></a>
-                            on <span data-bind="text:moment(CreationDate,'yyyy mm dd') "></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <p data-bind="text:Post"></p>
-                </div>
+                        <ul class="comments">
+                            <li data-bind="foreach:UserComments">
+                                <ul style="list-style:none;  padding: 0px;">
+                                    <li class="media">
+                                        <div class="media-left">
+                                            <span>
+                                                <img style="height:50px;width:50px" data-bind="attr:{src:ImageUrl}" class="media-object">
+                                            </span>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="pull-right dropdown" data-show-hover="li" style="display: none;">
+                                                <a href="#" data-toggle="dropdown" class="toggle-button">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Edit</a></li>
+                                                    <li><a href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                            <a href="" class="comment-author pull-left" data-bind="text:UserName"></a>
+                                            <span data-bind="text:Comment"></span>
+                                            <div class="comment-date" data-bind="text:moment(CreationDate,'yyyy mm dd')"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
 
+                            <li class="comment-form" data-bind="click:UserDashboardVM.PostComment">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Type your comment here..">
+                                    <span class="input-group-btn">
+                    <div href="#" class="btn btn-default"><i class="fa fa-paper-plane"></i></div>
+                </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-    </div>
-    
 
 
+
+    </div>
+    <pre data-bind="text: ko.toJSON($data, null, 2)"></pre>
 </div>
 
-<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>
+
 
 @section scripts{
-    @Scripts.Render("~/bundles/Knockout")
+   @Scripts.Render("~/bundles/Knockout")
+    
     <script>
-        var dashBoarViewModel = ko.mapping.fromJS(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model)));
-        ko.applyBindings(dashBoarViewModel);
-
-    </script>
-    }
+        var UserDashboardVM = ko.mapping.fromJS(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model)));
+        </script>
+    @Scripts.Render("~/Scripts/Custom/ProWorldz.UserDashboard.js")
+    
+    
+}

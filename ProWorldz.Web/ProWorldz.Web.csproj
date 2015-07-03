@@ -749,6 +749,7 @@
     <Content Include="Scripts\ckeditor\skins\moono\images\lock.png" />
     <Content Include="Scripts\ckeditor\skins\moono\images\refresh.png" />
     <Content Include="Scripts\ckeditor\styles.js" />
+    <Content Include="Scripts\Custom\ProWorldz.UserDashboard.js" />
     <Content Include="Scripts\Custom\Proworldz.Register.js" />
     <Content Include="Scripts\Custom\ProWorldz.UserPost.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />

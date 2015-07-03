@@ -164,5 +164,9 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        var proWorld = window.proWorld || {};
+    </script>
     @RenderSection("scripts", required: false)
 </body>

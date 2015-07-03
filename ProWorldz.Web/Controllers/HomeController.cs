@@ -35,6 +35,11 @@ namespace ProWorldz.Web.Controllers
             PostCommentModel model = new PostCommentModel();
             UserPostBL blObj = new UserPostBL();
             model.UserPostList = blObj.GetUserPost();
+            foreach (var item in model.UserPostList)
+	        {
+                item.CommentCount = item.UserComments.Count;    
+	        }
+            
             model.User  = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             return View(model);
 

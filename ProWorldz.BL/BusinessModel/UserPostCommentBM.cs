@@ -12,11 +12,11 @@ namespace ProWorldz.BL.BusinessModel
         public int Id { get; set; }
         
         public int UserId { get; set; }
-
-        
+        public string UserName { get; set; }
+        public string ImageUrl { get; set; }
         public int PostId { get; set; }
 
         public string Comment { get; set; }
-
+        
     }
 }

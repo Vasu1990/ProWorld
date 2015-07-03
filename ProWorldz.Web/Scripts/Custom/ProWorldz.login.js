@@ -1,4 +1,4 @@
-﻿var proWorld = window.proWorld || {};
+﻿
 proWorld.login = proWorld.login || {};
 
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProWorldz.BL.BusinessLayer
 {
-   public class UserPostBL
+    public class UserPostBL
     {
         UnitOfWork uow;
 
@@ -25,7 +25,7 @@ namespace ProWorldz.BL.BusinessLayer
         }
         public List<UserPostBM> GetUserPost()
         {
-          
+
             return uow.UserPostRepository.GetAll().ConvertAll<UserPostBM>(new Converter<UserPost, UserPostBM>(ConvertToBM));
         }
 
@@ -46,13 +46,13 @@ namespace ProWorldz.BL.BusinessLayer
             return new UserPost
             {
                 Id = model.Id,
-               UserId=model.UserId,
-               Subject=model.Subject,
-               Post=model.Post,
-               CreatedBy=model.CreatedBy,
-               CreationDate=model.CreationDate,
-               ModifiedBy = model.ModifiedBy,
-               ModificationDate = model.ModificationDate
+                UserId = model.UserId,
+                Subject = model.Subject,
+                Post = model.Post,
+                CreatedBy = model.CreatedBy,
+                CreationDate = model.CreationDate,
+                ModifiedBy = model.ModifiedBy,
+                ModificationDate = model.ModificationDate
             };
         }
 
@@ -61,18 +61,39 @@ namespace ProWorldz.BL.BusinessLayer
             return new UserPostBM()
             {
                 Id = model.Id,
-               UserId=model.UserId,
-               UserName=model.User.Name,
-               ImageUrl = model.User.UserGeneralInfo.Where(x =>x.UserId == model.UserId).Select(x=>x.Image).FirstOrDefault(), 
-               Subject=model.Subject,
-               Post=model.Post,
-               CreatedBy=model.CreatedBy,
-               CreationDate=model.CreationDate,
-               ModifiedBy = model.ModifiedBy,
-               ModificationDate = model.ModificationDate
-
+                UserId = model.UserId,
+                UserName = model.User.Name,
+                ImageUrl = model.User.UserGeneralInfo.Where(x => x.UserId == model.UserId).Select(x => x.Image).FirstOrDefault(),
+                Subject = model.Subject,
+                Post = model.Post,
+                CreatedBy = model.CreatedBy,
+                CreationDate = model.CreationDate,
+                ModifiedBy = model.ModifiedBy,
+                ModificationDate = model.ModificationDate,
+                //WHICH ONE IS BETTER??
+                //done by lazy loading
+                UserComments = model.UserComments.Select(data => ConvertToCommentBM(data)).ToList()
+                //done by repo call
+                //UserComments = uow.UserPostCommentRepository.Find(x=>x.PostId == model.Id).ConvertAll<UserPostCommentBM>(new Converter<UserPostComment, UserPostCommentBM>(ConvertToCommentBM))
             };
         }
-       
+
+
+        private UserPostCommentBM ConvertToCommentBM(UserPostComment c)
+        {
+            return new UserPostCommentBM()
+                  {
+                      Id = c.Id,
+                      UserId = c.UserId,
+                      UserName = c.User.Name,
+                      Comment = c.Comment,
+                      PostId = c.PostId,
+                      CreatedBy = c.CreatedBy,
+                      CreationDate = c.CreationDate,
+                      ModificationDate = c.ModificationDate,
+                      ImageUrl = c.User.UserGeneralInfo.Select(x=>x.Image).FirstOrDefault()
+
+                  };
+        }
     }
 }

@@ -22,6 +22,6 @@ namespace ProWorldz.DL.Models
 
         public virtual User User { get; set; }
            
-        public ICollection<UserPostComment> UserComments { get; set; }
+        public virtual List<UserPostComment> UserComments { get; set; }
     }
 }
