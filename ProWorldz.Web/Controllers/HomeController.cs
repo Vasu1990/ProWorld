@@ -56,6 +56,21 @@ namespace ProWorldz.Web.Controllers
             return Json(commentBM);
         }
 
+        
+        [HttpPost]
+        public JsonResult EditComment(UserPostCommentBM commentBM)
+        {
+            UserPostCommentCommentBL commentbl = new UserPostCommentCommentBL();
+            UserBM userObj = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            commentBM.ModifiedBy= userObj.Id;
+            commentBM.ModificationDate = DateTime.Now;
+
+
+            commentbl.Update(commentBM);
+            return Json(commentBM);
+
+        }
+
         [HttpPost]
         public void DeleteComment(UserPostCommentBM commentBM)
         {

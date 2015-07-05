@@ -6,6 +6,8 @@
     var editCommentControls = {};
     var postCommentButton = {};
     var commentTextBox = {};
+    var CommentToBeUpdted = {};
+    
 
     function SetGlobalElements(clickedEditIcon) {
 
@@ -35,7 +37,11 @@
                 ImageUrl: ko.observable(data.ImageUrl()),
                 CreationDate: ko.observable(""),
                 Id: ko.observable(0),
-                UserName:ko.observable("")
+                UserName: ko.observable(""),
+                UserId: ko.observable(0),
+                ModificationDate: ko.observable(""),
+                CreatedBy: ko.observable(0),
+                ModifiedBy: ko.observable("")
             }
 
             //cast ko model to json and post request
@@ -45,8 +51,11 @@
             //Insert into list after success
             function OnSuccessInsertComment(result) {
                 _commentObj.UserName(result.UserName);
+                _commentObj.UserId(result.UserId);
+                _commentObj.CreatedBy(result.UserId);
+                _commentObj.ModifiedBy(result.UserId);
+                _commentObj.ModificationDate(result.ModificationDate);
                 _commentObj.CreationDate(result.CreationDate);
-                _commentObj.PostId(result.PostId);
                 _commentObj.Id(result.Id);
                 data.UserComments.push(_commentObj);
             }
@@ -71,6 +80,8 @@
     }
     dashVM.StartEditComment = function (_commentObj, event) {
         
+        CommentToBeUpdted = _commentObj;
+        console.log(CommentToBeUpdted);
         //if clicking edit when already editing a comment reset the previous
         if (commentStrip instanceof jQuery) {
             dashVM.CancelEditComment();
@@ -93,25 +104,31 @@
         
     }
     
-    dashVM.EditComment = function (_commentBM) {
-        console.log(_commentBM);
-       // proWorld.AjaxHelper.AjaxPostCall("/Home/EditComment", _commentBM, OnSuccessEditComment);
+    dashVM.EditComment = function () {
+        console.log(commentTextBox.val());
+        CommentToBeUpdted.Comment(commentTextBox.val());
+        proWorld.AjaxHelper.AjaxPostCall("/Home/EditComment", CommentToBeUpdted, OnSuccessEditComment);
         
+        function OnSuccessEditComment(data) {
+            ko.utils.arrayForEach(dashVM.UserPostList(), function (post) {
+                if (post.Id() == data.PostId) {
+                    var mapping = {
+                        key: function (data) {
+                            return ko.utils.unwrapObservable(data.Id);
+                        },
+                        create: function (options) {
+                            var innerModel = ko.mapping.fromJS(options.data);
+                            return innerModel;
+                        }
+                    }
+                    ko.mapping.fromJS(data, mapping, post.UserComments);
+                }
+            });
 
-        function OnSuccessEditComment() {
             dashVM.CancelEditComment();
         }
         
-        
-        //ko.utils.arrayForEach(dashVM.UserPostList(), function (post) {
-        //    if (post.Id() == _commentObj.PostId()) {
-        //        var _commentBM = ko.toJS(_commentObj)
-        //        proWorld.AjaxHelper.AjaxPostCall("/Home/DeleteComment", _commentBM, OnSuccessDeleteComment);
-        //        function OnSuccessDeleteComment() {
-        //            post.UserComments.remove(_commentObj);
-        //        }
-        //    }
-        //});
+       
     }
     dashVM.CancelEditComment = function () {
 
