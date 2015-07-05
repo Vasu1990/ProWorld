@@ -74,3 +74,6 @@ table {
 .margin-bottom7 {
     margin-bottom: 7px;
 }
+footer{
+    z-index:999;
+}

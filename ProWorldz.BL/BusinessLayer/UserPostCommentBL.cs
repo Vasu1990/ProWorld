@@ -18,10 +18,12 @@ namespace ProWorldz.BL.BusinessLayer
             uow = new UnitOfWork();
         }
 
-        public void Create(UserPostCommentBM model)
+        public int Create(UserPostCommentBM model)
         {
-            uow.UserPostCommentRepository.Add(ConvertToDM(model));
+            UserPostComment commentDM =  ConvertToDM(model);
+            uow.UserPostCommentRepository.Add(commentDM);
             uow.Save();
+            return commentDM.Id;
         }
         public List<UserPostCommentBM> GetUserPostComment()
         {
@@ -34,9 +36,15 @@ namespace ProWorldz.BL.BusinessLayer
         }
 
 
-        public void Updat(UserPostCommentBM model)
+        public void Update(UserPostCommentBM model)
         {
             uow.UserPostCommentRepository.Update(ConvertToDM(model));
+            uow.Save();
+        }
+
+        public void Delete(UserPostCommentBM model)
+        {
+            uow.UserPostCommentRepository.Delete(ConvertToDM(model));
             uow.Save();
         }
 

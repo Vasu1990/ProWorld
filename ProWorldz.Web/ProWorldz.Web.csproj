@@ -309,8 +309,10 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\custom\Proworldz.dashboard.css" />
     <Content Include="Content\themes\custom\Proworldz.site.css" />
     <Content Include="Content\themes\custom\Proworldz.login.css" />
+    <Content Include="Scripts\Custom\Utility\Proworldz.AjaxHelpers.js" />
     <Content Include="Content\themes\social-3\css\module-chat.min.css" />
     <Content Include="Content\themes\social-3\css\module-cover.min.css" />
     <Content Include="Content\themes\social-3\css\module-essentials.min.css" />

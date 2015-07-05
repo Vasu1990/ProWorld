@@ -35,15 +35,39 @@ namespace ProWorldz.Web.Controllers
             PostCommentModel model = new PostCommentModel();
             UserPostBL blObj = new UserPostBL();
             model.UserPostList = blObj.GetUserPost();
-            foreach (var item in model.UserPostList)
-	        {
-                item.CommentCount = item.UserComments.Count;    
-	        }
             
             model.User  = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             return View(model);
 
         }
+        [HttpPost]
+        public JsonResult PostComment(UserPostCommentBM commentBM)
+        {
+            UserPostCommentCommentBL commentbl = new UserPostCommentCommentBL();
+            UserBM userObj = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            commentBM.UserName = userObj.Name;
+            commentBM.UserId = userObj.Id;
+            commentBM.CreatedBy = userObj.Id;
+            commentBM.CreationDate = DateTime.Now;
+            
+
+            int CommentId = commentbl.Create(commentBM);
+            commentBM.Id = CommentId;
+            return Json(commentBM);
+        }
+
+        [HttpPost]
+        public void DeleteComment(UserPostCommentBM commentBM)
+        {
+            UserPostCommentCommentBL commentbl = new UserPostCommentCommentBL();
+            
+            commentbl.Delete(commentBM);
+
+        }
+
+
+
+
 
         public ActionResult UserPost()
         {

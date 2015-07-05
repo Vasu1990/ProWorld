@@ -2,7 +2,9 @@
 
 @model PostCommentModel
 
-
+@section styles{
+    @Styles.Render("~/Content/themes/custom/Proworldz.dashboard.css")
+    }
 <div id="dashBoardWrapper">
     <div class="cover profile">
         <div class="wrapper">
@@ -70,10 +72,11 @@
             </ul>
         </div>
     </div>
-    <div class="timeline row" data-toggle="isotope" style="position: relative; height: 1850px;">
+    <div class="timeline row post-container-wrapper" data-toggle="isotope">
 
         <div data-bind="foreach:UserPostList">
-            <div class="col-xs-12 col-md-6 col-lg-6 item" style="position: absolute; left: 770px; top: 1261px;">
+            
+            <div class="col-xs-12 col-md-6 col-lg-6 item post-container">
                 <div class="timeline-block">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -84,60 +87,77 @@
                                     </span>
                                 </div>
                                 <div class="media-body">
+                          
                                     <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
                                     <a href="#" data-bind="text:UserName"></a>
-                                    on <span data-bind="text:moment(CreationDate,'yyyy mm dd') "></span>
+                                    on <span data-bind="text:CreationDate"></span>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-body">
-                            <p data-bind="text:Post"></p>
+                        <div class="panel-body user-post">
+                            <div class="boxed">
+                                <h4 class="post-header" data-bind="text:Subject"></h4>
+                                <p class="post-text" data-bind="text:Post"></p>
+                            </div>
                         </div>
                         <div class="view-all-comments">
                             <a href="#">
                                 <i class="fa fa-comments-o"></i>
                             </a>
 
-                            <span data-bind="if:CommentCount() == 1">
-                                <span data-bind="text:CommentCount"></span> comment
+                            <span data-bind="if:UserComments().length == 1">
+                                <span data-bind="text:UserComments().length"></span> comment
                             </span>
-                            <span data-bind="if:CommentCount() > 1">
-                                <span data-bind="text:CommentCount"></span> comments
+                            <span data-bind="if:UserComments().length > 1">
+                                <span data-bind="text:UserComments().length"></span> comments
                             </span>
+                          
+                            
                         </div>
                         <ul class="comments">
-                            <li data-bind="foreach:UserComments">
-                                <ul style="list-style:none;  padding: 0px;">
-                                    <li class="media">
+                            <li data-bind="foreach:UserComments" data-container="comment-box">   
+                                <ul class="comment-box">
+                                    <li class="media" data-container="comment-strip">
                                         <div class="media-left">
                                             <span>
                                                 <img style="height:50px;width:50px" data-bind="attr:{src:ImageUrl}" class="media-object">
                                             </span>
                                         </div>
                                         <div class="media-body">
-                                            <div class="pull-right dropdown" data-show-hover="li" style="display: none;">
-                                                <a href="#" data-toggle="dropdown" class="toggle-button">
+                                            <div class="pull-right" data-container="comment-controls">
+                                                <a data-bind="click:$root.StartEditComment" class="toggle-button">
                                                     <i class="fa fa-pencil"></i>
                                                 </a>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="#">Edit</a></li>
-                                                    <li><a href="#">Delete</a></li>
-                                                </ul>
+                                                <a data-bind="click:$root.DeleteComment" class="toggle-button">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+
                                             </div>
-                                            <a href="" class="comment-author pull-left" data-bind="text:UserName"></a>
-                                            <span data-bind="text:Comment"></span>
-                                            <div class="comment-date" data-bind="text:moment(CreationDate,'yyyy mm dd')"></div>
+                                            <a href="#" class="pull-left" data-bind="text:UserName"></a>
+                                            <span data-control="text-comment" data-bind="text:Comment"></span>
+                                            <div class="comment-date" data-bind="text:CreationDate"></div>
                                         </div>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="comment-form" data-bind="click:UserDashboardVM.PostComment">
+                            <li class="comment-form" >
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Type your comment here..">
-                                    <span class="input-group-btn">
-                    <div href="#" class="btn btn-default"><i class="fa fa-paper-plane"></i></div>
-                </span>
+                                    <input type="text"  class="txtUserComment form-control" placeholder="Type your comment here.."/>
+                                    
+                                    <div class="input-group-btn" data-control="post-comment-control" data-bind="click:UserDashboardVM.PostComment">
+                                        <span class=" btn btn-default">
+                                            <i class="fa fa-paper-plane"></i>
+                                        </span>
+                                    </div>
+                                    <div class="input-group-btn hidden" data-control="edit-comment-controls">
+                                        <span class=" btn btn-default" data-bind="click:$root.EditComment">
+                                            <i class="fa fa-check"></i>
+                                        </span>
+                                        <span class=" btn btn-default" data-bind="click:$root.CancelEditComment">
+                                            <i class="fa fa-close"></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -162,6 +182,4 @@
         var UserDashboardVM = ko.mapping.fromJS(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model)));
         </script>
     @Scripts.Render("~/Scripts/Custom/ProWorldz.UserDashboard.js")
-    
-    
 }
