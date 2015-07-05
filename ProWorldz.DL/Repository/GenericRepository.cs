@@ -42,7 +42,7 @@ namespace ProWorldz.DL.Repository
         }
 
         public void Update(TEntity entity)
-        {
+            {
             DbSet.Attach(entity);
             
             Context.Entry(entity).State = EntityState.Modified;

@@ -4,6 +4,7 @@ using ProWorldz.Web.Models;
 using ProWorldz.Web.Utils;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -49,7 +50,6 @@ namespace ProWorldz.Web.Controllers
             commentBM.UserId = userObj.Id;
             commentBM.CreatedBy = userObj.Id;
             commentBM.CreationDate = DateTime.Now;
-            
 
             int CommentId = commentbl.Create(commentBM);
             commentBM.Id = CommentId;
@@ -63,7 +63,14 @@ namespace ProWorldz.Web.Controllers
             UserPostCommentCommentBL commentbl = new UserPostCommentCommentBL();
             UserBM userObj = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             commentBM.ModifiedBy= userObj.Id;
-            commentBM.ModificationDate = DateTime.Now;
+            commentBM.ModificationDate = DateTime.UtcNow;
+            
+            //date issue http://www.devcurry.com/2013/04/json-dates-are-different-in-aspnet-mvc.html#.Ufvl1Y3VD6Q
+            //date issue for ko MVC
+            if (commentBM.CreationDate.ToString() == "1/1/0001 12:00:00 AM")
+            {
+                commentBM.CreationDate = DateTime.Now;
+            }
 
 
             commentbl.Update(commentBM);

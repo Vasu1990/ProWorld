@@ -35,7 +35,7 @@
                 Comment: ko.observable(_commentText),
                 PostId: ko.observable(data.Id()),
                 ImageUrl: ko.observable(data.ImageUrl()),
-                CreationDate: ko.observable(""),
+                CreationDate: "",
                 Id: ko.observable(0),
                 UserName: ko.observable(""),
                 UserId: ko.observable(0),
@@ -55,7 +55,8 @@
                 _commentObj.CreatedBy(result.UserId);
                 _commentObj.ModifiedBy(result.UserId);
                 _commentObj.ModificationDate(result.ModificationDate);
-                _commentObj.CreationDate(result.CreationDate);
+                //date issue http://www.devcurry.com/2013/04/json-dates-are-different-in-aspnet-mvc.html#.Ufvl1Y3VD6Q
+                _commentObj.CreationDate = new Date(parseInt(result.CreationDate.replace(/\/Date\((.*?)\)\//gi, "$1"))));
                 _commentObj.Id(result.Id);
                 data.UserComments.push(_commentObj);
             }
@@ -143,6 +144,9 @@
         commentTextBox.val("");
     }
 
+    dashVM.IsCommentOwner = function (CommentCreator,CurrentUser) {
+        return CommentCreator() === CurrentUser();
+    }
 
     ko.applyBindings(dashVM, $("#dashBoardWrapper")[0]);
 
