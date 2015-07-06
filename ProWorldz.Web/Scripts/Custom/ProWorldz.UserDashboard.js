@@ -93,7 +93,8 @@
 
          
         ///select ele and get n set text in comment box
-         var _commentText = commentEle.text();
+        var _commentText = commentEle.text();
+        commentTextBox.focus();
          commentTextBox.val(_commentText);
 
         //hide comment till in edtitng mode
