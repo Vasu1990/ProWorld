@@ -124,13 +124,13 @@
                                             </span>
                                         </div>
                                         <div class="media-body">
-                                            <div class="pull-right" data-container="comment-controls" data-bind="visible:$root.IsCommentOwner($parent.UserId,$root.User.Id)">
-                                                <a data-bind=" click:$root.StartEditComment" class="toggle-button">
+                                            <div class="btn pull-right" data-container="comment-controls" data-bind="visible:$root.IsCommentOwner($parent.UserId,$root.User.Id)">
+                                                <span data-bind=" click:$root.StartEditComment" class="toggle-button">
                                                     <i class="fa fa-pencil"></i>
-                                                </a>
-                                                <a data-bind="click:$root.DeleteComment" class="toggle-button">
+                                                </span>
+                                                <span data-bind="click:$root.DeleteComment" class="btn toggle-button">
                                                     <i class="fa fa-trash"></i>
-                                                </a>
+                                                </span>
 
                                             </div>
                                             <a href="#" class="pull-left comment-author" data-bind="text:UserName"></a>
@@ -170,7 +170,7 @@
 
 
     </div>
-    <pre data-bind="text: ko.toJSON($data, null, 2)"></pre>
+    @*<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>*@
 </div>
 
 

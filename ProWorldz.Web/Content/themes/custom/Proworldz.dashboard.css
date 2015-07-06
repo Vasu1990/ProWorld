@@ -7,8 +7,8 @@
     text-overflow: ellipsis;
 }
 
-a:hover{
-    background-color:none !important;
+.post-container a:hover{
+    background-color:#26a69a !important;
 }
 
 .comment-box{
@@ -19,4 +19,11 @@ a:hover{
 }
 .post-container{
     position: absolute; left: 770px; top: 1261px;
+}
+[data-container="comment-controls"] .toggle-button i{
+    color: lightgrey;
+
+}
+[data-container="comment-controls"] .toggle-button i:hover{
+    color: grey;
 }
