@@ -56,7 +56,7 @@
                 _commentObj.ModifiedBy(result.UserId);
                 _commentObj.ModificationDate(result.ModificationDate);
                 //date issue http://www.devcurry.com/2013/04/json-dates-are-different-in-aspnet-mvc.html#.Ufvl1Y3VD6Q
-                _commentObj.CreationDate = new Date(parseInt(result.CreationDate.replace(/\/Date\((.*?)\)\//gi, "$1"))));
+                _commentObj.CreationDate = new Date(parseInt(result.CreationDate.replace(/\/Date\((.*?)\)\//gi, "$1")));
                 _commentObj.Id(result.Id);
                 data.UserComments.push(_commentObj);
             }
