@@ -1,0 +1,66 @@
+﻿<section id="resume-contact-block">
+    <!--Map container-->
+  <div id="resume-map" style="border-top-style: none; height: 604px; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);">
+   
+          </div>
+
+  <div class="container">
+      <div id="postResult"></div>
+
+    <div class="resume-contact">
+        <!--Contact Form Section-->
+      <div class="two_third first">
+        <h1 class="resume-section-title" style="margin-bottom: 10px;"><i class="fa fa-list-ul"></i>Contact Us</h1>
+        <h3 class="resume-section-subtitle">Use this contact form to send us an email.</h3>
+        <div id="resume-contact">
+            @using(Html.BeginForm("ContactUs", "Home", FormMethod.Post,new {@id = "contactForm"}))
+          {
+            <span class="contact-name">
+            <input type="text" name="Name" id="contactName" value="" class="input-textarea" placeholder="Name*" required>
+            </span> <span class="contact-email">
+            <input type="email" name="email" id="email" value="" class="input-textarea" placeholder="Email*" required >
+            </span> <span class="contact-message">
+            <textarea name="message" id="message" cols="8" rows="8" required></textarea>
+            </span> <div class="contact-test">
+            
+            </div>
+            <input style="margin-bottom: 0;" name="submit" type="submit" value="Send Message" class="input-submit">
+            <span class="submit-loading"><i class="fa fa-refresh fa-spin"></i></span>
+          }
+         </div>
+      </div>
+
+        <!--Side bar Socail Section-->
+      <div class="one_third">
+        <h1 class="resume-section-title" style="margin-bottom: 80px;"><i class="fa fa-envelope"></i>Contact Details</h1>
+        <span class="resume-contact-info"> <i class="fa fa-map-marker"></i><span>Noida, Sector 63</span> </span> <span class="resume-contact-info"> <i class="fa fa-mobile"></i><span>+373 123 4567-890</span> </span> <span class="resume-contact-info"> <i class="fa fa-facebook-square"></i><span><a href="https://www.facebook.com/alex.gurghis">Facebook</a></span> </span> <span class="resume-contact-info"> <i class="fa fa-linkedin-square"></i><span><a href="https://www.facebook.com/alex.gurghis">LinkedIn</a></span> </span> <span class="resume-contact-info"> <i class="fa fa-twitter-square"></i><span><a href="https://twitter.com/agurghis">Twitter</a></span> </span> <span class="resume-contact-info"> <i class="fa fa-google-plus-square"></i><span><a href="https://www.facebook.com/alex.gurghis">Google+</a></span> </span> </div>
+    </div>
+  </div>
+    
+    
+</section>
+
+@section scripts{
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+<script src="~/Areas/Site/Scripts/jquery.unobtrusive-ajax.js"></script>
+    
+    <script>
+    function initialize() {
+        var myLatlng = new google.maps.LatLng(28.6246822, 77.3865584);
+        var mapCanvas = document.getElementById('resume-map');
+        var mapOptions = {
+            center:myLatlng,
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'ProWorldz Head Office'
+        });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+    }

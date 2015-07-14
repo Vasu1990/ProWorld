@@ -39,7 +39,7 @@ namespace ProWorldz.DL
         public DbSet<IndustryType> IndustryType { get; set; }
 
         public DbSet<Degree> Degree { get; set; }
-        
+        public DbSet<ContactUs> ContactUs{ get; set; }
         
 
     }

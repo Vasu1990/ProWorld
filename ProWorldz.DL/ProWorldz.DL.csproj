@@ -65,8 +65,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Migrations\201507140955297_Contact Form Table.cs" />
+    <Compile Include="Migrations\201507140955297_Contact Form Table.Designer.cs">
+      <DependentUpon>201507140955297_Contact Form Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507141625312_contact us date.cs" />
+    <Compile Include="Migrations\201507141625312_contact us date.Designer.cs">
+      <DependentUpon>201507141625312_contact us date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
+    <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Community.cs" />
     <Compile Include="Models\Country.cs" />
@@ -96,6 +105,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201507140955297_Contact Form Table.resx">
+      <DependentUpon>201507140955297_Contact Form Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507141625312_contact us date.resx">
+      <DependentUpon>201507141625312_contact us date.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -28,6 +28,15 @@ namespace ProWorldz.BL.BusinessLayer
              List<DegreeBM> DegreList = uow.DegreeRepository.GetAll().ConvertAll<DegreeBM>(new Converter<Degree, DegreeBM>(ConvertToDegreeBM)); ;
              return DegreList;
          }
+         public int SubmitContactForm(ContactUsBM contactBM) {
+
+             ContactUs contactEntity = ConvertToContactUsDM(contactBM);
+             uow.ContactUsRepository.Add(contactEntity);
+             uow.Save();
+             return contactEntity.Id;
+         }
+
+       
 
          #region convert methods
          private IndustryType ConvertToIndustryDM(IndustryBM model)
@@ -69,6 +78,17 @@ namespace ProWorldz.BL.BusinessLayer
                  Id = model.Id,
                  Name = model.Name,
 
+             };
+         }
+         private ContactUs ConvertToContactUsDM(ContactUsBM input)
+         {
+             return new ContactUs()
+             {
+                 Id = input.Id,
+                 Email = input.Email,
+                 Name = input.Name,
+                 Message = input.Message,
+                 CreationDate = input.CreationDate
              };
          }
         #endregion

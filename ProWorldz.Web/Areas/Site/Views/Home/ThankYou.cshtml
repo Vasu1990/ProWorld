@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "ThankYou";
+}
+
+<section id="resume-tahnk-you-block">
+    <div class="container">
+        <div class="resume-contact" style="margin: 50px 0px 70px 0px; ">
+            @if (ViewBag.Result > 0)
+            {
+
+                <h1 class="resume-section-title" style="margin-bottom: 10px;"><i class="fa fa-check"></i>Thank you!</h1>
+                <h3 class="resume-section-subtitle">Your message was sent successfully.</h3>
+
+            }
+            else
+            {
+                <h1 class="resume-section-title" style="margin-bottom: 10px;"><i class="fa fa-close"></i>Oops! Something went wrong</h1>
+                <h3 class="resume-section-subtitle">Please try again after sometime.</h3>
+
+            }
+        </div>
+    </div>
+</section>

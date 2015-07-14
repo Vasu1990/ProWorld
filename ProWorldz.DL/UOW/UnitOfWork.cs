@@ -36,6 +36,7 @@ namespace ProWorldz.DL.UOW
         private IRepository<UserVideo> userVideoRepository;
         private IRepository<IndustryType> industryTypeRepository;
         private IRepository<Degree> degreeRepository;
+        private IRepository<ContactUs> contactUs;
 
 
         public IRepository<Degree> DegreeRepository
@@ -45,6 +46,15 @@ namespace ProWorldz.DL.UOW
                 if (degreeRepository == null)
                     degreeRepository = new GenericRepository<Degree>(Context);
                 return degreeRepository;
+            }
+        }
+        public IRepository<ContactUs> ContactUsRepository
+        {
+            get
+            {
+                if (contactUs == null)
+                    contactUs = new GenericRepository<ContactUs>(Context);
+                return contactUs;
             }
         }
         public IRepository<IndustryType> IndustryTypeRepository

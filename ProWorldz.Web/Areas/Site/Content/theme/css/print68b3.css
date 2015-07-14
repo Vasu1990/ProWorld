@@ -1,0 +1,175 @@
+@media print {
+	
+	.container, #my-account ul.tabs, .rounded-box-page, .container-boxed, #container #content, .one_half {
+		width: 660px !important;
+	}
+
+	.frame_center img, .frame_right img, .frame_left img {
+		max-width: 480px;
+	}
+
+	#recipe-page .one_half {
+		width: 100% !important;
+		margin-left: 0;
+	}
+
+	#carousel span, #carousel-wrapper .caroufredsel_wrapper, #carousel {
+		height: 416px !important;
+		width: 100% !important;
+	}
+
+	.recipe-author-header {
+		padding: 0 20px;
+	}
+
+	.author-description {
+		width: 100%;
+		padding: 0 20px;
+	}
+
+	.recipe-ratings {
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin-left: 20px;
+		position: relative;
+		float: left;
+	}
+
+	#recipe-page #recipe-block .one_half.ingredients {
+		margin-top: 30px;
+	}
+
+	.author-block-home, a.author-recipe-block {
+		width: 167px;
+		height: 167px;
+		margin-left: 30px;
+		margin-bottom: 30px;
+	}
+
+	.block-recipe-image, .block-recipe-image img {
+		width: 167px;
+		height: 167px;
+	}
+
+	.author-list-total-posts, .block-recipe-info-hover-link, #thumbs-wrapper-feat-recipes .feat-recipe-thumb-title, #carousel-feat-recipes .feat-post-black-box .recipe-author-header, .one_fourth .my-account-author-badges-box, .block-recipe-info-details {
+		display: none;
+	}
+
+	.author-block-home .author-list-avatar {
+		margin-top: 15px;
+	}
+
+	.author-list-link-profile a {
+		font-size: 14px;
+	}
+
+	ul.tabs.container li a.current, ul.tabs.container li a:hover, ul.tabs.container li a {
+		font-size: 16px;
+		line-height: 16px;
+	}
+
+	.block-recipe-info-title {
+		font-size: 14px;
+	}
+
+	.block-recipe-info-hover-title {
+		font-size: 18px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	.featured-recipes-slider, #carousel-wrapper-feat-recipes, #carousel-wrapper-feat-recipes .caroufredsel_wrapper, #carousel-feat-recipes, #carousel-feat-recipes span, .featured-recipes-slider .carousel-feat-recipes-shadow {
+		height: 404px !important;
+		width: 768px !important;
+	}
+
+	#carousel-feat-recipes .feat-post-black-box {
+		width: 400px;
+	}
+
+	#thumbs-wrapper-feat-recipes {
+		width: 144px;
+	}
+
+	#thumbs-wrapper-feat-recipes .caroufredsel_wrapper {
+		width: 84px !important;
+		height: 294px !important;
+	}
+
+	.recipe-search-stripe-container {
+		width: 828px;
+	}
+
+	.recipe-search-stripe-inner, .recipe-search-stripe-inner:after {
+		width: 898px;
+	}
+
+	.recipe-search-stripe-border, .recipe-search-stripe-border:after {
+		width: 928px;
+	}
+
+	.recipe-search-container-title {
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.cheefs-list-holder-recipe a.author-recipe-block, .cheefs-list-holder-recipe .block-recipe-image, .cheefs-list-holder-recipe .block-recipe-image img {
+		width: 156px !important;
+		height: 156px !important;
+	}
+
+	.post-block-content .recipe-author-header {
+		padding: 0;
+	}
+
+	.post-block-content .two_third {
+		width: 100%;
+	}
+
+	.post-block-content .one_third {
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin: 0;
+		padding: 0 20px;
+	}
+
+	.twitter-count img, .rss-count img {
+		width: 100%;
+		height: auto;
+	}
+
+	#blog-post .recipe-author-name a {
+		font-size: 12px;
+		margin-top: 7px;
+	}
+
+	.one_half .author-recipe-grid {
+		width: 100% !important;
+		width: -webkit-calc(100% + 30px) !important;
+		width: calc(100% + 30px) !important;
+		margin-left: -30px;
+	}
+
+	.one_half .author-recipe-grid a.author-recipe-block.first {
+		margin-left: 30px;
+	}
+
+	#print-button, #header, footer, .socket, .related-ads, #ad-comments, #top, .recipe-step-video, .comment-block-holder, .comm-block, .author-recipe-grid, .author-page-title-recipes, #thumbs-wrapper, .comments-info {
+		display: none;
+	}
+
+	.page-title, .page-title span, .page-title strong, .blog-post-categories .fa, .recipe-header-info-block .fa, .page-title, .recipe-header-info-block, .recipe-header-info-block .recipe-categories p  {
+		color: #484848 !important;
+	}
+
+	.recipe-step-image {
+		max-width: 240px;
+	}
+
+	#page-title {
+		background: none;
+	}
+
+}

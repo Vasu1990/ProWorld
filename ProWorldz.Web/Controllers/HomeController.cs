@@ -21,13 +21,12 @@ namespace ProWorldz.Web.Controllers
         UserQualificationBL UserQualificationBL = new BL.BusinessLayer.UserQualificationBL();
 
         UserVideoBL UserVideoBL = new UserVideoBL();
+
+        [HttpGet]
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-
-            UserBL userBL = new UserBL();
-
-            return RedirectToAction("Login", "Account");
+           
+            return RedirectToAction("Index", "Home", new {@area ="Site" });
         }
             
         [Authorize]

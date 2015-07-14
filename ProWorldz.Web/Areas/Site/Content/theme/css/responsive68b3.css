@@ -1,0 +1,1465 @@
+/* Tablet (Portrait) */
+@media (min-width: 768px) and (max-width: 1139px) {
+	.container, #my-account ul.tabs, .rounded-box-page, .container-boxed, #container #content {
+		width: 768px !important;
+	}
+
+	#header {
+		position: relative !important;
+	}
+
+	.company-holder-block .company-list-view-profile,
+	.company-holder-block .company-list-badges,
+	.featured-item-badge,
+	.job-offers-post-badge {
+		display: none;
+	}
+
+	#resume-menu .container ul li, 
+	#company-menu .container ul li, 
+	#job-menu .container ul li {
+		margin: 0 10px;
+	}
+
+	.ff-items a span {
+		line-height: 105px;
+	}
+
+	.ff-items a, .ff-items li {
+		height: 135px;
+	}
+
+	.frame_center img, .frame_right img, .frame_left img {
+		max-width: 680px;
+	}
+
+	#recipe-page #recipe-block .one_half {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	#carousel span, #carousel-wrapper .caroufredsel_wrapper, #carousel {
+		height: 415px !important;
+		width: 766px !important;
+	}
+
+	.recipe-author-header {
+		padding: 0 20px;
+	}
+
+	.author-description {
+		width: 100%;
+		padding: 0 20px;
+	}
+
+	.recipe-ratings {
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin-left: 20px;
+		position: relative;
+		float: left;
+	}
+
+	#recipe-page #recipe-block .one_half.ingredients {
+		margin-top: 30px;
+	}
+
+	.author-block-home, a.author-recipe-block {
+		width: 167px;
+		height: 167px;
+		margin-left: 30px;
+		margin-bottom: 30px;
+	}
+
+	.block-recipe-image, .block-recipe-image img {
+		width: 167px;
+		height: 167px;
+	}
+
+	.author-list-total-posts, .block-recipe-info-hover-link, #thumbs-wrapper-feat-recipes .feat-recipe-thumb-title, #carousel-feat-recipes .feat-post-black-box .recipe-author-header, .one_fourth .my-account-author-badges-box, .block-recipe-info-details {
+		display: none;
+	}
+
+	.author-block-home .author-list-avatar {
+		margin-top: 15px;
+	}
+
+	.author-list-link-profile a {
+		font-size: 14px;
+	}
+
+	ul.tabs.container li a.current, ul.tabs.container li a:hover, ul.tabs.container li a {
+		font-size: 16px;
+		line-height: 16px;
+	}
+
+	.block-recipe-info-title {
+		font-size: 14px;
+	}
+
+	.block-recipe-info-hover-title {
+		font-size: 18px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	.featured-recipes-slider, #carousel-wrapper-feat-recipes, #carousel-wrapper-feat-recipes .caroufredsel_wrapper, #carousel-feat-recipes, #carousel-feat-recipes span, .featured-recipes-slider .carousel-feat-recipes-shadow {
+		height: 404px !important;
+		width: 768px !important;
+	}
+
+	#carousel-feat-recipes .feat-post-black-box {
+		width: 400px;
+	}
+
+	#thumbs-wrapper-feat-recipes {
+		width: 144px;
+	}
+
+	#thumbs-wrapper-feat-recipes .caroufredsel_wrapper {
+		width: 84px !important;
+		height: 294px !important;
+	}
+
+	.recipe-search-stripe-container {
+		width: 828px;
+	}
+
+	.recipe-search-stripe-inner, .recipe-search-stripe-inner:after {
+		width: 898px;
+	}
+
+	.recipe-search-stripe-border, .recipe-search-stripe-border:after {
+		width: 928px;
+	}
+
+	.recipe-search-container-title {
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.cheefs-list-holder-recipe a.author-recipe-block, .cheefs-list-holder-recipe .block-recipe-image, .cheefs-list-holder-recipe .block-recipe-image img {
+		width: 156px !important;
+		height: 156px !important;
+	}
+
+	.post-block-content .recipe-author-header {
+		padding: 0;
+	}
+
+	.post-block-content .two_third {
+		width: 100%;
+	}
+
+	.post-block-content .one_third {
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin: 0;
+		padding: 0 20px;
+	}
+
+	.twitter-count img, .rss-count img {
+		width: 100%;
+		height: auto;
+	}
+
+	#blog-post .recipe-author-name a {
+		font-size: 12px;
+		margin-top: 7px;
+	}
+
+	#my-account #my-account-header .one_half {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	#my-account #my-account-header .my-account-stats-content .one_half {
+		width: 50%;
+		margin-left: 0;
+	}
+
+	.my-account-stats {
+		width: 90%;
+		width: -webkit-calc(100% - 60px);
+		width: calc(100% - 60px);
+		margin-left: 30px;
+	}
+
+	.woocommerce ul.products li.product h3, .woocommerce-page ul.products li.product h3 {
+		width: 80px;
+	}
+
+	.woocommerce ul.products li.product:hover .onsale, .woocommerce-page ul.products li.product:hover .onsale {
+		margin-bottom: 125px;
+	}
+
+	.woocommerce ul.products li.product:hover a.add_to_cart_button, .woocommerce-page ul.products li.product:hover a.add_to_cart_button {
+		margin-bottom: 20px !important;
+	}
+
+	.woocommerce ul.products li.product:hover .star-rating, .woocommerce-page ul.products li.product:hover .star-rating {
+		margin-bottom: 70px;
+	}
+
+	.woocommerce ul.products li.product:hover h3, .woocommerce-page ul.products li.product:hover h3 {
+		margin-bottom: 90px;
+	}
+
+	.woocommerce ul.products li.product:hover .price .amount, .woocommerce-page ul.products li.product:hover .price .amount {
+		margin-bottom: 95px;
+	}
+
+	.woocommerce ul.products li.product:hover .price, .woocommerce-page ul.products li.product:hover .price {
+		height: 169px;
+	}
+
+	.one_half .author-recipe-grid {
+		width: 100%;
+		width: -webkit-calc(100% + 30px);
+		width: calc(100% + 30px);
+		margin-left: -30px;
+	}
+
+	.one_half .author-recipe-grid a.author-recipe-block.first {
+		margin-left: 30px;
+	}
+
+}
+
+
+
+
+
+/* Mobile (Portrait) */
+
+/* ================================================== */
+
+/* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 767px) {
+
+	#header {
+		position: relative !important;
+	}
+
+	#mobile-nav-bar {
+		display: block;
+	}
+
+	.bannerText h1,
+	.bannerText h2, 
+	.cover-resume-breadcrumbs {
+		display: none;
+	}
+
+	.bannerText {
+		background: none;
+		border: none;
+	}
+
+	.company-list-icon {
+		width: 100%;
+		max-width: 100%;
+		margin-bottom: 0;
+	}
+
+	.company-holder-block .company-list-name-block {
+		margin-left: 0;
+		text-align: center;
+	}
+
+	.company-holder-block .company-list-view-profile,
+	.company-holder-block .company-list-badges,
+	.featured-item-badge,
+	.job-offers-post-badge,
+	.header-stats,
+	ul.navbar-nav {
+		display: none;
+	}
+
+	.my-account-company-single-date,
+	.my-account-company-single-views,
+	.my-account-job-single-company,
+	.my-account-job-single-date,
+	.my-account-company-single-views {
+		display: none;
+	}
+
+	.my-account-job-single-status,
+	.my-account-company-single-status {
+		display: none;
+	}
+
+	.my-account-job-single-publish, 
+	.my-account-company-single-publish {
+		width: 17%;
+	}
+
+	.my-account-job-single-title,
+	.my-account-company-single-title {
+		width: 50%;
+	}
+
+	.my-account-list-header .my-account-company-single-status,
+	.my-account-list-header .my-account-company-single-edit,
+	.my-account-list-header .my-account-company-single-delete,
+	.my-account-list-header .my-account-company-single-publish,
+	.my-account-list-header .my-account-company-single-feature,
+	.my-account-list-header .my-account-job-single-status,
+	.my-account-list-header .my-account-job-single-edit,
+	.my-account-list-header .my-account-job-single-delete,
+	.my-account-list-header .my-account-job-single-feature  {
+		display: none;
+	}
+
+	.ff-items li {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.main_menu,
+	.main_menu select {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.top_menu .menu {
+		padding-left: 0;
+	}
+
+	.work-experience-first-block, 
+	.work-experience-second-block,
+	.work-experience-third-block {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.container, #my-account ul.tabs, .rounded-box-page, .container-boxed, #container #content {
+		width: 300px !important;
+	}
+
+	.one_half, .one_third, .one_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth, .two_third, .three_fourth {
+		margin-left: 0;
+		width: 100%;
+	}
+
+	.new-recipe {
+		margin-left: 150px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	.recipe-search-container-block select#difficulty, .recipe-search-container-block select#cuisine, .recipe-search-container-block select#cat, .recipe-search-container-block select#persons {
+		text-indent: -999px;
+	}
+
+	.main_menu select {
+		margin-top: 0;
+		margin-bottom: 20px;
+		margin-left: 150px;
+		width: 100%;
+	}
+
+	#recipe-page #recipe-block .one_half {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	#carousel span, #carousel-wrapper .caroufredsel_wrapper, #carousel {
+		height: 158px !important;
+	}
+
+	.recipe-author-header {
+		padding: 0 20px;
+	}
+
+	.author-description {
+		width: 100%;
+		padding: 0 20px;
+	}
+
+	.recipe-ratings {
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin-left: 20px;
+		position: relative;
+		float: left;
+	}
+
+	#recipe-page #recipe-block .one_half.ingredients {
+		margin-top: 30px;
+	}
+
+	.author-block-home, a.author-recipe-block {
+		width: 300px;
+		height: 300px;
+		margin-left: 0;
+		margin-bottom: 30px;
+	}
+
+	.block-recipe-image, .block-recipe-image img {
+		width: 300px;
+		height: 300px;
+	}
+
+	.author-list-total-posts, #thumbs-wrapper-feat-recipes .feat-recipe-thumb-title, #carousel-feat-recipes .feat-post-black-box .recipe-author-header, .one_fourth .my-account-author-badges-box, .recipe-search-container-title, #carousel-feat-recipes .feat-post-cuisine-box, #carousel-feat-recipes .feat-post-black-box .feat-post-meta, #carousel-feat-recipes .feat-post-black-box .full, .recipes-corner {
+		display: none;
+	}
+
+	#carousel-feat-recipes .feat-post-black-box .feat-post-black-box-content {
+		width: 230px;
+	}
+
+	#carousel-feat-recipes .feat-post-black-box .feat-post-black-box-content .feat-post-title a {
+		font-size: 16px;
+		line-height: 20px;
+		margin-bottom: 0;
+	}
+
+	.author-block-home .author-list-avatar {
+		margin-top: 145px;
+	}
+
+	.author-list-link-profile a {
+		font-size: 14px;
+	}
+
+	ul.tabs.container li a.current, ul.tabs.container li a:hover, ul.tabs.container li a {
+		font-size: 16px;
+		line-height: 16px;
+	}
+
+	.block-recipe-info-title {
+		font-size: 14px;
+	}
+
+	.block-recipe-info-hover-title {
+		font-size: 18px;
+		margin-top: 140px;
+		margin-bottom: 40px;
+	}
+
+	.featured-recipes-slider, #carousel-wrapper-feat-recipes, #carousel-wrapper-feat-recipes .caroufredsel_wrapper, #carousel-feat-recipes, #carousel-feat-recipes span, .featured-recipes-slider .carousel-feat-recipes-shadow {
+		height: 158px !important;
+		width: 300px !important;
+	}
+
+	#carousel-feat-recipes .feat-post-black-box {
+		width: 280px;
+	}
+
+	#thumbs-wrapper-feat-recipes {
+		width: 144px;
+	}
+
+	#thumbs-wrapper-feat-recipes .caroufredsel_wrapper {
+		width: 84px !important;
+		height: 111px !important;
+	}
+
+	#thumbs-wrapper-feat-recipes a {
+		margin: 13px 0;
+	}
+
+	.recipe-search-stripe-container {
+		width: 360px;
+	}
+
+	.recipe-search-stripe-inner, .recipe-search-stripe-inner:after {
+		width: 430px;
+	}
+
+	.recipe-search-stripe-border, .recipe-search-stripe-border:after {
+		width: 460px;
+	}
+
+	.recipe-search-container-title {
+		font-size: 12px;
+		line-height: 16px;
+		text-transform: capitalize;
+	}
+
+	.cheefs-list-holder-recipe a.author-recipe-block, .cheefs-list-holder-recipe .block-recipe-image, .cheefs-list-holder-recipe .block-recipe-image img {
+		width: 260px !important;
+		height: 260px !important;
+	}
+
+	.cheefs-list-holder-recipe a.author-recipe-block {
+		margin: 0;
+		margin-top: 30px;
+	}
+
+	.cheefs-list-holder-recipe a.author-recipe-block.first {
+		margin-top: 0;
+	}
+
+	.frame_center img, .frame_right img, .frame_left img {
+		max-width: 260px;
+	}
+
+	.post-block-content .recipe-author-header {
+		padding: 0;
+	}
+
+	.post-block-content .two_third {
+		width: 100%;
+	}
+
+	.post-block-content .one_third {
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin: 0;
+		padding: 0 20px;
+	}
+
+	.my-account-stats-content button#edit-submit, .my-account-stats-content button#edit-submit:hover {
+		margin-left: 20px;
+	}
+
+	fieldset.input-full-width input, .my-account-stats-content textarea {
+		width: 100% !important;
+		margin-top: 10px;
+	}
+
+	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+	.woocommerce #content div.product .product_title, .woocommerce div.product .product_title, .woocommerce-page #content div.product .product_title, .woocommerce-page div.product .product_title {
+		color: #484848;
+	}
+
+	.twitter-count img, .rss-count img {
+		width: 100%;
+		height: auto;
+	}
+
+	#blog-post .recipe-author-name a {
+		font-size: 12px;
+		margin-top: 7px;
+	}
+
+	#my-account #my-account-header .one_half {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	#my-account #my-account-header .my-account-stats-content .one_half {
+		width: 50%;
+		margin-left: 0;
+	}
+
+	.my-account-stats {
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin-left: 20px;
+	}
+
+	.one_half .author-recipe-grid {
+		width: 100%;
+	}
+
+	.one_half .author-recipe-grid a.author-recipe-block.first {
+		margin-left: 0px;
+	}
+
+	.recipe-search-container-block {
+		width: 100%;
+	}
+
+	#blog-post .post-block-featured-image {
+		width: 100%;
+		margin-right: 20px;
+		margin-bottom: 40px;
+	}
+
+	#blog-post .recipe-author-header {
+		width: 98%;
+		width: -webkit-calc(100% - 20px);
+		width: calc(100% - 20px);		margin-bottom: 20px;
+	}
+
+	#blog-post .blog-post-meta {
+		float: left;
+		width: 98%;
+		width: -webkit-calc(100% - 20px);
+		width: calc(100% - 20px);
+	}
+
+	#wpcook-main-map {
+		border: solid 10px #faf9f4;
+		margin-top: 0;
+		margin-right: 20px;
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin-left: 20px;
+	}
+
+	.my-account-recipes-button {
+		float: left;
+		margin-top: 10px;
+	}
+
+	.my-account-stats-number {
+		font-size: 40px;
+	}
+
+	.my-account-settings {
+		float: left;
+		margin-top: 0px;
+		margin-bottom: 30px;
+	}
+
+	.my-account-stats-info {
+		font-size: 10px;
+	}
+
+	.my-account-author-description {
+		float: right;
+		width: 100%;
+		margin-top: 30px;
+	}
+
+	.my-account-author-url a {
+		color: #484848;
+	}
+
+	.my-account-author-header {
+		padding-right: 30px;
+	}
+
+	fieldset.input-half-width, fieldset.input-full-width-step-title, fieldset.input-full-width-step-duration {
+		width: 100%;
+	}
+
+	input.ingredient_name, input.ingredient_amount {
+		width: 90%;
+		width: -webkit-calc(100% - 110px);
+		width: calc(100% - 110px);
+		margin-bottom: 20px;
+		float: right;
+	}
+
+	#ingredients_criteria .option_item .ingredient-title, #nutrition_criteria .option_item .ingredient-title {
+		margin-left: 0 !important;
+		margin-bottom: 30px;
+	}.container, #my-account ul.tabs, .rounded-box-page, .container-boxed, #container #content {
+		width: 300px !important;
+	}
+
+	.one_half, .one_third, .one_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth, .two_third, .three_fourth {
+		margin-left: 0;
+		width: 100%;
+	}
+
+	.new-recipe {
+		margin-left: 150px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	.recipe-search-container-block select#difficulty, .recipe-search-container-block select#cuisine, .recipe-search-container-block select#cat, .recipe-search-container-block select#persons {
+		text-indent: -999px;
+	}
+
+	.main_menu select {
+		margin-top: 0;
+		margin-bottom: 20px;
+		margin-left: 150px;
+		width: 100%;
+	}
+
+	#recipe-page #recipe-block .one_half {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	#carousel span, #carousel-wrapper .caroufredsel_wrapper, #carousel {
+		height: 158px !important;
+	}
+
+	.recipe-author-header {
+		padding: 0 20px;
+	}
+
+	.author-description {
+		width: 100%;
+		padding: 0 20px;
+	}
+
+	.recipe-ratings {
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin-left: 20px;
+		position: relative;
+		float: left;
+	}
+
+	#recipe-page #recipe-block .one_half.ingredients {
+		margin-top: 30px;
+	}
+
+	.author-block-home, a.author-recipe-block {
+		width: 300px;
+		height: 300px;
+		margin-left: 0;
+		margin-bottom: 30px;
+	}
+
+	.block-recipe-image, .block-recipe-image img {
+		width: 300px;
+		height: 300px;
+	}
+
+	.author-list-total-posts, #thumbs-wrapper-feat-recipes .feat-recipe-thumb-title, #carousel-feat-recipes .feat-post-black-box .recipe-author-header, .one_fourth .my-account-author-badges-box, .recipe-search-container-title, #carousel-feat-recipes .feat-post-cuisine-box, #carousel-feat-recipes .feat-post-black-box .feat-post-meta, #carousel-feat-recipes .feat-post-black-box .full, .recipes-corner, .top-social-icons, .woocommerce .cart .product-remove, .woocommerce .cart .product-quantity {
+		display: none;
+	}
+
+	#carousel-feat-recipes .feat-post-black-box .feat-post-black-box-content {
+		width: 170px;
+	}
+
+	#carousel-feat-recipes .feat-post-black-box .feat-post-black-box-content .feat-post-title a {
+		font-size: 16px;
+		line-height: 20px;
+		margin-bottom: 0;
+	}
+
+	.author-block-home .author-list-avatar {
+		margin-top: 95px;
+	}
+
+	.author-list-link-profile a {
+		font-size: 14px;
+	}
+
+	ul.tabs.container li a.current, ul.tabs.container li a:hover, ul.tabs.container li a {
+		font-size: 16px;
+		line-height: 16px;
+	}
+
+	.block-recipe-info-title {
+		font-size: 14px;
+	}
+
+	.block-recipe-info-hover-title {
+		font-size: 18px;
+		margin-top: 90px;
+		margin-bottom: 40px;
+	}
+
+	.featured-recipes-slider, #carousel-wrapper-feat-recipes, #carousel-wrapper-feat-recipes .caroufredsel_wrapper, #carousel-feat-recipes, #carousel-feat-recipes span, .featured-recipes-slider .carousel-feat-recipes-shadow {
+		height: 158px !important;
+		width: 300px !important;
+	}
+
+	#carousel-feat-recipes .feat-post-black-box {
+		width: 280px;
+		margin-left: 0;
+		margin-bottom: 0;
+	}
+
+	#thumbs-wrapper-feat-recipes {
+		width: 104px;
+	}
+
+	#thumbs-wrapper-feat-recipes .caroufredsel_wrapper {
+		width: 84px !important;
+		height: 84px !important;
+	}
+
+	#thumbs-wrapper-feat-recipes { 
+		padding: 35px 10px;
+	}
+
+	#thumbs-wrapper-feat-recipes #prev {
+		margin-top: 10px;
+		margin-left: 28px;
+	}
+
+	#thumbs-wrapper-feat-recipes #next {
+		margin-bottom: 10px;
+	}
+
+	#thumbs-wrapper-feat-recipes a {
+		margin: 0;
+	}
+
+	.recipe-search-stripe-container {
+		width: 360px;
+	}
+
+	.recipe-search-stripe-inner, .recipe-search-stripe-inner:after {
+		width: 430px;
+	}
+
+	.recipe-search-stripe-border, .recipe-search-stripe-border:after {
+		width: 460px;
+	}
+
+	.recipe-search-container-title {
+		font-size: 12px;
+		line-height: 16px;
+		text-transform: capitalize;
+	}
+
+	.cheefs-list-holder-recipe a.author-recipe-block, .cheefs-list-holder-recipe .block-recipe-image, .cheefs-list-holder-recipe .block-recipe-image img {
+		width: 260px !important;
+		height: 260px !important;
+	}
+
+	.cheefs-list-holder-recipe a.author-recipe-block {
+		margin: 0;
+		margin-top: 30px;
+	}
+
+	.cheefs-list-holder-recipe a.author-recipe-block.first {
+		margin-top: 0;
+	}
+
+	.frame_center img, .frame_right img, .frame_left img {
+		max-width: 240px;
+	}
+
+	.post-block-content .recipe-author-header {
+		padding: 0;
+	}
+
+	.post-block-content .two_third {
+		width: 100%;
+	}
+
+	.post-block-content .one_third {
+		width: 100%;
+		width: -webkit-calc(100% - 0px);
+		width: calc(100% - 0px);
+		margin: 0;
+		padding: 0 20px;
+	}
+
+	.twitter-count img, .rss-count img {
+		width: 100%;
+		height: auto;
+	}
+
+	#blog-post .recipe-author-name a {
+		font-size: 12px;
+		margin-top: 7px;
+	}
+
+	#my-account #my-account-header .one_half {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	#my-account #my-account-header .my-account-stats-content .one_half {
+		width: 50%;
+		margin-left: 0;
+	}
+
+	.my-account-stats {
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin-left: 20px;
+	}
+
+	.one_half .author-recipe-grid {
+		width: 100%;
+	}
+
+	.one_half .author-recipe-grid a.author-recipe-block.first {
+		margin-left: 0px;
+	}
+
+	.recipe-search-container-block {
+		width: 100% !important;
+	}
+
+	.action-box-text {
+		max-width: 100%;
+	}
+
+	#blog-post .post-block-featured-image {
+		width: 100%;
+		margin-right: 20px;
+		margin-bottom: 40px;
+	}
+
+	#blog-post .recipe-author-header {
+		width: 98%;
+		width: -webkit-calc(100% - 20px);
+		width: calc(100% - 20px);		margin-bottom: 20px;
+	}
+
+	#blog-post .blog-post-meta {
+		float: left;
+		width: 98%;
+		width: -webkit-calc(100% - 20px);
+		width: calc(100% - 20px);
+	}
+
+	#wpcook-main-map {
+		border: solid 10px #faf9f4;
+		margin-top: 0;
+		margin-right: 20px;
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin-left: 20px;
+	}
+
+	.my-account-recipes-button {
+		float: left;
+		margin-top: 10px;
+	}
+
+	.my-account-stats-number {
+		font-size: 40px;
+	}
+
+	.my-account-settings {
+		float: left;
+		margin-top: 0px;
+		margin-bottom: 30px;
+	}
+
+	.my-account-stats-info {
+		font-size: 10px;
+	}
+
+	.my-account-author-description {
+		float: right;
+		width: 100%;
+		margin-top: 30px;
+	}
+
+	.my-account-author-url a {
+		color: #484848;
+	}
+
+	.my-account-author-header {
+		padding-right: 30px;
+	}
+
+	fieldset.input-half-width, fieldset.input-full-width-step-title, fieldset.input-full-width-step-duration {
+		width: 100%;
+	}
+
+	input.ingredient_name, input.ingredient_amount {
+		width: 90%;
+		width: -webkit-calc(100% - 110px);
+		width: calc(100% - 110px);
+		margin-bottom: 20px;
+		float: right;
+	}
+
+	#ingredients_criteria .option_item .ingredient-title, #nutrition_criteria .option_item .ingredient-title {
+		margin-left: 0 !important;
+		margin-bottom: 30px;
+	}
+
+	h1, .page-title {
+		font-size: 32px;
+		margin: 33px 0;
+	}
+
+	h2 {
+		font-size: 24px;
+		margin: 25px 0;
+	}
+
+	h3 {
+		font-size: 22px;
+		margin: 22px 0;
+	}
+
+	h4 {
+		font-size: 20px;
+		margin: 25px 0;
+	}
+
+	h5 {
+		font-size: 18px;
+		margin: 30px 0;
+	}
+
+	h6 {
+		font-size: 16px;
+		margin: 36px 0;
+	}
+
+	.my-account-settings a {
+		margin-top: 0;
+		margin-right: 150px;
+	}
+
+	.woocommerce .related ul li.product, .woocommerce .related ul.products li.product, .woocommerce .upsells.products ul li.product, .woocommerce .upsells.products ul.products li.product, .woocommerce-page .related ul li.product, .woocommerce-page .related ul.products li.product, .woocommerce-page .upsells.products ul li.product, .woocommerce-page .upsells.products ul.products li.product {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+	#my-account #my-account-header .my-account-stats-content .one_half {
+		width: 100%;
+	}
+
+	#my-account #my-account-header .one_half.my-account-stats-number, #my-account #my-account-header .one_half.my-account-stats-info {
+		width: 50% !important;
+	}
+
+	.my-account-author-image {
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+	}
+
+	.my-account-author-image img {
+		float: left;
+		height: 80px;
+		width: auto;
+		text-align: center;
+	}
+
+	.my-account-author-image-edit {
+		width: 100px;
+	}
+
+}
+
+
+/*  Mobile (Landscape) */
+
+/* ================================================== */
+
+/* Note: Design for a width of 480px */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+	#header {
+		position: relative !important;
+	}
+
+	#mobile-nav-bar {
+		display: block;
+	}
+
+	.bannerText h1,
+	.bannerText h2, 
+	.cover-resume-breadcrumbs {
+		display: none;
+	}
+
+	.bannerText {
+		background: none;
+		border: none;
+	}
+
+	.company-holder-block .company-list-view-profile,
+	.company-holder-block .company-list-badges,
+	.featured-item-badge,
+	.job-offers-post-badge,
+	.header-stats,
+	ul.navbar-nav {
+		display: none;
+	}
+
+	.ff-items li {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.my-account-company-single-date,
+	.my-account-company-single-views,
+	.my-account-job-single-company,
+	.my-account-job-single-date,
+	.my-account-company-single-views {
+		display: none;
+	}
+
+	.my-account-job-single-status,
+	.my-account-company-single-status {
+		width: 20%;
+		display: block;
+	}
+
+	.my-account-job-single-publish, 
+	.my-account-company-single-publish {
+		width: 17%;
+	}
+
+	.my-account-job-single-title,
+	.my-account-company-single-title {
+		width: 30%;
+	}
+
+	.my-account-list-header .my-account-company-single-status,
+	.my-account-list-header .my-account-company-single-edit,
+	.my-account-list-header .my-account-company-single-delete,
+	.my-account-list-header .my-account-company-single-publish,
+	.my-account-list-header .my-account-company-single-feature,
+	.my-account-list-header .my-account-job-single-status,
+	.my-account-list-header .my-account-job-single-edit,
+	.my-account-list-header .my-account-job-single-delete,
+	.my-account-list-header .my-account-job-single-feature  {
+		display: inline-block;
+	}
+
+	.main_menu,
+	.main_menu select {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.top_menu .menu {
+		padding-left: 0;
+	}
+
+	.work-experience-first-block, 
+	.work-experience-second-block,
+	.work-experience-third-block {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.container, #my-account ul.tabs, .rounded-box-page, .container-boxed, #container #content {
+		width: 420px !important;
+	}
+
+	.company-holder-block .company-list-name-block {
+		max-width: 100% !important;
+		width: 100%;
+	}
+
+	.one_half, .one_third, .one_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth, .two_third, .three_fourth {
+		margin-left: 0;
+		width: 100%;
+	}
+
+	.new-recipe {
+		margin-left: 250px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	.recipe-search-container-block select#difficulty, .recipe-search-container-block select#cuisine, .recipe-search-container-block select#cat, .recipe-search-container-block select#persons {
+		text-indent: -999px;
+	}
+
+	.main_menu select {
+		margin-top: 0;
+		margin-bottom: 20px;
+		margin-left: 150px;
+		width: 100%;
+	}
+
+	#recipe-page #recipe-block .one_half {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	#carousel span, #carousel-wrapper .caroufredsel_wrapper, #carousel {
+		height: 301px !important;
+	}
+
+	.recipe-author-header {
+		padding: 0 20px;
+	}
+
+	.author-description {
+		width: 100%;
+		padding: 0 20px;
+	}
+
+	.recipe-ratings {
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin-left: 20px;
+		position: relative;
+		float: left;
+	}
+
+	#recipe-page #recipe-block .one_half.ingredients {
+		margin-top: 30px;
+	}
+
+	.author-block-home, a.author-recipe-block {
+		width: 420px;
+		height: 420px;
+		margin-left: 0;
+		margin-bottom: 30px;
+	}
+
+	.block-recipe-image, .block-recipe-image img {
+		width: 420px;
+		height: 420px;
+	}
+
+	.author-list-total-posts, #thumbs-wrapper-feat-recipes .feat-recipe-thumb-title, #carousel-feat-recipes .feat-post-black-box .recipe-author-header, .one_fourth .my-account-author-badges-box, .recipe-search-container-title, #carousel-feat-recipes .feat-post-cuisine-box, #carousel-feat-recipes .feat-post-black-box .feat-post-meta, #carousel-feat-recipes .feat-post-black-box .full, .recipes-corner {
+		display: none;
+	}
+
+	#carousel-feat-recipes .feat-post-black-box .feat-post-black-box-content {
+		width: 230px;
+	}
+
+	#carousel-feat-recipes .feat-post-black-box .feat-post-black-box-content .feat-post-title a {
+		font-size: 16px;
+		line-height: 20px;
+		margin-bottom: 0;
+	}
+
+	.author-block-home .author-list-avatar {
+		margin-top: 145px;
+	}
+
+	.author-list-link-profile a {
+		font-size: 14px;
+	}
+
+	ul.tabs.container li a.current, ul.tabs.container li a:hover, ul.tabs.container li a {
+		font-size: 16px;
+		line-height: 16px;
+	}
+
+	.block-recipe-info-title {
+		font-size: 14px;
+	}
+
+	.block-recipe-info-hover-title {
+		font-size: 18px;
+		margin-top: 140px;
+		margin-bottom: 40px;
+	}
+
+	.featured-recipes-slider, #carousel-wrapper-feat-recipes, #carousel-wrapper-feat-recipes .caroufredsel_wrapper, #carousel-feat-recipes, #carousel-feat-recipes span, .featured-recipes-slider .carousel-feat-recipes-shadow {
+		height: 221px !important;
+		width: 420px !important;
+	}
+
+	#carousel-feat-recipes .feat-post-black-box {
+		width: 400px;
+	}
+
+	#thumbs-wrapper-feat-recipes {
+		width: 144px;
+	}
+
+	#thumbs-wrapper-feat-recipes .caroufredsel_wrapper {
+		width: 84px !important;
+		height: 111px !important;
+	}
+
+	#thumbs-wrapper-feat-recipes a {
+		margin: 13px 0;
+	}
+
+	.recipe-search-stripe-container {
+		width: 480px;
+	}
+
+	.recipe-search-stripe-inner, .recipe-search-stripe-inner:after {
+		width: 550px;
+	}
+
+	.recipe-search-stripe-border, .recipe-search-stripe-border:after {
+		width: 580px;
+	}
+
+	.woocommerce #content div.product .product_title, .woocommerce div.product .product_title, .woocommerce-page #content div.product .product_title, .woocommerce-page div.product .product_title {
+		color: #484848;
+	}
+
+	.woocommerce .related ul li.product, .woocommerce .related ul.products li.product, .woocommerce .upsells.products ul li.product, .woocommerce .upsells.products ul.products li.product, .woocommerce-page .related ul li.product, .woocommerce-page .related ul.products li.product, .woocommerce-page .upsells.products ul li.product, .woocommerce-page .upsells.products ul.products li.product {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+	.recipe-search-container-title {
+		font-size: 12px;
+		line-height: 16px;
+		text-transform: capitalize;
+	}
+
+	.cheefs-list-holder-recipe a.author-recipe-block, .cheefs-list-holder-recipe .block-recipe-image, .cheefs-list-holder-recipe .block-recipe-image img {
+		width: 380px !important;
+		height: 380px !important;
+	}
+
+	.cheefs-list-holder-recipe a.author-recipe-block {
+		margin: 0;
+		margin-top: 30px;
+	}
+
+	.cheefs-list-holder-recipe a.author-recipe-block.first {
+		margin-top: 0;
+	}
+
+	.frame_center img, .frame_right img, .frame_left img {
+		max-width: 280px;
+	}
+
+	.post-block-content .recipe-author-header {
+		padding: 0;
+	}
+
+	.post-block-content .two_third {
+		width: 100%;
+	}
+
+	.post-block-content .one_third {
+		width: 100%;
+		width: -webkit-calc(100% - 0px);
+		width: calc(100% - 0px);
+		margin: 0;
+		padding: 0 20px;
+	}
+
+	.twitter-count img, .rss-count img {
+		width: 100%;
+		height: auto;
+	}
+
+	#blog-post .recipe-author-name a {
+		font-size: 12px;
+		margin-top: 7px;
+	}
+
+	#my-account #my-account-header .one_half {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	#my-account #my-account-header .my-account-stats-content .one_half {
+		width: 50%;
+		margin-left: 0;
+	}
+
+	.my-account-stats {
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin-left: 20px;
+	}
+
+	.one_half .author-recipe-grid {
+		width: 100%;
+	}
+
+	.one_half .author-recipe-grid a.author-recipe-block.first {
+		margin-left: 0px;
+	}
+
+	.my-account-author-image {
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+	}
+
+	.my-account-author-image img {
+		float: left;
+		height: 80px;
+		width: auto;
+		text-align: center;
+	}
+
+	.my-account-author-image-edit {
+		width: 100px;
+	}
+
+	.recipe-search-container-block {
+		width: 100% !important;
+	}
+
+	#blog-post .post-block-featured-image {
+		width: 100%;
+		margin-right: 20px;
+		margin-bottom: 40px;
+	}
+
+	#blog-post .recipe-author-header {
+		width: 98%;
+		width: -webkit-calc(100% - 20px);
+		width: calc(100% - 20px);		margin-bottom: 20px;
+	}
+
+	#blog-post .blog-post-meta {
+		float: left;
+		width: 98%;
+		width: -webkit-calc(100% - 20px);
+		width: calc(100% - 20px);
+	}
+
+	#wpcook-main-map {
+		border: solid 10px #faf9f4;
+		margin-top: 0;
+		margin-right: 20px;
+		width: 90%;
+		width: -webkit-calc(100% - 40px);
+		width: calc(100% - 40px);
+		margin-left: 20px;
+	}
+
+	.my-account-recipes-button {
+		float: left;
+		margin-top: 10px;
+	}
+
+	.my-account-stats-number {
+		font-size: 40px;
+	}
+
+	.my-account-settings {
+		float: left;
+		margin-top: 0px;
+		margin-bottom: 30px;
+	}
+
+	.my-account-stats-info {
+		font-size: 10px;
+	}
+
+	.my-account-author-description {
+		float: right;
+		width: 100%;
+		margin-top: 30px;
+	}
+
+	.my-account-author-url a {
+		color: #484848;
+	}
+
+	.my-account-author-header {
+		padding-right: 30px;
+	}
+
+	fieldset.input-half-width, fieldset.input-full-width-step-title, fieldset.input-full-width-step-duration {
+		width: 100%;
+	}
+
+	input.ingredient_name, input.ingredient_amount {
+		width: 90%;
+		width: -webkit-calc(100% - 110px);
+		width: calc(100% - 110px);
+		margin-bottom: 20px;
+		float: right;
+	}
+
+	#ingredients_criteria .option_item .ingredient-title, #nutrition_criteria .option_item .ingredient-title {
+		margin-left: 0 !important;
+		margin-bottom: 30px;
+	}
+
+}
+

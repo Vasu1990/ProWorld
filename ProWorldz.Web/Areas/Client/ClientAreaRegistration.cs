@@ -14,11 +14,11 @@ namespace ProWorldz.Web.Areas.Client
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-            context.MapRoute(
-                "Client_default",
-                "Client/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
-            );
+            //context.MapRoute(
+            //    "Client_default",
+            //    "Client/{controller}/{action}/{id}",
+            //    new { action = "Index", id = UrlParameter.Optional }
+            //);
         }
     }
 }

@@ -33,6 +33,7 @@
     <!-- <link href="css/module-colors-calendar.min.css" rel="stylesheet" /> -->
     <!-- <link href="css/module-colors-progress-bars.min.css" rel="stylesheet" /> -->
     <!-- <link href="css/module-colors-text.min.css" rel="stylesheet" /> -->
+    
     @RenderSection("styles", required: false)
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
@@ -63,7 +64,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="main-nav">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Dashboard","Dashboard","Home")
+                        <li>@Html.ActionLink("Dashboard", "Dashboard", "Home", new {Area = "" },null)
                         <li><a href="/Home/UserPost">User Post</a>
                         </li>
                         <li><a href="/Account/Profile">Edit Profile</a>
