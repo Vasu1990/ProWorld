@@ -359,6 +359,7 @@
     <Content Include="Areas\Site\Content\theme\images\bg_control_nav.html" />
     <Content Include="Areas\Site\Content\theme\images\birdfly-.jpg" />
     <Content Include="Areas\Site\Content\theme\images\blank.gif" />
+    <Content Include="Areas\Site\Content\theme\images\blog.jpg" />
     <Content Include="Areas\Site\Content\theme\images\bloxkspi.jpg" />
     <Content Include="Areas\Site\Content\theme\images\bloxkspilled-493x328.jpg" />
     <Content Include="Areas\Site\Content\theme\images\box-download.html" />
@@ -384,6 +385,7 @@
     <Content Include="Areas\Site\Content\theme\images\cluster-2.png" />
     <Content Include="Areas\Site\Content\theme\images\cluster-3.html" />
     <Content Include="Areas\Site\Content\theme\images\cluster0.png" />
+    <Content Include="Areas\Site\Content\theme\images\contact.jpg" />
     <Content Include="Areas\Site\Content\theme\images\cover-10.jpg" />
     <Content Include="Areas\Site\Content\theme\images\cover-103.html" />
     <Content Include="Areas\Site\Content\theme\images\cover-12.jpg" />
@@ -505,6 +507,7 @@
     <Content Include="Areas\Site\Content\theme\images\right.png" />
     <Content Include="Areas\Site\Content\theme\images\search.html" />
     <Content Include="Areas\Site\Content\theme\images\select-arrow.html" />
+    <Content Include="Areas\Site\Content\theme\images\service.jpg" />
     <Content Include="Areas\Site\Content\theme\images\sl2.jpg" />
     <Content Include="Areas\Site\Content\theme\images\sl3.jpg" />
     <Content Include="Areas\Site\Content\theme\images\solidsoc.jpg" />

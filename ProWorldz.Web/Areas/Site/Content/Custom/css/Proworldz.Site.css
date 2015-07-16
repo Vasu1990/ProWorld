@@ -1,3 +1,20 @@
 ﻿.main_menu ul li a {
 	margin-right:90px !important;	
 }
+
+#blog{
+    background-image:url('../../theme/images/blog.jpg');
+    
+}
+.slide_points span{
+    margin-bottom:10px;
+}
+.slide_points span i{
+    color:white;
+    margin-right:10px;
+}
+
+.service_ul li{
+    margin-bottom:30px;
+}
+
