@@ -22,5 +22,6 @@ namespace ProWorldz.DL.Interfaces
         void Delete(int id);
 
         void Delete(TEntity entity);
+
     }
 }

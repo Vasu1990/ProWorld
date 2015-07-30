@@ -62,7 +62,7 @@ namespace ProWorldz.Web.Controllers
                     SessionManager.InstanceCreator.Set<UserBM>(User, SessionKey.User);
                   //  Session["User"] = User;
                     FormsAuthentication.SetAuthCookie(User.Name, false);
-                    return RedirectToAction("Profile");
+                    return RedirectToAction("DashBoard","Home");
                 }
                 else
                 {
@@ -72,8 +72,15 @@ namespace ProWorldz.Web.Controllers
             }
             return RedirectToAction("Login");
         }
+        public new ActionResult Profile()
+        {
+            ViewProfileModel Model = new ViewProfileModel();
 
-        public ActionResult Profile()
+            Model.SucessMessage = (TempData["Success"] != null ? TempData["Success"].ToString() : string.Empty).ToString();
+            Model.ErrorMessage = (TempData["Error"] != null ? TempData["Error"].ToString() : string.Empty).ToString();
+            return View(Model);
+        }
+        public  ActionResult EditProfile()
         {
             CommonBL commonBL = new CommonBL();
             CommunityBL CommunityBL = new BL.BusinessLayer.CommunityBL();
@@ -103,25 +110,12 @@ namespace ProWorldz.Web.Controllers
                 if (Model.UserVideoModel == null)
                     Model.UserVideoModel = new UserVideoBM();
 
-
-
-               
-
-
                 List<UserPersonalInformationBM> PersoalInfoList = UserPersonalInformationBL.GetPersonalInformation().Where(p => p.UserId == CurrentUser.Id).ToList();
                 if (PersoalInfoList.Count > 0)
                     Model.UserPersonalInformationModel = PersoalInfoList.FirstOrDefault();
                 if (Model.UserPersonalInformationModel == null)
                     Model.UserPersonalInformationModel = new UserPersonalInformationBM();
                
-               
-
-
-
-             
-
-
-
                 Model.CommunityList = CommunityBL.GetCommunity().Where(o => o.ParentId == 0).ToList();
 
                 Model.SubCommunityList = CommunityBL.GetCommunity().Where(o => o.ParentId != 0).ToList();

@@ -14,37 +14,7 @@
         </div>
     </div>
     <div class="row">
-   
-            <h3 class="title">
-                <i class="fa fa-fw fa-list"></i>
-                Post Listing
-            </h3>
-    <div class="panel panel-default padding-All30">
-        <!-- Data table -->
-        <table data-toggle="data-table" class="table table-bordered table-hover table-responsive table-striped" cellspacing="0" width="100%">
-            <thead >
-                <tr>
-                    <th>Post</th>
-                    <th>Subject</th>
-                    <th>User Name</th>
-                    <th>Creation Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.UserPostList)
-                {
-                    <tr>
-                        <td>@item.Post</td>
-                        <td>@item.Subject</td>
-                        <td>@item.UserName</td>
-                        <td>@item.CreationDate</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-
-        <div class="col-md-12">
+        <div>
             <h3 class="title cursor" id="createPost">
                 <i class="fa fa-fw fa-plus-circle"></i>
                 Create New Post
@@ -82,6 +52,37 @@
 
             }
         </div>
+            <h3 class="title">
+                <i class="fa fa-fw fa-list"></i>
+                Post Listing
+            </h3>
+        
+    <div class="panel panel-default padding-All30">
+        <!-- Data table -->
+        <table data-toggle="data-table" class="table table-bordered table-hover table-responsive table-striped" cellspacing="0" width="100%">
+            <thead >
+                <tr>
+                    <th>Post</th>
+                    <th>Subject</th>
+                    <th>User Name</th>
+                    <th>Creation Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.UserPostList)
+                {
+                    <tr>
+                        <td>@item.Post</td>
+                        <td>@item.Subject</td>
+                        <td>@item.UserName</td>
+                        <td>@item.CreationDate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+        
        
 </div>
 @section scripts{

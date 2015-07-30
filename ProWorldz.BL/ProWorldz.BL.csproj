@@ -30,6 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\KeyDash\SourceCode\KeyDashRewrite\KeyDashRewrite.Web\bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\KeyDash\SourceCode\KeyDashRewrite\KeyDashRewrite.Web\bin\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
@@ -60,6 +67,7 @@
     <Compile Include="BusinessLayer\CommonBL.cs" />
     <Compile Include="BusinessLayer\CommunityBL.cs" />
     <Compile Include="BusinessLayer\CountryBL.cs" />
+    <Compile Include="BusinessLayer\FriendBL.cs" />
     <Compile Include="BusinessLayer\StateBL.cs" />
     <Compile Include="BusinessLayer\UserBL.cs" />
     <Compile Include="BusinessLayer\UserGeneralInformationBL.cs" />
@@ -73,6 +81,8 @@
     <Compile Include="BusinessModel\ContactUsBM.cs" />
     <Compile Include="BusinessModel\CityBM.cs" />
     <Compile Include="BusinessModel\CommunityBM.cs" />
+    <Compile Include="BusinessModel\Lkp_FriendShipStatusBM.cs" />
+    <Compile Include="BusinessModel\FriendBM.cs" />
     <Compile Include="BusinessModel\CountryBM.cs" />
     <Compile Include="BusinessModel\DegreeBM.cs" />
     <Compile Include="BusinessModel\IndustryBM.cs" />
@@ -87,6 +97,10 @@
     <Compile Include="BusinessModel\UserQualificatinBM.cs" />
     <Compile Include="BusinessModel\UserVideoBM.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Common\DatatablePaging\DataTableConfig.cs" />
+    <Compile Include="Common\DatatablePaging\DataTableParams.cs" />
+    <Compile Include="Common\DatatablePaging\GlobalSearchText.cs" />
+    <Compile Include="Common\Enums\FriendShipStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

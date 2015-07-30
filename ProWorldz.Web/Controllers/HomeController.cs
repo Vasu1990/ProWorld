@@ -1,5 +1,7 @@
 ﻿using ProWorldz.BL.BusinessLayer;
 using ProWorldz.BL.BusinessModel;
+using ProWorldz.BL.Common.DatatablePaging;
+using ProWorldz.BL.Common.Enums;
 using ProWorldz.Web.Models;
 using ProWorldz.Web.Utils;
 using System;
@@ -20,23 +22,29 @@ namespace ProWorldz.Web.Controllers
         UserProfessionalQualificationBL UserProfessionalQualificationBL = new BL.BusinessLayer.UserProfessionalQualificationBL();
         UserQualificationBL UserQualificationBL = new BL.BusinessLayer.UserQualificationBL();
 
+        public UserBM CurrentUser { 
+            get{
+                return SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            }
+        }
+
         UserVideoBL UserVideoBL = new UserVideoBL();
 
         [HttpGet]
         public ActionResult Index()
         {
-           
-            return RedirectToAction("Index", "Home", new {@area ="Site" });
+
+            return RedirectToAction("Index", "Home", new { @area = "Site" });
         }
-            
+
         [Authorize]
         public ActionResult Dashboard()
         {
             PostCommentModel model = new PostCommentModel();
             UserPostBL blObj = new UserPostBL();
             model.UserPostList = blObj.GetUserPost();
-            
-            model.User  = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+
+            model.User = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             return View(model);
 
         }
@@ -55,15 +63,15 @@ namespace ProWorldz.Web.Controllers
             return Json(commentBM);
         }
 
-        
+
         [HttpPost]
         public JsonResult EditComment(UserPostCommentBM commentBM)
         {
             UserPostCommentCommentBL commentbl = new UserPostCommentCommentBL();
             UserBM userObj = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
-            commentBM.ModifiedBy= userObj.Id;
+            commentBM.ModifiedBy = userObj.Id;
             commentBM.ModificationDate = DateTime.UtcNow;
-            
+
             //date issue http://www.devcurry.com/2013/04/json-dates-are-different-in-aspnet-mvc.html#.Ufvl1Y3VD6Q
             //date issue for ko MVC
             if (commentBM.CreationDate.ToString() == "1/1/0001 12:00:00 AM")
@@ -81,7 +89,7 @@ namespace ProWorldz.Web.Controllers
         public void DeleteComment(UserPostCommentBM commentBM)
         {
             UserPostCommentCommentBL commentbl = new UserPostCommentCommentBL();
-            
+
             commentbl.Delete(commentBM);
 
         }
@@ -89,7 +97,7 @@ namespace ProWorldz.Web.Controllers
 
 
 
-
+        [Authorize]
         public ActionResult UserPost()
         {
             PostCommentModel Model = new PostCommentModel();
@@ -99,19 +107,12 @@ namespace ProWorldz.Web.Controllers
             return View(Model);
         }
 
-        public ActionResult ViewProfile()
-        {
-            ViewProfileModel Model = new ViewProfileModel();
-           
-            Model.SucessMessage = (TempData["Success"] != null ? TempData["Success"].ToString() : string.Empty).ToString();
-            Model.ErrorMessage = (TempData["Error"] != null ? TempData["Error"].ToString() : string.Empty).ToString();
-            return View(Model);
-        }
+
         [ValidateInput(false)]
         public ActionResult PostComment(PostCommentModel Model)
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
-           // UserBM CurrentUser = (UserBM)Session["User"];
+            // UserBM CurrentUser = (UserBM)Session["User"];
             if (CurrentUser != null)
             {
 
@@ -133,7 +134,7 @@ namespace ProWorldz.Web.Controllers
         public JsonResult GetUserGeneralDetail()
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
-            UserGeneralInformationBM UserGeneralInformationBM=new UserGeneralInformationBM();
+            UserGeneralInformationBM UserGeneralInformationBM = new UserGeneralInformationBM();
             if (CurrentUser != null)
                 UserGeneralInformationBM = UserGeneralInformationBL.GetGeneralInformationByUserId(CurrentUser.Id);
             return Json(UserGeneralInformationBM, JsonRequestBehavior.AllowGet);
@@ -173,6 +174,116 @@ namespace ProWorldz.Web.Controllers
             if (CurrentUser != null)
                 UserVideoBM = UserVideoBL.GetByUserId(CurrentUser.Id);
             return Json(UserVideoBM, JsonRequestBehavior.AllowGet);
+        }
+
+        [Authorize]
+        public ActionResult Friends()
+        {
+            return View();
+        }
+     
+        [HttpPost]
+        public JsonResult GetFriends(GlobalSearchText GlobalSearchText, int RecordsToTake, int RecordsToSkip, List<DataTableConfig> Columns)
+        {
+            
+
+            FriendBL frndBL = new FriendBL();
+            List<FriendBM> lsFrndBM = new List<FriendBM>();
+            DataTableParams param = new DataTableParams();
+            param.RecordsToSkip = RecordsToSkip;
+            param.RecordsToTake = RecordsToTake;
+            param.SearchOptions = GlobalSearchText;
+            param.ColumnConfiguration = Columns;
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+
+            lsFrndBM = frndBL.GetFriendListById(CurrentUser.Id, param);
+            
+            return Json(lsFrndBM);
+        }
+        public JsonResult GetTotalFriendCount()
+        {
+            FriendBL frndBL = new FriendBL();
+            return Json(frndBL.GetFriendCountById(CurrentUser.Id),JsonRequestBehavior.AllowGet);
+        }
+
+        public void AddFriend(FriendBM frnd)
+        {
+            FriendBL frnbl = new FriendBL();
+            List<FriendBM> lsFrndReq = new List<FriendBM>();
+            
+            frnd.CreationDate = DateTime.Now;
+            frnd.FriendShipStatusId = (int)FriendShipStatus.Pending;
+            lsFrndReq.Add(frnd);
+            lsFrndReq.Add(GetOtherBM(frnd));
+
+            //cast list to ienumearble call create Friend req
+            frnbl.CreateFriendrequest(lsFrndReq);
+            
+        }
+
+        public void DeleteFriend(FriendBM frnd)
+        {
+            FriendBL frnbl = new FriendBL();
+            frnbl.DeleteFriend(frnd);
+
+        }
+
+        public FriendBM GetOtherBM(FriendBM frnd)
+        {
+            FriendBM frndbm = new FriendBM();
+            frndbm.CreationDate = frnd.CreationDate;
+            frndbm.FriendId = frnd.UserId;
+            frndbm.UserId = frnd.FriendId;
+            frndbm.FriendShipStatusId = (int)FriendShipStatus.New;
+            return frndbm;
+        }
+
+        public void RemoveFriend(FriendBM frnd)
+        {
+            FriendBL frnbl = new FriendBL();
+            frnbl.Delete(frnd);
+        }
+
+        public void ConfirmRequest(FriendBM frnd)
+        {
+            FriendBL frnbl = new FriendBL();
+            
+
+            //cast list to ienumearble call create Friend req
+            frnbl.ConfirmFriendRequest(frnd);
+        }
+
+        public JsonResult GetUserCountByName(string SearchTable)
+        {
+            string SearchBy = SearchTable == "" ?  SessionManager.InstanceCreator.Get<string>("SearchText").ToString() : SearchTable;
+            FriendBL frndBL = new FriendBL();
+            string _searchtext = SearchBy;
+
+            return Json(frndBL.GetUserCountByName(_searchtext), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult People(string SearchText)
+        {
+            SessionManager.InstanceCreator.Set<string>(SearchText, "SearchText");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult People(GlobalSearchText GlobalSearchText, int RecordsToTake, int RecordsToSkip, List<DataTableConfig> Columns)
+        {
+            List<FriendBM> people = new List<FriendBM>();
+            string _searchtext = SessionManager.InstanceCreator.Get<string>("SearchText").ToString();
+            if (_searchtext != "")
+            {
+                FriendBL frnd = new FriendBL();
+                  DataTableParams param = new DataTableParams();
+                    param.RecordsToSkip = RecordsToSkip;
+                    param.RecordsToTake = RecordsToTake;
+                    param.SearchOptions = GlobalSearchText;
+                    param.ColumnConfiguration = Columns;
+                    people = frnd.GetUsersWithFriendStatus(_searchtext, CurrentUser.Id, param);
+            }
+            return Json(people);
         }
 
     }

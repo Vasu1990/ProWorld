@@ -37,7 +37,7 @@ namespace ProWorldz.DL.UOW
         private IRepository<IndustryType> industryTypeRepository;
         private IRepository<Degree> degreeRepository;
         private IRepository<ContactUs> contactUs;
-
+        private IRepository<Friend> friendRepository { get; set; }
 
         public IRepository<Degree> DegreeRepository
         {
@@ -174,6 +174,17 @@ namespace ProWorldz.DL.UOW
                 return communityRepository;
             }
         }
+        public IRepository<Friend> FriendRepository
+        {
+            get
+            {
+                if (friendRepository == null)
+                    friendRepository = new GenericRepository<Friend>(Context);
+                return friendRepository;
+            }
+        }
+
+        
 
         public void Save()
         {
@@ -199,5 +210,6 @@ namespace ProWorldz.DL.UOW
             }
             _dispose = true;
         }
+     
     }
 }

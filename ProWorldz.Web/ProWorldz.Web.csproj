@@ -733,9 +733,13 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\custom\Proworldz.friend.css" />
+    <Content Include="Content\themes\custom\Proworldz.people.css" />
     <Content Include="Content\themes\custom\Proworldz.dashboard.css" />
     <Content Include="Content\themes\custom\Proworldz.site.css" />
     <Content Include="Content\themes\custom\Proworldz.login.css" />
+    <Content Include="Scripts\Custom\ProWorldz.Friend.js" />
+    <Content Include="Scripts\Custom\ProWorldz.People.js" />
     <Content Include="Scripts\Custom\Utility\Proworldz.AjaxHelpers.js" />
     <Content Include="Content\themes\social-3\css\module-chat.min.css" />
     <Content Include="Content\themes\social-3\css\module-cover.min.css" />
@@ -1194,6 +1198,19 @@
     <Content Include="Scripts\Custom\ProWorldz.UserDashboard.js" />
     <Content Include="Scripts\Custom\Proworldz.Register.js" />
     <Content Include="Scripts\Custom\ProWorldz.UserPost.js" />
+    <Content Include="Scripts\DatatableScripts\cog.js" />
+    <Content Include="Scripts\DatatableScripts\cog.utils.js" />
+    <Content Include="Scripts\DatatableScripts\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DatatableScripts\datatables.fnReloadAjax.js" />
+    <Content Include="Scripts\DatatableScripts\dataTables.tableTools.js" />
+    <Content Include="Scripts\DatatableScripts\jquery.dataTables.js" />
+    <Content Include="Scripts\DatatableScripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DatatableScripts\jquery.dataTables.plugins.js" />
+    <Content Include="Scripts\DatatableScripts\knockout-3.2.0.js" />
+    <Content Include="Scripts\DatatableScripts\knockout-datatables.js" />
+    <Content Include="Scripts\DatatableScripts\knockout.bindings.dataTables.js" />
+    <Content Include="Scripts\DatatableScripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\DatatableScripts\knockout.mapping-latest.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -1207,8 +1224,8 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\knockout-2.2.0.debug.js" />
-    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\knockout-3.3.0.debug.js" />
+    <Content Include="Scripts\knockout-3.3.0.js" />
     <Content Include="Scripts\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\knockout.mapping-latest.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -1257,11 +1274,13 @@
     <Content Include="Views\Shared\_Layout_Old.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Account\Profile.cshtml" />
+    <Content Include="Views\Account\EditProfile.cshtml" />
     <Content Include="Views\Account\Test.cshtml" />
     <Content Include="Views\Home\UserPost.cshtml" />
-    <Content Include="Views\Home\ViewProfile.cshtml" />
+    <Content Include="Views\Account\Profile.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Home\Friends.cshtml" />
+    <Content Include="Views\Home\People.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

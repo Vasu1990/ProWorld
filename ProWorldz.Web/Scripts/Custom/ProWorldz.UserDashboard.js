@@ -18,6 +18,11 @@
         postCommentButton = _commentBox.siblings().find("[data-control='post-comment-control']");
         commentTextBox = _commentBox.siblings().find(".txtUserComment");
     }
+    //date issue http://www.devcurry.com/2013/04/json-dates-are-different-in-aspnet-mvc.html#.Ufvl1Y3VD6Q
+    function GetFomattedDate(UnformattedDate) {
+        var _createdDate = new Date(parseInt(UnformattedDate.replace(/\/Date\((.*?)\)\//gi, "$1"))).toUTCString();
+        return _createdDate.split(' ').slice(0, 4).join(' ');
+    }
 
     dashVM.PostComment = function(data,event) {
         //get comment value
@@ -55,8 +60,7 @@
                 _commentObj.CreatedBy(result.UserId);
                 _commentObj.ModifiedBy(result.UserId);
                 _commentObj.ModificationDate(result.ModificationDate);
-                //date issue http://www.devcurry.com/2013/04/json-dates-are-different-in-aspnet-mvc.html#.Ufvl1Y3VD6Q
-                _commentObj.CreationDate = new Date(parseInt(result.CreationDate.replace(/\/Date\((.*?)\)\//gi, "$1")));
+                _commentObj.CreationDate = GetFomattedDate(result.CreationDate);
                 _commentObj.Id(result.Id);
                 data.UserComments.push(_commentObj);
             }

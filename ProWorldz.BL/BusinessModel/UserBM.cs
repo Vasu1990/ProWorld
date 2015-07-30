@@ -9,7 +9,7 @@ namespace ProWorldz.BL.BusinessModel
     public class UserBM
     {
         public int Id { get; set; }
-     
+        
         public string Name { get; set; }
 
         public string Email { get; set; }
@@ -19,7 +19,6 @@ namespace ProWorldz.BL.BusinessModel
         public int UserTypeId { get; set; }
 
         public DateTime DOB { get; set; }
-
 
         public bool Active { get; set; }
 
@@ -35,7 +34,6 @@ namespace ProWorldz.BL.BusinessModel
 
         public Nullable<int> ModifiedBy { get; set; }
 
-
         public int CommunityId { get; set; }
 
         public int SubCommunityId { get; set; }
@@ -44,16 +42,12 @@ namespace ProWorldz.BL.BusinessModel
 
         public int SubCommunityName { get; set; }
 
-
-      
         public int CityId { get; set; }
 
-
-
-       
         public int StateId { get; set; }
 
-        
         public int CountryId { get; set; }
+
+        public virtual UserGeneralInformationBM GeneralInfo { get; set; }
     }
 }

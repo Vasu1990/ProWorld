@@ -73,6 +73,14 @@
     <Compile Include="Migrations\201507141625312_contact us date.Designer.cs">
       <DependentUpon>201507141625312_contact us date.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507252107087_friends.cs" />
+    <Compile Include="Migrations\201507252107087_friends.Designer.cs">
+      <DependentUpon>201507252107087_friends.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507281729451_fk_friends.cs" />
+    <Compile Include="Migrations\201507281729451_fk_friends.Designer.cs">
+      <DependentUpon>201507281729451_fk_friends.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
     <Compile Include="Models\ContactUs.cs" />
@@ -80,7 +88,9 @@
     <Compile Include="Models\Community.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Degree.cs" />
+    <Compile Include="Models\Lkp_FriendShipStatus.cs" />
     <Compile Include="Models\IndustryType.cs" />
+    <Compile Include="Models\Friend.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostComment.cs" />
     <Compile Include="Models\State.cs" />
@@ -112,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507141625312_contact us date.resx">
       <DependentUpon>201507141625312_contact us date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507252107087_friends.resx">
+      <DependentUpon>201507252107087_friends.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507281729451_fk_friends.resx">
+      <DependentUpon>201507281729451_fk_friends.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

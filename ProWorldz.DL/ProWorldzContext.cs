@@ -40,6 +40,9 @@ namespace ProWorldz.DL
 
         public DbSet<Degree> Degree { get; set; }
         public DbSet<ContactUs> ContactUs{ get; set; }
+        public DbSet<Lkp_FriendShipStatus> Lkp_FriendShipStatus { get; set; }
+        public DbSet<Friend> Friend { get; set; }
+        
         
 
     }

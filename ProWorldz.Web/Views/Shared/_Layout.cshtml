@@ -63,13 +63,26 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="main-nav">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" style="width:70%">
                         <li>@Html.ActionLink("Dashboard", "Dashboard", "Home", new {Area = "" },null)
                         <li><a href="/Home/UserPost">User Post</a>
                         </li>
-                        <li><a href="/Account/Profile">Edit Profile</a>
+                         <li><a href="/Account/Profile">Profile</a>
                         </li>
-                         <li><a href="/Home/ViewProfile">View Profile</a>
+                        <li>
+                            <a href="/Home/Friends">Friends</a>
+                        </li>
+                        <li style="width:55%;margin-top: 8px;margin-left:10px;">
+                            @using (Html.BeginForm("People","Home",FormMethod.Get)) { 
+                            <div class="input-group col-md-8">
+                                <input type="text" class="form-control input-md" data-bind="value:searchText" name="SearchText" placeholder="Search People By Name" required>
+                                <span class="input-group-btn" data-bind="click:$root.dataSource">
+                                    <button class="btn btn-primary btn-md" type="submit" id="searchPeople">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            }
                         </li>
                         
                     </ul>

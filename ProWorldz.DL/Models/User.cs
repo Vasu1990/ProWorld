@@ -43,8 +43,6 @@ namespace ProWorldz.DL.Models
         [ForeignKey("City")]
         public int CityId { get; set; }
 
-
-
         [ForeignKey("State")]
         public int StateId { get; set; }
 
@@ -63,6 +61,7 @@ namespace ProWorldz.DL.Models
 
          //temp soln http://stackoverflow.com/questions/26386831/one-fk-works-another-gives-error-multiplicity-is-not-valid or use fluent api
         public virtual ICollection<UserGeneralInfomation> UserGeneralInfo { get; set; }
+        public virtual ICollection<Friend> UserFriends { get; set; }
         
     }
 }

@@ -18,7 +18,7 @@ namespace ProWorldz.Web
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/Knockout").Include(
-                "~/Scripts/knockout-2.2.0.js",
+                "~/Scripts/knockout-{version}.js",
                 "~/Scripts/knockout.mapping-latest.js"
                 
                 ));

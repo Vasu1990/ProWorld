@@ -1,0 +1,25 @@
+﻿table tbody {
+            padding: 50px;
+            display: block;
+        }
+
+        table#dvGrid > tbody > tr {
+            width: 23%;
+            float: left;
+            border: 1px solid lightgrey;
+            margin-right: 10%;
+            margin-bottom: 50px;
+        }
+
+        .item .panel.panel-default {
+            margin-bottom: 0px;
+        }
+
+        table#dvGrid > tbody > tr > td {
+            display: block;
+            padding: 0px;
+        }
+
+        .panel-default > .panel-heading {
+            background-color: white !important;
+        }

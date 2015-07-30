@@ -1,4 +1,5 @@
 ﻿using ProWorldz.BL.BusinessModel;
+using ProWorldz.BL.Common.DatatablePaging;
 using ProWorldz.DL.Models;
 using ProWorldz.DL.UOW;
 using System;
@@ -38,7 +39,19 @@ namespace ProWorldz.BL.BusinessLayer
             uow.UserRepository.Add(ConvertToDM(model));
             uow.Save();
         }
+        public List<UserBM> GeteUserByName(string searchTerm,DataTableParams param)
+        {
+            //Pagination logic Math.Min returns the least from both values
+            var _searchQuery = param.SearchOptions.value == null ? searchTerm : param.SearchOptions.value;
+            int RecordsToFetch = Math.Min(GetUserCountByName(_searchQuery) - param.RecordsToSkip, param.RecordsToTake);
+            return uow.UserRepository.Find(x=>x.Name.Contains(searchTerm)).OrderBy(x => x.Name).Skip(param.RecordsToSkip).Take(RecordsToFetch).ToList().ConvertAll<UserBM>(new Converter<User, UserBM>(ConvertToBM));
+            
+        }
+        public int GetUserCountByName(string searchTerm)
+        {
+            return uow.UserRepository.Find(x => x.Name.Contains(searchTerm)).Count();
 
+        }
         public void UpdateUser(UserBM model)
         {
             uow.UserRepository.Update(ConvertToDM(model));

@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Friends";
+}
+
+@section styles{
+<link href="~/Content/themes/custom/Proworldz.people.css" rel="stylesheet" />
+}
+
+
+<h2 class="title">
+    <i class="fa fa-fw fa-users"></i>
+    Search Result
+</h2>
+<div class="panel panel-default">
+    <div class="panel-body" id="wrapTemplate">
+        
+        <table id="dvGrid" class="table tblProductsList"
+               data-bind="dataTable: {
+                                        dataSource:PeopleVM.dataSource,
+                                        rowTemplate:  PeopleVM.CurrentGridTemplate,
+                                        ordering:false,
+                                        bAutoWidth : false,
+                                            info:false,
+                                        columns: [
+                                               {data: 'Id', bSortable: true }
+
+                                                ],
+
+                                        options: {
+                                            sPaginationType: 'bootstrap',
+                                            bAutoWidth: 'false',
+
+                                            oLanguage: {
+                                                sLengthMenu: '_MENU_  Friends Per Page<br>'
+                                            }
+                                           }
+                                           }">
+            <thead>
+                <tr>
+                    <th class="text-center  tblClass"></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+    </div>
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/Knockout")
+
+    <!--basic data table files-->
+    <script src="~/Scripts/DatatableScripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DatatableScripts/dataTables.bootstrap.js"></script>
+
+    <!--Third party plugin for ko and data table integration-->
+    <script src="~/Scripts/DatatableScripts/cog.js"></script>
+    <script src="~/Scripts/DatatableScripts/cog.utils.js"></script>
+    <script src="~/Scripts/DatatableScripts/knockout.bindings.dataTables.js"></script>
+
+  
+<script src="~/Scripts/Custom/ProWorldz.People.js"></script>
+
+    <!--template for Grid View-->
+    <script id="peopleGridTemplate" type="text/html">
+        <td data-bind="text: Id,visible:false "></td>
+        <td>
+            <div class="item">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img data-bind="attr:{src: FriendImage}" alt="people" class="media-object img-circle" style="width:50px">
+                            </div>
+                            <div class="media-body text-left">
+                                <h4 class="media-heading margin-v-5">
+                                    <a href="#" data-bind="text: FriendName"></a>
+                                </h4>
+
+                                <p class="common-friends">Community<span data-bind="text:FriendCommunity"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="panel-body">
+
+                            <div class="user-friend-list">
+
+                            </div>
+                        </div>*@
+                    <div class="panel-footer">
+                        <button data-bind="click:PeopleVM.addFriend,visible:FriendShipStatusId == 0" class="btn btn-success"><i class="fa fa-check-circle"></i> Add Friend</button>
+                        <button data-bind="click:PeopleVM.confirmFriend,visible:FriendShipStatusId == 1" class="btn btn-primary"><i class="icon-user-1"></i> Confirm Request</button>
+                        <button data-bind="click:PeopleVM.removeFriend,visible:FriendShipStatusId == 2" class="btn btn-danger"><i class="fa fa-times"></i> Remove Friend</button>
+                        <button data-bind="click:PeopleVM.removeFriend,visible:FriendShipStatusId == 3" class="btn btn-warning"><i class="fa fa-times"></i> Request Pending</button>
+</div>
+                </div>
+            </div>
+        </td>
+        @*<td data-bind="text: FriendName "></td>
+            <td data-bind="text: FriendImage "></td>
+            <td><button data-bind="click:vm.addFriend">Edit</button></td>*@
+    </script>
+
+}
