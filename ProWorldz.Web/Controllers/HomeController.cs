@@ -272,17 +272,16 @@ namespace ProWorldz.Web.Controllers
         public ActionResult People(GlobalSearchText GlobalSearchText, int RecordsToTake, int RecordsToSkip, List<DataTableConfig> Columns)
         {
             List<FriendBM> people = new List<FriendBM>();
-            string _searchtext = SessionManager.InstanceCreator.Get<string>("SearchText").ToString();
-            if (_searchtext != "")
-            {
-                FriendBL frnd = new FriendBL();
+
+            string _searchtext = GlobalSearchText.value != null ? GlobalSearchText.value : SessionManager.InstanceCreator.Get<string>("SearchText").ToString();
+            
+            FriendBL frnd = new FriendBL();
                   DataTableParams param = new DataTableParams();
                     param.RecordsToSkip = RecordsToSkip;
                     param.RecordsToTake = RecordsToTake;
                     param.SearchOptions = GlobalSearchText;
                     param.ColumnConfiguration = Columns;
                     people = frnd.GetUsersWithFriendStatus(_searchtext, CurrentUser.Id, param);
-            }
             return Json(people);
         }
 

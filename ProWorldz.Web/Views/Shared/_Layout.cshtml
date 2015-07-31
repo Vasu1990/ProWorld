@@ -86,8 +86,14 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                         </li>
                         
                     </ul>
-                    <ul class="nav navbar-nav  navbar-right ">
-                      
+                    <ul class="nav navbar-nav  navbar-right" id="navbarUser">
+                        <li style="position:relative">
+                            <span class="notification-circle">3</span>
+                            <a href="#sidebar-chat" data-toggle="sidebar-menu">
+                                <i class="fa fa-group"></i>
+                            </a>
+                            
+                        </li>
                         <!-- User -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle user" data-toggle="dropdown">
@@ -178,10 +184,26 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/Knockout")
 
     <script>
         var proWorld = window.proWorld || {};
     </script>
     @Scripts.Render("~/Scripts/Custom/Utility/Proworldz.AjaxHelpers.js")
+    <script>
+        var LayoutVM = {};
+
+        (function (vm) {
+            //vm.friendInfo = ko.observable();
+            //proWorld.AjaxHelper.GetCall("/Home/GetFriendequests", OnSuccessGetFrndRequest);
+
+            //function OnSuccessGetFrndRequest(data) {
+            //    vm.friendInfo = ko.mapping.fomrJS(data);
+            //}
+
+            //ko.applyBindings(vm, document.getElementById("navbarUser"));
+        })(LayoutVM)
+        
+    </script>
     @RenderSection("scripts", required: false)
 </body>

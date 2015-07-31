@@ -48,7 +48,6 @@
 
 
 @section scripts{
-    @Scripts.Render("~/bundles/Knockout")
 
     <!--basic data table files-->
     <script src="~/Scripts/DatatableScripts/jquery.dataTables.min.js"></script>
@@ -71,7 +70,7 @@
                     <div class="panel-heading">
                         <div class="media">
                             <div class="pull-left">
-                                <img data-bind="attr:{src: FriendImage}" alt="people" class="media-object img-circle" style="width:50px">
+                                <img data-bind="attr:{src: FriendImage}" class="media-object img-circle img-responsive user-avatar" >
                             </div>
                             <div class="media-body text-left">
                                 <h4 class="media-heading margin-v-5">

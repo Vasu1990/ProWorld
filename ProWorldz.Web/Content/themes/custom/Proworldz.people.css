@@ -4,11 +4,12 @@
         }
 
         table#dvGrid > tbody > tr {
-            width: 23%;
+          width: 37%;
             float: left;
             border: 1px solid lightgrey;
-            margin-right: 10%;
+            margin-right: 7%;
             margin-bottom: 50px;
+            margin-left: 5%;
         }
 
         .item .panel.panel-default {
@@ -23,3 +24,4 @@
         .panel-default > .panel-heading {
             background-color: white !important;
         }
+

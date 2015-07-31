@@ -77,3 +77,27 @@ table {
 footer{
     z-index:999;
 }
+.user-avatar {
+        width: 74px;
+    height: 65px;
+    background-image: url("/Content/themes/social-3/images/people/110/guy-5.png");
+    background-position: -73px 217px;
+    background-size: 100%;
+}
+
+.notification-circle{
+         position: absolute;
+    top: 5px;
+    left: 27px;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    padding: 5px;
+    border-radius: 13px;
+    width: 22px;
+    height: 22px;
+    z-index: 999;
+    line-height: 1;
+    font-size: 13px;
+    padding-left: 7px;
+}
