@@ -101,3 +101,11 @@ footer{
     font-size: 13px;
     padding-left: 7px;
 }
+
+.user-avatar-mini{
+        width: 48px;
+    height: 47px;
+    background-image: url("/Content/themes/social-3/images/people/110/guy-5.png");
+    background-position: -48px 240px;
+    background-size: 100%;
+}

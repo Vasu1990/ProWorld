@@ -285,5 +285,13 @@ namespace ProWorldz.Web.Controllers
             return Json(people);
         }
 
+        [HttpGet]
+        public JsonResult GetFriendequests()
+        {
+            FriendBL frnd = new FriendBL();
+            return Json(frnd.GetNewFriends(CurrentUser.Id),JsonRequestBehavior.AllowGet);
+            
+        }
+
     }
 }

@@ -3,7 +3,11 @@
 <head>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+<style>
+    .popover{
+        width:300px;
+    }
+</style>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -87,12 +91,37 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                         
                     </ul>
                     <ul class="nav navbar-nav  navbar-right" id="navbarUser">
+                        <!--Friend Requests-->
                         <li style="position:relative">
-                            <span class="notification-circle">3</span>
-                            <a href="#sidebar-chat" data-toggle="sidebar-menu">
+                            <a href="#" id="popoverFriendrequest">
+                                <span class="notification-circle" data-bind="text:friendInfo().length,visible:friendInfo().length > 0"></span>
                                 <i class="fa fa-group"></i>
                             </a>
-                            
+                            <!-- Popover Friends hidden content -->
+                            <div id="popoverFriendrequestContent" style="display: none">
+                                <div data-bind="foreach:friendInfo">
+                                    <div class="panel-heading" style="padding:0px;">
+                                        <div class="media" style="width:170px;float:left">
+                                            <div class="pull-left">
+                                                <img data-bind="attr:{src: FriendImage}" class="media-object img-circle img-responsive user-avatar-mini">
+                                            </div>
+                                            <div class="media-body text-left">
+                                                <p class="media-heading margin-v-5">
+                                                    <b><a href="#" data-bind="text: FriendName"></a></b>
+                                                </p>
+
+                                                <p class="common-friends">Community<span data-bind="text:FriendCommunity"></span></p>
+                                            </div>
+                                        </div>
+                                        <button data-bind="click:$root.AcceptFriend" class="btn btn-success btn-stroke btn-circle"><i class="fa fa-check"></i></button>
+                                        <button data-bind="click:$root.RejectFriend"  class="btn btn-danger btn-stroke btn-circle"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Popover Friends hidden title -->
+                            <div id="popoverFriendrequestTitle" style="display: none">
+                                Fireind Requests
+                            </div>
                         </li>
                         <!-- User -->
                         <li class="dropdown">
@@ -113,9 +142,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                 <!-- /.navbar-collapse -->
             </div>
         </div>
-
-
-
+       
     </div>
        
     <!-- /st-container -->
@@ -133,9 +160,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         </nav>
     </div>*@
     <div class="container" id="body">
-       
-                @RenderBody()
-        
+                 @RenderBody()
     </div>
     
             <footer class="footer">
@@ -167,6 +192,9 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         }
     };
     </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/Knockout")
     <script src="~/Content/themes/social-3/js/vendor-core.min.js"></script>
     <script src="~/Content/themes/social-3/js/vendor-tables.min.js"></script>
     <script src="~/Content/themes/social-3/js/vendor-forms.min.js"></script>
@@ -182,9 +210,6 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         
 
     
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/Knockout")
 
     <script>
         var proWorld = window.proWorld || {};
@@ -192,16 +217,47 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     @Scripts.Render("~/Scripts/Custom/Utility/Proworldz.AjaxHelpers.js")
     <script>
         var LayoutVM = {};
+        
+        (function (vm) 
+        {
+            // Enabling Popover Friend request - JS (hidden content and title capturing)
+            $("#popoverFriendrequest").popover({
+                html : true, 
+                content: function() {
+                    return $('#popoverFriendrequestContent').html();
+                },
+                placement:"bottom",
+                title: function() {
+                    return $('#popoverFriendrequestTitle').html();
+                }
+            });
 
-        (function (vm) {
-            //vm.friendInfo = ko.observable();
-            //proWorld.AjaxHelper.GetCall("/Home/GetFriendequests", OnSuccessGetFrndRequest);
+            vm.friendInfo = ko.observableArray();
+            proWorld.AjaxHelper.GetCall("/Home/GetFriendequests", OnSuccessGetFrndRequest);
 
-            //function OnSuccessGetFrndRequest(data) {
-            //    vm.friendInfo = ko.mapping.fomrJS(data);
-            //}
+            function OnSuccessGetFrndRequest(data) {
+                vm.friendInfo(ko.mapping.fromJS(data)());
+            }
 
-            //ko.applyBindings(vm, document.getElementById("navbarUser"));
+            vm.AcceptFriend = function (data) {
+                proWorld.AjaxHelper.AjaxPostCallNoType("/Home/ConfirmRequest", data, OnSuccessConfirmFriend);
+
+                function OnSuccessConfirmFriend(responseData) {
+                    alert("Congratulations! You have made a new friend.");
+                    vm.dataSource(globalOptions, globalCallback);
+                }
+            }
+
+            vm.RejectFriend = function (data) {
+                proWorld.AjaxHelper.AjaxPostCallNoType("/Home/DeleteFriend", data, OnSuccessDeleteFriend);
+
+                function OnSuccessDeleteFriend(responseData) {
+                    alert("Friend removed successfully");
+                    vm.dataSource(globalOptions, globalCallback);
+                }
+            }
+
+            ko.applyBindings(vm, document.getElementById("navbarUser"));
         })(LayoutVM)
         
     </script>
