@@ -159,7 +159,7 @@ namespace ProWorldz.BL.BusinessLayer
             UserBL userObj = new UserBL();
             CurrentUser = UserId;
 
-            List<UserBM> Users = userObj.GeteUserByName(SearchString,param);
+            List<UserBM> Users = userObj.GeteUserByName(SearchString,param).Where(x=>x.Id != UserId).ToList();
             return Users.ConvertAll<FriendBM>(new Converter<UserBM, FriendBM>(ConvertToFriendBM));
 
         }
