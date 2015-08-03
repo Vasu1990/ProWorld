@@ -101,20 +101,24 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                             <div id="popoverFriendrequestContent" style="display: none">
                                 <div data-bind="foreach:friendInfo">
                                     <div class="panel-heading" style="padding:0px;">
-                                        <div class="media" style="width:170px;float:left">
-                                            <div class="pull-left">
+                                        <div class="row">
+                                            <div class="col-md-3">
                                                 <img data-bind="attr:{src: FriendImage}" class="media-object img-circle img-responsive user-avatar-mini">
                                             </div>
-                                            <div class="media-body text-left">
+                                            <div class="col-md-4">
                                                 <p class="media-heading margin-v-5">
                                                     <b><a href="#" data-bind="text: FriendName"></a></b>
                                                 </p>
 
                                                 <p class="common-friends">Community<span data-bind="text:FriendCommunity"></span></p>
                                             </div>
+                                            <div class="col-md-5 text-right">
+                                                <button data-bind="click:$root.AcceptFriend" class="btn btn-success btn-stroke btn-circle"><i class="fa fa-check"></i></button>
+                                                <button data-bind="click:$root.RejectFriend" class="btn btn-danger btn-stroke btn-circle"><i class="fa fa-times"></i></button>
+                                            </div>
                                         </div>
-                                        <button data-bind="click:$root.AcceptFriend" class="btn btn-success btn-stroke btn-circle"><i class="fa fa-check"></i></button>
-                                        <button data-bind="click:$root.RejectFriend"  class="btn btn-danger btn-stroke btn-circle"><i class="fa fa-times"></i></button>
+                                        
+                                        
                                     </div>
                                 </div>
                             </div>
