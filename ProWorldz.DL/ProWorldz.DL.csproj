@@ -65,21 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201507140955297_Contact Form Table.cs" />
-    <Compile Include="Migrations\201507140955297_Contact Form Table.Designer.cs">
-      <DependentUpon>201507140955297_Contact Form Table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507141625312_contact us date.cs" />
-    <Compile Include="Migrations\201507141625312_contact us date.Designer.cs">
-      <DependentUpon>201507141625312_contact us date.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507252107087_friends.cs" />
-    <Compile Include="Migrations\201507252107087_friends.Designer.cs">
-      <DependentUpon>201507252107087_friends.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507281729451_fk_friends.cs" />
-    <Compile Include="Migrations\201507281729451_fk_friends.Designer.cs">
-      <DependentUpon>201507281729451_fk_friends.cs</DependentUpon>
+    <Compile Include="Migrations\201508041912148_newPro.cs" />
+    <Compile Include="Migrations\201508041912148_newPro.Designer.cs">
+      <DependentUpon>201508041912148_newPro.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
@@ -117,17 +105,8 @@
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201507140955297_Contact Form Table.resx">
-      <DependentUpon>201507140955297_Contact Form Table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507141625312_contact us date.resx">
-      <DependentUpon>201507141625312_contact us date.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507252107087_friends.resx">
-      <DependentUpon>201507252107087_friends.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507281729451_fk_friends.resx">
-      <DependentUpon>201507281729451_fk_friends.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508041912148_newPro.resx">
+      <DependentUpon>201508041912148_newPro.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

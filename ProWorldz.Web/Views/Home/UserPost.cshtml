@@ -21,7 +21,7 @@
             </h3>
 
 
-            @using (Html.BeginForm("PostComment", "Home", FormMethod.Post))
+            @using (Html.BeginForm("NewPost", "Home", FormMethod.Post))
             {
                 <div class="panel panel-default" id="divPost">
                     <div class="panel-body">
@@ -72,7 +72,7 @@
                 @foreach (var item in Model.UserPostList)
                 {
                     <tr>
-                        <td>@item.Post</td>
+                        <td>@Html.Raw(item.Post)</td>
                         <td>@item.Subject</td>
                         <td>@item.UserName</td>
                         <td>@item.CreationDate</td>

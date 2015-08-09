@@ -107,12 +107,12 @@ namespace ProWorldz.Web.Controllers
             return View(Model);
         }
 
-
+        [HttpPost]
         [ValidateInput(false)]
-        public ActionResult PostComment(PostCommentModel Model)
+        public ActionResult NewPost(PostCommentModel Model)
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
-            // UserBM CurrentUser = (UserBM)Session["User"];
+            
             if (CurrentUser != null)
             {
 
