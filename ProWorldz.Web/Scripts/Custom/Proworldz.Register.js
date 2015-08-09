@@ -32,6 +32,8 @@ function LoadCity(Id) {
 
 function LoadSubCommunity(Id) {
     debugger;
+    $("#hdCommunityName").val($('#ddlCommunity :selected').text())
+    $("#hdSubCommunityName").val($('#ddlSubCommunity :selected').text())
     $.get('/Account/GetSubCommunityByCommunity/' + Id, function (data) {
         debugger;
         $('#ddlSubCommunity').find('option:gt(0)').remove();

@@ -12,6 +12,8 @@
 
                 @using (Html.BeginForm("Signup", "Account", FormMethod.Post))
                 {
+                    @Html.Hidden("CommunityName", new { @id="hdCommunityName",@name="CommunityName"})
+                      @Html.Hidden("SubCommunityName", new { @id="hdSubCommunityName",@name="SubCommunityName"})
                     <div class="page-section">
                         <div class="row">
                             <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">

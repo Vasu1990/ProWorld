@@ -48,6 +48,9 @@ namespace ProWorldz.BL.BusinessLayer
 
         private UserVideo ConvertToDM(UserVideoBM model)
         {
+            if (model == null)
+                return null;
+            else
             return new UserVideo
             {
                 Id = model.Id,
@@ -74,6 +77,9 @@ namespace ProWorldz.BL.BusinessLayer
 
         private UserVideoBM ConvertToBM(UserVideo model)
         {
+            if (model == null)
+                return null;
+            else
             return new UserVideoBM()
             {
                 Id = model.Id,

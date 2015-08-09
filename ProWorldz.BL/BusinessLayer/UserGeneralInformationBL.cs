@@ -9,76 +9,82 @@ using System.Threading.Tasks;
 
 namespace ProWorldz.BL.BusinessLayer
 {
-   public class UserGeneralInformationBL
+    public class UserGeneralInformationBL
     {
-         UnitOfWork uow;
+        UnitOfWork uow;
 
-         public UserGeneralInformationBL()
+        public UserGeneralInformationBL()
         {
             uow = new UnitOfWork();
         }
 
-         public void Create(UserGeneralInformationBM model)
+        public void Create(UserGeneralInformationBM model)
         {
             uow.UserGeneralInfomationRepository.Add(ConvertToDM(model));
             uow.Save();
         }
-         public List<UserGeneralInformationBM> GetGeneralInformation()
+        public List<UserGeneralInformationBM> GetGeneralInformation()
         {
             return uow.UserGeneralInfomationRepository.GetAll().ConvertAll<UserGeneralInformationBM>(new Converter<UserGeneralInfomation, UserGeneralInformationBM>(ConvertToBM));
         }
 
-         public UserGeneralInformationBM GetGeneralInformationById(int id)
+        public UserGeneralInformationBM GetGeneralInformationById(int id)
         {
             return ConvertToBM(uow.UserGeneralInfomationRepository.GetByID(id));
         }
-         public UserGeneralInformationBM GetGeneralInformationByUserId(int UserId)
-         {
-            
-             return ConvertToBM(uow.UserGeneralInfomationRepository.Find(p=>p.UserId==UserId).FirstOrDefault());
-         }
-        
-         public void Update(UserGeneralInformationBM model)
+        public UserGeneralInformationBM GetGeneralInformationByUserId(int UserId)
+        {
+
+            return ConvertToBM(uow.UserGeneralInfomationRepository.Find(p => p.UserId == UserId).FirstOrDefault());
+        }
+
+        public void Update(UserGeneralInformationBM model)
         {
             uow.UserGeneralInfomationRepository.Update(ConvertToDM(model));
             uow.Save();
         }
 
-         private UserGeneralInfomation ConvertToDM(UserGeneralInformationBM model)
+        private UserGeneralInfomation ConvertToDM(UserGeneralInformationBM model)
         {
-            return new UserGeneralInfomation
-            {
-                Id = model.Id,
-                CommunityId = model.CommunityId,
-                SubCommunityId = model.SubCommunityId,
-                Image = model.Image,
-                Active=model.Active, 
-                CreatedBy = model.CreatedBy,
-                CreationDate = model.CreationDate,
-                UserId=model.UserId,
-                ModifiedBy = model.ModifiedBy,
-                ModificationDate = model.ModificationDate
+            if (model == null)
+                return null;
+            else
+                return new UserGeneralInfomation
+                {
+                    Id = model.Id,
+                    CommunityId = model.CommunityId,
+                    SubCommunityId = model.SubCommunityId,
+                    Image = model.Image,
+                    Active = model.Active,
+                    CreatedBy = model.CreatedBy,
+                    CreationDate = model.CreationDate,
+                    UserId = model.UserId,
+                    ModifiedBy = model.ModifiedBy,
+                    ModificationDate = model.ModificationDate
 
 
-            };
+                };
         }
 
-         private UserGeneralInformationBM ConvertToBM(UserGeneralInfomation model)
+        private UserGeneralInformationBM ConvertToBM(UserGeneralInfomation model)
         {
-            return new UserGeneralInformationBM()
-            {
-                Id = model.Id,
-              CommunityId=model.CommunityId,
-              SubCommunityId=model.SubCommunityId,
-              Image=model.Image,
-              CreatedBy=model.CreatedBy,
-              CreationDate=model.CreationDate,
-                UserId = model.UserId,
-                ModifiedBy = model.ModifiedBy,
-                ModificationDate = model.ModificationDate
+            if (model == null)
+                return null;
+            else
+                return new UserGeneralInformationBM()
+                {
+                    Id = model.Id,
+                    CommunityId = model.CommunityId,
+                    SubCommunityId = model.SubCommunityId,
+                    Image = model.Image,
+                    CreatedBy = model.CreatedBy,
+                    CreationDate = model.CreationDate,
+                    UserId = model.UserId,
+                    ModifiedBy = model.ModifiedBy,
+                    ModificationDate = model.ModificationDate
 
-              
-            };
+
+                };
         }
     }
 }

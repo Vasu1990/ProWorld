@@ -43,6 +43,9 @@ namespace ProWorldz.BL.BusinessLayer
 
         private UserPost ConvertToDM(UserPostBM model)
         {
+            if (model == null)
+                return null;
+            else
             return new UserPost
             {
                 Id = model.Id,
@@ -58,6 +61,9 @@ namespace ProWorldz.BL.BusinessLayer
 
         private UserPostBM ConvertToBM(UserPost model)
         {
+            if (model == null)
+                return null;
+            else
             return new UserPostBM()
             {
                 Id = model.Id,

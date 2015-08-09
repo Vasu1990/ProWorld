@@ -61,6 +61,9 @@ namespace ProWorldz.BL.BusinessLayer
 
         private User ConvertToDM(UserBM model)
         {
+            if (model == null)
+                return null;
+            else
             return new User
             {
                 Id=model.Id,
@@ -89,6 +92,9 @@ namespace ProWorldz.BL.BusinessLayer
 
         private UserBM ConvertToBM(User model)
         {
+            if (model == null)
+                return null;
+            else
             return new UserBM()
             {
                 Id = model.Id,

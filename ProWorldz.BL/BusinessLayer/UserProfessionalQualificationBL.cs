@@ -54,6 +54,9 @@ namespace ProWorldz.BL.BusinessLayer
 
         private UserProfessionalQualification ConvertToDM(UserProfessionalQualificationBM model)
         {
+            if (model == null)
+                return null;
+            else
             return new UserProfessionalQualification
             {
                 Id = model.Id,
@@ -76,6 +79,9 @@ namespace ProWorldz.BL.BusinessLayer
 
         private UserProfessionalQualificationBM ConvertToBM(UserProfessionalQualification model)
         {
+            if (model == null)
+                return null;
+            else
             return new UserProfessionalQualificationBM()
             {
                 Id = model.Id,
