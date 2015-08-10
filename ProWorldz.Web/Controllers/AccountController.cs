@@ -455,8 +455,8 @@ namespace ProWorldz.Web.Controllers
             userBM.CountryId = model.CountryId;
             userBM.StateId = model.StateId;
             userBM.CityId = model.CityId;
-           // userBM.CommunityName = 1;
-            //userBM.SubCommunityName = 1;
+            userBM.CommunityName = collection["hdCommunityName"].ToString();
+            userBM.SubCommunityName = collection["hdSubCommunityName"].ToString();
             userBM.CreatedBy = 1;
             userBM.ModifiedBy = 1;
 

@@ -64,7 +64,9 @@ GO
 SET IDENTITY_INSERT [dbo].[Users] ON 
 
 GO
-INSERT [dbo].[Users] ([Id], [Name], [Email], [Password], [UserTypeId], [DOB], [Gender], [CommunityId], [SubCommunityId], [CommunityName], [SubCommunityName], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy],[IsDeleted],[CityId],[StateId],[CountryName]) VALUES (1, N'Himanshu', N'himanshu.rastogi@infomatrixinc.com', N'123456', 2, CAST(0x0000A48200F62AC9 AS DateTime), N'M', 3, 4, 1, 1, 1, CAST(0x0000A48200000000 AS DateTime), CAST(0x0000A48200000000 AS DateTime), 1, 1,0,1,1,1)
+INSERT [dbo].[Users] ([Id], [Name], [Email], [Password], [UserTypeId],
+ [DOB], [Gender], [CommunityId], [SubCommunityId], [CommunityName], [SubCommunityName], [Active], [CreationDate], [ModificationDate], [CreatedBy], [ModifiedBy],[IsDeleted],[CityId],[StateId],[CountryId]) VALUES (1, N'Himanshu', N'himanshu.rastogi@infomatrixinc.com', N'123456', 2, CAST(0x0000A48200F62AC9 AS DateTime),
+ N'M', 3, 4, 'Btech', 'MBA', 1, CAST(0x0000A48200000000 AS DateTime), CAST(0x0000A48200000000 AS DateTime), 1, 1,0,1,1,1)
 GO
 
 SET IDENTITY_INSERT [dbo].[Users] OFF

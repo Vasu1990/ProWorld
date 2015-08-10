@@ -65,9 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201508041912148_newPro.cs" />
-    <Compile Include="Migrations\201508041912148_newPro.Designer.cs">
-      <DependentUpon>201508041912148_newPro.cs</DependentUpon>
+    <Compile Include="Migrations\201508101926103_New11DB.cs" />
+    <Compile Include="Migrations\201508101926103_New11DB.Designer.cs">
+      <DependentUpon>201508101926103_New11DB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
@@ -105,8 +105,8 @@
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508041912148_newPro.resx">
-      <DependentUpon>201508041912148_newPro.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508101926103_New11DB.resx">
+      <DependentUpon>201508101926103_New11DB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

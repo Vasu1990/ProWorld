@@ -136,7 +136,8 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/Account/EditProfile">Edit Profile</a>
                                 </li>
-                              
+                               <li><a href="#myChangePasswordModal" class="forgot-password" data-toggle="modal">Change Password</a>
+                                </li>
                                 <li><a href="/Account/LogOff">Logout</a>
                                 </li>
                             </ul>
@@ -148,6 +149,43 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         </div>
        
     </div>
+
+         @using (Html.BeginForm("ChangePassword", "Account", FormMethod.Post))
+        {
+            <div id="myChangePasswordModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Change Password</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <label for="exampleInputFirstName">Password</label>
+                                    <input type="password" class="form-control" placeholder = "Password" />
+                                
+                                </div>
+                            </div>
+
+                             <div class="row">
+                                <div class="col-md-12">
+
+                                    <label for="exampleInputFirstName">Confirm Password</label>
+                                    <input type="password" class="form-control" placeholder = "Confirm Password" />
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
        
     <!-- /st-container -->
     </header>

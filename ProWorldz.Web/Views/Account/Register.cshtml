@@ -12,8 +12,8 @@
 
                 @using (Html.BeginForm("Signup", "Account", FormMethod.Post))
                 {
-                    @Html.Hidden("CommunityName", new { @id="hdCommunityName",@name="CommunityName"})
-                      @Html.Hidden("SubCommunityName", new { @id="hdSubCommunityName",@name="SubCommunityName"})
+                    @Html.Hidden("hdCommunityName", new { @id="hdCommunityName",@name="hdCommunityName"})
+                      @Html.Hidden("hdSubCommunityName", new { @id="hdSubCommunityName",@name="hdCommunityName"})
                     <div class="page-section">
                         <div class="row">
                             <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
@@ -126,7 +126,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group form-control-default">
                                                         <label for="exampleInputLastName">Sub Community</label>
-                                                        @Html.DropDownListFor(x => x.SubCommunityId, new SelectList(Model.SubCommunityList, "ID", "Name", Model.SubCommunityId), "- - Select - -", new { @class = "dropdown form-control" ,@id="ddlSubCommunity"})
+                                                        @Html.DropDownListFor(x => x.SubCommunityId, new SelectList(Model.SubCommunityList, "ID", "Name", Model.SubCommunityId), "- - Select - -", new { @class = "dropdown form-control" ,@id="ddlSubCommunity",@onchange="ChangeSubCommunity(this.value)" })
                                                        @Html.ValidationMessageFor(model => model.SubCommunityId)
                                                     </div>
                                                 </div>

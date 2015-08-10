@@ -44,3 +44,10 @@ function LoadSubCommunity(Id) {
     })
 
 }
+
+function ChangeSubCommunity(Id) {
+    debugger;
+    $("#hdSubCommunityName").val($('#ddlSubCommunity :selected').text())
+
+
+}

@@ -84,7 +84,7 @@ namespace ProWorldz.BL.BusinessLayer
                 ModificationDate = model.ModificationDate,
                 CityId=model.CityId,
                 StateId=model.StateId,
-                CountryName=model.CountryId
+                CountryId=model.CountryId
 
 
             };
@@ -113,7 +113,7 @@ namespace ProWorldz.BL.BusinessLayer
                 ModificationDate = model.ModificationDate,
                 CityId = model.CityId,
                 StateId = model.StateId,
-              CountryId= model.CountryName,
+              CountryId= model.CountryId,
               CreationDate = model.CreationDate
 
 

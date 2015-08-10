@@ -38,9 +38,9 @@ namespace ProWorldz.BL.BusinessModel
 
         public int SubCommunityId { get; set; }
 
-        public int CommunityName { get; set; }
+        public string CommunityName { get; set; }
 
-        public int SubCommunityName { get; set; }
+        public string SubCommunityName { get; set; }
 
         public int CityId { get; set; }
 

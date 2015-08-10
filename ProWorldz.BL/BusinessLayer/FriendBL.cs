@@ -124,7 +124,7 @@ namespace ProWorldz.BL.BusinessLayer
                                                   select new FriendBM
                                                   {
                                                       FriendName = curUser.Name,
-                                                      FriendCommunity = curUser.CommunityName,
+                                                      FriendCommunity = curUser.CommunityId,
                                                       FriendImage = rt.Image !=null ? rt.Image : "",
                                                       FriendId = curUser.Id,
                                                       UserId = b.Where(x => x.FriendId == curUser.Id).Select(x => x.UserId).FirstOrDefault()
@@ -171,7 +171,7 @@ namespace ProWorldz.BL.BusinessLayer
 
             frnd.UserId = CurrentUser;
             frnd.FriendName = model.Name;
-            frnd.FriendCommunity = model.CommunityName;
+            frnd.FriendCommunity = model.CommunityId;
             //     frnd.FriendImage = model.GeneralInfo.Image!=null?model.GeneralInfo.Image:"";
 
             var friend = uow.FriendRepository.Find(x => x.UserId == CurrentUser && x.FriendId == model.Id).FirstOrDefault();
@@ -224,7 +224,7 @@ namespace ProWorldz.BL.BusinessLayer
                 UserId = model.UserId,
                 FriendName = model.FriendUser.Name,
                 FriendImage = model.FriendUser.UserGeneralInfo.Where(x => x.UserId == model.FriendId).Select(x => x.Image).FirstOrDefault(),
-                FriendCommunity = model.FriendUser.CommunityName,
+                FriendCommunity = model.FriendUser.CommunityId,
 
             };
         }
@@ -252,7 +252,7 @@ namespace ProWorldz.BL.BusinessLayer
                                                   select new FriendBM
                                                   {
                                                       FriendName = curUser.Name,
-                                                      FriendCommunity = curUser.CommunityName,
+                                                      FriendCommunity = curUser.CommunityId,
                                                       FriendImage = rt.Image !=null ? rt.Image : "",
                                                       FriendId = curUser.Id,
                                                       UserId = b.Where(x => x.FriendId == curUser.Id).Select(x => x.UserId).FirstOrDefault()

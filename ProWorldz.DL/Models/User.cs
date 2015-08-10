@@ -36,9 +36,9 @@ namespace ProWorldz.DL.Models
 
         public int SubCommunityId { get; set; }
 
-        public int CommunityName { get; set; }
+        public string CommunityName { get; set; }
 
-        public int SubCommunityName { get; set; }
+        public string SubCommunityName { get; set; }
 
         [ForeignKey("City")]
         public int CityId { get; set; }
@@ -47,7 +47,7 @@ namespace ProWorldz.DL.Models
         public int StateId { get; set; }
 
          [ForeignKey("Country")]
-          public int CountryName { get; set; }
+          public int CountryId { get; set; }
 
          public virtual City City { get; set; }
          public virtual Country Country { get; set; }
