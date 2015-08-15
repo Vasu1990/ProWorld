@@ -12,6 +12,13 @@ input:focus {
     border-color: #2fc8c0 !important;
     box-shadow: 0 0 5px #2fc8c0 !important;
 }
+.nav-padding {
+padding:2px 40px;
+}
+
+.search-form{
+    width:55%;margin-top: 8px;margin-left:10px;
+}
 
 .padding-All30 {
     padding: 30px;

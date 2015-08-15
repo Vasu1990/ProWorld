@@ -259,5 +259,32 @@ namespace ProWorldz.BL.BusinessLayer
                                                   };
             return frndCollection.ToList();
         }
+
+        public List<FriendBM> GetAllFriends(int CurrentUserId)
+        {
+            ProWorldzContext context = new ProWorldzContext();
+            var b = from user in context.Users
+                    join fr in context.Friend
+                    on user.Id equals fr.UserId
+                    where user.Id == CurrentUserId && fr.FriendShipStatusId == (int)FriendShipStatus.Accepted
+                    select new { fr.FriendId, fr.UserId };
+
+            IQueryable<FriendBM> frndCollection = from curUser in context.Users
+                                                  join genInfo in context.UserGeneralInfomation
+                                                  on curUser.Id equals genInfo.UserId
+                                                  into t
+                                                  from rt in t.DefaultIfEmpty()
+                                                  where b.Any(o => o.FriendId == curUser.Id)
+                                                  select new FriendBM
+                                                  {
+                                                      FriendName = curUser.Name,
+                                                      FriendCommunity = curUser.CommunityName,
+                                                      FriendImage = rt.Image != null ? rt.Image : "",
+                                                      FriendId = curUser.Id,
+                                                      UserId = b.Where(x => x.FriendId == curUser.Id).Select(x => x.UserId).FirstOrDefault(),
+                                                      IsOnline = curUser.IsOnline
+                                                  };
+            return frndCollection.ToList();
+        }
     }
 }

@@ -77,9 +77,9 @@
     <Compile Include="Migrations\201507252107087_friends.Designer.cs">
       <DependentUpon>201507252107087_friends.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201507281729451_fk_friends.cs" />
-    <Compile Include="Migrations\201507281729451_fk_friends.Designer.cs">
-      <DependentUpon>201507281729451_fk_friends.cs</DependentUpon>
+    <Compile Include="Migrations\201508151140462_isUserOnlineFalg.cs" />
+    <Compile Include="Migrations\201508151140462_isUserOnlineFalg.Designer.cs">
+      <DependentUpon>201508151140462_isUserOnlineFalg.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
@@ -126,8 +126,8 @@
     <EmbeddedResource Include="Migrations\201507252107087_friends.resx">
       <DependentUpon>201507252107087_friends.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507281729451_fk_friends.resx">
-      <DependentUpon>201507281729451_fk_friends.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508151140462_isUserOnlineFalg.resx">
+      <DependentUpon>201508151140462_isUserOnlineFalg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
