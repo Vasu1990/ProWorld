@@ -37,7 +37,11 @@
     <!-- <link href="css/module-colors-calendar.min.css" rel="stylesheet" /> -->
     <!-- <link href="css/module-colors-progress-bars.min.css" rel="stylesheet" /> -->
     <!-- <link href="css/module-colors-text.min.css" rel="stylesheet" /> -->
-    
+    <style>
+        .status{
+            z-index:0;
+        }
+    </style>
     @RenderSection("styles", required: false)
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
@@ -51,77 +55,82 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 <body>
     <header>
         <!-- Wrapper required for sidebar transitions -->
-    <div class="st-container">
-        <!-- Fixed navbar -->
-        <div class="navbar navbar-main navbar-primary navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="#sidebar-chat" data-toggle="sidebar-menu" class="toggle pull-right visible-xs"><i class="fa fa-comments"></i></a>
-                    <a class="navbar-brand" href="index-2.html">ProWorldz</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="main-nav">
-                    <ul class="nav navbar-nav" style="width:70%">
-                        <li>@Html.ActionLink("Dashboard", "Dashboard", "Home", new {Area = "" },null)
-                        <li><a href="/Home/UserPost">User Post</a>
-                        </li>
-                         <li><a href="/Account/Profile">Profile</a>
-                        </li>
-                        <li>
-                            <a href="/Home/Friends">Friends</a>
-                        </li>
-                        <li style="width:55%;margin-top: 8px;margin-left:10px;">
-                            @using (Html.BeginForm("People","Home",FormMethod.Get)) { 
-                            <div class="input-group col-md-8">
-                                <input type="text" class="form-control input-md" data-bind="value:searchText" name="SearchText" placeholder="Search People By Name" required>
-                                <span class="input-group-btn" data-bind="click:$root.dataSource">
-                                    <button class="btn btn-primary btn-md" type="submit" id="searchPeople">
-                                        <i class="glyphicon glyphicon-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                            }
-                        </li>
-                        
-                    </ul>
-                    <ul class="nav navbar-nav  navbar-right" id="navbarUser">
-                        <!--Friend Requests-->
-                        <li style="position:relative">
-                            <a href="#" id="popoverFriendrequest">
-                                <span class="notification-circle" data-bind="text:friendInfo().length,visible:friendInfo().length > 0"></span>
-                                <i class="fa fa-group"></i>
-                            </a>
-                            <!-- Popover Friends hidden content -->
-                            <div id="popoverFriendrequestContent" style="display: none">
-                                <div data-bind="foreach:friendInfo">
-                                    <div class="panel-heading" style="padding:0px;">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <img data-bind="attr:{src: FriendImage}" class="media-object img-circle img-responsive user-avatar-mini">
-                                            </div>
-                                            <div class="col-md-4">
-                                                <p class="media-heading margin-v-5">
-                                                    <b><a href="#" data-bind="text: FriendName"></a></b>
-                                                </p>
+        <div class="st-container">
+            <!-- Fixed navbar -->
+            <div class="navbar navbar-main navbar-primary navbar-fixed-top" role="navigation">
+                <div class="nav-padding">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#sidebar-chat" data-toggle="sidebar-menu" class="toggle pull-right visible-xs"><i class="fa fa-comments"></i></a>
+                        <a class="navbar-brand" href="index-2.html">ProWorldz</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="main-nav">
+                        <ul class="nav navbar-nav" style="width:70%">
+                            <li>@Html.ActionLink("Dashboard", "Dashboard", "Home", new { Area = "" }, null)
+                            <li>
+                                <a href="/Home/UserPost">User Post</a>
+                            </li>
+                            <li>
+                                <a href="/Account/Profile">Profile</a>
+                            </li>
+                            <li>
+                                <a href="/Home/Friends">Friends</a>
+                            </li>
+                            <li class="search-form">
+                                @using (Html.BeginForm("People", "Home", FormMethod.Get))
+                                {
+                                    <div class="input-group col-md-8">
+                                        <input type="text" class="form-control input-md" name="SearchText" placeholder="Search People By Name" required>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary btn-md" type="submit" id="searchPeople">
+                                                <i class="glyphicon glyphicon-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                }
+                            </li>
 
-                                                <p class="common-friends">Community<span data-bind="text:FriendCommunity"></span></p>
+                        </ul>
+                        <ul class="nav navbar-nav  navbar-right navbarUser">
+                            <!--Friend Requests-->
+                            <li style="position:relative">
+                                <a href="#" id="popoverFriendrequest">
+                                    <span class="notification-circle" data-bind="text:friendInfo().length,visible:friendInfo().length > 0"></span>
+                                    <i class="fa fa-group"></i>
+                                </a>
+                                <!-- Popover Friends hidden content -->
+                                <div id="popoverFriendrequestContent" style="display: none">
+                                    <div data-bind="foreach:friendInfo">
+                                        <div class="panel-heading" style="padding:0;">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img data-bind="attr:{src: FriendImage}" class="media-object img-circle img-responsive user-avatar-mini">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p class="media-heading margin-v-5">
+                                                        <b><a href="#" data-bind="text: FriendName"></a></b>
+                                                    </p>
+
+                                                    <p class="common-friends">Community<span data-bind="text:FriendCommunity"></span></p>
+                                                </div>
+                                                <div class="col-md-5 text-right">
+                                                    <button data-bind="click:$root.AcceptFriend" class="btn btn-success btn-stroke btn-circle"><i class="fa fa-check"></i></button>
+                                                    <button data-bind="click:$root.RejectFriend" class="btn btn-danger btn-stroke btn-circle"><i class="fa fa-times"></i></button>
+                                                </div>
                                             </div>
-                                            <div class="col-md-5 text-right">
-                                                <button data-bind="click:$root.AcceptFriend" class="btn btn-success btn-stroke btn-circle"><i class="fa fa-check"></i></button>
-                                                <button data-bind="click:$root.RejectFriend" class="btn btn-danger btn-stroke btn-circle"><i class="fa fa-times"></i></button>
-                                            </div>
+
+
                                         </div>
-                                        
-                                        
                                     </div>
                                 </div>
-                            </div>
+
+                            
                             <!-- Popover Friends hidden title -->
                             <div id="popoverFriendrequestTitle" style="display: none">
                                 Fireind Requests
@@ -143,11 +152,12 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                             </ul>
                         </li>
                     </ul>
+
                 </div>
-                <!-- /.navbar-collapse -->
             </div>
+
         </div>
-       
+     
     </div>
 
          @using (Html.BeginForm("ChangePassword", "Account", FormMethod.Post))
@@ -188,51 +198,90 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         }
        
     <!-- /st-container -->
+
     </header>
-    @*<div class="row"style="margin-top:50px">
-        <nav class="navbar navbar-subnav navbar-static-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#subnav" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="fa fa-ellipsis-h"></span>
-                    </button>
-                </div><div class="collapse navbar-collapse" id="subnav" aria-expanded="false"><ul class="nav navbar-nav"><li class="active"><a href="index.html"><i class="fa fa-fw icon-ship-wheel"></i>My Timeline</a> </li><li><a href="user-private-profile.html"><i class="fa fa-fw icon-user-1"></i>Edit Profile</a> </li><li><a href="user-private-users.html"><i class="fa fa-fw fa-group"></i>Manage Friends</a> </li><li><a href="user-private-messages.html"><i class="fa fa-fw icon-comment-fill-1"></i>Messages</a> </li></ul><ul class="nav navbar-nav hidden-xs navbar-right"><li><a href="login.html">Logout <i class="fa fa-fw icon-unlock-fill"></i></a></li></ul></div>
+
+
+    <div id="body">
+
+
+        <div class="col-md-10" style="padding:0 30px">
+            @RenderBody()
+        </div>
+        <div class="col-md-2">
+            <div class="sidebar sidebar-chat left sidebar-size-2 sidebar-offset-2 chat-skin-white sidebar-visible-desktop" id="sidebar-chat">
+                <div class="split-vertical">
+                    <div class="chat-search">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+
+                    <ul class="chat-filter nav nav-pills">
+                        <li class="active"><a href="#" data-target="li">All</a></li>
+                        <li class=""><a href="#" data-target=".online">Online</a></li>
+                        <li class=""><a href="#" data-target=".offline">Offline</a></li>
+                        
+                    </ul>
+                    <div class="split-vertical-body navbarUser">
+                        <div class="split-vertical-cell" style="min-height:775px">
+                            <div data-scrollable="" tabindex="1" style="overflow-y: hidden; outline: none;">
+                                <ul class="chat-contacts">
+                                    <span data-bind="foreach:allFriendsInfo">
+
+                                        <li data-bind="css:LayoutVM.isOnline($data)" data-user-id="1" style="display: list-item;">
+                                            <a href="#">
+                                                <div class="media">
+                                                    <div class="pull-left">
+                                                        <span class="status"></span>
+                                                        <img data-bind="attr:{src: FriendImage}" class="media-object img-circle img-responsive user-avatar-mini">
+                                                    </div>
+                                                    <div class="media-body" style="padding-left: 10px;">
+
+                                                        <div class="contact-name" data-bind="text:FriendName"></div>
+                                                        <small data-bind="text:$root.isOnline($data)"></small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </span>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ascrail2001" class="nicescroll-rails" style="width: 5px; z-index: 2; cursor: default; position: absolute; top: 86px; left: 195px; height: 247px; opacity: 0;"><div style="position: relative; top: 0px; float: right; width: 5px; height: 79px; border: 0px; border-radius: 5px; background-color: rgb(52, 152, 219); background-clip: padding-box;"></div></div>
             </div>
-        </nav>
-    </div>*@
-    <div class="container" id="body">
-                 @RenderBody()
+
+        </div>
     </div>
-    
-            <footer class="footer">
-                <strong>ThemeKit</strong> v3.6.3 © Copyright 2015
-            </footer>
-    
+
+    <footer class="footer">
+        <strong>Proworldz</strong> © Copyright 2015
+    </footer>
+
     <script>
-            var config = {
-        theme: "social-3",
-        skins: {
-            "default": {
-                "primary-color": "#16ae9f"
-            },
-            "orange": {
-                "primary-color": "#e74c3c"
-            },
-            "blue": {
-                "primary-color": "#4687ce"
-            },
-            "purple": {
-                "primary-color": "#af86b9"
-            },
-            "brown": {
-                "primary-color": "#c3a961"
-            },
-            "default-nav-inverse": {
-                "color-block": "#242424"
+        var config = {
+            theme: "social-3",
+            skins: {
+                "default": {
+                    "primary-color": "#16ae9f"
+                },
+                "orange": {
+                    "primary-color": "#e74c3c"
+                },
+                "blue": {
+                    "primary-color": "#4687ce"
+                },
+                "purple": {
+                    "primary-color": "#af86b9"
+                },
+                "brown": {
+                    "primary-color": "#c3a961"
+                },
+                "default-nav-inverse": {
+                    "color-block": "#242424"
+                }
             }
-        }
-    };
+        };
     </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
@@ -246,12 +295,12 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     @*<script src="~/Content/themes/social-3/js/vendor-maps.min.js"></script>*@
     <script src="~/Content/themes/social-3/js/module-essentials.min.js"></script>
     @*<script src="~/Content/themes/social-3/js/module-sidebar.min.js"></script>*@
-        @*<script src="~/Content/themes/social-3/js/module-maps.min.js"></script>*@
-        @*<script src="~/Scripts/bootbox.min.js"></script>*@
+    @*<script src="~/Content/themes/social-3/js/module-maps.min.js"></script>*@
+    @*<script src="~/Scripts/bootbox.min.js"></script>*@
     <script src="~/Scripts/moment.js"></script>
-        
 
-    
+
+
 
     <script>
         var proWorld = window.proWorld || {};
@@ -259,23 +308,29 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     @Scripts.Render("~/Scripts/Custom/Utility/Proworldz.AjaxHelpers.js")
     <script>
         var LayoutVM = {};
-        
-        (function (vm) 
-        {
+
+        (function (vm) {
             // Enabling Popover Friend request - JS (hidden content and title capturing)
             $("#popoverFriendrequest").popover({
-                html : true, 
-                content: function() {
+                html: true,
+                content: function () {
                     return $('#popoverFriendrequestContent').html();
                 },
-                placement:"bottom",
-                title: function() {
+                placement: "bottom",
+                title: function () {
                     return $('#popoverFriendrequestTitle').html();
                 }
             });
 
             vm.friendInfo = ko.observableArray();
+            vm.allFriendsInfo = ko.observableArray();
             proWorld.AjaxHelper.GetCall("/Home/GetFriendequests", OnSuccessGetFrndRequest);
+            proWorld.AjaxHelper.GetCall("/Home/GetAllFriends", OnSuccessGetAllFriends);
+
+            function OnSuccessGetAllFriends(data) {
+                vm.allFriendsInfo(ko.mapping.fromJS(data)());
+                console.log(vm.allFriendsInfo());
+            }
 
             function OnSuccessGetFrndRequest(data) {
                 vm.friendInfo(ko.mapping.fromJS(data)());
@@ -299,9 +354,16 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                 }
             }
 
-            ko.applyBindings(vm, document.getElementById("navbarUser"));
+            vm.isOnline = function (data) {
+                return data.IsOnline() == true ? "online" : "offline";
+            };
+           
+            //ko.applyBindings(vm, document.getElementById("navbarUser"));
+            $(".navbarUser").each(function () {
+                ko.applyBindings(vm, this);
+            })
         })(LayoutVM)
-        
+
     </script>
     @RenderSection("scripts", required: false)
 </body>

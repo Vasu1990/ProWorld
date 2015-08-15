@@ -84,7 +84,12 @@ namespace ProWorldz.BL.BusinessLayer
                 ModificationDate = model.ModificationDate,
                 CityId=model.CityId,
                 StateId=model.StateId,
-                CountryId=model.CountryId
+
+                CountryId=model.CountryId,
+
+                IsOnline = model.IsOnline
+
+
 
 
             };
@@ -113,9 +118,11 @@ namespace ProWorldz.BL.BusinessLayer
                 ModificationDate = model.ModificationDate,
                 CityId = model.CityId,
                 StateId = model.StateId,
-              CountryId= model.CountryId,
-              CreationDate = model.CreationDate
 
+              CountryId= model.CountryId,
+              CreationDate = model.CreationDate,
+
+                IsOnline = model.IsOnline
 
             };
         }

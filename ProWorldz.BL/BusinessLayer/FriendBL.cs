@@ -124,7 +124,7 @@ namespace ProWorldz.BL.BusinessLayer
                                                   select new FriendBM
                                                   {
                                                       FriendName = curUser.Name,
-                                                      FriendCommunity = curUser.CommunityId,
+                                                      FriendCommunity = curUser.CommunityName,
                                                       FriendImage = rt.Image !=null ? rt.Image : "",
                                                       FriendId = curUser.Id,
                                                       UserId = b.Where(x => x.FriendId == curUser.Id).Select(x => x.UserId).FirstOrDefault()
@@ -171,7 +171,7 @@ namespace ProWorldz.BL.BusinessLayer
 
             frnd.UserId = CurrentUser;
             frnd.FriendName = model.Name;
-            frnd.FriendCommunity = model.CommunityId;
+            frnd.FriendCommunity = model.CommunityName;
             //     frnd.FriendImage = model.GeneralInfo.Image!=null?model.GeneralInfo.Image:"";
 
             var friend = uow.FriendRepository.Find(x => x.UserId == CurrentUser && x.FriendId == model.Id).FirstOrDefault();
@@ -224,7 +224,7 @@ namespace ProWorldz.BL.BusinessLayer
                 UserId = model.UserId,
                 FriendName = model.FriendUser.Name,
                 FriendImage = model.FriendUser.UserGeneralInfo.Where(x => x.UserId == model.FriendId).Select(x => x.Image).FirstOrDefault(),
-                FriendCommunity = model.FriendUser.CommunityId,
+                FriendCommunity = model.FriendUser.CommunityName
 
             };
         }
@@ -252,10 +252,37 @@ namespace ProWorldz.BL.BusinessLayer
                                                   select new FriendBM
                                                   {
                                                       FriendName = curUser.Name,
-                                                      FriendCommunity = curUser.CommunityId,
+                                                      FriendCommunity = curUser.CommunityName,
                                                       FriendImage = rt.Image !=null ? rt.Image : "",
                                                       FriendId = curUser.Id,
                                                       UserId = b.Where(x => x.FriendId == curUser.Id).Select(x => x.UserId).FirstOrDefault()
+                                                  };
+            return frndCollection.ToList();
+        }
+
+        public List<FriendBM> GetAllFriends(int CurrentUserId)
+        {
+            ProWorldzContext context = new ProWorldzContext();
+            var b = from user in context.Users
+                    join fr in context.Friend
+                    on user.Id equals fr.UserId
+                    where user.Id == CurrentUserId && fr.FriendShipStatusId == (int)FriendShipStatus.Accepted
+                    select new { fr.FriendId, fr.UserId };
+
+            IQueryable<FriendBM> frndCollection = from curUser in context.Users
+                                                  join genInfo in context.UserGeneralInfomation
+                                                  on curUser.Id equals genInfo.UserId
+                                                  into t
+                                                  from rt in t.DefaultIfEmpty()
+                                                  where b.Any(o => o.FriendId == curUser.Id)
+                                                  select new FriendBM
+                                                  {
+                                                      FriendName = curUser.Name,
+                                                      FriendCommunity = curUser.CommunityName,
+                                                      FriendImage = rt.Image != null ? rt.Image : "",
+                                                      FriendId = curUser.Id,
+                                                      UserId = b.Where(x => x.FriendId == curUser.Id).Select(x => x.UserId).FirstOrDefault(),
+                                                      IsOnline = curUser.IsOnline
                                                   };
             return frndCollection.ToList();
         }
