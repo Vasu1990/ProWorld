@@ -65,6 +65,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Migrations\201508151140462_isUserOnlineFalg.cs" />
+    <Compile Include="Migrations\201508151140462_isUserOnlineFalg.Designer.cs">
+      <DependentUpon>201508151140462_isUserOnlineFalg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508151448075_merging db.cs" />
+    <Compile Include="Migrations\201508151448075_merging db.Designer.cs">
+      <DependentUpon>201508151448075_merging db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
     <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\City.cs" />
@@ -98,6 +107,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201508151140462_isUserOnlineFalg.resx">
+      <DependentUpon>201508151140462_isUserOnlineFalg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508151448075_merging db.resx">
+      <DependentUpon>201508151448075_merging db.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
