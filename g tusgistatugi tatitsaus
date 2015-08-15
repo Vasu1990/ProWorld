@@ -1,0 +1,253 @@
+[33mcommit 6659563fba660cf2c5c6fdf6470068457779e75d[m
+Author: Vasu Nagpal <vasunagpal@vasu368301.Nagarro.local>
+Date:   Sat Aug 15 19:45:29 2015 +0530
+
+    chatting ui
+
+[33mcommit 9c1f50a55075d6959ec844e38c8edd71f77f26fe[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Tue Aug 4 00:16:27 2015 +0530
+
+    added check not to search current user in search list
+
+[33mcommit 7aea066c28b022972067f65d373286c874ae385c[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Tue Aug 4 00:00:59 2015 +0530
+
+    UI fix for friend request popover
+
+[33mcommit caa6dedf38e73991f22670c5a83820012768a19c[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Mon Aug 3 02:31:59 2015 +0530
+
+    db script for frndshp status look up table data
+
+[33mcommit 121d12a3304826c6b26bb5ede11e069d2013095a[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Mon Aug 3 02:04:43 2015 +0530
+
+    added notification popup
+
+[33mcommit 221c256867460b1b792598519b65a587dcfe39a4[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Sat Aug 1 02:01:27 2015 +0530
+
+    default user image added fixed UI issues
+
+[33mcommit 5baad7773f622e40a73122d1315f016d832dd9d5[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Fri Jul 31 04:46:36 2015 +0530
+
+    frien listing and people listing
+
+[33mcommit e7914ca657aaed912e6ac0c77ed08043eb8c43bc[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Fri Jul 17 01:05:11 2015 +0530
+
+    logo redirection
+
+[33mcommit 66716a108c098f23ae518faee02dc684087bd389[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Fri Jul 17 01:00:26 2015 +0530
+
+    theme changes
+
+[33mcommit f1fe399de227f2d05f93e15a721d1f2fc795a3f0[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Wed Jul 15 02:18:34 2015 +0530
+
+    Static pages main site
+
+[33mcommit 9db4f505721b70f43f1f5f5ad2050f9851faf88b[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Mon Jul 6 14:41:59 2015 +0530
+
+    dashboard anchor hover css changes
+
+[33mcommit f0f1dec149043c98732cd9d10cce6b7585ab6688[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Mon Jul 6 13:58:08 2015 +0530
+
+    focus text box on comment edit dashboard
+
+[33mcommit a48e276381dce505b6c61bd14e26735e41e75c52[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Mon Jul 6 13:36:36 2015 +0530
+
+    js fix dashboard
+
+[33mcommit 0cb130b1ae223fa8590b029ce17d68d61ac30047[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Sun Jul 5 13:48:49 2015 +0530
+
+    updated edit functionality added permission editing fixed date issue
+
+[33mcommit 888f5d32c9b443a13293986cd6ee5babd4daf136[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Sun Jul 5 06:35:00 2015 +0530
+
+    update comments in place
+
+[33mcommit 4e2e82ca739a7a03672bf6ce62ec984782b4b002[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Sun Jul 5 06:00:31 2015 +0530
+
+    dashboard section in shape only update save left
+
+[33mcommit e9236f7fc737d1e6c6b5b87a6b49acc1d109b2d9[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Fri Jul 3 14:44:13 2015 +0530
+
+    User post comment section without post action
+
+[33mcommit 9ad78e8c98a08cdd9305cba031ec78bbd309905f[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Thu Jul 2 13:26:38 2015 +0530
+
+    added gitignore files for bl and dl
+
+[33mcommit 355b0ba0f396b805ea5ac16651aa9ee0d56cac86[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Thu Jul 2 13:16:06 2015 +0530
+
+    removed bin obj files
+
+[33mcommit 1061f7662e0cc0580601aacc758c800b117677b7[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Thu Jul 2 13:13:31 2015 +0530
+
+    git ignore file to keep away from untracked files
+
+[33mcommit 269fa6e3832c1753f5bf98e150b31e6df3b143d6[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Thu Jul 2 11:35:05 2015 +0530
+
+    screwed while removin g bin and dll
+
+[33mcommit afa830cbd8784ba2d8641c12925b8db7d15f9d89[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Thu Jul 2 09:43:42 2015 +0530
+
+    untracked files
+
+[33mcommit c70885d4163ae0b376eaa2664185444bdef83440[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Thu Jul 2 00:20:03 2015 +0530
+
+    a try to remove dll files and untrack them
+
+[33mcommit ad95c3da1f510c7410f161d212a45f5d3e67e3e2[m
+Author: Himanshu Rastogi <hr260389@gmail.com>
+Date:   Wed Jul 1 01:22:52 2015 +0530
+
+    commit
+
+[33mcommit 1244a85bdf6b57f805f3a898fae6ba723e11538b[m
+Merge: 6372dad c98e9c5
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Tue Jun 30 02:06:05 2015 +0530
+
+    Merge branch 'master' of https://github.com/Vasu1990/ProWorld
+
+[33mcommit 6372dadf52eb37ab560d9ad0a33115e10fc676ce[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Tue Jun 30 02:05:48 2015 +0530
+
+    dashboard ui changes
+
+[33mcommit c98e9c54f43fbd2f84f6bb7d39f506d451237d2b[m
+Author: Himanshu Rastogi <hr260389@gmail.com>
+Date:   Tue Jun 30 01:45:16 2015 +0530
+
+    commit
+
+[33mcommit 7d61328d7f9dd8c4f6f2e3ac9ca48247ef58ba91[m
+Merge: bc53a9f 77dc43d
+Author: Himanshu Rastogi <hr260389@gmail.com>
+Date:   Tue Jun 30 00:59:12 2015 +0530
+
+    Merge branch 'master' of https://github.com/Vasu1990/ProWorld
+    
+    Conflicts:
+    	ProWorldz.BL/bin/Debug/ProWorldz.BL.dll
+    	ProWorldz.BL/bin/Debug/ProWorldz.BL.pdb
+    	ProWorldz.BL/bin/Debug/ProWorldz.DL.dll
+    	ProWorldz.BL/bin/Debug/ProWorldz.DL.pdb
+    	ProWorldz.BL/obj/Debug/ProWorldz.BL.csprojResolveAssemblyReference.cache
+    	ProWorldz.BL/obj/Debug/ProWorldz.BL.dll
+    	ProWorldz.BL/obj/Debug/ProWorldz.BL.pdb
+    	ProWorldz.DL/bin/Debug/ProWorldz.DL.dll
+    	ProWorldz.DL/bin/Debug/ProWorldz.DL.pdb
+    	ProWorldz.DL/obj/Debug/ProWorldz.DL.dll
+    	ProWorldz.DL/obj/Debug/ProWorldz.DL.pdb
+    	ProWorldz.Web.v12.suo
+    	ProWorldz.Web/bin/ProWorldz.BL.dll
+    	ProWorldz.Web/bin/ProWorldz.BL.pdb
+    	ProWorldz.Web/bin/ProWorldz.DL.dll
+    	ProWorldz.Web/bin/ProWorldz.DL.pdb
+    	ProWorldz.Web/bin/ProWorldz.Web.dll
+    	ProWorldz.Web/bin/ProWorldz.Web.pdb
+    	ProWorldz.Web/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+    	ProWorldz.Web/obj/Debug/ProWorldz.Web.csprojResolveAssemblyReference.cache
+    	ProWorldz.Web/obj/Debug/ProWorldz.Web.dll
+    	ProWorldz.Web/obj/Debug/ProWorldz.Web.pdb
+
+[33mcommit bc53a9f5b141299e2f2cf9b4799b8407d03789e1[m
+Author: Himanshu Rastogi <hr260389@gmail.com>
+Date:   Tue Jun 30 00:58:18 2015 +0530
+
+    commit
+
+[33mcommit 77dc43d3f987d1994b0136b4ec43717bd18bff93[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Tue Jun 30 00:56:10 2015 +0530
+
+    user bl creation date / momentjs added
+
+[33mcommit a77b05357e25ecf831db864e7abbe65b89e59a60[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Mon Jun 29 17:56:53 2015 +0530
+
+    dynamic dashboard
+
+[33mcommit 896907d759c8a0bce6c82a0e82765a9c66e2e5a9[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Mon Jun 29 01:44:23 2015 +0530
+
+    Static Dashboard
+
+[33mcommit 49f586c985c7cd62a5a78d7c35d7540dd4c3f263[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Fri Jun 26 17:14:06 2015 +0530
+
+    UiI changes
+
+[33mcommit 083b75def06b293679f6eeda74a7f94aef57a687[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Fri Jun 26 02:44:17 2015 +0530
+
+    user post page text editor added icons UI finishing
+
+[33mcommit a2ae758d1bc6b72e2c07294d543d2ebc514bb7fc[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Thu Jun 25 14:55:17 2015 +0530
+
+    minor UI changes
+
+[33mcommit d4bdbb3379f9a156f2cd916e86cf8bbccd918a38[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Thu Jun 25 12:01:47 2015 +0530
+
+    Design layout change for pages
+
+[33mcommit aead3b1ba9c9a5b1393bc9b876d2d68a5224fc9e[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Thu Jun 25 11:10:01 2015 +0530
+
+    changed layout and edit profile page css js invocation removed console errors
+
+[33mcommit 0ed5d1e737d6ba22fcc15c235281c0605eff96c1[m
+Author: unknown <vasunagpal@vasu368301.Nagarro.local>
+Date:   Thu Jun 25 00:31:40 2015 +0530
+
+    new code base
