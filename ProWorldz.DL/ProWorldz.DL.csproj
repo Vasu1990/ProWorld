@@ -69,6 +69,14 @@
     <Compile Include="Migrations\201508101926103_New11DB.Designer.cs">
       <DependentUpon>201508101926103_New11DB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508171059348_removecomm.cs" />
+    <Compile Include="Migrations\201508171059348_removecomm.Designer.cs">
+      <DependentUpon>201508171059348_removecomm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508171259177_UserGeneralUpdate.cs" />
+    <Compile Include="Migrations\201508171259177_UserGeneralUpdate.Designer.cs">
+      <DependentUpon>201508171259177_UserGeneralUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
     <Compile Include="Models\ContactUs.cs" />
@@ -107,6 +115,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201508101926103_New11DB.resx">
       <DependentUpon>201508101926103_New11DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508171059348_removecomm.resx">
+      <DependentUpon>201508171059348_removecomm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508171259177_UserGeneralUpdate.resx">
+      <DependentUpon>201508171259177_UserGeneralUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

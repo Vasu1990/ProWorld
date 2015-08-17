@@ -16,17 +16,7 @@ namespace ProWorldz.DL.Models
         [ForeignKey("User")]//check unique user name
         public int UserId { get; set; }
 
-        public string Address1 { get; set; }
-
-        public string Address2 { get; set; }
-
-        public string Status { get; set; }
-
-        public string FatherName { get; set; }
-
-
-
-        public string PhoneNumber { get; set; }
+      
 
         public virtual User User { get; set; }
       

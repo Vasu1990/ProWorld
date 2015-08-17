@@ -60,9 +60,9 @@ namespace ProWorldz.Web.Controllers
                 if (User != null)
                 {
                     SessionManager.InstanceCreator.Set<UserBM>(User, SessionKey.User);
-                  //  Session["User"] = User;
+                    //  Session["User"] = User;
                     FormsAuthentication.SetAuthCookie(User.Name, false);
-                    return RedirectToAction("DashBoard","Home");
+                    return RedirectToAction("DashBoard", "Home");
                 }
                 else
                 {
@@ -80,7 +80,7 @@ namespace ProWorldz.Web.Controllers
             Model.ErrorMessage = (TempData["Error"] != null ? TempData["Error"].ToString() : string.Empty).ToString();
             return View(Model);
         }
-        public  ActionResult EditProfile()
+        public ActionResult EditProfile()
         {
             CommonBL commonBL = new CommonBL();
             CommunityBL CommunityBL = new BL.BusinessLayer.CommunityBL();
@@ -89,14 +89,15 @@ namespace ProWorldz.Web.Controllers
             CityBL CityBL = new BL.BusinessLayer.CityBL();
             ProfileModel Model = new ProfileModel();
 
-         List<IndustryBM> IndustryList=  commonBL.GetIndustry();
+            List<IndustryBM> IndustryList = commonBL.GetIndustry();
             Model.SucessMessage = (TempData["Success"] != null ? TempData["Success"].ToString() : string.Empty).ToString();
             Model.ErrorMessage = (TempData["Error"] != null ? TempData["Error"].ToString() : string.Empty).ToString();
 
             if (SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User) != null)
             {
 
-                UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User) ;
+                UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+                Model.UserBM = CurrentUser;
                 ViewBag.CurrentUser = CurrentUser.Name;
                 List<UserGeneralInformationBM> GenerealInfoList = UserGeneralInformationBL.GetGeneralInformation().Where(p => p.UserId == CurrentUser.Id).ToList();
                 if (GenerealInfoList.Count > 0)
@@ -110,12 +111,12 @@ namespace ProWorldz.Web.Controllers
                 if (Model.UserVideoModel == null)
                     Model.UserVideoModel = new UserVideoBM();
 
-                List<UserPersonalInformationBM> PersoalInfoList = UserPersonalInformationBL.GetPersonalInformation().Where(p => p.UserId == CurrentUser.Id).ToList();
-                if (PersoalInfoList.Count > 0)
-                    Model.UserPersonalInformationModel = PersoalInfoList.FirstOrDefault();
-                if (Model.UserPersonalInformationModel == null)
-                    Model.UserPersonalInformationModel = new UserPersonalInformationBM();
-               
+                //List<UserPersonalInformationBM> PersoalInfoList = UserPersonalInformationBL.GetPersonalInformation().Where(p => p.UserId == CurrentUser.Id).ToList();
+                //if (PersoalInfoList.Count > 0)
+                //    Model.UserPersonalInformationModel = PersoalInfoList.FirstOrDefault();
+                //if (Model.UserPersonalInformationModel == null)
+                //    Model.UserPersonalInformationModel = new UserPersonalInformationBM();
+
                 Model.CommunityList = CommunityBL.GetCommunity().Where(o => o.ParentId == 0).ToList();
 
                 Model.SubCommunityList = CommunityBL.GetCommunity().Where(o => o.ParentId != 0).ToList();
@@ -129,7 +130,7 @@ namespace ProWorldz.Web.Controllers
         }
 
 
-      
+
         [HttpPost]
         public ActionResult ForgotPassword(LoginModel Model)
         {
@@ -137,7 +138,7 @@ namespace ProWorldz.Web.Controllers
             return RedirectToAction("Login");
         }
 
-        public ActionResult UpdateGeneralInformation(ProfileModel Model, HttpPostedFileBase file)
+        public ActionResult UpdateGeneralInformation(ProfileModel Model, HttpPostedFileBase file, FormCollection collection)
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             if (CurrentUser != null)
@@ -152,46 +153,49 @@ namespace ProWorldz.Web.Controllers
                         string physicalPath = Server.MapPath("~/Images/" + ImageName);
                         file.SaveAs(physicalPath);
                         UserGeneralInformationBM UserGeneralInformation = new UserGeneralInformationBM();
-                        UserGeneralInformation.CommunityId = Model.UserGeneralInformationModel.CommunityId;
-                        UserGeneralInformation.SubCommunityId = Model.UserGeneralInformationModel.SubCommunityId;
+
                         UserGeneralInformation.Image = "/Images/" + ImageName;
+
+                        UserGeneralInformation.PhoneNumber = Model.UserGeneralInformationModel.PhoneNumber;
+                        UserGeneralInformation.Address1 = Model.UserGeneralInformationModel.Address1;
+                        UserGeneralInformation.Address2 = Model.UserGeneralInformationModel.Address2;
+                        UserGeneralInformation.FatherName = Model.UserGeneralInformationModel.FatherName;
+                        UserGeneralInformation.Status = Model.UserGeneralInformationModel.Status;
                         UserGeneralInformation.UserId = CurrentUser.Id;
                         UserGeneralInformation.CreatedBy = CurrentUser.Id;
                         UserGeneralInformation.CreationDate = DateTime.Now;
                         UserGeneralInformationBL.Create(UserGeneralInformation);
-
-
-                        if (!string.IsNullOrEmpty(Model.UserGeneralInformationModel.Password))
-                        {
-                            CurrentUser.Password = Model.UserGeneralInformationModel.Password;
-                            UserBL userBL = new UserBL();
-                            CurrentUser.CreationDate = DateTime.Now;
-                            userBL.UpdateUser(CurrentUser);
-                            SessionManager.InstanceCreator.Set<UserBM>(CurrentUser,SessionKey.User);
-                            
-                        }
                         TempData["Success"] = "Record saved Successfully.";
+
+
                     }
                 }
                 else
                 {
                     //update code
-                  UserGeneralInformationBM UserGeneralInformationBM=  UserGeneralInformationBL.GetGeneralInformationByUserId(CurrentUser.Id);
-                  UserGeneralInformationBM.CommunityId = Model.UserGeneralInformationModel.CommunityId;
-                  UserGeneralInformationBM.SubCommunityId = Model.UserGeneralInformationModel.SubCommunityId;
-                 // UserGeneralInformationBM.Image = "/Images/" + ImageName;
-                  if (file != null)
-                  {
-                     
-                      string ImageName = System.IO.Path.GetFileName(file.FileName);
-                      string physicalPath = Server.MapPath("~/Images/" + ImageName);
-                      file.SaveAs(physicalPath);
-                      UserGeneralInformationBM.Image = "/Images/" + ImageName;
-                  }
-                  UserGeneralInformationBM.UserId = CurrentUser.Id;
-                  UserGeneralInformationBM.ModifiedBy = CurrentUser.Id;
-                  UserGeneralInformationBM.ModificationDate = DateTime.Now;
-                  UserGeneralInformationBL.Update(UserGeneralInformationBM);
+                    UserGeneralInformationBM UserGeneralInformationBM = UserGeneralInformationBL.GetGeneralInformationByUserId(CurrentUser.Id);
+                    UserGeneralInformationBM.CommunityId = Model.UserGeneralInformationModel.CommunityId;
+                    UserGeneralInformationBM.SubCommunityId = Model.UserGeneralInformationModel.SubCommunityId;
+                    // UserGeneralInformationBM.Image = "/Images/" + ImageName;
+                    if (file != null)
+                    {
+
+                        string ImageName = System.IO.Path.GetFileName(file.FileName);
+                        string physicalPath = Server.MapPath("~/Images/" + ImageName);
+                        file.SaveAs(physicalPath);
+                        UserGeneralInformationBM.Image = "/Images/" + ImageName;
+                    }
+                    UserGeneralInformationBM.PhoneNumber = Model.UserGeneralInformationModel.PhoneNumber;
+                    UserGeneralInformationBM.Address1 = Model.UserGeneralInformationModel.Address1;
+                    UserGeneralInformationBM.Address2 = Model.UserGeneralInformationModel.Address2;
+                    UserGeneralInformationBM.FatherName = Model.UserGeneralInformationModel.FatherName;
+                    UserGeneralInformationBM.Status = Model.UserGeneralInformationModel.Status;
+                    UserGeneralInformationBM.UserId = CurrentUser.Id;
+                    UserGeneralInformationBM.ModifiedBy = CurrentUser.Id;
+                    UserGeneralInformationBM.ModificationDate = DateTime.Now;
+                    UserGeneralInformationBL.Update(UserGeneralInformationBM);
+
+
                 }
             }
             else
@@ -204,25 +208,28 @@ namespace ProWorldz.Web.Controllers
 
 
 
-        public ActionResult UpdatePersonalInformation(ProfileModel Model)
+        public ActionResult UpdatePersonalInformation(ProfileModel Model, FormCollection collection)
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             if (CurrentUser != null)
             {
+                string test = collection["hdCommunityName"].ToString();
+                string test2 = collection["hdSubCommunityName"].ToString();
+                UserBL UserBL = new UserBL();
+                CurrentUser.CountryId = Model.UserBM.CountryId;
+                CurrentUser.StateId = Model.UserBM.StateId;
+                CurrentUser.CityId = Model.UserBM.CityId;
+                CurrentUser.CommunityId = Model.UserBM.CommunityId;
+                CurrentUser.SubCommunityId = Model.UserBM.SubCommunityId;
+                if (!string.IsNullOrEmpty(collection["hdCommunityName"].ToString()))
+                    CurrentUser.CommunityName = collection["hdCommunityName"].ToString();
+                if (!string.IsNullOrEmpty(collection["hdSubCommunityName"].ToString()))
+                    CurrentUser.SubCommunityName = collection["hdSubCommunityName"].ToString();
 
-                UserPersonalInformationBM UserPersonalInformationBM = new UserPersonalInformationBM();
-                UserPersonalInformationBM.CountryId = Model.UserPersonalInformationModel.CountryId;
-                UserPersonalInformationBM.StateId = Model.UserPersonalInformationModel.StateId;
-                UserPersonalInformationBM.CityId = Model.UserPersonalInformationModel.CityId;
-                UserPersonalInformationBM.Phone = Model.UserPersonalInformationModel.Phone;
-                UserPersonalInformationBM.Address1 = Model.UserPersonalInformationModel.Address1;
-                UserPersonalInformationBM.Address2 = Model.UserPersonalInformationModel.Address2;
-                UserPersonalInformationBM.UserId = CurrentUser.Id;
-                UserPersonalInformationBM.CreatedBy = CurrentUser.Id;
-                UserPersonalInformationBM.CreationDate = DateTime.Now;
-                UserPersonalInformationBL.Create(UserPersonalInformationBM);
-                    TempData["Success"] = "Record saved Successfully.";
-                
+                UserBL.UpdateUser(CurrentUser);
+                SessionManager.InstanceCreator.Set<UserBM>(CurrentUser, SessionKey.User);
+                TempData["Success"] = "Record saved Successfully.";
+
             }
             else
             {
@@ -287,7 +294,7 @@ namespace ProWorldz.Web.Controllers
 
             return RedirectToAction("Profile");
         }
-        public ActionResult UserProfessionalQualification(ProfileModel Model,FormCollection collection)
+        public ActionResult UserProfessionalQualification(ProfileModel Model, FormCollection collection)
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             if (CurrentUser != null)
@@ -345,7 +352,7 @@ namespace ProWorldz.Web.Controllers
             List<UserProfessionalQualificationBM> UserProfessionalQualificationBMList = new List<UserProfessionalQualificationBM>();
             if (CurrentUser != null)
             {
-                 UserProfessionalQualificationBMList = UserProfessionalQualificationBL.GetProfessionalQualification().Where(a => a.UserId == CurrentUser.Id).ToList();
+                UserProfessionalQualificationBMList = UserProfessionalQualificationBL.GetProfessionalQualification().Where(a => a.UserId == CurrentUser.Id).ToList();
 
             }
             else
@@ -406,7 +413,7 @@ namespace ProWorldz.Web.Controllers
             return RedirectToAction("Profile");
         }
 
-       
+
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
@@ -463,13 +470,26 @@ namespace ProWorldz.Web.Controllers
             userBM.CreationDate = DateTime.Now.Date;
             userBM.ModificationDate = DateTime.Now.Date;
 
-            userBL.Create(userBM);
+            int userId = userBL.Create(userBM);
+
+            FillUserGeneralInformation(userId);
             TempData["Successs"] = "User Registered Successfully";
             // If we got this far, something failed, redisplay form
             return RedirectToAction("Login");
         }
 
+        public void FillUserGeneralInformation(int UserId)
+        {
 
+            UserGeneralInformationBM UserGeneralInformation = new UserGeneralInformationBM();
+
+            UserGeneralInformation.Image = "/Images/" + "No-Image.jpg";
+            UserGeneralInformation.UserId = UserId;
+            UserGeneralInformation.CreatedBy = UserId;
+            UserGeneralInformation.CreationDate = DateTime.Now;
+            UserGeneralInformationBL.Create(UserGeneralInformation);
+
+        }
 
         public JsonResult GetCommunityByCountry(int Id)
         {

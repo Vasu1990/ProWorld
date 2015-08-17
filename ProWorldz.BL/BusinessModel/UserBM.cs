@@ -48,6 +48,12 @@ namespace ProWorldz.BL.BusinessModel
 
         public int CountryId { get; set; }
 
+        public string CityName { get; set; }
+
+        public string StateName { get; set; }
+
+        public string CountryName { get; set; }
+
         public virtual UserGeneralInformationBM GeneralInfo { get; set; }
     }
 }

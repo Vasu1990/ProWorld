@@ -4,31 +4,31 @@
     
 }
 @section Styles{
-<link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-    }
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+}
 <h2 class="title">
     <i class="fa fa-fw fa-edit"></i>
     Edit Profile
 </h2>
-    <div id="content">
-        
-            <div class="lock-container">
-                
-                @*<span class="title">Edit Profile  <i class="fa fa-fw fa-pencil"></i>    </span>*@
-                <div class="panel panel-default text-center">
-                                        
-                        @if (ViewBag.CurrentUser != null)
-                        {
-                        <h4 >Welcome      <b>@ViewBag.CurrentUser</b> </h4>
-                       }
-                        
-                </div>
-            </div>
-        </div>
-    
+<div id="content">
 
-    
-  @*  @if (Model != null && !string.IsNullOrEmpty(Model.SucessMessage))
+    <div class="lock-container">
+
+        @*<span class="title">Edit Profile  <i class="fa fa-fw fa-pencil"></i>    </span>*@
+        <div class="panel panel-default text-center">
+
+            @if (ViewBag.CurrentUser != null)
+            {
+                <h4>Welcome      <b>@ViewBag.CurrentUser</b> </h4>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+@*  @if (Model != null && !string.IsNullOrEmpty(Model.SucessMessage))
     {
         <div class="col-md-8" id="successMessage" onclick="hideMessage(this);">
             <div class="alert alert-success" role="alert">@Model.SucessMessage</div>
@@ -40,95 +40,334 @@
             <div class="alert alert-success" role="alert">@Model.ErrorMessage</div>
         </div>
     }*@
- 
-    <div class="row">
-        <div class="tabbable tabs-vertical tabs-left">
-            <!-- Tabs -->
-            <ul class="nav nav-tabs" tabindex="6" style="overflow: hidden; outline: none;">
-                <li class="active"><a href="#home4" data-toggle="tab"><i class="fa fa-fw fa-home"></i>General Information</a>
-                </li>
-                <li><a href="#profile4" data-toggle="tab"><i class="fa fa-fw fa-user"></i>Personal Info</a>
-                </li>
-                <li><a href="#messages4" data-toggle="tab" onclick="return showProfessionalData();"><i class="fa fa-fw fa-envelope"></i>Professional Info</a>
-                </li>
 
-                <li><a href="#Qualification" data-toggle="tab" onclick="return showQualificationData();"><i class="fa fa-fw fa-envelope"></i>Qualification Info</a>
-                </li>
+<div class="row">
+    <div class="tabbable tabs-vertical tabs-left">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" tabindex="6" style="overflow: hidden; outline: none;">
+            <li id="liGeneral" class="active"><a href="#home4" data-toggle="tab"><i class="fa fa-fw fa-home"></i>General Information</a>
+            </li>
+            <li id="liCommunity"><a href="#profile4" data-toggle="tab"><i class="fa fa-fw fa-user"></i>Personal Info</a>
+            </li>
+            <li id="liProfessional"><a href="#messages4" data-toggle="tab" onclick="return showProfessionalData();"><i class="fa fa-fw fa-envelope"></i>Professional Info</a>
+            </li>
 
-                <li>
-                    <a href="#UserVideo" data-toggle="tab"><i class="fa fa-fw fa-envelope"></i>Video & Portfolio</a>
-                </li>
-            </ul>
-            <!-- // END Tabs -->
-            <!-- Panes -->
-            <div class="tab-content">
-                <div id="home4" class="tab-pane active">
-                    @using (Html.BeginForm("UpdateGeneralInformation", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                    {
+            <li id="liQualification"><a href="#Qualification" data-toggle="tab" onclick="return showQualificationData();"><i class="fa fa-fw fa-envelope"></i>Qualification Info</a>
+            </li>
+
+            <li id="liVideo">
+                <a href="#UserVideo" data-toggle="tab"><i class="fa fa-fw fa-envelope"></i>Video & Portfolio</a>
+            </li>
+        </ul>
+        <!-- // END Tabs -->
+        <!-- Panes -->
+        <div class="tab-content">
+            <div id="home4" class="tab-pane active">
+                @using (Html.BeginForm("UpdateGeneralInformation", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
                          
-                        <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form">
 
-                            @Html.HiddenFor(m => m.UserGeneralInformationModel.Id)
+                        @Html.HiddenFor(m => m.UserGeneralInformationModel.Id)
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Image</label>
+                            <div class="col-sm-9">
+                                <input type="file"  class="form-control" name="file" id="file"  value="@Model.UserGeneralInformationModel.Image" />
+
+                                <img src="@Model.UserGeneralInformationModel.Image" style="height:100px;width:100px" alt="Bill" class="img-circle" />
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Father Name</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(x => x.UserGeneralInformationModel.FatherName, new { @class = "form-control", @placeholder = "Father Name" })
+                                @Html.ValidationMessageFor(model => model.UserGeneralInformationModel.FatherName)
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Martial Status</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(x => x.UserGeneralInformationModel.Status, new { @class = "form-control", @placeholder = "Martial Status" })
+                                @Html.ValidationMessageFor(model => model.UserGeneralInformationModel.Status)
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Phone</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(x => x.UserGeneralInformationModel.PhoneNumber, new { @class = "form-control", @placeholder = "Phone" })
+                                @Html.ValidationMessageFor(model => model.UserGeneralInformationModel.PhoneNumber)
+                            </div>
+                        </div>
+
+                        <br />
+                        <br />
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Address 1</label>
+                            <div class="col-sm-9">
+                                @Html.TextAreaFor(model => model.UserGeneralInformationModel.Address1, new { @class = "form-control", @placeholder = "Address 1" })
+
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Address 2</label>
+                            <div class="col-sm-9">
+                                @Html.TextAreaFor(model => model.UserPersonalInformationModel.Address2, new { @class = "form-control", @placeholder = "Address 2" })
+                            </div>
+                        </div>
+
+                        <br />
+                        <br />
+                        <br />
+                        <div class="form-group margin-none">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+
+                    </form>
+                }
+            </div>
+            <div id="profile4" class="tab-pane">
+                @using (Html.BeginForm("UpdatePersonalInformation", "Account", FormMethod.Post))
+                {
+                    <form class="form-horizontal" role="form">
+                        @Html.Hidden("hdCommunityName", new { @id = "hdCommunityName", @name = "hdCommunityName" })
+                        @Html.Hidden("hdSubCommunityName", new { @id = "hdSubCommunityName", @name = "hdCommunityName" })
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Country</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(x => x.UserBM.CountryId, new SelectList(Model.CountryList, "CountryId", "Name", Model.UserBM.CountryId), "- - Select - -", new { @class = "dropdown form-control", @onchange = "LoadCommunity(this.value)" })
+                                @Html.ValidationMessageFor(model => model.UserBM.CountryId)
+                            </div>
+                        </div>
+
+                        <br />
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">State</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(x => x.UserBM.StateId, new SelectList(Model.StateList, "StateId", "Name", Model.UserBM.StateId), "- - Select - -", new { @class = "dropdown form-control", @id = "ddlState", @onchange = "LoadCity(this.value)" })
+                                @Html.ValidationMessageFor(model => model.UserBM.StateId)
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">City</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(x => x.UserBM.CityId, new SelectList(Model.CityList, "Id", "Name", Model.UserBM.CityId), "- - Select - -", new { @class = "dropdown form-control", @id = "ddlCity" })
+                                @Html.ValidationMessageFor(model => model.UserBM.CityId)
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+
+                        <br />
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Community</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(x => x.UserBM.CommunityId, new SelectList(Model.CommunityList, "ID", "Name", Model.UserBM.CommunityId), "- - Select - -", new { @class = "dropdown form-control", @id = "ddlCommunity", @onchange = "LoadSubCommunity(this.value)" })
+                                @Html.ValidationMessageFor(model => model.UserBM.CommunityId)
+                            </div>
+                        </div>
+
+
+                        <br />
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Sub Community</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(x => x.UserBM.SubCommunityId, new SelectList(Model.SubCommunityList, "ID", "Name", Model.UserBM.SubCommunityId), "- - Select - -", new { @class = "dropdown form-control", @id = "ddlSubCommunity", @onchange = "ChangeSubCommunity(this.value)" })
+                                @Html.ValidationMessageFor(model => model.UserBM.SubCommunityId)
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+
+                        <div class="form-group margin-none">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                }
+            </div>
+            <div id="messages4" class="tab-pane">
+                @using (Html.BeginForm("UserProfessionalQualification", "Account", FormMethod.Post))
+                {
+                        
+                    <input type="button" class="btn btn-primary" value="Add More" onclick="return moreProfessionalDetail();" />
+                    <form class="form-horizontal" role="form">
+                        <div id="dvProfessional" style="display: none">
+                            @Html.HiddenFor(m => m.UserProfessionalQualificationModel.Id)
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Image</label>
+                                <label for="inputEmail3" class="col-sm-3 control-label">Company Name</label>
                                 <div class="col-sm-9">
-                                    <input type="file"  class="form-control" name="file" id="file"  value="@Model.UserGeneralInformationModel.Image" />
+                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.CompanyName, new { @class = "form-control", @placeholder = "Company Name" })
+                                    @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.CompanyName)
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
 
-                                    <img src="@Model.UserGeneralInformationModel.Image" style="height:100px;width:100px" alt="Bill" class="img-circle" />
-                                    <br />
-                                    <br />
+
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Start date</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.StartDate, new { @id = "datepicker", @class = "form-control form_date", @placeholder = "Start Date" })
+                                    @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.StartDate)
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">End Date</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.EndDate, new { @class = "form-control form_date", @placeholder = "End Date" })
+                                    @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.EndDate)
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Salary</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.Salary, new { @class = "form-control", @placeholder = "Salary" })
+                                    @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.Salary)
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Industry Type</label>
+                                <div class="col-sm-9">
+                                    @Html.DropDownListFor(x => x.UserProfessionalQualificationModel.IndustryTypeId, new SelectList(@Model.IndustryList, "Id", "Name", Model.UserProfessionalQualificationModel.IndustryTypeId), "- - Select - -", new { @class = "dropdown form-control" })
+                                    @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.IndustryTypeId)
+                                </div>
+                            </div>
+
+                            <br />
+                            <br />
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Designation</label>
+                                <div class="col-sm-9">
+                                    <select class="dropdown form-control" data-val="true" data-val-number="The field CommunityId must be a number." data-val-required="The CommunityId field is required." id="UserTypeId" name="DesignationType">
+                                        <option value="">- - Select - -</option>
+                                        <option value="1">QA</option>
+                                        <option value="2">Developer</option>
+                                        <option value="2">Manager</option>
+                                        <option value="2">COO</option>
+                                        <option value="2">PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Role</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.UserRole, new { @class = "form-control", @placeholder = "UserRole" })
+                                    @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.UserRole)
                                 </div>
                             </div>
 
                             <br />
                             <br />
                             <br />
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Community</label>
-                                <div class="col-sm-9">
-                                    @Html.DropDownListFor(x => x.UserGeneralInformationModel.CommunityId, new SelectList(Model.CommunityList, "ID", "Name", Model.UserGeneralInformationModel.CommunityId), "- - Select - -", new { @class = "dropdown form-control" })
-                                    @Html.ValidationMessageFor(model => model.UserGeneralInformationModel.CommunityId)
-                                </div>
-                            </div>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Sub Community</label>
-                                <div class="col-sm-9">
-                                    @Html.DropDownListFor(x => x.UserGeneralInformationModel.SubCommunityId, new SelectList(Model.SubCommunityList, "ID", "Name", Model.UserGeneralInformationModel.SubCommunityId), "- - Select - -", new { @class = "dropdown form-control" })
-                                    @Html.ValidationMessageFor(model => model.UserGeneralInformationModel.SubCommunityId)
-                                </div>
-                            </div>
-                            <br />
-                            <br />
 
-                            
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Skill</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.Skill, new { @class = "form-control", @placeholder = "Skill" })
+
+                                </div>
+                            </div>
+
+                            <br />
+                            <br />
                             <br />
                             <div class="form-group margin-none">
                                 <div class="col-sm-offset-3 col-sm-9">
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                             </div>
-                            <br />
-                            <br />
-                        </form>
-                    }
-                </div>
-                <div id="profile4" class="tab-pane">
-                    @using (Html.BeginForm("UpdatePersonalInformation", "Account", FormMethod.Post))
-                    {
-                        <form class="form-horizontal" role="form">
+                        </div>
+                    </form>
+                    <br />
+                    <br />
+                    <br />
+                    <table data-toggle="data-table" class="table" id="tblProfessional">
+                        <thead>
+                            <tr>
+                                <th>Company </th>
+                                <th>Start Date </th>
+                                <th>End Date</th>
+                                <th>Salary</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+                    </table>
+                }
+            </div>
+
+            <div id="Qualification" class="tab-pane">
+                @using (Html.BeginForm("UserQualification", "Account", FormMethod.Post))
+                {
+                    @Html.HiddenFor(m => m.UserQualificatinModel.Id)
+                    <input type="button" class="btn btn-primary" value="Add More" onclick="return moreQualificationDetail();" />
+                    <form class="form-horizontal" role="form">
+                        <div id="dvQualification" style="display: none">
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Country</label>
+                                <label for="inputEmail3" class="col-sm-3 control-label">School Name</label>
                                 <div class="col-sm-9">
-                                    @Html.DropDownListFor(x => x.UserPersonalInformationModel.CountryId, new SelectList(Model.CountryList, "CountryId", "Name", Model.UserPersonalInformationModel.CountryId), "- - Select - -", new { @class = "dropdown form-control" })
-                                    @Html.ValidationMessageFor(model => model.UserPersonalInformationModel.CountryId)
+                                    @Html.TextBoxFor(model => model.UserQualificatinModel.SchoolName, new { @class = "form-control", @placeholder = "School Name" })
+                                    @Html.ValidationMessageFor(model => model.UserQualificatinModel.SchoolName)
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Degree</label>
+                                <div class="col-sm-9">
+                                    @Html.DropDownListFor(x => x.UserQualificatinModel.Degree, new SelectList(@Model.DegreeList, "Id", "Name", Model.UserQualificatinModel.Degree), "- - Select - -", new { @class = "dropdown form-control" })
+                                    @Html.ValidationMessageFor(model => model.UserQualificatinModel.Degree)
                                 </div>
                             </div>
 
@@ -136,505 +375,368 @@
                             <br />
                             <br />
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">State</label>
+                                <label for="inputEmail3" class="col-sm-3 control-label">Percentage</label>
                                 <div class="col-sm-9">
-                                    @Html.DropDownListFor(x => x.UserPersonalInformationModel.StateId, new SelectList(Model.StateList, "StateId", "Name", Model.UserPersonalInformationModel.StateId), "- - Select - -", new { @class = "dropdown form-control" })
-                                    @Html.ValidationMessageFor(model => model.UserPersonalInformationModel.StateId)
+                                    @Html.TextBoxFor(model => model.UserQualificatinModel.Percentage, new { @class = "form-control", @placeholder = "Percentage" })
+
+                                    @Html.ValidationMessageFor(model => model.UserQualificatinModel.Percentage)
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Start date</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.UserQualificatinModel.StartDate, new { @class = "form-control form_date", @placeholder = "Start Date" })
+                                    @Html.ValidationMessageFor(model => model.UserQualificatinModel.StartDate)
                                 </div>
                             </div>
                             <br />
                             <br />
                             <br />
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">City</label>
+                                <label for="inputEmail3" class="col-sm-3 control-label">End Date</label>
                                 <div class="col-sm-9">
-                                    @Html.DropDownListFor(x => x.UserPersonalInformationModel.CityId, new SelectList(Model.CityList, "Id", "Name", Model.UserPersonalInformationModel.CityId), "- - Select - -", new { @class = "dropdown form-control" })
-                                    @Html.ValidationMessageFor(model => model.UserPersonalInformationModel.CityId)
-                                </div>
-                            </div>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Phone</label>
-                                <div class="col-sm-9">
-                                    @Html.TextBoxFor(x => x.UserPersonalInformationModel.Phone, new { @class = "dropdown form-control" })
-                                    @Html.ValidationMessageFor(model => model.UserPersonalInformationModel.Phone)
+                                    @Html.TextBoxFor(model => model.UserQualificatinModel.EndDate, new { @class = "form-control form_date", @placeholder = "End Date" })
+                                    @Html.ValidationMessageFor(model => model.UserQualificatinModel.EndDate)
                                 </div>
                             </div>
                             <br />
                             <br />
                             <br />
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Address 1</label>
+                                <label for="inputEmail3" class="col-sm-3 control-label">Description</label>
                                 <div class="col-sm-9">
-                                    @Html.TextAreaFor(model => model.UserPersonalInformationModel.Address1, new { @class = "form-control", @placeholder = "Address 1" })
+                                    @Html.TextAreaFor(model => model.UserQualificatinModel.Description, new { @class = "form-control", @placeholder = "Description" })
 
                                 </div>
                             </div>
                             <br />
                             <br />
                             <br />
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Address 2</label>
-                                <div class="col-sm-9">
-                                    @Html.TextAreaFor(model => model.UserPersonalInformationModel.Address2, new { @class = "form-control", @placeholder = "Address 2" })
-                                </div>
-                            </div>
-                            <br />
-                            <br />
-                            <br />
-
                             <div class="form-group margin-none">
                                 <div class="col-sm-offset-3 col-sm-9">
-                                    <button type="submit" class="btn btn-primary">Add</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                             </div>
-                        </form>
-                    }
-                </div>
-                <div id="messages4" class="tab-pane">
-                    @using (Html.BeginForm("UserProfessionalQualification", "Account", FormMethod.Post))
-                    {
+                        </div>
+                    </form>
+                            
+                            
+                    <br />
+                    <br />
+                    <br />
                         
-                        <input type="button" class="btn btn-primary" value="Add More" onclick="return moreProfessionalDetail();" />
-                        <form class="form-horizontal" role="form">
-                            <div id="dvProfessional" style="display: none">
-                                @Html.HiddenFor(m => m.UserProfessionalQualificationModel.Id)
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Company Name</label>
-                                    <div class="col-sm-9">
-                                        @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.CompanyName, new { @class = "form-control", @placeholder = "Company Name" })
-                                        @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.CompanyName)
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-                                <br />
+                    <table data-toggle="data-table" class="table" id="tblQualification">
+                        <thead>
+                            <tr>
+                                <th>School </th>
+                                <th>Start Date </th>
+                                <th>End Date</th>
+                                <th>Percentage</th>
 
+                            </tr>
+                        </thead>
 
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Start date</label>
-                                    <div class="col-sm-9">
-                                        @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.StartDate, new { @id = "datepicker", @class = "form-control form_date", @placeholder = "Start Date" })
-                                        @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.StartDate)
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-                                <br />
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">End Date</label>
-                                    <div class="col-sm-9">
-                                        @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.EndDate, new { @class = "form-control form_date", @placeholder = "End Date" })
-                                        @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.EndDate)
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-                                <br />
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Salary</label>
-                                    <div class="col-sm-9">
-                                        @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.Salary, new { @class = "form-control", @placeholder = "Salary" })
-                                        @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.Salary)
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Industry Type</label>
-                                    <div class="col-sm-9">
-                                        @Html.DropDownListFor(x => x.UserProfessionalQualificationModel.IndustryTypeId, new SelectList(@Model.IndustryList, "Id", "Name", Model.UserProfessionalQualificationModel.IndustryTypeId), "- - Select - -", new { @class = "dropdown form-control" })
-                                        @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.IndustryTypeId)
-                                    </div>
-                                </div>
-
-                                <br />
-                                <br />
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Designation</label>
-                                    <div class="col-sm-9">
-                                        <select class="dropdown form-control" data-val="true" data-val-number="The field CommunityId must be a number." data-val-required="The CommunityId field is required." id="UserTypeId" name="DesignationType">
-                                            <option value="">- - Select - -</option>
-                                            <option value="1">QA</option>
-                                            <option value="2">Developer</option>
-                                            <option value="2">Manager</option>
-                                            <option value="2">COO</option>
-                                            <option value="2">PM</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-                                <br />
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Role</label>
-                                    <div class="col-sm-9">
-                                        @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.UserRole, new { @class = "form-control", @placeholder = "UserRole" })
-                                        @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.UserRole)
-                                    </div>
-                                </div>
-
-                                <br />
-                                <br />
-                                <br />
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Skill</label>
-                                    <div class="col-sm-9">
-                                        @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.Skill, new { @class = "form-control", @placeholder = "Skill" })
-
-                                    </div>
-                                </div>
-
-                                <br />
-                                <br />
-                                <br />
-                                <div class="form-group margin-none">
-                                    <div class="col-sm-offset-3 col-sm-9">
-                                        <button type="submit" class="btn btn-primary">Update</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <br />
-                        <br />
-                        <br />
-                        <table data-toggle="data-table" class="table" id="tblProfessional">
-                            <thead>
-                                <tr>
-                                    <th>Company </th>
-                                    <th>Start Date </th>
-                                    <th>End Date</th>
-                                    <th>Salary</th>
-                                    <th>Role</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                            </tbody>
-                        </table>
-                    }
-                </div>
-
-                <div id="Qualification" class="tab-pane">
-                    @using (Html.BeginForm("UserQualification", "Account", FormMethod.Post))
-                    {
-                         @Html.HiddenFor(m => m.UserQualificatinModel.Id)
-                        <input type="button" class="btn btn-primary" value="Add More" onclick="return moreQualificationDetail();" />
-                        <form class="form-horizontal" role="form">
-                            <div id="dvQualification" style="display:none">
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">School Name</label>
-                                    <div class="col-sm-9">
-                                        @Html.TextBoxFor(model => model.UserQualificatinModel.SchoolName, new { @class = "form-control", @placeholder = "School Name" })
-                                        @Html.ValidationMessageFor(model => model.UserQualificatinModel.SchoolName)
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-                                <br />
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Degree</label>
-                                    <div class="col-sm-9">
-                                        @Html.DropDownListFor(x => x.UserQualificatinModel.Degree, new SelectList(@Model.DegreeList, "Id", "Name", Model.UserQualificatinModel.Degree), "- - Select - -", new { @class = "dropdown form-control" })
-                                        @Html.ValidationMessageFor(model => model.UserQualificatinModel.Degree)
-                                    </div>
-                                </div>
-
-                                <br />
-                                <br />
-                                <br />
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Percentage</label>
-                                    <div class="col-sm-9">
-                                        @Html.TextBoxFor(model => model.UserQualificatinModel.Percentage, new { @class = "form-control", @placeholder = "Percentage" })
-
-                                        @Html.ValidationMessageFor(model => model.UserQualificatinModel.Percentage)
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Start date</label>
-                                    <div class="col-sm-9">
-                                        @Html.TextBoxFor(model => model.UserQualificatinModel.StartDate, new { @class = "form-control form_date", @placeholder = "Start Date" })
-                                        @Html.ValidationMessageFor(model => model.UserQualificatinModel.StartDate)
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-                                <br />
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">End Date</label>
-                                    <div class="col-sm-9">
-                                        @Html.TextBoxFor(model => model.UserQualificatinModel.EndDate, new { @class = "form-control form_date", @placeholder = "End Date" })
-                                        @Html.ValidationMessageFor(model => model.UserQualificatinModel.EndDate)
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-                                <br />
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Description</label>
-                                    <div class="col-sm-9">
-                                        @Html.TextAreaFor(model => model.UserQualificatinModel.Description, new { @class = "form-control", @placeholder = "Description" })
-
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-                                <br />
-                                <div class="form-group margin-none">
-                                    <div class="col-sm-offset-3 col-sm-9">
-                                        <button type="submit" class="btn btn-primary">Update</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                        <tbody>
+                        </tbody>
+                    </table>
                             
-                            
-                        <br />
-                        <br />
-                        <br />
-                        
-                        <table data-toggle="data-table" class="table" id="tblQualification">
-                            <thead>
-                                <tr>
-                                    <th>School </th>
-                                    <th>Start Date </th>
-                                    <th>End Date</th>
-                                    <th>Percentage</th>
-                                    
-                                </tr>
-                            </thead>
+                }
+            </div>
 
-                            <tbody>
-                            </tbody>
-                        </table>
-                            
-                    }
-                </div>
-
-                <div id="UserVideo" class="tab-pane">
-                    @using (Html.BeginForm("UserVideo", "Account", FormMethod.Post))
-                    {
-                        @Html.HiddenFor(m => m.UserVideoModel.Id)
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Video Resume Url</label>
-                                <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.UserVideoModel.VideoResumeUrl, new { @class = "form-control", @placeholder = "Video Resume Url" })
-                                    @Html.ValidationMessageFor(model => model.UserVideoModel.VideoResumeUrl)
-                                </div>
+            <div id="UserVideo" class="tab-pane">
+                @using (Html.BeginForm("UserVideo", "Account", FormMethod.Post))
+                {
+                    @Html.HiddenFor(m => m.UserVideoModel.Id)
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Video Resume Url</label>
+                            <div class="col-sm-6">
+                                @Html.TextBoxFor(model => model.UserVideoModel.VideoResumeUrl, new { @class = "form-control", @placeholder = "Video Resume Url" })
+                                @Html.ValidationMessageFor(model => model.UserVideoModel.VideoResumeUrl)
                             </div>
-                            <div class="clearfix"></div>
-                            <br />
-                            <br />
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Youtube Url 1</label>
-                                <div class="col-sm-6">
-                                    @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkYouTube1, new { @class = "form-control", @placeholder = "Youtube Url 1" })
-                                    @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkYouTube1)
-                                </div>
-                                @* <div class="col-sm-3">
+                        </div>
+                        <div class="clearfix"></div>
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Youtube Url 1</label>
+                            <div class="col-sm-6">
+                                @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkYouTube1, new { @class = "form-control", @placeholder = "Youtube Url 1" })
+                                @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkYouTube1)
+                            </div>
+                            @* <div class="col-sm-3">
                                     <input type="button" value="Add More" onclick="return AddMoreYouTube();" />
                                 </div>*@
-                            </div>
-                            <div class="clearfix"></div>
-                            <br />
-                            <br />
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Youtube Url 2</label>
-                                <div class="col-sm-6">
-                                    @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkYouTube2, new { @class = "form-control", @placeholder = "Youtube Url 2" })
-                                    @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkYouTube2)
-                                </div>
-
-                            </div>
-                            <div class="clearfix"></div>
-                            <br />
-                            <br />
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Youtube Url 3</label>
-                                <div class="col-sm-6">
-                                    @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkYouTube3, new { @class = "form-control", @placeholder = "Youtube Url 3" })
-                                    @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkYouTube3)
-                                </div>
-
-                            </div>
-                            <div class="clearfix"></div>
-                            <br />
-                            <br />
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Youtube Url 4</label>
-                                <div class="col-sm-6">
-                                    @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkYouTube4, new { @class = "form-control", @placeholder = "Youtube Url 1" })
-                                    @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkYouTube4)
-                                </div>
-
-                            </div>
-                            <div class="clearfix"></div>
-                            <br />
-                            <br />
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Youtube Url 5</label>
-                                <div class="col-sm-6">
-                                    @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkYouTube5, new { @class = "form-control", @placeholder = "Youtube Url 1" })
-                                    @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkYouTube5)
-                                </div>
-
-                            </div>
-                            <div class="clearfix"></div>
-                            <br />
-                            <br />
-
-
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Art Work Url 1</label>
-                                <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkUrl1, new { @class = "form-control", @placeholder = "Art Work Url 1" })
-                                    @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkUrl1)
-                                </div>
-                            </div>
-
-                            <div class="clearfix"></div>
-                            <br />
-                            <br />
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Art Work Url 2</label>
-                                <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkUrl2, new { @class = "form-control", @placeholder = "Art Work Url 2" })
-                                    @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkUrl2)
-                                </div>
-                            </div>
-
-                            <div class="clearfix"></div>
-                            <br />
-                            <br />
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Art Work Url 3</label>
-                                <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkUrl3, new { @class = "form-control", @placeholder = "Art Work Url 3" })
-                                    @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkUrl3)
-                                </div>
-                            </div>
-
-                            <div class="clearfix"></div>
-                            <br />
-                            <br />
-                            <div class="form-group margin-none">
-                                <div class="col-sm-offset-3 col-sm-9">
-                                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                                </div>
-                            </div>
-
-                        </form>
+                        </div>
+                        <div class="clearfix"></div>
                         <br />
                         <br />
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Youtube Url 2</label>
+                            <div class="col-sm-6">
+                                @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkYouTube2, new { @class = "form-control", @placeholder = "Youtube Url 2" })
+                                @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkYouTube2)
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
                         <br />
-                    }
-                </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Youtube Url 3</label>
+                            <div class="col-sm-6">
+                                @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkYouTube3, new { @class = "form-control", @placeholder = "Youtube Url 3" })
+                                @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkYouTube3)
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Youtube Url 4</label>
+                            <div class="col-sm-6">
+                                @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkYouTube4, new { @class = "form-control", @placeholder = "Youtube Url 1" })
+                                @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkYouTube4)
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Youtube Url 5</label>
+                            <div class="col-sm-6">
+                                @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkYouTube5, new { @class = "form-control", @placeholder = "Youtube Url 1" })
+                                @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkYouTube5)
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <br />
+                        <br />
 
 
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Art Work Url 1</label>
+                            <div class="col-sm-6">
+                                @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkUrl1, new { @class = "form-control", @placeholder = "Art Work Url 1" })
+                                @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkUrl1)
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Art Work Url 2</label>
+                            <div class="col-sm-6">
+                                @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkUrl2, new { @class = "form-control", @placeholder = "Art Work Url 2" })
+                                @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkUrl2)
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Art Work Url 3</label>
+                            <div class="col-sm-6">
+                                @Html.TextBoxFor(model => model.UserVideoModel.ArtWorkUrl3, new { @class = "form-control", @placeholder = "Art Work Url 3" })
+                                @Html.ValidationMessageFor(model => model.UserVideoModel.ArtWorkUrl3)
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <br />
+                        <br />
+                        <div class="form-group margin-none">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </div>
+
+                    </form>
+                    <br />
+                    <br />
+                    <br />
+                }
             </div>
-            <!-- // END Panes -->
-        </div>
 
+
+        </div>
+        <!-- // END Panes -->
     </div>
 
+</div>
+
 @section Scripts{
-<script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript">
-    function moreProfessionalDetail() {
-        $("#dvProfessional").show("slow")
-    }
-    function moreQualificationDetail() {
-        $("#dvQualification").show("slow")
-    }
-    function showProfessionalData() {
-        $("#tblProfessional> tbody").html("");
-        $.get('/Account/GetProfessionalData', function (data) {
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript">
 
-            debugger;
-            console.log(data)
-            $(data).each(function (index, value) {
+        function LoadCommunity(Id) {
 
-                var b = value.StartDate.split('(');
-                var d = b[1].split(')')[0];
-                var startDate = new Date(parseInt(d));
-                var displaystartDate = (startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' + startDate.getFullYear()
-
-
-                var u = value.StartDate.split('(');
-                var k = u[1].split(')')[0];
-                var endDate = new Date(parseInt(k));
-                var displayendDate = (endDate.getMonth() + 1) + '/' + endDate.getDate() + '/' + endDate.getFullYear()
-
-
-
-                var $row = $('<tr>' +
-      '<td>' + value.CompanyName + '</td>' +
-      '<td>' + displaystartDate + '</td>' +
-      '<td>' + displayendDate + '</td>' +
-        '<td>' + value.Salary + '</td>' +
-          '<td>' + value.UserRole + '</td>' +
-
-
-      '</tr>');
-                $("#tblProfessional tbody:last").append($row);
-
+            $.get('/Account/GetCommunityByCountry/' + Id, function (data) {
+                debugger;
+                $('#ddlCommunity').find('option:gt(0)').remove();
+                $(data).each(function (index, value) {
+                    var newOption = $('<option value="' + value.Id + '">' + value.Name + '</option>');
+                    $('#ddlCommunity').append(newOption);
+                });
             })
-        })
-    }
-
-    function showQualificationData() {
-        $("#tblQualification> tbody").html("");
-        $.get('/Account/GetQualificationData', function (data) {
-
-            debugger;
-
-            console.log(data)
-            $(data).each(function (index, value) {
-                var b = value.StartDate.split('(');
-                var d = b[1].split(')')[0];
-                var startDate = new Date(parseInt(d));
-                var displaystartDate = (startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' + startDate.getFullYear()
-
-
-                var u = value.StartDate.split('(');
-                var k = u[1].split(')')[0];
-                var endDate = new Date(parseInt(k));
-                var displayendDate = (endDate.getMonth() + 1) + '/' + endDate.getDate() + '/' + endDate.getFullYear()
-                var $row = $('<tr>' +
-      '<td>' + value.SchoolName + '</td>' +
-      '<td>' + displaystartDate + '</td>' +
-      '<td>' + displayendDate + '</td>' +
-        '<td>' + value.Percentage + '</td>' +
-          
-
-
-      '</tr>');
-                $("#tblQualification tbody:last").append($row);
-
+            $.get('/Account/GetStateByCountry/' + Id, function (data) {
+                debugger;
+                $('#ddlState').find('option:gt(0)').remove();
+                $(data).each(function (index, value) {
+                    var newOption = $('<option value="' + value.StateId + '">' + value.Name + '</option>');
+                    $('#ddlState').append(newOption);
+                });
             })
+        }
+
+        function LoadCity(Id) {
+            debugger;
+            $.get('/Account/GetCityByState/' + Id, function (data) {
+                $('#ddlCity').find('option:gt(0)').remove();
+                $(data).each(function (index, value) {
+                    var newOption = $('<option value="' + value.Id + '">' + value.Name + '</option>');
+                    $('#ddlCity').append(newOption);
+                });
+            })
+
+        }
+
+        function ChangeSubCommunity(Id) {
+            debugger;
+            $("#hdSubCommunityName").val($('#ddlSubCommunity :selected').text())
+
+
+        }
+
+        function LoadSubCommunity(Id) {
+            debugger;
+            $("#hdCommunityName").val($('#ddlCommunity :selected').text())
+            $("#hdSubCommunityName").val($('#ddlSubCommunity :selected').text())
+            $.get('/Account/GetSubCommunityByCommunity/' + Id, function (data) {
+                debugger;
+                $('#ddlSubCommunity').find('option:gt(0)').remove();
+                $(data).each(function (index, value) {
+                    var newOption = $('<option value="' + value.Id + '">' + value.Name + '</option>');
+                    $('#ddlSubCommunity').append(newOption);
+                });
+            })
+
+        }
+
+        function moreProfessionalDetail() {
+            $("#dvProfessional").show("slow")
+        }
+        function moreQualificationDetail() {
+            $("#dvQualification").show("slow")
+        }
+        function showProfessionalData() {
+            $("#tblProfessional> tbody").html("");
+            $.get('/Account/GetProfessionalData', function (data) {
+
+                debugger;
+                console.log(data)
+                $(data).each(function (index, value) {
+
+                    var b = value.StartDate.split('(');
+                    var d = b[1].split(')')[0];
+                    var startDate = new Date(parseInt(d));
+                    var displaystartDate = (startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' + startDate.getFullYear()
+
+
+                    var u = value.StartDate.split('(');
+                    var k = u[1].split(')')[0];
+                    var endDate = new Date(parseInt(k));
+                    var displayendDate = (endDate.getMonth() + 1) + '/' + endDate.getDate() + '/' + endDate.getFullYear()
+
+
+
+                    var $row = $('<tr>' +
+          '<td>' + value.CompanyName + '</td>' +
+          '<td>' + displaystartDate + '</td>' +
+          '<td>' + displayendDate + '</td>' +
+            '<td>' + value.Salary + '</td>' +
+              '<td>' + value.UserRole + '</td>' +
+
+
+          '</tr>');
+                    $("#tblProfessional tbody:last").append($row);
+
+                })
+            })
+        }
+
+        function showQualificationData() {
+            $("#tblQualification> tbody").html("");
+            $.get('/Account/GetQualificationData', function (data) {
+
+                debugger;
+
+                console.log(data)
+                $(data).each(function (index, value) {
+                    var b = value.StartDate.split('(');
+                    var d = b[1].split(')')[0];
+                    var startDate = new Date(parseInt(d));
+                    var displaystartDate = (startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' + startDate.getFullYear()
+
+
+                    var u = value.StartDate.split('(');
+                    var k = u[1].split(')')[0];
+                    var endDate = new Date(parseInt(k));
+                    var displayendDate = (endDate.getMonth() + 1) + '/' + endDate.getDate() + '/' + endDate.getFullYear()
+                    var $row = $('<tr>' +
+          '<td>' + value.SchoolName + '</td>' +
+          '<td>' + displaystartDate + '</td>' +
+          '<td>' + displayendDate + '</td>' +
+            '<td>' + value.Percentage + '</td>' +
+
+
+
+          '</tr>');
+                    $("#tblQualification tbody:last").append($row);
+
+                })
+            })
+        }
+        $(document).ready(function () {
+            debugger;
+            //logic of open tab on the basis of query string value
+            if (window.location.href.indexOf('?') > -1) {
+                var tabNumber = window.location.href[(window.location.href.lastIndexOf('=') + 1)];
+                tabNumber = parseInt(tabNumber)
+                switch (tabNumber) {
+                    case 1:
+                        $("#liGeneral a").trigger("click");
+                        break;
+                    case 2:
+                        $("#liCommunity a").trigger("click")
+                        break;
+                    case 3:
+                        $("#liProfessional a").trigger("click")
+                        break;
+                    case 4:
+                        $("#liQualification a").trigger("click")
+                        break;
+                    case 5:
+                        $("#liVideo a").trigger("click")
+                        break;
+
+                }
+             //   tabNumber == "1" ? $("#liGeneral a").trigger("click") : "2" ? $("#liCommunity a").trigger("click") : "3" ? $("#liProfessional a").trigger("click") : "4" ? $("#liQualification a").trigger("click") : "5" ? $("#liVideo a").trigger("click") : "";
+            }
+
+            if ('@Model.SucessMessage' != "")
+                bootbox.alert('@Model.SucessMessage')
+            if ('@Model.ErrorMessage' != "")
+                bootbox.alert('@Model.ErrorMessage')
         })
-    }
-    $(document).ready(function () {
-      //  bootbox.alert("hi")
-        //   $('#himanshu').datepicker();
-        if('@Model.SucessMessage' != "")
-            bootbox.alert('@Model.SucessMessage')
-        if ('@Model.ErrorMessage' != "")
-            bootbox.alert('@Model.ErrorMessage')
-    })
     function hideMessage(data) {
         $(data).hide("slow")
 
@@ -652,7 +754,7 @@
         forceParse: 0,
         showMeridian: 0
     });
-</script>
-    }
+    </script>
+}
 
 

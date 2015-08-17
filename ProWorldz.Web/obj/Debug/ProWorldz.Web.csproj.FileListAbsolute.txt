@@ -788,3 +788,5 @@ F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hans\System.Spatial.resources.dll
 F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hant\System.Spatial.resources.dll
 F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.dll
 F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.pdb
+F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.Migrations.removeCommunity.resources
+F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csproj.GenerateResource.Cache

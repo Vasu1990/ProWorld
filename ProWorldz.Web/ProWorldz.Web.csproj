@@ -246,6 +246,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508171058143_removeCommunity.cs" />
+    <Compile Include="Migrations\201508171058143_removeCommunity.Designer.cs">
+      <DependentUpon>201508171058143_removeCommunity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -739,6 +743,7 @@
     <Content Include="Content\themes\custom\Proworldz.dashboard.css" />
     <Content Include="Content\themes\custom\Proworldz.site.css" />
     <Content Include="Content\themes\custom\Proworldz.login.css" />
+    <Content Include="Images\No-Image.jpg" />
     <Content Include="Scripts\Custom\ProWorldz.Friend.js" />
     <Content Include="Scripts\Custom\ProWorldz.People.js" />
     <Content Include="Scripts\Custom\Utility\Proworldz.AjaxHelpers.js" />
@@ -1299,6 +1304,11 @@
       <Project>{f21db6cc-69be-414d-bd63-3915428d738f}</Project>
       <Name>ProWorldz.BL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201508171058143_removeCommunity.resx">
+      <DependentUpon>201508171058143_removeCommunity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

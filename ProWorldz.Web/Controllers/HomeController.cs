@@ -16,7 +16,7 @@ namespace ProWorldz.Web.Controllers
     public class HomeController : Controller
     {
         UserPostBL UserPostBL = new UserPostBL();
-
+        UserBL UserBL = new UserBL();
         UserGeneralInformationBL UserGeneralInformationBL = new BL.BusinessLayer.UserGeneralInformationBL();
         UserPersonalInformationBL UserPersonalInformationBL = new BL.BusinessLayer.UserPersonalInformationBL();
         UserProfessionalQualificationBL UserProfessionalQualificationBL = new BL.BusinessLayer.UserProfessionalQualificationBL();
@@ -140,13 +140,13 @@ namespace ProWorldz.Web.Controllers
             return Json(UserGeneralInformationBM, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult LoadUserPersonalDetail()
+        public JsonResult LoadUserCommunityDetail()
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
-            UserPersonalInformationBM UserPersonalInformationBM = new UserPersonalInformationBM();
+            UserBM userBM = new UserBM();
             if (CurrentUser != null)
-                UserPersonalInformationBM = UserPersonalInformationBL.GetPersonalInformationByUserId(CurrentUser.Id);
-            return Json(UserPersonalInformationBM, JsonRequestBehavior.AllowGet);
+                userBM = UserBL.GetUserById(CurrentUser.Id);
+            return Json(userBM, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult LoadUserProfessionalDetail()

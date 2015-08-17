@@ -20,6 +20,18 @@ namespace ProWorldz.BL.BusinessModel
 
         public int SubCommunityId { get; set; }
 
+        public string Address1 { get; set; }
+
+        public string Address2 { get; set; }
+
+        public string Status { get; set; }
+
+        public string FatherName { get; set; }
+
+
+
+        public string PhoneNumber { get; set; }
+
         public string Image { get; set; }
 
         public string Password { get; set; }

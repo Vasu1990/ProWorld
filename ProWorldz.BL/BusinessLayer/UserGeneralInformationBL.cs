@@ -46,14 +46,20 @@ namespace ProWorldz.BL.BusinessLayer
 
         private UserGeneralInfomation ConvertToDM(UserGeneralInformationBM model)
         {
+            UserBL userBL = new UserBL();
             if (model == null)
                 return null;
             else
                 return new UserGeneralInfomation
                 {
                     Id = model.Id,
-                    CommunityId = model.CommunityId,
-                    SubCommunityId = model.SubCommunityId,
+                    Address1=model.Address1,
+                    Address2=model.Address2,
+                    PhoneNumber=model.PhoneNumber,
+                    FatherName=model.FatherName,
+                    Status=model.Status,
+                   // CommunityId = userBL.GetUserById(model.UserId).CommunityId,
+                   // SubCommunityId = userBL.GetUserById(model.UserId).SubCommunityId,
                     Image = model.Image,
                     Active = model.Active,
                     CreatedBy = model.CreatedBy,
@@ -68,22 +74,28 @@ namespace ProWorldz.BL.BusinessLayer
 
         private UserGeneralInformationBM ConvertToBM(UserGeneralInfomation model)
         {
+            UserBL userBL = new UserBL();
             if (model == null)
                 return null;
             else
                 return new UserGeneralInformationBM()
                 {
                     Id = model.Id,
-                    CommunityId = model.CommunityId,
-                    SubCommunityId = model.SubCommunityId,
+
+                    Address1 = model.Address1,
+                    Address2 = model.Address2,
+                    PhoneNumber = model.PhoneNumber,
+                    FatherName = model.FatherName,
+                    Status = model.Status,
+
+                    CommunityId = userBL.GetUserById(model.UserId).CommunityId,
+                    SubCommunityId = userBL.GetUserById(model.UserId).SubCommunityId,
                     Image = model.Image,
                     CreatedBy = model.CreatedBy,
                     CreationDate = model.CreationDate,
                     UserId = model.UserId,
                     ModifiedBy = model.ModifiedBy,
                     ModificationDate = model.ModificationDate
-
-
                 };
         }
     }

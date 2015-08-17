@@ -17,7 +17,7 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading panel-heading-gray">
-                    <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                    <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil" onclick="Redirect(1)"></i></a>
                     <i class="fa fa-fw fa-info-circle"></i>General Info
                 </div>
                 <div class="panel-body" id="dvGeneral">
@@ -31,20 +31,47 @@
                                 <img data-bind="attr: {src:viewModel.Image}" alt="Bill" class="img-circle" style="height: 100px; width: 100px" />
                             </div>
                         </li>
-                        <li class="padding-v-5">
+                        <li class="padding-v-5" data-bind="visible: viewModel.FatherName">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <span class="text-muted">Community</span>
+                                    <span class="text-muted">Father Name</span>
                                 </div>
-                                <div class="col-sm-8" id="dvCommunity" data-bind="text:viewModel.Community"></div>
+                                <div class="col-sm-8" data-bind="text:viewModel.FatherName"></div>
                             </div>
                         </li>
-                        <li class="padding-v-5">
+                        <li class="padding-v-5" data-bind="visible: viewModel.PhoneNumber">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <span class="text-muted">Sub-Community</span>
+                                    <span class="text-muted">Phone Number</span>
                                 </div>
-                                <div class="col-sm-8" id="dvSubCommunity" data-bind="text:viewModel.SubCommunity"></div>
+                                <div class="col-sm-8" data-bind="text:viewModel.PhoneNumber"></div>
+                            </div>
+                        </li>
+
+                         <li class="padding-v-5" data-bind="visible: viewModel.Status">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Martial Status</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewModel.Status"></div>
+                            </div>
+                        </li>
+
+                         <li class="padding-v-5" data-bind="visible: viewModel.Address1">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Address 1 </span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewModel.Address1"></div>
+                            </div>
+                        </li>
+
+                         <li class="padding-v-5" data-bind="text:viewModel.Address2">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Address 2 </span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewModel.Address2"></div>
                             </div>
                         </li>
 
@@ -56,17 +83,35 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading panel-heading-gray">
-                    
-                    <i class="fa fa-fw fa-info-circle"></i>Personal Info
+                    <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil" onclick="Redirect(2)"></i></a>
+                    <i class="fa fa-fw fa-info-circle"></i>Community Info
                 </div>
                 <div class="panel-body" id="dvPersonal">
                     <ul class="list-unstyled profile-about margin-none">
+
+                         <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Community</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewPersonalModel.CommunityName"></div>
+                            </div>
+                        </li>
+
+                         <li class="padding-v-5">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="text-muted">Sub-Community</span>
+                                </div>
+                                <div class="col-sm-8" data-bind="text:viewPersonalModel.SubCommunityName"></div>
+                            </div>
+                        </li>
                         <li class="padding-v-5">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <span class="text-muted">Country</span>
                                 </div>
-                                <div class="col-sm-8" id="dvCountry" data-bind="text:viewPersonalModel.Country"></div>
+                                <div class="col-sm-8" id="dvCountry" data-bind="text:viewPersonalModel.CountryName"></div>
                             </div>
                         </li>
                         <li class="padding-v-5">
@@ -74,7 +119,7 @@
                                 <div class="col-sm-4">
                                     <span class="text-muted">State</span>
                                 </div>
-                                <div class="col-sm-8" data-bind="text:viewPersonalModel.State"></div>
+                                <div class="col-sm-8" data-bind="text:viewPersonalModel.StateName"></div>
                             </div>
                         </li>
                         <li class="padding-v-5">
@@ -82,33 +127,11 @@
                                 <div class="col-sm-4">
                                     <span class="text-muted">City</span>
                                 </div>
-                                <div class="col-sm-8" data-bind="text:viewPersonalModel.City"></div>
+                                <div class="col-sm-8" data-bind="text:viewPersonalModel.CityName"></div>
                             </div>
                         </li>
-                        <li class="padding-v-5">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <span class="text-muted">Phone</span>
-                                </div>
-                                <div class="col-sm-8" data-bind="text:viewPersonalModel.Phone"></div>
-                            </div>
-                        </li>
-                        <li class="padding-v-5">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <span class="text-muted">Address 1</span>
-                                </div>
-                                <div class="col-sm-8" data-bind="text:viewPersonalModel.Address1"></div>
-                            </div>
-                        </li>
-                        <li class="padding-v-5">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <span class="text-muted">Address 2</span>
-                                </div>
-                                <div class="col-sm-8" data-bind="text:viewPersonalModel.Address2"></div>
-                            </div>
-                        </li>
+                       
+                      
                     </ul>
                 </div>
             </div>
@@ -122,7 +145,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading panel-heading-gray">
-                    
+                    <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil" onclick="Redirect(3)"></i></a>
                     <i class="fa fa-fw fa-info-circle"></i>Professional Info
                 </div>
                 <div class="panel-body" id="dvProfessional">
@@ -183,7 +206,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading panel-heading-gray">
-                    <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                    <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil" onclick="Redirect(4)"></i></a>
                     <i class="fa fa-fw fa-info-circle"></i>Qualification Info
                 </div>
                 <div class="panel-body" id="dvQualification">
@@ -253,20 +276,34 @@
 <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
 <script src="~/Scripts/knockout-2.2.0.js"></script>
 <script type="text/javascript">
+
+    function Redirect(tabNumber)
+    {
+        debugger;
+        window.location.href = '/Account/EditProfile?Tab=' + tabNumber;
+    }
     var viewModel = {};
     viewModel.Image = ko.observable();
     viewModel.Community = ko.observable();
     viewModel.SubCommunity = ko.observable();
+    viewModel.FatherName = ko.observable();
+
+   
+
+
+    viewModel.Status = ko.observable();
+    viewModel.PhoneNumber = ko.observable();
+    viewModel.Address1 = ko.observable();
+    viewModel.Address2 = ko.observable();
     ko.applyBindings(viewModel, document.getElementById('dvGeneral'));
 
     var viewPersonalModel = {};
-    viewPersonalModel.Country = ko.observable();
-    viewPersonalModel.State = ko.observable();
-    viewPersonalModel.City = ko.observable();
-
-    viewPersonalModel.Phone = ko.observable();
-    viewPersonalModel.Address1 = ko.observable();
-    viewPersonalModel.Address2 = ko.observable();
+    viewPersonalModel.CommunityName = ko.observable();
+    viewPersonalModel.SubCommunityName = ko.observable();
+    viewPersonalModel.CountryName = ko.observable();
+    viewPersonalModel.StateName = ko.observable();
+    viewPersonalModel.CityName = ko.observable();
+  
     ko.applyBindings(viewPersonalModel, document.getElementById('dvPersonal'));
 
 
@@ -308,16 +345,30 @@
             debugger;
             console.log(data)
             viewModel.Image(data.Image)
-            viewModel.Community(data.CommunityName)
-            viewModel.SubCommunity(data.SubCommunityName)
+           // viewModel.Community(data.CommunityName)
+           // viewModel.SubCommunity(data.SubCommunityName)
+            viewModel.FatherName(data.FatherName)
+            viewModel.Status(data.Status)
+            viewModel.Address1(data.Address1)
+
+            viewModel.Address2(data.Address2)
+            viewModel.PhoneNumber(data.PhoneNumber)
+
+
+            
         })
     }
     function LoadUserPersonalDetail() {
-        $.get('/Home/LoadUserPersonalDetail', function (data) {
+        $.get('/Home/LoadUserCommunityDetail', function (data) {
+            debugger;
             console.log(data);
-            viewPersonalModel.Phone(data.Phone);
-            viewPersonalModel.Address1(data.Address1);
-            viewPersonalModel.Address2(data.Address2);
+           
+
+            viewPersonalModel.CommunityName(data.CommunityName)
+            viewPersonalModel.SubCommunityName(data.SubCommunityName);
+            viewPersonalModel.CountryName(data.CountryName);
+            viewPersonalModel.StateName(data.StateName);
+            viewPersonalModel.CityName(data.CityName);
         })
     }
     function LoadUserProfessionalDetail() {

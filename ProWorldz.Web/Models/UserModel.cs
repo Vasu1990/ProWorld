@@ -33,6 +33,7 @@ namespace ProWorldz.Web.Models
         public UserPersonalInformationBM UserPersonalInformationModel { get; set; }
         public UserProfessionalQualificationBM UserProfessionalQualificationModel { get; set; }
         public UserQualificatinBM UserQualificatinModel { get; set; }
+        UserBL userBL = new UserBL();
         CommonBL commonBL = new CommonBL();
 
         public UserVideoBM UserVideoModel { get; set; }
@@ -50,12 +51,15 @@ namespace ProWorldz.Web.Models
 
         public List<DegreeBM> DegreeList { get; set; }
 
+        public UserBM UserBM { get; set; }
+
       //  public List<Designa> IndustryList { get; set; }
 
         public ProfileModel()
         {
             UserProfessionalQualificationModel = new UserProfessionalQualificationBM();
             IndustryList = commonBL.GetIndustry();
+           
             DegreeList = commonBL.GetDegree();
             UserGeneralInformationModel = new UserGeneralInformationBM();
             UserPersonalInformationModel = new UserPersonalInformationBM();
