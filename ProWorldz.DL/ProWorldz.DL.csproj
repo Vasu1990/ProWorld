@@ -65,9 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201508101926103_New11DB.cs" />
-    <Compile Include="Migrations\201508101926103_New11DB.Designer.cs">
-      <DependentUpon>201508101926103_New11DB.cs</DependentUpon>
+    <Compile Include="Migrations\201508151140462_isUserOnlineFalg.cs" />
+    <Compile Include="Migrations\201508151140462_isUserOnlineFalg.Designer.cs">
+      <DependentUpon>201508151140462_isUserOnlineFalg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508151844210_TestDbafterMerge.cs" />
+    <Compile Include="Migrations\201508151844210_TestDbafterMerge.Designer.cs">
+      <DependentUpon>201508151844210_TestDbafterMerge.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201508171059348_removecomm.cs" />
     <Compile Include="Migrations\201508171059348_removecomm.Designer.cs">
@@ -113,8 +117,11 @@
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508101926103_New11DB.resx">
-      <DependentUpon>201508101926103_New11DB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508151140462_isUserOnlineFalg.resx">
+      <DependentUpon>201508151140462_isUserOnlineFalg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508151844210_TestDbafterMerge.resx">
+      <DependentUpon>201508151844210_TestDbafterMerge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201508171059348_removecomm.resx">
       <DependentUpon>201508171059348_removecomm.cs</DependentUpon>

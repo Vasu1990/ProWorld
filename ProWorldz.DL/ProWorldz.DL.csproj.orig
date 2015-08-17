@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F21DB6CC-69BE-414D-BD63-3915428D738F}</ProjectGuid>
+    <ProjectGuid>{BCFC03E3-B3D2-4954-90B9-F3331B0FCB25}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProWorldz.BL</RootNamespace>
-    <AssemblyName>ProWorldz.BL</AssemblyName>
+    <RootNamespace>ProWorldz.DL</RootNamespace>
+    <AssemblyName>ProWorldz.DL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,12 +31,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
@@ -64,57 +64,57 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLayer\CityBL.cs" />
-    <Compile Include="BusinessLayer\CommonBL.cs" />
-    <Compile Include="BusinessLayer\CommunityBL.cs" />
-    <Compile Include="BusinessLayer\CountryBL.cs" />
-    <Compile Include="BusinessLayer\FriendBL.cs" />
-    <Compile Include="BusinessLayer\StateBL.cs" />
-    <Compile Include="BusinessLayer\UserBL.cs" />
-    <Compile Include="BusinessLayer\UserGeneralInformationBL.cs" />
-    <Compile Include="BusinessLayer\UserPersonalInformationBL.cs" />
-    <Compile Include="BusinessLayer\UserPostBL.cs" />
-    <Compile Include="BusinessLayer\UserPostCommentBL.cs" />
-    <Compile Include="BusinessLayer\UserProfessionalQualificationBL.cs" />
-    <Compile Include="BusinessLayer\UserQualificationBL.cs" />
-    <Compile Include="BusinessLayer\UserVideoBL.cs" />
-    <Compile Include="BusinessModel\BaseBM.cs" />
-    <Compile Include="BusinessModel\ContactUsBM.cs" />
-    <Compile Include="BusinessModel\CityBM.cs" />
-    <Compile Include="BusinessModel\CommunityBM.cs" />
-    <Compile Include="BusinessModel\Lkp_FriendShipStatusBM.cs" />
-    <Compile Include="BusinessModel\FriendBM.cs" />
-    <Compile Include="BusinessModel\CountryBM.cs" />
-    <Compile Include="BusinessModel\DegreeBM.cs" />
-    <Compile Include="BusinessModel\IndustryBM.cs" />
-    <Compile Include="BusinessModel\PostBM.cs" />
-    <Compile Include="BusinessModel\StateBM.cs" />
-    <Compile Include="BusinessModel\UserBM.cs" />
-    <Compile Include="BusinessModel\UserGeneralInformationBM.cs" />
-    <Compile Include="BusinessModel\UserPersonalInformationBM.cs" />
-    <Compile Include="BusinessModel\UserPostBM.cs" />
-    <Compile Include="BusinessModel\UserPostCommentBM.cs" />
-    <Compile Include="BusinessModel\UserProfessionalQualificationBM.cs" />
-    <Compile Include="BusinessModel\UserQualificatinBM.cs" />
-    <Compile Include="BusinessModel\UserVideoBM.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="Common\DatatablePaging\DataTableConfig.cs" />
-    <Compile Include="Common\DatatablePaging\DataTableParams.cs" />
-    <Compile Include="Common\DatatablePaging\GlobalSearchText.cs" />
-    <Compile Include="Common\Enums\FriendShipStatus.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Migrations\201508151140462_isUserOnlineFalg.cs" />
+    <Compile Include="Migrations\201508151140462_isUserOnlineFalg.Designer.cs">
+      <DependentUpon>201508151140462_isUserOnlineFalg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508151448075_merging db.cs" />
+    <Compile Include="Migrations\201508151448075_merging db.Designer.cs">
+      <DependentUpon>201508151448075_merging db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BaseClass.cs" />
+    <Compile Include="Models\ContactUs.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Community.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Degree.cs" />
+    <Compile Include="Models\Lkp_FriendShipStatus.cs" />
+    <Compile Include="Models\IndustryType.cs" />
+    <Compile Include="Models\Friend.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\PostComment.cs" />
+    <Compile Include="Models\State.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserGeneralInfomation.cs" />
+    <Compile Include="Models\UserLanguage.cs" />
+    <Compile Include="Models\UserPersonalInfomation.cs" />
+    <Compile Include="Models\UserPost.cs" />
+    <Compile Include="Models\UserPostComment.cs" />
+    <Compile Include="Models\UserProfessionalQualification.cs" />
+    <Compile Include="Models\UserQualification.cs" />
+    <Compile Include="Models\UserType.cs" />
+    <Compile Include="Models\UserVideo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProWorldzContext.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="UOW\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProWorldz.DL\ProWorldz.DL.csproj">
-      <Project>{bcfc03e3-b3d2-4954-90b9-f3331b0fcb25}</Project>
-      <Name>ProWorldz.DL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <EmbeddedResource Include="Migrations\201508151140462_isUserOnlineFalg.resx">
+      <DependentUpon>201508151140462_isUserOnlineFalg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508151448075_merging db.resx">
+      <DependentUpon>201508151448075_merging db.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

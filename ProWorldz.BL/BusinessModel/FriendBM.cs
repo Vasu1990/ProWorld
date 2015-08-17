@@ -23,7 +23,9 @@ namespace ProWorldz.BL.BusinessModel
         
        public string FriendImage { get; set; }
 
-       public int FriendCommunity { get; set; }
+       public string FriendCommunity { get; set; }
+
+       public bool IsOnline { get; set; }
 
     }
 }

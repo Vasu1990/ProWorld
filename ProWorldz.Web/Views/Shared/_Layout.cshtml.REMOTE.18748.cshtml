@@ -129,78 +129,49 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Popover Friends hidden title -->
+                                <div id="popoverFriendrequestTitle" style="display: none">
+                                    Fireind Requests
+                                </div>
+                            </li>
+                            <!-- User -->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle user" data-toggle="dropdown">
+                                    <img src="~/Content/themes/social-3/images/people/110/guy-5.jpg" alt="Bill" class="img-circle" width="40" />
+                                    Bill <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="/Account/Profile">Profile</a>
+                                    </li>
 
-                            
-                            <!-- Popover Friends hidden title -->
-                            <div id="popoverFriendrequestTitle" style="display: none">
-                                Fireind Requests
-                            </div>
-                        </li>
-                        <!-- User -->
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle user" data-toggle="dropdown">
-                                <img src="~/Content/themes/social-3/images/people/110/guy-5.jpg" alt="Bill" class="img-circle" width="40" />
-                                Bill <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/Account/EditProfile">Edit Profile</a>
-                                </li>
-                               <li><a href="#myChangePasswordModal" class="forgot-password" data-toggle="modal">Change Password</a>
-                                </li>
-                                <li><a href="/Account/LogOff">Logout</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-
+                                    <li>
+                                        <a href="/Account/LogOff">Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
                 </div>
             </div>
 
         </div>
-     
-    </div>
 
-         @using (Html.BeginForm("ChangePassword", "Account", FormMethod.Post))
-        {
-            <div id="myChangePasswordModal" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Change Password</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-12">
-
-                                    <label for="exampleInputFirstName">Password</label>
-                                    <input type="password" class="form-control" placeholder = "Password" />
-                                
-                                </div>
-                            </div>
-
-                             <div class="row">
-                                <div class="col-md-12">
-
-                                    <label for="exampleInputFirstName">Confirm Password</label>
-                                    <input type="password" class="form-control" placeholder = "Confirm Password" />
-                                
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        }
-       
-    <!-- /st-container -->
-
+        <!-- /st-container -->
     </header>
-
+    @*<div class="row"style="margin-top:50px">
+            <nav class="navbar navbar-subnav navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#subnav" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="fa fa-ellipsis-h"></span>
+                        </button>
+                    </div><div class="collapse navbar-collapse" id="subnav" aria-expanded="false"><ul class="nav navbar-nav"><li class="active"><a href="index.html"><i class="fa fa-fw icon-ship-wheel"></i>My Timeline</a> </li><li><a href="user-private-profile.html"><i class="fa fa-fw icon-user-1"></i>Edit Profile</a> </li><li><a href="user-private-users.html"><i class="fa fa-fw fa-group"></i>Manage Friends</a> </li><li><a href="user-private-messages.html"><i class="fa fa-fw icon-comment-fill-1"></i>Messages</a> </li></ul><ul class="nav navbar-nav hidden-xs navbar-right"><li><a href="login.html">Logout <i class="fa fa-fw icon-unlock-fill"></i></a></li></ul></div>
+                </div>
+            </nav>
+        </div>*@
 
     <div id="body">
 

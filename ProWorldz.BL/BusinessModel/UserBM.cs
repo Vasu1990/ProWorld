@@ -47,6 +47,8 @@ namespace ProWorldz.BL.BusinessModel
         public int StateId { get; set; }
 
         public int CountryId { get; set; }
+        
+        public bool IsOnline { get; set; }
 
         public string CityName { get; set; }
 

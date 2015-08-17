@@ -13,21 +13,16 @@ namespace ProWorldz.BL.BusinessLayer
     public class UserBL
     {
         UnitOfWork uow;
-        CountryBL countryBL = new CountryBL();
-        CityBL cityBL = new CityBL();
-        StateBL stateBL = new StateBL();
 
         public UserBL()
         {
             uow = new UnitOfWork();
         }
 
-        public int Create(UserBM model)
+        public void Create(UserBM model)
         {
-            User user = ConvertToDM(model);
-            uow.UserRepository.Add(user);
+            uow.UserRepository.Add(ConvertToDM(model));
             uow.Save();
-            return user.Id;
         }
         public List<UserBM> GetUsers()
         {
@@ -125,14 +120,8 @@ namespace ProWorldz.BL.BusinessLayer
                 StateId = model.StateId,
 
               CountryId= model.CountryId,
-              CreationDate = model.CreationDate,
-
+                CreationDate = model.CreationDate,
                 IsOnline = model.IsOnline
-              CountryName=countryBL.GetCountryById(model.CountryId).Name,
-              StateName=stateBL.GetStateById(model.StateId).Name,
-              CityName=cityBL.GetCityById(model.CityId).Name
-
-
 
             };
         }
