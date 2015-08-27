@@ -67,21 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201508151140462_isUserOnlineFalg.cs" />
-    <Compile Include="Migrations\201508151140462_isUserOnlineFalg.Designer.cs">
-      <DependentUpon>201508151140462_isUserOnlineFalg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508151844210_TestDbafterMerge.cs" />
-    <Compile Include="Migrations\201508151844210_TestDbafterMerge.Designer.cs">
-      <DependentUpon>201508151844210_TestDbafterMerge.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508171059348_removecomm.cs" />
-    <Compile Include="Migrations\201508171059348_removecomm.Designer.cs">
-      <DependentUpon>201508171059348_removecomm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508171259177_UserGeneralUpdate.cs" />
-    <Compile Include="Migrations\201508171259177_UserGeneralUpdate.Designer.cs">
-      <DependentUpon>201508171259177_UserGeneralUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\201508271337014_27AugChange.cs" />
+    <Compile Include="Migrations\201508271337014_27AugChange.Designer.cs">
+      <DependentUpon>201508271337014_27AugChange.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
@@ -119,17 +107,8 @@
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508151140462_isUserOnlineFalg.resx">
-      <DependentUpon>201508151140462_isUserOnlineFalg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508151844210_TestDbafterMerge.resx">
-      <DependentUpon>201508151844210_TestDbafterMerge.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508171059348_removecomm.resx">
-      <DependentUpon>201508171059348_removecomm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508171259177_UserGeneralUpdate.resx">
-      <DependentUpon>201508171259177_UserGeneralUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508271337014_27AugChange.resx">
+      <DependentUpon>201508271337014_27AugChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -127,7 +127,7 @@ namespace ProWorldz.BL.BusinessLayer
               CountryId= model.CountryId,
               CreationDate = model.CreationDate,
 
-                IsOnline = model.IsOnline
+                IsOnline = model.IsOnline,
               CountryName=countryBL.GetCountryById(model.CountryId).Name,
               StateName=stateBL.GetStateById(model.StateId).Name,
               CityName=cityBL.GetCityById(model.CityId).Name

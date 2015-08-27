@@ -39,6 +39,29 @@ namespace ProWorldz.DL.UOW
         private IRepository<ContactUs> contactUs;
         private IRepository<Friend> friendRepository { get; set; }
 
+        private IRepository<LatestTechnology> latestTechnologyRepository { get; set; }
+        private IRepository<LatestTutorials> latestTutorialsRepository { get; set; }
+
+
+        public IRepository<LatestTutorials> LatestTutorialsRepository
+        {
+            get
+            {
+                if (latestTutorialsRepository == null)
+                    latestTutorialsRepository = new GenericRepository<LatestTutorials>(Context);
+                return latestTutorialsRepository;
+            }
+        }
+
+        public IRepository<LatestTechnology> LatestTechnologyRepository
+        {
+            get
+            {
+                if (latestTechnologyRepository == null)
+                    latestTechnologyRepository = new GenericRepository<LatestTechnology>(Context);
+                return latestTechnologyRepository;
+            }
+        }
         public IRepository<Degree> DegreeRepository
         {
             get

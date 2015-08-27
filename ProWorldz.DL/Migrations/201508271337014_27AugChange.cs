@@ -3,7 +3,7 @@ namespace ProWorldz.DL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class New11DB : DbMigration
+    public partial class _27AugChange : DbMigration
     {
         public override void Up()
         {
@@ -124,6 +124,7 @@ namespace ProWorldz.DL.Migrations
                         CityId = c.Int(nullable: false),
                         StateId = c.Int(nullable: false),
                         CountryId = c.Int(nullable: false),
+                        IsOnline = c.Boolean(nullable: false),
                         Active = c.Boolean(nullable: false),
                         CreationDate = c.DateTime(nullable: false),
                         ModificationDate = c.DateTime(),
@@ -144,9 +145,12 @@ namespace ProWorldz.DL.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        CommunityId = c.Int(nullable: false),
+                        Address1 = c.String(),
+                        Address2 = c.String(),
+                        Status = c.String(),
+                        FatherName = c.String(),
+                        PhoneNumber = c.String(),
                         UserId = c.Int(nullable: false),
-                        SubCommunityId = c.Int(nullable: false),
                         Image = c.String(),
                         Active = c.Boolean(nullable: false),
                         CreationDate = c.DateTime(nullable: false),
@@ -156,9 +160,7 @@ namespace ProWorldz.DL.Migrations
                         IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Communities", t => t.CommunityId)
                 .ForeignKey("dbo.Users", t => t.UserId)
-                .Index(t => t.CommunityId)
                 .Index(t => t.UserId);
             
             CreateTable(
@@ -185,11 +187,6 @@ namespace ProWorldz.DL.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         UserId = c.Int(nullable: false),
-                        Address1 = c.String(),
-                        Address2 = c.String(),
-                        Status = c.String(),
-                        FatherName = c.String(),
-                        PhoneNumber = c.String(),
                         Active = c.Boolean(nullable: false),
                         CreationDate = c.DateTime(nullable: false),
                         ModificationDate = c.DateTime(),
@@ -350,7 +347,6 @@ namespace ProWorldz.DL.Migrations
             DropForeignKey("dbo.UserPersonalInfomations", "UserId", "dbo.Users");
             DropForeignKey("dbo.Friends", "FriendShipStatusId", "dbo.Lkp_FriendShipStatus");
             DropForeignKey("dbo.UserGeneralInfomations", "UserId", "dbo.Users");
-            DropForeignKey("dbo.UserGeneralInfomations", "CommunityId", "dbo.Communities");
             DropForeignKey("dbo.Friends", "UserId", "dbo.Users");
             DropForeignKey("dbo.Users", "StateId", "dbo.States");
             DropForeignKey("dbo.Users", "CountryId", "dbo.Countries");
@@ -367,7 +363,6 @@ namespace ProWorldz.DL.Migrations
             DropIndex("dbo.UserPosts", new[] { "UserId" });
             DropIndex("dbo.UserPersonalInfomations", new[] { "UserId" });
             DropIndex("dbo.UserGeneralInfomations", new[] { "UserId" });
-            DropIndex("dbo.UserGeneralInfomations", new[] { "CommunityId" });
             DropIndex("dbo.Users", new[] { "CountryId" });
             DropIndex("dbo.Users", new[] { "StateId" });
             DropIndex("dbo.Users", new[] { "CityId" });
