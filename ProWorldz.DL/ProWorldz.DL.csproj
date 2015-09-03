@@ -67,9 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201508271337014_27AugChange.cs" />
-    <Compile Include="Migrations\201508271337014_27AugChange.Designer.cs">
-      <DependentUpon>201508271337014_27AugChange.cs</DependentUpon>
+    <Compile Include="Migrations\201509032131213_mergin chatting.cs" />
+    <Compile Include="Migrations\201509032131213_mergin chatting.Designer.cs">
+      <DependentUpon>201509032131213_mergin chatting.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
@@ -78,6 +78,8 @@
     <Compile Include="Models\Community.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Degree.cs" />
+    <Compile Include="Models\LatestTechnology.cs" />
+    <Compile Include="Models\LatestTutorials.cs" />
     <Compile Include="Models\Lkp_FriendShipStatus.cs" />
     <Compile Include="Models\IndustryType.cs" />
     <Compile Include="Models\Friend.cs" />
@@ -107,8 +109,8 @@
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508271337014_27AugChange.resx">
-      <DependentUpon>201508271337014_27AugChange.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509032131213_mergin chatting.resx">
+      <DependentUpon>201509032131213_mergin chatting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
