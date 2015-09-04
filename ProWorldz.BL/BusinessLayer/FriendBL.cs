@@ -267,7 +267,7 @@ namespace ProWorldz.BL.BusinessLayer
                     join fr in context.Friend
                     on user.Id equals fr.UserId
                     where user.Id == CurrentUserId && fr.FriendShipStatusId == (int)FriendShipStatus.Accepted
-                    select new { fr.FriendId, fr.UserId };
+                    select new { fr.FriendId, fr.UserId,user.Name };
 
             IQueryable<FriendBM> frndCollection = from curUser in context.Users
                                                   join genInfo in context.UserGeneralInfomation
@@ -282,6 +282,7 @@ namespace ProWorldz.BL.BusinessLayer
                                                       FriendImage = rt.Image != null ? rt.Image : "",
                                                       FriendId = curUser.Id,
                                                       UserId = b.Where(x => x.FriendId == curUser.Id).Select(x => x.UserId).FirstOrDefault(),
+                                                      UserName = b.Where(x => x.FriendId == curUser.Id).Select(x => x.Name).FirstOrDefault(),
                                                       IsOnline = curUser.IsOnline
                                                   };
             return frndCollection.ToList();

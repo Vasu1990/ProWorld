@@ -84,6 +84,9 @@ table {
 footer{
     z-index:999;
 }
+.sidebar-chat .chat-contacts li .status {
+    z-index: 0;
+}
 .user-avatar {
         width: 74px;
     height: 65px;
