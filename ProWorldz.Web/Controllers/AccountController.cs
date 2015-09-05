@@ -59,6 +59,9 @@ namespace ProWorldz.Web.Controllers
                 UserBM User = UserBL.GetUsers().Where(p => p.Email == Model.Email && p.Password == Model.Password).FirstOrDefault();
                 if (User != null)
                 {
+                    User.IsOnline = true;
+                    UserBL.UpdateUser(User);
+
                     SessionManager.InstanceCreator.Set<UserBM>(User, SessionKey.User);
                     //  Session["User"] = User;
                     FormsAuthentication.SetAuthCookie(User.Name, false);
@@ -416,6 +419,13 @@ namespace ProWorldz.Web.Controllers
 
         public ActionResult LogOff()
         {
+            UserBM User = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            if (User != null)
+            {
+                User.IsOnline = false;
+                UserBL userBL = new UserBL();
+                userBL.UpdateUser(User);
+            }
             FormsAuthentication.SignOut();
 
             return RedirectToAction("Login", "Account");
