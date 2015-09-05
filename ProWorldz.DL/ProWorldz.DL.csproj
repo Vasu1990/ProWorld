@@ -67,21 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201509031759580_LatestTech.cs" />
-    <Compile Include="Migrations\201509031759580_LatestTech.Designer.cs">
-      <DependentUpon>201509031759580_LatestTech.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509032112210_AddUserIdInLatestTech.cs" />
-    <Compile Include="Migrations\201509032112210_AddUserIdInLatestTech.Designer.cs">
-      <DependentUpon>201509032112210_AddUserIdInLatestTech.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509032123222_AddLatestTechAndLatestTut.cs" />
-    <Compile Include="Migrations\201509032123222_AddLatestTechAndLatestTut.Designer.cs">
-      <DependentUpon>201509032123222_AddLatestTechAndLatestTut.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509032137221_ChangeDataType.cs" />
-    <Compile Include="Migrations\201509032137221_ChangeDataType.Designer.cs">
-      <DependentUpon>201509032137221_ChangeDataType.cs</DependentUpon>
+    <Compile Include="Migrations\201509052313233_merging_1\6\2015.cs" />
+    <Compile Include="Migrations\201509052313536_mergin_latest.cs" />
+    <Compile Include="Migrations\201509052313536_mergin_latest.Designer.cs">
+      <DependentUpon>201509052313536_mergin_latest.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
@@ -121,17 +110,8 @@
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509031759580_LatestTech.resx">
-      <DependentUpon>201509031759580_LatestTech.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509032112210_AddUserIdInLatestTech.resx">
-      <DependentUpon>201509032112210_AddUserIdInLatestTech.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509032123222_AddLatestTechAndLatestTut.resx">
-      <DependentUpon>201509032123222_AddLatestTechAndLatestTut.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509032137221_ChangeDataType.resx">
-      <DependentUpon>201509032137221_ChangeDataType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509052313536_mergin_latest.resx">
+      <DependentUpon>201509052313536_mergin_latest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

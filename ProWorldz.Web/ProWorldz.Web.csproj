@@ -8,7 +8,7 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{687458FB-D3F2-4DEF-9441-0796C6C94D8B}</ProjectGuid>
-    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProWorldz.Web</RootNamespace>
@@ -274,11 +274,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201508171058143_removeCommunity.cs" />
-    <Compile Include="Migrations\201508171058143_removeCommunity.Designer.cs">
-      <DependentUpon>201508171058143_removeCommunity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\LatestTechnologyModel.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -1355,11 +1350,6 @@
       <Project>{f21db6cc-69be-414d-bd63-3915428d738f}</Project>
       <Name>ProWorldz.BL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508171058143_removeCommunity.resx">
-      <DependentUpon>201508171058143_removeCommunity.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
