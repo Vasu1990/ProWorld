@@ -6,14 +6,17 @@
 <div class="container">
     <div class="clear-fix">
     </div>
-    <div class="row col-md-12 ">
-        
-            <a class="btn btn-primary pull-right"  style="color:white" href='@Url.Content("/Account/EditProfile")'>Edit Profile<i class="fa fa-pencil"></i></a>
-        
+    <div class="row col-md-11 ">
+
+        <a class="btn btn-primary pull-right"  style="color:white" href='@Url.Content("/Account/EditProfile")'>Edit Profile<i class="fa fa-pencil"></i></a>
+
     </div>
-    <br /><br /><br /><br />
-   
-    <div class="col-md-12">
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="col-md-11">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading panel-heading-gray">
@@ -48,7 +51,7 @@
                             </div>
                         </li>
 
-                         <li class="padding-v-5" data-bind="visible: viewModel.Status">
+                        <li class="padding-v-5" data-bind="visible: viewModel.Status">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <span class="text-muted">Martial Status</span>
@@ -57,7 +60,7 @@
                             </div>
                         </li>
 
-                         <li class="padding-v-5" data-bind="visible: viewModel.Address1">
+                        <li class="padding-v-5" data-bind="visible: viewModel.Address1">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <span class="text-muted">Address 1 </span>
@@ -66,7 +69,7 @@
                             </div>
                         </li>
 
-                         <li class="padding-v-5" data-bind="text:viewModel.Address2">
+                        <li class="padding-v-5" data-bind="text:viewModel.Address2">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <span class="text-muted">Address 2 </span>
@@ -89,7 +92,7 @@
                 <div class="panel-body" id="dvPersonal">
                     <ul class="list-unstyled profile-about margin-none">
 
-                         <li class="padding-v-5">
+                        <li class="padding-v-5">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <span class="text-muted">Community</span>
@@ -98,7 +101,7 @@
                             </div>
                         </li>
 
-                         <li class="padding-v-5">
+                        <li class="padding-v-5">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <span class="text-muted">Sub-Community</span>
@@ -130,8 +133,8 @@
                                 <div class="col-sm-8" data-bind="text:viewPersonalModel.CityName"></div>
                             </div>
                         </li>
-                       
-                      
+
+
                     </ul>
                 </div>
             </div>
@@ -140,7 +143,7 @@
 
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-11">
         <div class="col-md-6">
 
             <div class="panel panel-default">
@@ -202,7 +205,7 @@
             </div>
 
         </div>
-         <div class="col-md-6">
+        <div class="col-md-6">
 
             <div class="panel panel-default">
                 <div class="panel-heading panel-heading-gray">
@@ -221,7 +224,7 @@
                             </div>
                         </li>
 
-                         <li class="padding-v-5">
+                        <li class="padding-v-5">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <span class="text-muted">Degree Name</span>
@@ -256,7 +259,7 @@
                             </div>
                         </li>
 
-                       
+
 
 
 
@@ -277,8 +280,7 @@
 <script src="~/Scripts/knockout-2.2.0.js"></script>
 <script type="text/javascript">
 
-    function Redirect(tabNumber)
-    {
+    function Redirect(tabNumber) {
         debugger;
         window.location.href = '/Account/EditProfile?Tab=' + tabNumber;
     }
@@ -288,7 +290,7 @@
     viewModel.SubCommunity = ko.observable();
     viewModel.FatherName = ko.observable();
 
-   
+
 
 
     viewModel.Status = ko.observable();
@@ -303,7 +305,7 @@
     viewPersonalModel.CountryName = ko.observable();
     viewPersonalModel.StateName = ko.observable();
     viewPersonalModel.CityName = ko.observable();
-  
+
     ko.applyBindings(viewPersonalModel, document.getElementById('dvPersonal'));
 
 
@@ -345,8 +347,8 @@
             debugger;
             console.log(data)
             viewModel.Image(data.Image)
-           // viewModel.Community(data.CommunityName)
-           // viewModel.SubCommunity(data.SubCommunityName)
+            // viewModel.Community(data.CommunityName)
+            // viewModel.SubCommunity(data.SubCommunityName)
             viewModel.FatherName(data.FatherName)
             viewModel.Status(data.Status)
             viewModel.Address1(data.Address1)
@@ -355,14 +357,14 @@
             viewModel.PhoneNumber(data.PhoneNumber)
 
 
-            
+
         })
     }
     function LoadUserPersonalDetail() {
         $.get('/Home/LoadUserCommunityDetail', function (data) {
             debugger;
             console.log(data);
-           
+
 
             viewPersonalModel.CommunityName(data.CommunityName)
             viewPersonalModel.SubCommunityName(data.SubCommunityName);

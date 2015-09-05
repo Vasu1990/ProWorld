@@ -16,7 +16,7 @@
                     </div>
                     <div class="margin-bottom7">
                         <i class="fa fa-birthday-cake fa-fw"></i>
-                        <span data-bind="text:User.DOB"></span>
+                        <span data-bind="text: moment(User.DOB()).format('LL')"></span>
                     </div>
                     <div class="margin-bottom7">
                         <i class="fa fa-book fa-fw"></i>
@@ -61,14 +61,14 @@
             </div>
             <ul class="cover-nav">
                 <li>
-                    <a href="user-public-timeline.html"><i class="fa fa-fw icon-ship-wheel"></i> Timeline</a>
+                    <a href="/Site"><i class="fa fa-fw icon-ship-wheel"></i> WebSite</a>
                 </li>
-                <li>
+               @* <li>
                     <a href="user-public-profile.html"><i class="fa fa-fw icon-user-1"></i> About</a>
                 </li>
                 <li>
                     <a href="user-public-users.html"><i class="fa fa-fw fa-users"></i> Friends</a>
-                </li>
+                </li>*@
             </ul>
         </div>
     </div>
@@ -90,14 +90,14 @@
                           
                                     <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
                                     <a href="#" data-bind="text:UserName"></a>
-                                    on <span data-bind="text:CreationDate"></span>
+                                    on <span data-bind="text: moment(CreationDate()).format('LL')"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="panel-body user-post">
                             <div class="boxed">
                                 <h4 class="post-header" data-bind="text:Subject"></h4>
-                                <p class="post-text" data-bind="text:Post"></p>
+                                <p class="post-text" data-bind="html:Post"></p>
                             </div>
                         </div>
                         <div class="view-all-comments">
@@ -176,7 +176,7 @@
 
 
 @section scripts{
-    
+    <script src="~/Scripts/moment.js"></script>
     <script>
         var UserDashboardVM = ko.mapping.fromJS(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model)));
         </script>

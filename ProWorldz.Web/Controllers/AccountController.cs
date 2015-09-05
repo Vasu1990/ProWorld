@@ -61,7 +61,7 @@ namespace ProWorldz.Web.Controllers
                 {
                     User.IsOnline = true;
                     UserBL.UpdateUser(User);
-
+                    User.Image = UserGeneralInformationBL.GetGeneralInformationByUserId(User.Id) != null ? UserGeneralInformationBL.GetGeneralInformationByUserId(User.Id).Image : string.Empty;
                     SessionManager.InstanceCreator.Set<UserBM>(User, SessionKey.User);
                     //  Session["User"] = User;
                     FormsAuthentication.SetAuthCookie(User.Name, false);

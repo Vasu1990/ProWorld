@@ -54,10 +54,19 @@ function ChangeSubCommunity(Id) {
 }
 
 function checkMail(value) {
-    alert("kkk")
+   
     console.log(value)
-    $.get('/Account/CheckMail/' + value, function (data) {
-    })
+    proWorld.AjaxHelper.GetCall("/Home/CheckMail?email="+value , OnSuccessGetCheckMail);
+    function OnSuccessGetCheckMail(data) {
+        debugger;
+        if (data) {
+            $("#txtEmail").val("");
+            alert("Email Already Exist.")
+
+        }
+
+       
+    }
 }
 
 
@@ -65,7 +74,16 @@ $('.form_date').datetimepicker({
     format: "dd MM yyyy",
     startDate: "1970-02-02",
 
-    todayBtn: 1
+    todayBtn: 1,
+    language: 'fr',
+    weekStart: 1,
+    
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0,
+    showMeridian: 0
 
 
 });

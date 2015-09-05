@@ -37,11 +37,11 @@
             <li id="liProfessional"><a href="#messages4" data-toggle="tab" onclick="return showProfessionalData();"><i class="fa fa-fw fa-envelope"></i>Professional Info</a>
             </li>
 
-            <li id="liQualification"><a href="#Qualification" data-toggle="tab" onclick="return showQualificationData();"><i class="fa fa-fw fa-envelope"></i>Qualification Info</a>
+            <li id="liQualification"><a href="#Qualification" data-toggle="tab" onclick="return showQualificationData();"><i class="fa fa-pencil fa-fw"></i>Qualification Info</a>
             </li>
 
             <li id="liVideo">
-                <a href="#UserVideo" data-toggle="tab"><i class="fa fa-fw fa-envelope"></i>Video & Portfolio</a>
+                <a href="#UserVideo" data-toggle="tab"><i class="fa fa-fw fa-camera-retro"></i>Video & Portfolio</a>
             </li>
         </ul>
         <!-- // END Tabs -->
@@ -575,6 +575,7 @@
             $.get('/Account/GetStateByCountry/' + Id, function (data) {
                 debugger;
                 $('#ddlState').find('option:gt(0)').remove();
+                $('#ddlCity').find('option:gt(0)').remove();
                 $(data).each(function (index, value) {
                     var newOption = $('<option value="' + value.StateId + '">' + value.Name + '</option>');
                     $('#ddlState').append(newOption);
@@ -693,6 +694,7 @@
         $(document).ready(function () {
             debugger;
             //logic of open tab on the basis of query string value
+            $(".form_date").val("")
             if (window.location.href.indexOf('?') > -1) {
                 var tabNumber = window.location.href[(window.location.href.lastIndexOf('=') + 1)];
                 tabNumber = parseInt(tabNumber)
@@ -728,7 +730,7 @@
     }
     $('.form_date').datetimepicker({
         format: "dd MM yyyy",
-        startDate: "2013-02-14",
+        startDate: "2000-02-14",
         language: 'fr',
         weekStart: 1,
         todayBtn: 1,

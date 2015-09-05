@@ -16,6 +16,7 @@ namespace ProWorldz.BL.BusinessLayer
         CountryBL countryBL = new CountryBL();
         CityBL cityBL = new CityBL();
         StateBL stateBL = new StateBL();
+        UserGeneralInformationBL userGeneralInformationBL = new UserGeneralInformationBL();
 
         public UserBL()
         {
@@ -131,6 +132,7 @@ namespace ProWorldz.BL.BusinessLayer
               CountryName=countryBL.GetCountryById(model.CountryId).Name,
               StateName=stateBL.GetStateById(model.StateId).Name,
               CityName=cityBL.GetCityById(model.CityId).Name
+              
 
 
 

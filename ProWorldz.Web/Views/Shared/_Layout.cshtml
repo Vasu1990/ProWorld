@@ -6,11 +6,11 @@
 <head>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-<style>
-    .popover{
-        width:300px;
-    }
-</style>
+    <style>
+        .popover {
+            width: 300px;
+        }
+    </style>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +29,7 @@
     <!-- <link href="css/module-media.min.css" rel="stylesheet" /> -->
     <link href="~/Content/themes/social-3/css/module-timeline.min.css" rel="stylesheet" />
     <link href="~/Content/themes/social-3/css/module-cover.min.css" rel="stylesheet" />
-    
+
     <link href="~/Content/themes/social-3/css/module-chat.min.css" rel="stylesheet" />
     <link href="~/Content/themes/custom/Proworldz.site.css" rel="stylesheet" />
     <!-- <link href="css/module-charts.min.css" rel="stylesheet" /> -->
@@ -41,26 +41,35 @@
     <!-- <link href="css/module-colors-progress-bars.min.css" rel="stylesheet" /> -->
     <!-- <link href="css/module-colors-text.min.css" rel="stylesheet" /> -->
     <style>
-        .status{
-            z-index:0;item post-container
+        .status {
+            z-index: 0;
+            item post-container;
         }
+
         .chatBox {
             background: #515858 !important;
             min-width: 300px;
         }
-         .chatBox .media .media-body a:hover {
-            background: #515858 !important;
-        }
-         .chatBox img {
+
+            .chatBox .media .media-body a:hover {
+                background: #515858 !important;
+            }
+
+            .chatBox img {
                 border-top-left-radius: 2 !important;
+            }
+
+        .minimise {
+            position: absolute;
+            bottom: -286px;
         }
-         .minimise {
-             position: absolute;
-             bottom: -286px;
-         }
-         .chatBoxPosition {
-             position: absolute;right: 0; top: -268px; line-height: 34px;
-         }
+
+        .chatBoxPosition {
+            position: absolute;
+            right: 0;
+            top: -268px;
+            line-height: 34px;
+        }
     </style>
     @RenderSection("styles", required: false)
 
@@ -75,6 +84,9 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 <body>
 
     <header>
+        @{
+            UserBM User = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+        }
         <!-- Wrapper required for sidebar transitions -->
         <div class="st-container">
             <!-- Fixed navbar -->
@@ -158,23 +170,42 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 </div>
                             </li>
                             <!-- User -->
+
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle user" data-toggle="dropdown">
-                                    <img src="~/Content/themes/social-3/images/people/110/guy-5.jpg" alt="Bill" class="img-circle" width="40" />
-                                    Bill <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="/Account/EditProfile">Edit Profile</a>
-                                    </li>
-                                    <li>
-                                        <a href="#myChangePasswordModal" class="forgot-password" data-toggle="modal">Change Password</a>
-                                    </li>
-                                    <li>
-                                        <a href="/Account/LogOff">Logout</a>
-                                    </li>
-                                </ul>
-                            </li>
+                               
+                                    @if (User != null)
+                                    {
+                                        <a href="#" class="dropdown-toggle user" data-toggle="dropdown">
+                                            <img src="@User.Image" alt="Bill" class="img-circle" width="40" />
+                                            @User.Name <span class="caret"></span>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="#" class="dropdown-toggle user" data-toggle="dropdown">
+                                            <img src="~/Content/themes/social-3/images/people/110/guy-5.jpg" alt="Bill" class="img-circle" width="40" />
+                                            Bill <span class="caret"></span>
+                                        </a>
+                                    }
+
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="/Account/EditProfile">Edit Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="#myChangePasswordModal" class="forgot-password" data-toggle="modal">Change Password</a>
+                                        </li>
+                                        <li>
+                                            <a href="/LatestTechnology">Latest Technology</a>
+                                        </li>
+                                        <li>
+                                            <a href="/LatestTutorials">Latest Tutorials</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Account/LogOff">Logout</a>
+                                        </li>
+                                    </ul></li>
                         </ul>
 
                     </div>
@@ -287,63 +318,63 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         <strong>Proworldz</strong> © Copyright 2015
         <!--template for chat box-->
         <div data-bind="visible:chatObjectArray().length > 0">
-                <ul data-bind="foreach:chatObjectArray" class="item post-container" id="chatBoxContainer" style="position: absolute;left: 0; top: -268px; line-height: 34px;list-style:none">
-                    <li class="col-xs-12 col-md-3 col-lg-3 timeline-block">
-                        <div class="panel panel-default">
-                            <!--Pannel header-->
-                            <div class="panel-heading chatBox">
-                                <div class="media">
-                                    <div>
-                                        <span>
-                                            <img class="media-object img-circle img-responsive user-avatar-mini pull-left" data-bind="attr:{src:chatFriendImage}">
-                                        </span>
-                                    </div>
-                                    <div class="media-body">
+            <ul data-bind="foreach:chatObjectArray" class="item post-container" id="chatBoxContainer" style="position: absolute; left: 0; top: -268px; line-height: 34px; list-style: none">
+                <li class="col-xs-12 col-md-3 col-lg-3 timeline-block">
+                    <div class="panel panel-default">
+                        <!--Pannel header-->
+                        <div class="panel-heading chatBox">
+                            <div class="media">
+                                <div>
+                                    <span>
+                                        <img class="media-object img-circle img-responsive user-avatar-mini pull-left" data-bind="attr:{src:chatFriendImage}">
+                                    </span>
+                                </div>
+                                <div class="media-body">
 
-                                        <a href="#" class="pull-right text-muted" data-bind="click:$root.closeCurrentBox"><i class="fa fa-times fa fa-2x "></i></a>
-                                        <a href="#" class="pull-right text-muted" data-bind="click:$root.minimiseCurrentBox"><i class="fa fa-minus fa fa-2x "></i></a>
+                                    <a href="#" class="pull-right text-muted" data-bind="click:$root.closeCurrentBox"><i class="fa fa-times fa fa-2x "></i></a>
+                                    <a href="#" class="pull-right text-muted" data-bind="click:$root.minimiseCurrentBox"><i class="fa fa-minus fa fa-2x "></i></a>
 
-                                        <a href="#" class="pull-left" style="line-height: 40px; font-size: 15px" data-bind="text:chatFriendName"></a>
-                                    </div>
+                                    <a href="#" class="pull-left" style="line-height: 40px; font-size: 15px" data-bind="text:chatFriendName"></a>
                                 </div>
                             </div>
-                            <div>
-                                <ul class="comments">
-                                    <!--Pannel chat list section-->
-                                    <li data-container="comment-box" style="height: 170px; overflow-y: scroll;">
-                                        <ul class="comment-box" data-bind=foreach:chatMessageList>
-                                            <li class="media" data-container="comment-strip" data-bind='template: { name: $root.SelectedTemplate($parent.chatHostId,chatterId)}'></li>
-                                        </ul>
-                                    </li>
-
-                                    <!--Pannel type send chat section-->
-                                    <li class="comment-form">
-                                        <div class="input-group">
-                                            <input type="text" class="txtUserComment form-control" placeholder="Type your message here.." data-bind="value:chatMsgBoxtext" autofocus>
-
-                                            <div class=" input-group-btn" data-control="post-comment-control" data-bind="click:LayoutVM.SendChatMessage">
-                                                <span class=" btn btn-default">
-                                                    <i class="fa fa-paper-plane"></i>
-                                                </span>
-                                            </div>
-                                            <div class="input-group-btn hidden">
-                                                <span class=" btn btn-default">
-                                                    <i class="fa fa-check"></i>
-                                                </span>
-                                                <span class=" btn btn-default">
-                                                    <i class="fa fa-close"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
+                        <div>
+                            <ul class="comments">
+                                <!--Pannel chat list section-->
+                                <li data-container="comment-box" style="height: 170px; overflow-y: scroll;">
+                                    <ul class="comment-box" data-bind="foreach:chatMessageList">
+                                        <li class="media" data-container="comment-strip" data-bind='template: { name: $root.SelectedTemplate($parent.chatHostId,chatterId)}'></li>
+                                    </ul>
+                                </li>
 
-                    </li>
-                </ul>
-            </div>
-        
+                                <!--Pannel type send chat section-->
+                                <li class="comment-form">
+                                    <div class="input-group">
+                                        <input type="text" class="txtUserComment form-control" placeholder="Type your message here.." data-bind="value:chatMsgBoxtext" autofocus>
+
+                                        <div class=" input-group-btn" data-control="post-comment-control" data-bind="click:LayoutVM.SendChatMessage">
+                                            <span class=" btn btn-default">
+                                                <i class="fa fa-paper-plane"></i>
+                                            </span>
+                                        </div>
+                                        <div class="input-group-btn hidden">
+                                            <span class=" btn btn-default">
+                                                <i class="fa fa-check"></i>
+                                            </span>
+                                            <span class=" btn btn-default">
+                                                <i class="fa fa-close"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
     </footer>
 
     <script>
@@ -440,21 +471,21 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                 chat.server.createAuth();
             });
 
-            vm.SelectedTemplate = function(userId,chatterId) {
-                return   userId() === chatterId ? "right" : "left";
+            vm.SelectedTemplate = function (userId, chatterId) {
+                return userId() === chatterId ? "right" : "left";
             }
 
-            vm.closeCurrentBox = function(data) {
+            vm.closeCurrentBox = function (data) {
                 console.log(data);
                 vm.chatObjectArray.remove(data);
             }
-           
-            vm.minimiseCurrentBox = function(data,event) {
+
+            vm.minimiseCurrentBox = function (data, event) {
                 var clickedBox = $(event.target);
                 $(clickedBox).closest('div.chatBox').next('div').toggle();
                 $(clickedBox).closest('div.panel-default').toggleClass('minimise');
             }
-           
+
             vm.chatObjectArray = ko.observableArray();
 
 
@@ -473,13 +504,13 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                             //var box1 = $("#" + chatBoxIdUser);
                             //var box2 = $("#" + chatBoxIdFriend);
                             //if(box1 == null && box2 == null){
-                                alert("already chatting");
-                                return;
+                            alert("already chatting");
+                            return;
                             //}
-                        } 
+                        }
                     }
                 }
-             
+
                 var chatObject = {
                     chatHostId: ko.observable(data.UserId()),
                     chatHostName: ko.observable(data.UserName()),
@@ -494,7 +525,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                 }
 
                 vm.chatObjectArray.push(chatObject);
-                
+
                 //var chatBox = $("#chatBox").html();
                 //$(".footer").append(chatBox);
                 //$(".footer.navbarUser").each(function () {
@@ -515,34 +546,33 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             }
             vm.SendChatMessage = function (data) {
 
-                if (data.chatMsgBoxtext() != undefined)
-                        {
+                if (data.chatMsgBoxtext() != undefined) {
                     // Call the Send method on the hub.
-                        var chatMessage = data.chatHostName() + " : " + ko.toJS(data.chatMsgBoxtext);
-                        var msgObj = { "chatMessage": chatMessage, "chatMsgDateTime": getCurretnDate(), chatterId: data.chatHostId() }
-                        data.chatMessage = msgObj;
-         
-                        data.chatMessageList.push(msgObj); //push to chat list array to display on user screen
+                    var chatMessage = data.chatHostName() + " : " + ko.toJS(data.chatMsgBoxtext);
+                    var msgObj = { "chatMessage": chatMessage, "chatMsgDateTime": getCurretnDate(), chatterId: data.chatHostId() }
+                    data.chatMessage = msgObj;
 
-                        data.chatMsgBoxtext("");//clear chat input text
-                        var model = ko.toJS(data);
-                        console.log(model);
-                        chat.server.sendChatMessage(model);
-                }else{
+                    data.chatMessageList.push(msgObj); //push to chat list array to display on user screen
+
+                    data.chatMsgBoxtext("");//clear chat input text
+                    var model = ko.toJS(data);
+                    console.log(model);
+                    chat.server.sendChatMessage(model);
+                } else {
                     alert("cannot be balnk");
                 }
             }
-           
+
             chat.client.appendChatBoxOnFriend = function (chatDetail) {
-                
+
                 var chatObject = ko.mapping.fromJS(chatDetail);
                 console.log(chatObject);
 
 
                 var chatBoxArrLen = vm.chatObjectArray().length;
                 if (chatBoxArrLen > 0) {
-             
-                    
+
+
                     var chatBoxIdUser = chatObject.chatFriendId() + chatObject.chatHostName();//if user clicks again on same frnd
                     var chatBoxIdFriend = chatObject.chatHostId() + chatObject.chatFriendName();//if friend clicks again user
                     var msgObject = {
@@ -582,7 +612,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                     //    ko.applyBindings(vm, this);
                     //});
                 }
-                
+
             };
 
             // apply binding on structure like this
@@ -601,38 +631,38 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
     @RenderSection("scripts", required: false)
 
-  
 
-<!--TEMPLATE FOR User Comment-->
-<script type="text/html" id="right">
-    <div class="media-body">
 
-        @*<a href="#" class="pull-left comment-author" data-bind="text:chatterName"></a>*@
-        <span>
-            <span class="pull-right" style="line-height: 16px; text-align: left;font-size: 14px" data-control="text-comment" data-bind="text:chatMessage"></span>
-            <span class="comment-date pull-right" style="float: left; clear: both;font-size: 10px;" data-bind="text:chatMsgDateTime"></span>
-
-        </span>
-    </div>
-    <div class="media-right">
-        <span>
-            <img class="media-object img-circle img-responsive user-avatar-mini" data-bind="attr:{src:$parent.chatHostImage}">
-        </span>
-    </div>
-</script>
-
-<!--TEMPLATE FOR Friend Comment-->
-    <script type="text/html" id="left">
-            <div>
-                <span>
-                    <img class="media-object img-circle img-responsive user-avatar-mini pull-left" data-bind="attr:{src:$parent.chatFriendImage}">
-                </span>
-            </div>
+    <!--TEMPLATE FOR User Comment-->
+    <script type="text/html" id="right">
         <div class="media-body">
 
             @*<a href="#" class="pull-left comment-author" data-bind="text:chatterName"></a>*@
             <span>
-                <span class="pull-left" style="line-height: 16px; text-align: left;font-size: 14px" data-control="text-comment" data-bind="text:chatMessage"></span>
+                <span class="pull-right" style="line-height: 16px; text-align: left; font-size: 14px" data-control="text-comment" data-bind="text:chatMessage"></span>
+                <span class="comment-date pull-right" style="float: left; clear: both; font-size: 10px;" data-bind="text:chatMsgDateTime"></span>
+
+            </span>
+        </div>
+        <div class="media-right">
+            <span>
+                <img class="media-object img-circle img-responsive user-avatar-mini" data-bind="attr:{src:$parent.chatHostImage}">
+            </span>
+        </div>
+    </script>
+
+    <!--TEMPLATE FOR Friend Comment-->
+    <script type="text/html" id="left">
+        <div>
+            <span>
+                <img class="media-object img-circle img-responsive user-avatar-mini pull-left" data-bind="attr:{src:$parent.chatFriendImage}">
+            </span>
+        </div>
+        <div class="media-body">
+
+            @*<a href="#" class="pull-left comment-author" data-bind="text:chatterName"></a>*@
+            <span>
+                <span class="pull-left" style="line-height: 16px; text-align: left; font-size: 14px" data-control="text-comment" data-bind="text:chatMessage"></span>
                 <span class="comment-date" style="float: left; clear: both;" data-bind="text:chatMsgDateTime"></span>
 
             </span>
@@ -640,5 +670,3 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     </script>
 
 </body>
-
-    

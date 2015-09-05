@@ -16,6 +16,8 @@ namespace ProWorldz.BL.BusinessModel
 
         public string Password { get; set; }
 
+        public string Image { get; set; }
+
         public int UserTypeId { get; set; }
 
         public DateTime DOB { get; set; }

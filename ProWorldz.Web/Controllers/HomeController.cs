@@ -301,5 +301,14 @@ namespace ProWorldz.Web.Controllers
 
         }
 
+        
+        public JsonResult CheckMail(string email)
+        {
+            UserBM User = UserBL.GetUsers().Where(p => p.Email == email).FirstOrDefault();
+            bool IsExist = User != null ? true : false;
+            return Json(IsExist, JsonRequestBehavior.AllowGet);
+
+        }
+
     }
 }

@@ -38,7 +38,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group form-control-default">
                                                         <label for="exampleInputLastName">Email</label>
-                                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email",onkeyup = "checkMail(this.value);" })
+                                                        @Html.TextBoxFor(model => model.Email, new {@id="txtEmail", @class = "form-control", @placeholder = "Email",onblur = "checkMail(this.value);" })
                                                         @Html.ValidationMessageFor(model => model.Email)
                                                     </div>
                                                 </div>
@@ -160,9 +160,9 @@
     <!-- /st-content -->
 </div>
 @section scripts{
-
+     <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
     @Scripts.Render("~/Scripts/Custom/ProWorldz.Register.js")
-    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+   
     <script>
         $(document).ready(function () {
             $("#datepicker").val("24 February 1989")
