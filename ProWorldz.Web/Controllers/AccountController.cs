@@ -45,8 +45,8 @@ namespace ProWorldz.Web.Controllers
         public ActionResult Login(string returnUrl)
         {
             LoginModel Model = new LoginModel();
-            Model.SucessMessage = (TempData["Success"] != null ? TempData["Success"].ToString() : string.Empty).ToString();
-            Model.ErrorMessage = (TempData["Error"] != null ? TempData["Error"].ToString() : string.Empty).ToString();
+            Model.SucessMessage = (TempData[Message.Success] != null ? TempData[Message.Success].ToString() : string.Empty).ToString();
+            Model.ErrorMessage = (TempData[Message.Error] != null ? TempData[Message.Error].ToString() : string.Empty).ToString();
 
             return View(Model);
         }
@@ -473,7 +473,7 @@ namespace ProWorldz.Web.Controllers
             int userId = userBL.Create(userBM);
 
             FillUserGeneralInformation(userId);
-            TempData["Successs"] = "User Registered Successfully";
+            TempData[Message.Success] = "User Registered Successfully. Please Login.";
             // If we got this far, something failed, redisplay form
             return RedirectToAction("Login");
         }

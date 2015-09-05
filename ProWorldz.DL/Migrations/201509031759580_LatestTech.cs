@@ -3,7 +3,7 @@ namespace ProWorldz.DL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _27AugChange : DbMigration
+    public partial class LatestTech : DbMigration
     {
         public override void Up()
         {

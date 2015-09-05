@@ -11,6 +11,7 @@
     $.get('/Account/GetStateByCountry/' + Id, function (data) {
         debugger;
         $('#ddlState').find('option:gt(0)').remove();
+        $('#ddlCity').find('option:gt(0)').remove();
         $(data).each(function (index, value) {
             var newOption = $('<option value="' + value.StateId + '">' + value.Name + '</option>');
             $('#ddlState').append(newOption);
@@ -51,3 +52,20 @@ function ChangeSubCommunity(Id) {
 
 
 }
+
+function checkMail(value) {
+    alert("kkk")
+    console.log(value)
+    $.get('/Account/CheckMail/' + value, function (data) {
+    })
+}
+
+
+$('.form_date').datetimepicker({
+    format: "dd MM yyyy",
+    startDate: "1970-02-02",
+
+    todayBtn: 1
+
+
+});

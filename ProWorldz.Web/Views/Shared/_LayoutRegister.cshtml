@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+<style>
+    .popover{
+        width:300px;
+    }
+</style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Proworld</title>
+    <link href="~/Content/themes/social-3/css/vendor.min.css" rel="stylesheet">
+    <link href="~/Content/themes/social-3/css/theme-core.min.css" rel="stylesheet">
+    <link href="~/Content/themes/social-3/css/module-essentials.min.css" rel="stylesheet" />
+    <link href="~/Content/themes/social-3/css/module-layout.min.css" rel="stylesheet" />
+    @*<link href="~/Content/themes/social-3/css/app/app.css" rel="stylesheet" />*@
+    @*<link href="~/Content/themes/social-3/css/module-sidebar.min.css" rel="stylesheet" />
+    <link href="~/Content/themes/social-3/css/module-sidebar-skins.min.css" rel="stylesheet" />*@
+    <link href="~/Content/themes/social-3/css/module-navbar.min.css" rel="stylesheet" />
+    <!-- <link href="css/module-media.min.css" rel="stylesheet" /> -->
+    <link href="~/Content/themes/social-3/css/module-timeline.min.css" rel="stylesheet" />
+    <link href="~/Content/themes/social-3/css/module-cover.min.css" rel="stylesheet" />
+    
+    <link href="~/Content/themes/social-3/css/module-chat.min.css" rel="stylesheet" />
+    <link href="~/Content/themes/custom/Proworldz.site.css" rel="stylesheet" />
+    <!-- <link href="css/module-charts.min.css" rel="stylesheet" /> -->
+    @*<link href="~/Content/themes/social-3/css/module-maps.min.css" rel="stylesheet" />*@
+    <!-- <link href="css/module-colors-alerts.min.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-background.min.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-buttons.min.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-calendar.min.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-progress-bars.min.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-text.min.css" rel="stylesheet" /> -->
+    <style>
+        .status{
+            z-index:0;
+        }
+    </style>
+    @RenderSection("styles", required: false)
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+    <header>
+        <!-- Wrapper required for sidebar transitions -->
+        <div class="st-container">
+            <!-- Fixed navbar -->
+            <div class="navbar navbar-main navbar-primary navbar-fixed-top" role="navigation">
+                <div class="nav-padding">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#sidebar-chat" data-toggle="sidebar-menu" class="toggle pull-right visible-xs"><i class="fa fa-comments"></i></a>
+                        <a class="navbar-brand" href="#">ProWorldz</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="main-nav">
+                        <ul class="nav navbar-nav" style="width:70%">
+                          
+
+                        </ul>
+                        
+
+                </div>
+            </div>
+
+        </div>
+     
+    </div>
+
+         @using (Html.BeginForm("ChangePassword", "Account", FormMethod.Post))
+        {
+            <div id="myChangePasswordModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Change Password</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <label for="exampleInputFirstName">Old Password</label>
+                                    <input type="password" class="form-control" placeholder = "Password" />
+                                
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <label for="exampleInputFirstName">Password</label>
+                                    <input type="password" class="form-control" placeholder = "Password" />
+                                
+                                </div>
+                            </div>
+
+                             <div class="row">
+                                <div class="col-md-12">
+
+                                    <label for="exampleInputFirstName">Confirm Password</label>
+                                    <input type="password" class="form-control" placeholder = "Confirm Password" />
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+       
+    <!-- /st-container -->
+
+    </header>
+
+
+    <div id="body">
+
+
+        <div class="col-md-12" style="padding:0 30px">
+            @RenderBody()
+        </div>
+        
+    </div>
+
+    <footer class="footer">
+        <strong>Proworldz</strong> © Copyright @DateTime.Now.Year
+    </footer>
+
+    <script>
+        var config = {
+            theme: "social-3",
+            skins: {
+                "default": {
+                    "primary-color": "#16ae9f"
+                },
+                "orange": {
+                    "primary-color": "#e74c3c"
+                },
+                "blue": {
+                    "primary-color": "#4687ce"
+                },
+                "purple": {
+                    "primary-color": "#af86b9"
+                },
+                "brown": {
+                    "primary-color": "#c3a961"
+                },
+                "default-nav-inverse": {
+                    "color-block": "#242424"
+                }
+            }
+        };
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/Knockout")
+    <script src="~/Content/themes/social-3/js/vendor-core.min.js"></script>
+    <script src="~/Content/themes/social-3/js/vendor-tables.min.js"></script>
+    <script src="~/Content/themes/social-3/js/vendor-forms.min.js"></script>
+    <script src="~/Content/themes/social-3/js/module-layout.min.js"></script>
+    <script src="~/Content/themes/social-3/js/module-timeline.min.js"></script>
+    <script src="~/Content/themes/social-3/js/module-chat.min.js"></script>
+    @*<script src="~/Content/themes/social-3/js/vendor-maps.min.js"></script>*@
+    <script src="~/Content/themes/social-3/js/module-essentials.min.js"></script>
+    @*<script src="~/Content/themes/social-3/js/module-sidebar.min.js"></script>*@
+    @*<script src="~/Content/themes/social-3/js/module-maps.min.js"></script>*@
+    @*<script src="~/Scripts/bootbox.min.js"></script>*@
+    <script src="~/Scripts/moment.js"></script>
+
+
+
+
+    <script>
+        var proWorld = window.proWorld || {};
+    </script>
+    @Scripts.Render("~/Scripts/Custom/Utility/Proworldz.AjaxHelpers.js")
+   
+    @RenderSection("scripts", required: false)
+</body>

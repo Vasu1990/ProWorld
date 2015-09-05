@@ -53,6 +53,8 @@ namespace ProWorldz.BL.BusinessLayer
 
                 SubCommunityId = model.SubCommunityId,
 
+                UserId = model.UserId,
+
                 Subject = model.Subject,
 
                 Tag = model.Tag,
@@ -81,6 +83,8 @@ namespace ProWorldz.BL.BusinessLayer
                 CommunityId = model.CommunityId,
 
                 SubCommunityId = model.SubCommunityId,
+
+                UserId = model.UserId,
 
                 Subject = model.Subject,
 

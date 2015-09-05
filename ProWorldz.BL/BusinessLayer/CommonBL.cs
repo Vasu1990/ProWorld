@@ -92,5 +92,13 @@ namespace ProWorldz.BL.BusinessLayer
              };
          }
         #endregion
+
+       
     }
+
+   public class Message 
+   {
+       public static string Success = "Success";
+       public static string Error = "Error";
+   }
 }

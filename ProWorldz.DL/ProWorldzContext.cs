@@ -42,6 +42,9 @@ namespace ProWorldz.DL
         public DbSet<ContactUs> ContactUs{ get; set; }
         public DbSet<Lkp_FriendShipStatus> Lkp_FriendShipStatus { get; set; }
         public DbSet<Friend> Friend { get; set; }
+
+        public DbSet<LatestTechnology> LatestTechnologies { get; set; }
+        public DbSet<LatestTutorials> LatestTutorials { get; set; }
         
         
 

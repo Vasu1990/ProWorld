@@ -14,11 +14,13 @@ namespace ProWorldz.BL.BusinessModel
 
         public int SubCommunityId { get; set; }
 
+        public int UserId { get; set; }
+
         public string Subject { get; set; }
 
         public string Tag { get; set; }
 
-        public int Topic { get; set; }
+        public string Topic { get; set; }
 
         public string Content { get; set; }
 

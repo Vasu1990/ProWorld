@@ -244,6 +244,8 @@
     <Compile Include="Areas\Site\SiteAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LatestTechnologyController.cs" />
+    <Compile Include="Controllers\LatestTutorialsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -254,6 +256,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\LatestTechnologyModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\SessionManager.cs" />
@@ -1289,6 +1292,10 @@
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Home\Friends.cshtml" />
     <Content Include="Views\Home\People.cshtml" />
+    <Content Include="Views\Home\ViewProfile.cshtml" />
+    <Content Include="Views\LatestTechnology\Index.cshtml" />
+    <Content Include="Views\LatestTutorials\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutRegister.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
