@@ -6,14 +6,6 @@
 <head>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-<<<<<<< HEAD
-    <style>
-        .popover {
-            width: 300px;
-        }
-    </style>
-=======
->>>>>>> keep_bug_fixes
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,40 +36,7 @@
     <!-- <link href="css/module-colors-calendar.min.css" rel="stylesheet" /> -->
     <!-- <link href="css/module-colors-progress-bars.min.css" rel="stylesheet" /> -->
     <!-- <link href="css/module-colors-text.min.css" rel="stylesheet" /> -->
-<<<<<<< HEAD
-    <style>
-        .status {
-            z-index: 0;
-            item post-container;
-        }
 
-        .chatBox {
-            background: #515858 !important;
-            min-width: 300px;
-        }
-
-            .chatBox .media .media-body a:hover {
-                background: #515858 !important;
-            }
-
-            .chatBox img {
-                border-top-left-radius: 2 !important;
-            }
-
-        .minimise {
-            position: absolute;
-            bottom: -286px;
-        }
-
-        .chatBoxPosition {
-            position: absolute;
-            right: 0;
-            top: -268px;
-            line-height: 34px;
-        }
-    </style>
-=======
->>>>>>> keep_bug_fixes
     @RenderSection("styles", required: false)
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
@@ -325,16 +284,15 @@
         <strong>Proworldz</strong> © Copyright 2015
         <!--template for chat box-->
         <div data-bind="visible:chatObjectArray().length > 0">
-<<<<<<< HEAD
-            <ul data-bind="foreach:chatObjectArray" class="item post-container" id="chatBoxContainer" style="position: absolute; left: 0; top: -268px; line-height: 34px; list-style: none">
-=======
+
             <ul data-bind="foreach:chatObjectArray" class="item post-container" id="chatBoxContainer" style="position: absolute;left: 0; top: -268px; line-height: 34px;list-style:none">
->>>>>>> keep_bug_fixes
+
                 <li class="col-xs-12 col-md-3 col-lg-3 timeline-block">
                     <div class="panel panel-default">
                         <!--Pannel header-->
                         <div class="panel-heading chatBox">
                             <div class="media">
+                                
                                 <div>
                                     <span>
                                         <img class="media-object img-circle img-responsive user-avatar-mini pull-left" data-bind="attr:{src:chatFriendImage}">
@@ -353,11 +311,9 @@
                             <ul class="comments">
                                 <!--Pannel chat list section-->
                                 <li data-container="comment-box" style="height: 170px; overflow-y: scroll;">
-<<<<<<< HEAD
-                                    <ul class="comment-box" data-bind="foreach:chatMessageList">
-=======
+
                                     <ul class="comment-box" data-bind=foreach:chatMessageList>
->>>>>>> keep_bug_fixes
+
                                         <li class="media" data-container="comment-strip" data-bind='template: { name: $root.SelectedTemplate($parent.chatHostId,chatterId)}'></li>
                                     </ul>
                                 </li>
@@ -427,253 +383,11 @@
         var proWorld = window.proWorld || {}; //global namespace
     </script>
     @Scripts.Render("~/Scripts/Custom/Utility/Proworldz.AjaxHelpers.js")
-<<<<<<< HEAD
-    <script>
-        var LayoutVM = {};
 
-        (function (vm) {
-
-            vm.friendInfo = ko.observableArray();
-            vm.allFriendsInfo = ko.observableArray();
-            vm.chatBoxes = ko.observable();
-
-
-            // Enabling Popover Friend request - JS (hidden content and title capturing)
-            $("#popoverFriendrequest").popover({
-                html: true,
-                content: function () {
-                    return $('#popoverFriendrequestContent').html();
-                },
-                placement: "bottom",
-                title: function () {
-                    return $('#popoverFriendrequestTitle').html();
-                }
-            });
-
-            function onSuccessGetFrndRequest(data) {
-                vm.friendInfo(ko.mapping.fromJS(data)());
-            }
-
-            proWorld.AjaxHelper.GetCall("/Home/GetFriendequests", onSuccessGetFrndRequest);
-
-            function onSuccessGetAllFriends(data) {
-                vm.allFriendsInfo(ko.mapping.fromJS(data)());
-                console.log(vm.allFriendsInfo());
-            }
-
-            proWorld.AjaxHelper.GetCall("/Home/GetAllFriends", onSuccessGetAllFriends);
-
-            vm.AcceptFriend = function (data) {
-                function onSuccessConfirmFriend(responseData) {
-                    alert("Congratulations! You have made a new friend.");
-                    vm.dataSource(window.globalOptions, window.globalCallback);
-                }
-
-                proWorld.AjaxHelper.AjaxPostCallNoType("/Home/ConfirmRequest", data, onSuccessConfirmFriend);
-            }
-            vm.RejectFriend = function (data) {
-                function onSuccessDeleteFriend(responseData) {
-                    alert("Friend removed successfully");
-                    vm.dataSource(window.globalOptions, window.globalCallback);
-                }
-
-                proWorld.AjaxHelper.AjaxPostCallNoType("/Home/DeleteFriend", data, onSuccessDeleteFriend);
-            }
-            vm.isOnline = function (data) {
-                return data.IsOnline() === true ? "online" : "offline";
-            };
-
-            var chat = $.connection.chatHub;
-            $.connection.hub.start().done(function () {
-                chat.server.createAuth();
-            });
-
-            vm.SelectedTemplate = function (userId, chatterId) {
-                return userId() === chatterId ? "right" : "left";
-            }
-
-            vm.closeCurrentBox = function (data) {
-                console.log(data);
-                vm.chatObjectArray.remove(data);
-            }
-
-            vm.minimiseCurrentBox = function (data, event) {
-                var clickedBox = $(event.target);
-                $(clickedBox).closest('div.chatBox').next('div').toggle();
-                $(clickedBox).closest('div.panel-default').toggleClass('minimise');
-            }
-
-            vm.chatObjectArray = ko.observableArray();
-
-
-            vm.CreateChatBox = function (data) {
-                console.log(data);
-
-
-                var chatBoxIdUser = data.UserId() + data.FriendName();//if user clicks again on same frnd
-                var chatBoxIdFriend = data.FriendId() + data.UserName();//if friend clicks again user
-                var position = 100;
-
-                var chatBoxArrLen = vm.chatObjectArray().length;
-                if (chatBoxArrLen > 0) {//means you have people you are chatting with
-                    for (var i = 0; i < chatBoxArrLen; i++) {
-                        if (vm.chatObjectArray()[i].chatBoxId() === chatBoxIdUser || vm.chatObjectArray()[i].chatBoxId() === chatBoxIdFriend) {
-                            //var box1 = $("#" + chatBoxIdUser);
-                            //var box2 = $("#" + chatBoxIdFriend);
-                            //if(box1 == null && box2 == null){
-                            alert("already chatting");
-                            return;
-                            //}
-                        }
-                    }
-                }
-
-                var chatObject = {
-                    chatHostId: ko.observable(data.UserId()),
-                    chatHostName: ko.observable(data.UserName()),
-                    chatMsgBoxtext: ko.observable(),
-                    chatMessageList: ko.observableArray([]),
-                    chatFriendName: ko.observable(data.FriendName()),
-                    chatBoxId: ko.observable(chatBoxIdUser),
-                    chatFriendId: ko.observable(data.FriendId()),
-                    chatFriendImage: ko.observable(data.FriendImage()),
-                    chatHostImage: ko.observable(),
-                    chatMessage: ko.observable()
-                }
-
-                vm.chatObjectArray.push(chatObject);
-
-                //var chatBox = $("#chatBox").html();
-                //$(".footer").append(chatBox);
-                //$(".footer.navbarUser").each(function () {
-                //        ko.cleanNode(this);
-                //        ko.applyBindings(vm, this);
-                //});
-            }
-            function getCurretnDate() {
-                var now = new Date();
-                var strDateTime = [[AddZero(now.getDate()), AddZero(now.getMonth() + 1), now.getFullYear()].join("/"), [AddZero(now.getHours()), AddZero(now.getMinutes())].join(":"), now.getHours() >= 12 ? "PM" : "AM"].join(" ");
-
-                //Pad given value to the left with "0"
-                function AddZero(num) {
-                    return (num >= 0 && num < 10) ? "0" + num : num + "";
-                }
-
-                return strDateTime;
-            }
-            vm.SendChatMessage = function (data) {
-
-                if (data.chatMsgBoxtext() != undefined) {
-                    // Call the Send method on the hub.
-                    var chatMessage = data.chatHostName() + " : " + ko.toJS(data.chatMsgBoxtext);
-                    var msgObj = { "chatMessage": chatMessage, "chatMsgDateTime": getCurretnDate(), chatterId: data.chatHostId() }
-                    data.chatMessage = msgObj;
-
-                    data.chatMessageList.push(msgObj); //push to chat list array to display on user screen
-
-                    data.chatMsgBoxtext("");//clear chat input text
-                    var model = ko.toJS(data);
-                    console.log(model);
-                    chat.server.sendChatMessage(model);
-                } else {
-                    alert("cannot be balnk");
-                }
-            }
-
-            chat.client.appendChatBoxOnFriend = function (chatDetail) {
-
-                var chatObject = ko.mapping.fromJS(chatDetail);
-                console.log(chatObject);
-
-
-                var chatBoxArrLen = vm.chatObjectArray().length;
-                if (chatBoxArrLen > 0) {
-
-
-                    var chatBoxIdUser = chatObject.chatFriendId() + chatObject.chatHostName();//if user clicks again on same frnd
-                    var chatBoxIdFriend = chatObject.chatHostId() + chatObject.chatFriendName();//if friend clicks again user
-                    var msgObject = {
-                        chatMessage: chatDetail.chatMessage.chatMessage,
-                        chatMsgDateTime: chatDetail.chatMessage.chatMsgDateTime,
-                        chatterId: chatDetail.chatMessage.chatterId
-                    }
-                    var chatBoxExists = false;
-
-                    for (var i = 0; i < chatBoxArrLen; i++) {
-                        if (vm.chatObjectArray()[i].chatBoxId() === chatBoxIdUser || vm.chatObjectArray()[i].chatBoxId() === chatBoxIdFriend) {
-                            vm.chatObjectArray()[i].chatMessageList.push(msgObject);
-                            chatBoxExists = true;
-                        }
-                    }
-                    if (!chatBoxExists) {
-                        vm.chatObjectArray.push(chatObject);
-                        //CreateChatBox
-
-                        var chatBox = $("#chatBox").html();
-                        $(".footer").append(chatBox);
-                        $(".footer.navbarUser").each(function () {
-                            ko.cleanNode(this);
-                            ko.applyBindings(vm, this);
-                        });
-                    }
-
-                } else {
-
-                    vm.chatObjectArray.push(chatObject);
-                    //CreateChatBox
-
-                    //var chatBox = $("#chatBox").html();
-                    //$(".footer").append(chatBox);
-                    //$(".footer.navbarUser").each(function () {
-                    //    ko.cleanNode(this);
-                    //    ko.applyBindings(vm, this);
-                    //});
-                }
-
-            };
-
-            // apply binding on structure like this
-            /*
-                <div class="navBarUser"></div>
-                <div></div>
-                <div class="navBarUser"></div>
-            omit the center div
-            */
-            $(".navbarUser").each(function () {
-                ko.applyBindings(vm, this);
-            });
-        })(LayoutVM);
-
-    </script>
-=======
-    
->>>>>>> keep_bug_fixes
 
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/Custom/ProWorldz.Layout.js"></script>
 
-<<<<<<< HEAD
-
-
-    <!--TEMPLATE FOR User Comment-->
-    <script type="text/html" id="right">
-        <div class="media-body">
-
-            @*<a href="#" class="pull-left comment-author" data-bind="text:chatterName"></a>*@
-            <span>
-                <span class="pull-right" style="line-height: 16px; text-align: left; font-size: 14px" data-control="text-comment" data-bind="text:chatMessage"></span>
-                <span class="comment-date pull-right" style="float: left; clear: both; font-size: 10px;" data-bind="text:chatMsgDateTime"></span>
-
-            </span>
-        </div>
-        <div class="media-right">
-            <span>
-                <img class="media-object img-circle img-responsive user-avatar-mini" data-bind="attr:{src:$parent.chatHostImage}">
-            </span>
-        </div>
-    </script>
-
-=======
     <!--TEMPLATE FOR User Comment-->
     <script type="text/html" id="right">
         <div class="media-body">
@@ -692,7 +406,7 @@
         </div>
     </script>
 
->>>>>>> keep_bug_fixes
+
     <!--TEMPLATE FOR Friend Comment-->
     <script type="text/html" id="left">
         <div>
@@ -704,20 +418,14 @@
 
             @*<a href="#" class="pull-left comment-author" data-bind="text:chatterName"></a>*@
             <span>
-<<<<<<< HEAD
-                <span class="pull-left" style="line-height: 16px; text-align: left; font-size: 14px" data-control="text-comment" data-bind="text:chatMessage"></span>
-                <span class="comment-date" style="float: left; clear: both;" data-bind="text:chatMsgDateTime"></span>
-=======
+
                 <span class="pull-left" style="line-height: 16px; text-align: left;font-size: 14px" data-control="text-comment" data-bind="text:chatMessage"></span>
                 <span class="comment-date" style="float: left; clear: both;font-size: 10px;" data-bind="text:chatMsgDateTime"></span>
->>>>>>> keep_bug_fixes
+
 
             </span>
         </div>
     </script>
 
 </body>
-<<<<<<< HEAD
-=======
 
->>>>>>> keep_bug_fixes
