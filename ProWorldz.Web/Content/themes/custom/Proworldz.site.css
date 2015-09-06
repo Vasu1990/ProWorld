@@ -119,3 +119,6 @@ footer{
     background-position: -48px 240px;
     background-size: 100%;
 }
+ .popover{
+        width:300px;
+    }

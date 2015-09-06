@@ -1,0 +1,20 @@
+﻿ .status{
+            z-index:0;
+        }
+        .chatBox {
+            background: #515858 !important;
+            min-width: 300px;
+        }
+         .chatBox .media .media-body a:hover {
+            background: #515858 !important;
+        }
+         .chatBox img {
+                border-top-left-radius: 21px !important;
+        }
+         .minimise {
+             position: absolute;
+             bottom: -286px;
+         }
+         .chatBoxPosition {
+             position: absolute;right: 0; top: -268px; line-height: 34px;
+         }

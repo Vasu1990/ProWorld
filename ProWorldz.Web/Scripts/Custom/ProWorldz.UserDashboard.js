@@ -51,7 +51,7 @@
 
             //cast ko model to json and post request
             var _commentBM = ko.toJS(_commentObj)
-            proWorld.AjaxHelper.AjaxPostCall("/Home/PostComment", _commentBM, OnSuccessInsertComment);
+            proWorld.AjaxHelper.AjaxPostCallNoType("/Home/PostComment", _commentBM, OnSuccessInsertComment);
 
             //Insert into list after success
             function OnSuccessInsertComment(result) {
@@ -72,8 +72,8 @@
 
         ko.utils.arrayForEach(dashVM.UserPostList(), function (post) {
             if (post.Id() == _commentObj.PostId()) {
-                    var _commentBM = ko.toJS(_commentObj)
-                    proWorld.AjaxHelper.AjaxPostCall("/Home/DeleteComment", _commentBM, OnSuccessDeleteComment);
+                var _commentBM = ko.toJS(_commentObj);
+                proWorld.AjaxHelper.AjaxPostCallNoType("/Home/DeleteComment", _commentBM, OnSuccessDeleteComment);
                     function OnSuccessDeleteComment() {
                         post.UserComments.remove(_commentObj);
                     }
@@ -113,7 +113,7 @@
     dashVM.EditComment = function () {
         console.log(commentTextBox.val());
         CommentToBeUpdted.Comment(commentTextBox.val());
-        proWorld.AjaxHelper.AjaxPostCall("/Home/EditComment", CommentToBeUpdted, OnSuccessEditComment);
+        proWorld.AjaxHelper.AjaxPostCallNoType("/Home/EditComment", CommentToBeUpdted, OnSuccessEditComment);
         
         function OnSuccessEditComment(data) {
             ko.utils.arrayForEach(dashVM.UserPostList(), function (post) {

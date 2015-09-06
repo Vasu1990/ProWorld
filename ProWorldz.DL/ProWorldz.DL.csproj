@@ -67,10 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201509052313233_merging_1\6\2015.cs" />
-    <Compile Include="Migrations\201509052313536_mergin_latest.cs" />
-    <Compile Include="Migrations\201509052313536_mergin_latest.Designer.cs">
-      <DependentUpon>201509052313536_mergin_latest.cs</DependentUpon>
+    <Compile Include="Migrations\201509061621272_newdb.cs" />
+    <Compile Include="Migrations\201509061621272_newdb.Designer.cs">
+      <DependentUpon>201509061621272_newdb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
@@ -110,8 +109,8 @@
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509052313536_mergin_latest.resx">
-      <DependentUpon>201509052313536_mergin_latest.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509061621272_newdb.resx">
+      <DependentUpon>201509061621272_newdb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

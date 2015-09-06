@@ -264,8 +264,9 @@
     <Compile Include="Areas\Client\Controllers\ClientHomeController.cs" />
     <Compile Include="Areas\Site\Controllers\HomeController.cs" />
     <Compile Include="Areas\Site\SiteAreaRegistration.cs" />
+    <Compile Include="Hubs\ChatHubModels.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
-    <Compile Include="ConnectionMapping.cs" />
+    <Compile Include="Hubs\ConnectionMapping.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LatestTechnologyController.cs" />
@@ -771,12 +772,15 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\themes\custom\Proworldz.friend.css" />
+    <Content Include="Content\themes\custom\Proworldz.chat.css" />
     <Content Include="Content\themes\custom\Proworldz.people.css" />
     <Content Include="Content\themes\custom\Proworldz.dashboard.css" />
     <Content Include="Content\themes\custom\Proworldz.site.css" />
     <Content Include="Content\themes\custom\Proworldz.login.css" />
     <Content Include="Images\finallogo.png" />
     <Content Include="Images\No-Image.jpg" />
+    <Content Include="Scripts\Custom\ProWorldz.Layout.js" />
+    <Content Include="Scripts\Custom\ProWorldz.Utility.js" />
     <Content Include="Scripts\Custom\ProWorldz.Friend.js" />
     <Content Include="Scripts\Custom\ProWorldz.People.js" />
     <Content Include="Scripts\Custom\Utility\Proworldz.AjaxHelpers.js" />

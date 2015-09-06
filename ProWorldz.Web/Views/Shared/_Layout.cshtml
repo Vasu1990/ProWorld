@@ -6,11 +6,14 @@
 <head>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+<<<<<<< HEAD
     <style>
         .popover {
             width: 300px;
         }
     </style>
+=======
+>>>>>>> keep_bug_fixes
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +27,7 @@
     <link href="~/Content/themes/social-3/css/module-layout.min.css" rel="stylesheet" />
     @*<link href="~/Content/themes/social-3/css/app/app.css" rel="stylesheet" />*@
     @*<link href="~/Content/themes/social-3/css/module-sidebar.min.css" rel="stylesheet" />
-    <link href="~/Content/themes/social-3/css/module-sidebar-skins.min.css" rel="stylesheet" />*@
+        <link href="~/Content/themes/social-3/css/module-sidebar-skins.min.css" rel="stylesheet" />*@
     <link href="~/Content/themes/social-3/css/module-navbar.min.css" rel="stylesheet" />
     <!-- <link href="css/module-media.min.css" rel="stylesheet" /> -->
     <link href="~/Content/themes/social-3/css/module-timeline.min.css" rel="stylesheet" />
@@ -32,6 +35,7 @@
 
     <link href="~/Content/themes/social-3/css/module-chat.min.css" rel="stylesheet" />
     <link href="~/Content/themes/custom/Proworldz.site.css" rel="stylesheet" />
+    <link href="~/Content/themes/custom/Proworldz.chat.css" rel="stylesheet" />
     <!-- <link href="css/module-charts.min.css" rel="stylesheet" /> -->
     @*<link href="~/Content/themes/social-3/css/module-maps.min.css" rel="stylesheet" />*@
     <!-- <link href="css/module-colors-alerts.min.css" rel="stylesheet" /> -->
@@ -40,6 +44,7 @@
     <!-- <link href="css/module-colors-calendar.min.css" rel="stylesheet" /> -->
     <!-- <link href="css/module-colors-progress-bars.min.css" rel="stylesheet" /> -->
     <!-- <link href="css/module-colors-text.min.css" rel="stylesheet" /> -->
+<<<<<<< HEAD
     <style>
         .status {
             z-index: 0;
@@ -71,15 +76,17 @@
             line-height: 34px;
         }
     </style>
+=======
+>>>>>>> keep_bug_fixes
     @RenderSection("styles", required: false)
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-WARNING: Respond.js doesn't work if you view the page via file:// -->
+    WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
     <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 
@@ -130,7 +137,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                             </li>
 
                         </ul>
-                        <ul class="nav navbar-nav  navbar-right navbarUser">
+                        <ul class="nav navbar-nav  navbar-right freindRequestBox navbarUser">
                             <!--Friend Requests-->
                             <li style="position: relative">
                                 <a href="#" id="popoverFriendrequest">
@@ -318,7 +325,11 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         <strong>Proworldz</strong> © Copyright 2015
         <!--template for chat box-->
         <div data-bind="visible:chatObjectArray().length > 0">
+<<<<<<< HEAD
             <ul data-bind="foreach:chatObjectArray" class="item post-container" id="chatBoxContainer" style="position: absolute; left: 0; top: -268px; line-height: 34px; list-style: none">
+=======
+            <ul data-bind="foreach:chatObjectArray" class="item post-container" id="chatBoxContainer" style="position: absolute;left: 0; top: -268px; line-height: 34px;list-style:none">
+>>>>>>> keep_bug_fixes
                 <li class="col-xs-12 col-md-3 col-lg-3 timeline-block">
                     <div class="panel panel-default">
                         <!--Pannel header-->
@@ -342,7 +353,11 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                             <ul class="comments">
                                 <!--Pannel chat list section-->
                                 <li data-container="comment-box" style="height: 170px; overflow-y: scroll;">
+<<<<<<< HEAD
                                     <ul class="comment-box" data-bind="foreach:chatMessageList">
+=======
+                                    <ul class="comment-box" data-bind=foreach:chatMessageList>
+>>>>>>> keep_bug_fixes
                                         <li class="media" data-container="comment-strip" data-bind='template: { name: $root.SelectedTemplate($parent.chatHostId,chatterId)}'></li>
                                     </ul>
                                 </li>
@@ -377,7 +392,8 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
     </footer>
 
-    <script>
+    <!-- of no use but gives console error if not created-->
+<script>
         var config = {
             theme: "",
             skins: {
@@ -400,7 +416,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     @*<script src="~/Content/themes/social-3/js/module-maps.min.js"></script>*@
     @*<script src="~/Scripts/bootbox.min.js"></script>*@
     <script src="~/Scripts/moment.js"></script>
-
+    <script src="~/Scripts/Custom/ProWorldz.Utility.js"></script>
 
     <script src="~/Scripts/jquery.signalR-2.2.0.js"></script>
     <script src="~/signalr/hubs"></script>
@@ -408,9 +424,10 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
 
     <script>
-        var proWorld = window.proWorld || {};
+        var proWorld = window.proWorld || {}; //global namespace
     </script>
     @Scripts.Render("~/Scripts/Custom/Utility/Proworldz.AjaxHelpers.js")
+<<<<<<< HEAD
     <script>
         var LayoutVM = {};
 
@@ -628,9 +645,14 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         })(LayoutVM);
 
     </script>
+=======
+    
+>>>>>>> keep_bug_fixes
 
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/Custom/ProWorldz.Layout.js"></script>
 
+<<<<<<< HEAD
 
 
     <!--TEMPLATE FOR User Comment-->
@@ -651,6 +673,26 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         </div>
     </script>
 
+=======
+    <!--TEMPLATE FOR User Comment-->
+    <script type="text/html" id="right">
+        <div class="media-body">
+
+            @*<a href="#" class="pull-left comment-author" data-bind="text:chatterName"></a>*@
+            <span>
+                <span class="pull-right" style="line-height: 16px; text-align: left;font-size: 14px" data-control="text-comment" data-bind="text:chatMessage"></span>
+                <span class="comment-date pull-right" style="float: left; clear: both;font-size: 10px;" data-bind="text:chatMsgDateTime"></span>
+
+            </span>
+        </div>
+        <div class="media-right">
+            <span>
+                <img class="media-object img-circle img-responsive user-avatar-mini" data-bind="attr:{src:$parent.chatHostImage}">
+            </span>
+        </div>
+    </script>
+
+>>>>>>> keep_bug_fixes
     <!--TEMPLATE FOR Friend Comment-->
     <script type="text/html" id="left">
         <div>
@@ -662,11 +704,20 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
             @*<a href="#" class="pull-left comment-author" data-bind="text:chatterName"></a>*@
             <span>
+<<<<<<< HEAD
                 <span class="pull-left" style="line-height: 16px; text-align: left; font-size: 14px" data-control="text-comment" data-bind="text:chatMessage"></span>
                 <span class="comment-date" style="float: left; clear: both;" data-bind="text:chatMsgDateTime"></span>
+=======
+                <span class="pull-left" style="line-height: 16px; text-align: left;font-size: 14px" data-control="text-comment" data-bind="text:chatMessage"></span>
+                <span class="comment-date" style="float: left; clear: both;font-size: 10px;" data-bind="text:chatMsgDateTime"></span>
+>>>>>>> keep_bug_fixes
 
             </span>
         </div>
     </script>
 
 </body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> keep_bug_fixes
