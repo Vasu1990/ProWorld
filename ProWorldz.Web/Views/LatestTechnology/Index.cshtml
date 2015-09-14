@@ -4,117 +4,150 @@
     <div class="row">
         <div class="col-md-12" id="divMessage" onclick="hideMessage(this);">
             @if (Model != null && !string.IsNullOrEmpty(Model.SucessMessage))
-        {
+            {
                 <div class="alert alert-success" role="alert">@Model.SucessMessage</div>
-        }
+            }
             @if (Model != null && !string.IsNullOrEmpty(Model.ErrorMessage))
-        {
+            {
                 <div class="alert alert-success" role="alert">@Model.ErrorMessage</div>
-        }
+            }
         </div>
     </div>
-    <div class="row">
-        <div>
-            <h3 class="title cursor" id="createPost">
-                <i class="fa fa-fw fa-plus-circle"></i>
-                Create New Technology
-            </h3>
+<div class="row">
+    <div>
+        <h3 class="title cursor" id="createPost">
+            <i class="fa fa-fw fa-plus-circle"></i>
+            Create New Technology
+        </h3>
 
 
-            @using (Html.BeginForm("NewTechnology", "LatestTechnology", FormMethod.Post, new { enctype = "multipart/form-data" }))
-            {
-                <div class="panel panel-default" id="divPost">
-                    <div class="panel-body">
-                        <form class="form-horizontal" role="form">
+        @using (Html.BeginForm("NewTechnology", "LatestTechnology", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="panel panel-default" id="divPost2">
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
 
-                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Community</label>
-                                <div class="col-sm-9">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Community</label>
+                            <div class="col-sm-9">
                                 @Html.DropDownListFor(x => x.latestTechnologyBM.CommunityId, new SelectList(Model.CommunityList, "ID", "Name", Model.latestTechnologyBM.CommunityId), "- - Select - -", new { @class = "dropdown form-control", @id = "ddlCommunity", @onchange = "LoadSubCommunity(this.value)" })
                                 @Html.ValidationMessageFor(model => model.latestTechnologyBM.CommunityId)
                             </div>
-                            </div>
-                             <br /><br />
-                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Sub-Community</label>
-                                 <div class="col-sm-9">
+                        </div>
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Sub-Community</label>
+                            <div class="col-sm-9">
                                 @Html.DropDownListFor(x => x.latestTechnologyBM.SubCommunityId, new SelectList(Model.SubCommunityList, "ID", "Name", Model.latestTechnologyBM.SubCommunityId), "- - Select - -", new { @class = "dropdown form-control", @id = "ddlSubCommunity", @onchange = "ChangeSubCommunity(this.value)" })
                                 @Html.ValidationMessageFor(model => model.latestTechnologyBM.SubCommunityId)
                             </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Subject</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.latestTechnologyBM.Subject, new { @class = "form-control", @placeholder = "Subject" })
+                                @Html.ValidationMessageFor(model => model.latestTechnologyBM.Subject)
                             </div>
-                             <br /><br />
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Subject</label>
-                                <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.latestTechnologyBM.Subject, new { @class = "form-control", @placeholder = "Subject" })
-                                    @Html.ValidationMessageFor(model => model.latestTechnologyBM.Subject)
-                                </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Tag</label>
+                            <div class="col-sm-9 margin-bottom10">
+                                @Html.TextBoxFor(model => model.latestTechnologyBM.Tag, new { @class = "form-control" })
                             </div>
-                            <br /><br />
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Tag</label>
-                                <div class="col-sm-9 margin-bottom10">
-                                    @Html.TextBoxFor(model => model.latestTechnologyBM.Tag, new { @class = "form-control" })
-                                </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Topic</label>
+                            <div class="col-sm-9 margin-bottom10">
+                                @Html.TextBoxFor(model => model.latestTechnologyBM.Topic, new { @class = "form-control" })
                             </div>
-                            <br /><br />
-                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Topic</label>
-                                <div class="col-sm-9 margin-bottom10">
-                                    @Html.TextBoxFor(model => model.latestTechnologyBM.Topic, new { @class = "form-control" })
-                                </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Content</label>
+                            <div class="col-sm-9 margin-bottom10">
+                                @Html.TextAreaFor(model => model.latestTechnologyBM.Content, new { @class = "form-control", @name = "Content", Id = "editor1", placeholder = "Type Your Post Here........", @rows = "5" })
+                                <img src="~/Images/plusIcon.png" style="height: 20px; width: 20px" onclick="addContent();" />
                             </div>
-                            <br /><br />
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Content</label>
-                                <div class="col-sm-9 margin-bottom10">
-                                    @Html.TextAreaFor(model => model.latestTechnologyBM.Content, new { @class = "form-control", Id = "editor1", placeholder = "Type Your Post Here........", @rows = "5" })
-                                </div>
-                            </div><br /><br />
-                           
-                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Url</label>
-                                <div class="col-sm-9 margin-bottom10">
-                                    @Html.TextBoxFor(model => model.latestTechnologyBM.Url, new { @class = "form-control" })
-                                </div>
-                            </div>
-                             <br /><br />
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Video Url</label>
-                                <div class="col-sm-9 margin-bottom10">
-                                    @Html.TextBoxFor(model => model.latestTechnologyBM.VideoUrl, new { @class = "form-control" })
-                                </div>
-                            </div>
-                             <br /><br />
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">File</label>
-                                <div class="col-sm-9 margin-bottom10">
-                                    <input type="file"  class="form-control" name="file" id="file"  value="@Model.latestTechnologyBM.FilePath" />
-                                </div>
-                            </div>
-                             <br /><br />
-                            <div class="form-group margin-none">
-                                <div class="col-sm-offset-3 col-sm-9">
-                                    <button type="submit" class="btn btn-primary">Post Technology</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                        </div>
 
-            }
-        </div>
-            <h3 class="title">
-                <i class="fa fa-fw fa-list"></i>
-                Technology Listing
-            </h3>
-        
+
+                         <div class="form-group">
+                            <label class="col-sm-3 control-label">Content</label>
+                            <div class="col-sm-9 margin-bottom10">
+                                @Html.TextAreaFor(model => model.latestTechnologyBM.Content, new { @class = "form-control", @name = "Content", Id = "editor2", placeholder = "Type Your Post Here........", @rows = "5" })
+                                <img src="~/Images/plusIcon.png" style="height: 20px; width: 20px" onclick="addContent();" />
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Url</label>
+                            <div class="col-sm-8 margin-bottom10">
+                                <input type="text" class="form-control" id="txtUrl" name="url" />
+                            </div>
+                            <div class="col-sm-1">
+                                @*@Html.TextBoxFor(model => model.latestTechnologyBM.Url, new { @class = "form-control",Id="txtUrl",@name="url" })*@
+                                <img src="~/Images/plusIcon.png" style="height: 20px; width: 20px" onclick="addUrl();" />
+                            </div>
+                        </div>
+                        <br />
+                        <div data-bind="foreach: viewModel.UrlRows">
+                            <div class="form-group">
+                                <span class="col-sm-3 control-label" data-bind="text: value"></span>
+                                
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" placeholder="url" data-bind="value: url" />
+                                </div>
+
+                                <div class="col-sm-2">  @*<input type="button" value="Add More" class="btn btn-primary" data-bind="click: viewModel.addNewUrlRow" />*@<i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewUrlRow" title="Add More"></i>
+                                    <input type="button" value="Remove" class="btn btn-danger" data-bind="click: viewModel.removeUrlRow" />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                     
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">File</label>
+                            <div class="col-sm-9 margin-bottom10">
+                                <input type="file"  class="form-control" name="file" id="file"  value="@Model.latestTechnologyBM.FilePath" />
+                                <img src="~/Images/plusIcon.png" style="height: 20px; width: 20px" onclick="addFile();" />
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="form-group margin-none">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary">Post Technology</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        }
+    </div>
+    <h3 class="title">
+        <i class="fa fa-fw fa-list"></i>
+        Technology Listing
+    </h3>
+
     <div class="panel panel-default padding-All30">
         <!-- Data table -->
         <table data-toggle="data-table" class="table table-bordered table-hover table-responsive table-striped" cellspacing="0" width="100%">
-            <thead >
+            <thead>
                 <tr>
-                   
+
                     <th>Subject</th>
                     <th>Tag</th>
                     <th>Topic</th>
@@ -125,7 +158,7 @@
                 @foreach (var item in Model.LatestTechnologyBMList)
                 {
                     <tr>
-                        
+
                         <td>@item.Subject</td>
                         <td>@item.Tag</td>
                         <td>@item.Topic</td>
@@ -136,10 +169,37 @@
         </table>
     </div>
 
-        
-       
+
+
 </div>
 @section scripts{
-<script src="~/Scripts/ckeditor/ckeditor.js"></script>  
-@Scripts.Render("~/Scripts/Custom/ProWorldz.UserPost.js")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+
+    @Scripts.Render("~/Scripts/Custom/ProWorldz.UserPost.js")
+  
+    <script>
+        function addContent() {
+
+        }
+
+        function addUrl() {
+            $($("#txtUrl").parent().parent()).append('<br><br><br><div class="col-sm-12"><div class="col-sm-3"></div><div class="col-sm-8"><input type="text" name="url" class="form-control" /></div><div class="col-sm-1"> <img src="/Images/plusIcon.png" style="height:20px;width:20px" onclick="addUrl();" /></div></div><br>')
+        }
+        function addFile() {
+        }
+
+        var viewModel = {};
+        viewModel.UrlRows = ko.observableArray([]);
+        viewModel.addNewUrlRow = function () {
+
+            viewModel.UrlRows.push({ value: 'Video Url', url: "" });
+        }
+        viewModel.removeUrlRow == function (data) {
+            debugger;
+            viewModel.UrlRows.remove(data);
+        }
+        viewModel.addNewUrlRow();
+        ko.applyBindings(viewModel, $("#divPost2")[0]);
+
+    </script>
 }

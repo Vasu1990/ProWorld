@@ -73,6 +73,9 @@
     <Compile Include="BusinessLayer\FriendBL.cs" />
     <Compile Include="BusinessLayer\LatestTechnologyBL.cs" />
     <Compile Include="BusinessLayer\LatestTutorialsBL.cs" />
+    <Compile Include="BusinessLayer\MasterContentBL.cs" />
+    <Compile Include="BusinessLayer\MasterFilePathBL.cs" />
+    <Compile Include="BusinessLayer\MasterUrlBL.cs" />
     <Compile Include="BusinessLayer\StateBL.cs" />
     <Compile Include="BusinessLayer\UserBL.cs" />
     <Compile Include="BusinessLayer\UserGeneralInformationBL.cs" />
@@ -93,6 +96,9 @@
     <Compile Include="BusinessModel\CountryBM.cs" />
     <Compile Include="BusinessModel\DegreeBM.cs" />
     <Compile Include="BusinessModel\IndustryBM.cs" />
+    <Compile Include="BusinessModel\MasterContentBM.cs" />
+    <Compile Include="BusinessModel\MasterFilePathBM.cs" />
+    <Compile Include="BusinessModel\MasterUrlBM.cs" />
     <Compile Include="BusinessModel\PostBM.cs" />
     <Compile Include="BusinessModel\StateBM.cs" />
     <Compile Include="BusinessModel\UserBM.cs" />

@@ -45,6 +45,15 @@ namespace ProWorldz.DL
 
         public DbSet<LatestTechnology> LatestTechnologies { get; set; }
         public DbSet<LatestTutorials> LatestTutorials { get; set; }
+
+
+
+
+
+        public DbSet<MasterContent> MasterContent { get; set; }
+
+        public DbSet<MasterFilePath> MasterFilePath { get; set; }
+        public DbSet<MasterUrl> MasterUrl { get; set; }
         
         
 

@@ -38,10 +38,10 @@ namespace ProWorldz.Web.Controllers
                 LatestTutorialsBM.Tag = Model.LatestTutorialsBM.Tag;
                 LatestTutorialsBM.Subject = Model.LatestTutorialsBM.Subject;
                 LatestTutorialsBM.Topic = Model.LatestTutorialsBM.Topic;
-                LatestTutorialsBM.Content = Model.LatestTutorialsBM.Content;
-                LatestTutorialsBM.Url = Model.LatestTutorialsBM.Url;
+               // LatestTutorialsBM.Content = Model.LatestTutorialsBM.Content;
+               // LatestTutorialsBM.Url = Model.LatestTutorialsBM.Url;
                 LatestTutorialsBM.VideoUrl = Model.LatestTutorialsBM.VideoUrl;
-                LatestTutorialsBM.FilePath = Model.LatestTutorialsBM.FilePath;
+               // LatestTutorialsBM.FilePath = Model.LatestTutorialsBM.FilePath;
                 LatestTutorialsBM.UserId = CurrentUser.Id;
                 LatestTutorialsBM.IsActive = true;
                 if (file != null)
@@ -53,7 +53,7 @@ namespace ProWorldz.Web.Controllers
                     }
                     string physicalPath = Server.MapPath("~/Images/TutorialsDocument/" + ImageName);
                     file.SaveAs(physicalPath);
-                    LatestTutorialsBM.FilePath = "~/Images/TutorialsDocument/" + ImageName;
+                   // LatestTutorialsBM.FilePath = "~/Images/TutorialsDocument/" + ImageName;
                 }
                 LatestTutorialsBL.Create(LatestTutorialsBM);
                 TempData["Success"] = "Record Saved Successfully.";

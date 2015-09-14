@@ -42,6 +42,40 @@ namespace ProWorldz.DL.UOW
         private IRepository<LatestTechnology> latestTechnologyRepository { get; set; }
         private IRepository<LatestTutorials> latestTutorialsRepository { get; set; }
 
+        private IRepository<MasterContent> masterContentRepository { get; set; }
+        private IRepository<MasterFilePath> masterFilePathRepository { get; set; }
+        private IRepository<MasterUrl> masterUrlRepository { get; set; }
+
+
+        public IRepository<MasterContent> MasterContentRepository
+        {
+            get
+            {
+                if (masterContentRepository == null)
+                    masterContentRepository = new GenericRepository<MasterContent>(Context);
+                return masterContentRepository;
+            }
+        }
+        public IRepository<MasterFilePath> MasterFilePathRepository
+        {
+            get
+            {
+                if (masterFilePathRepository == null)
+                    masterFilePathRepository = new GenericRepository<MasterFilePath>(Context);
+                return masterFilePathRepository;
+            }
+        }
+
+        public IRepository<MasterUrl> MasterUrlRepository
+        {
+            get
+            {
+                if (masterUrlRepository == null)
+                    masterUrlRepository = new GenericRepository<MasterUrl>(Context);
+                return masterUrlRepository;
+            }
+        }
+
 
         public IRepository<LatestTutorials> LatestTutorialsRepository
         {

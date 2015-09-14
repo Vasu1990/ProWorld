@@ -38,10 +38,10 @@ namespace ProWorldz.Web.Controllers
                 latestTechnologyBM.Tag = Model.latestTechnologyBM.Tag;
                 latestTechnologyBM.Subject = Model.latestTechnologyBM.Subject;
                 latestTechnologyBM.Topic = Model.latestTechnologyBM.Topic;
-                latestTechnologyBM.Content = Model.latestTechnologyBM.Content;
-                latestTechnologyBM.Url = Model.latestTechnologyBM.Url;
+               // latestTechnologyBM.Content = Model.latestTechnologyBM.Content;
+               // latestTechnologyBM.Url = Model.latestTechnologyBM.Url;
                 latestTechnologyBM.VideoUrl = Model.latestTechnologyBM.VideoUrl;
-                latestTechnologyBM.FilePath = Model.latestTechnologyBM.FilePath;
+               // latestTechnologyBM.FilePath = Model.latestTechnologyBM.FilePath;
                 latestTechnologyBM.UserId = CurrentUser.Id;
                 latestTechnologyBM.IsActive = true;
                 if (file != null)
@@ -53,7 +53,7 @@ namespace ProWorldz.Web.Controllers
                     }
                     string physicalPath = Server.MapPath("~/Images/TechnologyDocument/" + ImageName);
                     file.SaveAs(physicalPath);
-                    latestTechnologyBM.FilePath = "~/Images/TechnologyDocument/" + ImageName;
+               //     latestTechnologyBM.FilePath = "~/Images/TechnologyDocument/" + ImageName;
                 }
                 latestTechnologyBL.Create(latestTechnologyBM);
                 TempData["Success"] = "Record Saved Successfully.";
