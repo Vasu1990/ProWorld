@@ -19,10 +19,12 @@ namespace ProWorldz.BL.BusinessLayer
             uow = new UnitOfWork();
         }
 
-        public void Create(LatestTechnologyBM model)
+        public int Create(LatestTechnologyBM model)
         {
-            uow.LatestTechnologyRepository.Add(ConvertToDM(model));
+            LatestTechnology tech = ConvertToDM(model);
+            uow.LatestTechnologyRepository.Add(tech);
             uow.Save();
+            return tech.Id;
         }
 
 

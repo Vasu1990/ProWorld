@@ -1,5 +1,6 @@
 ﻿using ProWorldz.BL.BusinessLayer;
 using ProWorldz.BL.BusinessModel;
+using ProWorldz.BL.Enum;
 using ProWorldz.Web.Models;
 using ProWorldz.Web.Utils;
 using System;
@@ -26,36 +27,65 @@ namespace ProWorldz.Web.Controllers
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult NewTechnology(LatestTutorialsModel Model, HttpPostedFileBase file)
+        public ActionResult NewTechnology(LatestTutorialsModel Model,FormCollection collection, List<HttpPostedFileBase> file)
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
 
             if (CurrentUser != null)
             {
-                LatestTutorialsBM LatestTutorialsBM = new LatestTutorialsBM();
-                LatestTutorialsBM.CommunityId = Model.LatestTutorialsBM.CommunityId;
-                LatestTutorialsBM.SubCommunityId = Model.LatestTutorialsBM.SubCommunityId;
-                LatestTutorialsBM.Tag = Model.LatestTutorialsBM.Tag;
-                LatestTutorialsBM.Subject = Model.LatestTutorialsBM.Subject;
-                LatestTutorialsBM.Topic = Model.LatestTutorialsBM.Topic;
-               // LatestTutorialsBM.Content = Model.LatestTutorialsBM.Content;
-               // LatestTutorialsBM.Url = Model.LatestTutorialsBM.Url;
-                LatestTutorialsBM.VideoUrl = Model.LatestTutorialsBM.VideoUrl;
-               // LatestTutorialsBM.FilePath = Model.LatestTutorialsBM.FilePath;
-                LatestTutorialsBM.UserId = CurrentUser.Id;
-                LatestTutorialsBM.IsActive = true;
-                if (file != null)
-                {
-                    string ImageName = System.IO.Path.GetFileName(file.FileName);
-                    if (!Directory.Exists(Server.MapPath("~/Images/TutorialsDocument")))
-                    {
-                        Directory.CreateDirectory(Server.MapPath("~/Images/TutorialsDocument"));
-                    }
-                    string physicalPath = Server.MapPath("~/Images/TutorialsDocument/" + ImageName);
-                    file.SaveAs(physicalPath);
-                   // LatestTutorialsBM.FilePath = "~/Images/TutorialsDocument/" + ImageName;
-                }
-                LatestTutorialsBL.Create(LatestTutorialsBM);
+                string url = collection["url"].ToString();
+                string[] strUrlArray = new string[] { };
+                if (!string.IsNullOrEmpty(url))
+                    strUrlArray = url.Split(',');
+                //  string filepaths = collection["file"].ToString();
+                LatestTutorialsBM latestTutorialsBM = new LatestTutorialsBM();
+                latestTutorialsBM.CommunityId = Model.LatestTutorialsBM.CommunityId;
+                latestTutorialsBM.SubCommunityId = Model.LatestTutorialsBM.SubCommunityId;
+                latestTutorialsBM.Tag = Model.LatestTutorialsBM.Tag;
+                latestTutorialsBM.Subject = Model.LatestTutorialsBM.Subject;
+                latestTutorialsBM.Topic = Model.LatestTutorialsBM.Topic;
+                // latestTechnologyBM.Content = Model.latestTechnologyBM.Content;
+                // latestTechnologyBM.Url = Model.latestTechnologyBM.Url;
+                //latestTechnologyBM.VideoUrl = Model.latestTechnologyBM.VideoUrl;
+                // latestTechnologyBM.FilePath = Model.latestTechnologyBM.FilePath;
+                latestTutorialsBM.UserId = CurrentUser.Id;
+                latestTutorialsBM.IsActive = true;
+
+               
+              int Id=  LatestTutorialsBL.Create(latestTutorialsBM);
+
+              #region MultipleUrl
+              foreach (var strUrl in strUrlArray)
+              {
+                  MasterUrlBL masterUrlBL = new MasterUrlBL();
+                  MasterUrlBM masterUrlBM = new MasterUrlBM();
+                  masterUrlBM.ModuleId = Id;
+                  masterUrlBM.Url = strUrl;
+                  masterUrlBL.Create(masterUrlBM);
+              }
+              #endregion
+              #region MultipleFile
+              foreach (var fileInstance in file)
+              {
+                  if (fileInstance != null)
+                  {
+                      string ImageName = System.IO.Path.GetFileName(fileInstance.FileName);
+                      if (!Directory.Exists(Server.MapPath("~/Images/TechnologyDocument")))
+                      {
+                          Directory.CreateDirectory(Server.MapPath("~/Images/TechnologyDocument"));
+                      }
+                      string physicalPath = Server.MapPath("~/Images/TechnologyDocument/" + ImageName);
+                      fileInstance.SaveAs(physicalPath);
+                      //     latestTechnologyBM.FilePath = "~/Images/TechnologyDocument/" + ImageName;
+
+                      MasterFilePathBL masterFilePathBL = new MasterFilePathBL();
+                      MasterFilePathBM masterFilePathBM = new MasterFilePathBM();
+                      masterFilePathBM.ModuleId = Id;
+                      masterFilePathBM.FilePath = "~/Images/TechnologyDocument/" + ImageName; ;
+                      masterFilePathBL.Create(masterFilePathBM);
+                  }
+              }
+              #endregion
                 TempData["Success"] = "Record Saved Successfully.";
             }
             else

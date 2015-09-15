@@ -18,10 +18,12 @@ namespace ProWorldz.BL.BusinessLayer
             uow = new UnitOfWork();
         }
 
-        public void Create(LatestTutorialsBM model)
+        public int Create(LatestTutorialsBM model)
         {
-            uow.LatestTutorialsRepository.Add(ConvertToDM(model));
+            LatestTutorials tutorials = ConvertToDM(model);
+            uow.LatestTutorialsRepository.Add(tutorials);
             uow.Save();
+            return tutorials.Id;
         }
 
 

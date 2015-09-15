@@ -114,6 +114,7 @@
     <Compile Include="Common\DatatablePaging\DataTableParams.cs" />
     <Compile Include="Common\DatatablePaging\GlobalSearchText.cs" />
     <Compile Include="Common\Enums\FriendShipStatus.cs" />
+    <Compile Include="Enum\ModuleEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
