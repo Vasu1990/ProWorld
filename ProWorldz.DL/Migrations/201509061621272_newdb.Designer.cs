@@ -7,13 +7,13 @@ namespace ProWorldz.DL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class LatestTech : IMigrationMetadata
+    public sealed partial class newdb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(LatestTech));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(newdb));
         
         string IMigrationMetadata.Id
         {
-            get { return "201509031759580_LatestTech"; }
+            get { return "201509061621272_newdb"; }
         }
         
         string IMigrationMetadata.Source

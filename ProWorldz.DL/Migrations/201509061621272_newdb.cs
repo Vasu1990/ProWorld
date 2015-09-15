@@ -3,7 +3,7 @@ namespace ProWorldz.DL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddUserIdInLatestTech : DbMigration
+    public partial class newdb : DbMigration
     {
         public override void Up()
         {
