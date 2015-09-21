@@ -29,6 +29,12 @@ namespace ProWorldz.Web.Controllers
         UserQualificationBL UserQualificationBL = new BL.BusinessLayer.UserQualificationBL();
 
         UserVideoBL UserVideoBL = new UserVideoBL();
+
+        public ActionResult Resume()
+        {
+            UserResumeModel Model = new UserResumeModel();
+            return View(Model);
+        }
         public ActionResult Test()
         {
 
@@ -50,10 +56,7 @@ namespace ProWorldz.Web.Controllers
 
             return View(Model);
         }
-        public ActionResult Resume()
-        {
-            return View();
-        }
+      
         [HttpPost]
         public ActionResult LoginUser(LoginModel Model)
         {

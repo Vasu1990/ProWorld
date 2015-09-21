@@ -1,34 +1,183 @@
 ﻿@model ProWorldz.Web.Models.UserResumeModel
 <div class="row">
-        <div class="col-md-12" id="divMessage" onclick="hideMessage(this);">
-            @if (Model != null && !string.IsNullOrEmpty(Model.SucessMessage))
+    <div class="col-md-12" id="divMessage" onclick="hideMessage(this);">
+        @if (Model != null && !string.IsNullOrEmpty(Model.SucessMessage))
         {
-                <div class="alert alert-success" role="alert">@Model.SucessMessage</div>
+            <div class="alert alert-success" role="alert">@Model.SucessMessage</div>
         }
-            @if (Model != null && !string.IsNullOrEmpty(Model.ErrorMessage))
+        @if (Model != null && !string.IsNullOrEmpty(Model.ErrorMessage))
         {
-                <div class="alert alert-success" role="alert">@Model.ErrorMessage</div>
+            <div class="alert alert-success" role="alert">@Model.ErrorMessage</div>
         }
+    </div>
+</div>
+<div class="row">
+    <h3 class="title cursor" id="createPost">
+        <i class="fa fa-fw fa-plus-circle"></i>
+        Upload Resume
+    </h3>
+
+    <div class="panel panel-default" >
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Having Visa</label>
+                </div>
+                <div class="col-md-9">
+                    <div class="col-md-3">
+                        <input type="radio" />
+                    </div>
+                    <div class="col-md-1">
+                        <label>Yes</label></div>
+                    <div class="col-md-3">
+                        <input type="radio" />
+                    </div>
+                    <div class="col-md-1">
+                        <label>No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Total Exp</label>
+                </div>
+                <div class="col-md-1">
+
+                    <select class="dropdown form-control">
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+
+                </div>
+                <div class="col-md-1">
+                    <label>Year</label>
+                </div>
+                <div class="col-md-1">
+                    <select class="dropdown form-control">
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+
+                </div>
+                <div class="col-md-1">
+                    <label>Month</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Intrested Location</label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-2">
+                    <i class="fa fa-fw fa-plus-circle" title="Add More"></i>
+                    <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Intrested Company</label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-2">
+                    <i class="fa fa-fw fa-plus-circle" title="Add More"></i>
+                    <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Your Intrests </label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-2">
+                    <i class="fa fa-fw fa-plus-circle" title="Add More"></i>
+                    <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Your Hobbies </label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-2">
+                    <i class="fa fa-fw fa-plus-circle" title="Add More"></i>
+                    <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Upload Resume </label>
+                </div>
+                <div class="col-md-5">
+                    <input type="file" class="form-control" />
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Paste Resume </label>
+                </div>
+                <div class="col-md-5">
+                    <textarea class="form-control" id="editor1" name="Content" placeholder="Paste Your Resume Here........" rows="5"></textarea>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Upload Cover </label>
+                </div>
+                <div class="col-md-5">
+                    <input type="file" class="form-control" />
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Paste Cover </label>
+                </div>
+                <div class="col-md-5">
+                    <textarea class="form-control" id="editor2" name="Content" placeholder="Paste Your Cover Here........" rows="5"></textarea>
+                </div>
+
+            </div>
+
+
+            <div class="row text-center">
+                <input type="submit" class="form-control" />
+            </div>
+
+
         </div>
     </div>
- <div class="row">
-        <h3 class="title cursor" id="createPost">
-                <i class="fa fa-fw fa-plus-circle"></i>
-                Upload Resume
-            </h3>
 
-       <div class="panel panel-default" id="divPost">
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Having Visa</label>
-                    </div>
-                    <div class="col-md-9">
-                        <input type="redio" /> Yes
-                        <input type="redio" /> No
-                    </div>
-                </div>
-                </div>
-           </div>
+</div>
 
-     </div>
+@section scripts{
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+
+    @Scripts.Render("~/Scripts/Custom/ProWorldz.UserPost.js")
+}

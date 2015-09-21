@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201509191823222_UserPostType.Designer.cs">
       <DependentUpon>201509191823222_UserPostType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509211822532_AddREsume.cs" />
+    <Compile Include="Migrations\201509211822532_AddREsume.Designer.cs">
+      <DependentUpon>201509211822532_AddREsume.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
     <Compile Include="Models\ContactUs.cs" />
@@ -130,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509191823222_UserPostType.resx">
       <DependentUpon>201509191823222_UserPostType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509211822532_AddREsume.resx">
+      <DependentUpon>201509211822532_AddREsume.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ProWorldz.Web.Models
 {
-    public class UserReumeModel:BaseModel
+    public class UserResumeModel:BaseModel
     {
         public UserResumeBM UserResume { get; set; }
     }
