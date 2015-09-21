@@ -54,6 +54,10 @@ namespace ProWorldz.DL
 
         public DbSet<MasterFilePath> MasterFilePath { get; set; }
         public DbSet<MasterUrl> MasterUrl { get; set; }
+
+
+        public DbSet<UserResume> UserResume { get; set; }
+        public DbSet<MasterModuleTypeData> MasterModuleTypeData { get; set; }
         
         
 

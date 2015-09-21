@@ -109,10 +109,10 @@ namespace ProWorldz.Web.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult NewPost(PostCommentModel Model)
+        public ActionResult NewPost(PostCommentModel Model,FormCollection collection)
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
-            
+            string type = collection["type"].ToString();
             if (CurrentUser != null)
             {
 
@@ -120,6 +120,8 @@ namespace ProWorldz.Web.Controllers
                 UserPostBM.Post = Model.UserPost.Post;
                 UserPostBM.Subject = Model.UserPost.Subject;
                 UserPostBM.UserId = CurrentUser.Id;
+                if (!string.IsNullOrEmpty(type))
+                    UserPostBM.PostType = Convert.ToInt32(type);
                 UserPostBM.CreatedBy = CurrentUser.Id;
                 UserPostBM.CreationDate = DateTime.Now;
                 UserPostBL.Create(UserPostBM);

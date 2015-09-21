@@ -46,7 +46,27 @@ namespace ProWorldz.DL.UOW
         private IRepository<MasterFilePath> masterFilePathRepository { get; set; }
         private IRepository<MasterUrl> masterUrlRepository { get; set; }
 
+        private IRepository<UserResume> userResumeRepository { get; set; }
+        private IRepository<MasterModuleTypeData> masterModuleTypeDataRepository { get; set; }
 
+        public IRepository<UserResume> UserResumeRepository
+        {
+            get
+            {
+                if (userResumeRepository == null)
+                    userResumeRepository = new GenericRepository<UserResume>(Context);
+                return userResumeRepository;
+            }
+        }
+        public IRepository<MasterModuleTypeData> MasterModuleTypeDataRepository
+        {
+            get
+            {
+                if (masterModuleTypeDataRepository == null)
+                    masterModuleTypeDataRepository = new GenericRepository<MasterModuleTypeData>(Context);
+                return masterModuleTypeDataRepository;
+            }
+        }
         public IRepository<MasterContent> MasterContentRepository
         {
             get

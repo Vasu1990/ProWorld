@@ -50,6 +50,10 @@ namespace ProWorldz.Web.Controllers
 
             return View(Model);
         }
+        public ActionResult Resume()
+        {
+            return View();
+        }
         [HttpPost]
         public ActionResult LoginUser(LoginModel Model)
         {

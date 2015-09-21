@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProWorldz.DL.Models
 {
-   public class UserPost: BaseClass
+   public class UserResume
     {
         [Key]
         public int Id { get; set; }
@@ -16,14 +16,20 @@ namespace ProWorldz.DL.Models
         [ForeignKey("User")]//check unique user name
         public int UserId { get; set; }
 
-        public string Subject { get; set; }
+        public bool IsVisaHolder { get; set; }
 
-        public string Post { get; set; }
+        public bool IsForeignWorker { get; set; }
 
-        public int PostType { get; set; }
+        public string TotalExperience { get; set; }
+
+        public string ResumePath { get; set; }
+
+        public string CoverLetterPath { get; set; }
+
+        public string ResumeContent { get; set; }
+        
+        public string CoverLetterContent { get; set; }
 
         public virtual User User { get; set; }
-           
-        public virtual List<UserPostComment> UserComments { get; set; }
     }
 }

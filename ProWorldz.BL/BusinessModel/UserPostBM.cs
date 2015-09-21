@@ -19,6 +19,9 @@ namespace ProWorldz.BL.BusinessModel
         public int UserId { get; set; }
         [Required]
         public string Subject { get; set; }
+
+        public int PostType { get; set; }
+
         [Required]
         public string Post { get; set; }
         public string ImageUrl { get; set; }

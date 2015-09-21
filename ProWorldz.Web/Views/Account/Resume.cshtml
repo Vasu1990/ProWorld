@@ -1,0 +1,34 @@
+﻿@model ProWorldz.Web.Models.UserResumeModel
+<div class="row">
+        <div class="col-md-12" id="divMessage" onclick="hideMessage(this);">
+            @if (Model != null && !string.IsNullOrEmpty(Model.SucessMessage))
+        {
+                <div class="alert alert-success" role="alert">@Model.SucessMessage</div>
+        }
+            @if (Model != null && !string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+                <div class="alert alert-success" role="alert">@Model.ErrorMessage</div>
+        }
+        </div>
+    </div>
+ <div class="row">
+        <h3 class="title cursor" id="createPost">
+                <i class="fa fa-fw fa-plus-circle"></i>
+                Upload Resume
+            </h3>
+
+       <div class="panel panel-default" id="divPost">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Having Visa</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="redio" /> Yes
+                        <input type="redio" /> No
+                    </div>
+                </div>
+                </div>
+           </div>
+
+     </div>

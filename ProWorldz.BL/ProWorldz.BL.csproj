@@ -75,6 +75,7 @@
     <Compile Include="BusinessLayer\LatestTutorialsBL.cs" />
     <Compile Include="BusinessLayer\MasterContentBL.cs" />
     <Compile Include="BusinessLayer\MasterFilePathBL.cs" />
+    <Compile Include="BusinessLayer\MasterModuleTypeDataBL.cs" />
     <Compile Include="BusinessLayer\MasterUrlBL.cs" />
     <Compile Include="BusinessLayer\StateBL.cs" />
     <Compile Include="BusinessLayer\UserBL.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="BusinessLayer\UserPostCommentBL.cs" />
     <Compile Include="BusinessLayer\UserProfessionalQualificationBL.cs" />
     <Compile Include="BusinessLayer\UserQualificationBL.cs" />
+    <Compile Include="BusinessLayer\UserResumeBL.cs" />
     <Compile Include="BusinessLayer\UserVideoBL.cs" />
     <Compile Include="BusinessModel\BaseBM.cs" />
     <Compile Include="BusinessModel\ContactUsBM.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="BusinessModel\IndustryBM.cs" />
     <Compile Include="BusinessModel\MasterContentBM.cs" />
     <Compile Include="BusinessModel\MasterFilePathBM.cs" />
+    <Compile Include="BusinessModel\MasterModuleTypeDataBM.cs" />
     <Compile Include="BusinessModel\MasterUrlBM.cs" />
     <Compile Include="BusinessModel\PostBM.cs" />
     <Compile Include="BusinessModel\StateBM.cs" />
@@ -108,6 +111,7 @@
     <Compile Include="BusinessModel\UserPostCommentBM.cs" />
     <Compile Include="BusinessModel\UserProfessionalQualificationBM.cs" />
     <Compile Include="BusinessModel\UserQualificatinBM.cs" />
+    <Compile Include="BusinessModel\UserResumeBM.cs" />
     <Compile Include="BusinessModel\UserVideoBM.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Common\DatatablePaging\DataTableConfig.cs" />
