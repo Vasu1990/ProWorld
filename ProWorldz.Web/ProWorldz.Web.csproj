@@ -1345,6 +1345,7 @@
     <Folder Include="Areas\Site\Content\Custom\images\" />
     <Folder Include="Areas\Site\Content\Custom\js\" />
     <Folder Include="Areas\Site\Models\" />
+    <Folder Include="Document\Resume\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

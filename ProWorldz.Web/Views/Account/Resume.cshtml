@@ -11,13 +11,15 @@
         }
     </div>
 </div>
-<div class="row">
+<div class="row" id="dvResume">
     <h3 class="title cursor" id="createPost">
         <i class="fa fa-fw fa-plus-circle"></i>
         Upload Resume
     </h3>
-
-    <div class="panel panel-default" >
+    <br />
+    <div class="panel panel-default">
+           @using (Html.BeginForm("UploadResume", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-3">
@@ -25,18 +27,43 @@
                 </div>
                 <div class="col-md-9">
                     <div class="col-md-3">
-                        <input type="radio" />
+                       
+                        <input type="radio" value="Y" name="visa" checked="checked"  />
                     </div>
                     <div class="col-md-1">
-                        <label>Yes</label></div>
+                        <label>Yes</label>
+                    </div>
                     <div class="col-md-3">
-                        <input type="radio" />
+                        <input type="radio" value="N" name="visa"  />
                     </div>
                     <div class="col-md-1">
                         <label>No</label>
                     </div>
                 </div>
             </div>
+            <br />
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Intrest in Foreign</label>
+                </div>
+                <div class="col-md-9">
+                    <div class="col-md-3">
+                        <input type="radio" value="Y" checked="checked"  name="Foreign"  />
+                    </div>
+                    <div class="col-md-1">
+                        <label>Yes</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="radio" value="N" name="Foreign"  />
+                    </div>
+                    <div class="col-md-1">
+                        <label>No</label>
+                    </div>
+                </div>
+            </div>
+            <br />
+
 
             <div class="row">
                 <div class="col-md-3">
@@ -44,7 +71,7 @@
                 </div>
                 <div class="col-md-1">
 
-                    <select class="dropdown form-control">
+                    <select class="dropdown form-control" name="Year" data-bind="value: Year">
 
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -55,7 +82,7 @@
                     <label>Year</label>
                 </div>
                 <div class="col-md-1">
-                    <select class="dropdown form-control">
+                    <select class="dropdown form-control" name="Month" data-bind="value: Month">
 
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -66,112 +93,138 @@
                     <label>Month</label>
                 </div>
             </div>
+            <br />
+          
+            <br />
 
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Intrested Location</label>
-                </div>
-                <div class="col-md-5">
-                    <input type="text" class="form-control" />
-                </div>
-                <div class="col-md-2">
-                    <i class="fa fa-fw fa-plus-circle" title="Add More"></i>
-                    <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+            <div data-bind="foreach: viewModel.IntrestedLocations">
+                <div class="form-group">
+                    <span class="col-sm-3 control-label" >Locations</span>
+
+                    <div class="col-sm-7">
+                        <input type="text" name="Location" class="form-control" placeholder="Location"  data-bind="value: value" />
+                    </div>
+
+                    <div class="col-sm-2">
+                        <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewLocations" title="Add More"></i>
+                        <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+
+                    </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Intrested Company</label>
-                </div>
-                <div class="col-md-5">
-                    <input type="text" class="form-control" />
-                </div>
-                <div class="col-md-2">
-                    <i class="fa fa-fw fa-plus-circle" title="Add More"></i>
-                    <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+            <br />
+
+            <div data-bind="foreach: viewModel.IntrestedCompanies">
+                <div class="form-group">
+                    <span class="col-sm-3 control-label" >Companies</span>
+
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="Company" placeholder="company" data-bind="value: value" />
+                    </div>
+
+                    <div class="col-sm-2">
+                        <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewCompanies" title="Add More"></i>
+                        <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+
+                    </div>
                 </div>
             </div>
+         
 
+            <br />
+     
 
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Your Intrests </label>
-                </div>
-                <div class="col-md-5">
-                    <input type="text" class="form-control" />
-                </div>
-                <div class="col-md-2">
-                    <i class="fa fa-fw fa-plus-circle" title="Add More"></i>
-                    <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+             <div data-bind="foreach: viewModel.AreaOfIntrests">
+                <div class="form-group">
+                    <span class="col-sm-3 control-label" >Intrests</span>
+
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="Intrest" placeholder="Intrests" data-bind="value: value" />
+                    </div>
+
+                    <div class="col-sm-2">
+                        <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewIntrests" title="Add More"></i>
+                        <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+
+                    </div>
                 </div>
             </div>
+            <br />
+       
 
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Your Hobbies </label>
-                </div>
-                <div class="col-md-5">
-                    <input type="text" class="form-control" />
-                </div>
-                <div class="col-md-2">
-                    <i class="fa fa-fw fa-plus-circle" title="Add More"></i>
-                    <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+            <div data-bind="foreach: viewModel.Hobby">
+                <div class="form-group">
+                    <span class="col-sm-3 control-label">Hobbies</span>
+
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="Hobby" placeholder="Hobby" data-bind="value: value" />
+                    </div>
+
+                    <div class="col-sm-2">
+                        <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewHobbies" title="Add More"></i>
+                        <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+
+                    </div>
                 </div>
             </div>
-
+            <br />
 
             <div class="row">
                 <div class="col-md-3">
                     <label>Upload Resume </label>
                 </div>
-                <div class="col-md-5">
-                    <input type="file" class="form-control" />
+                <div class="col-md-7">
+                    <input type="file" class="form-control" id="resumePath" name="ResumeFile" data-bind="fileInput: resumeData" />
                 </div>
 
             </div>
-
+            <br />
             <div class="row">
                 <div class="col-md-3">
                     <label>Paste Resume </label>
                 </div>
-                <div class="col-md-5">
-                    <textarea class="form-control" id="editor1" name="Content" placeholder="Paste Your Resume Here........" rows="5"></textarea>
+                <div class="col-md-7">
+                    <textarea class="form-control" id="editor1"  data-bind="value: ResumeContent" name="ResumeContent" placeholder="Paste Your Resume Here........" rows="5"></textarea>
                 </div>
 
             </div>
 
-
+            <br />
 
 
             <div class="row">
                 <div class="col-md-3">
-                    <label>Upload Cover </label>
+                    <label>Upload Cover</label>
                 </div>
-                <div class="col-md-5">
-                    <input type="file" class="form-control" />
+                <div class="col-md-7">
+                    <input type="file" class="form-control" id="coverPath" name="CoverLetterFile" data-bind="fileInput: coverData" />
                 </div>
 
             </div>
-
+            <br />
 
             <div class="row">
                 <div class="col-md-3">
                     <label>Paste Cover </label>
                 </div>
-                <div class="col-md-5">
-                    <textarea class="form-control" id="editor2" name="Content" placeholder="Paste Your Cover Here........" rows="5"></textarea>
+                <div class="col-md-7">
+                    <textarea class="form-control" id="editor2" data-bind="value: CoverLetterContent" name="CoverContent" placeholder="Paste Your Cover Here........" rows="5"></textarea>
                 </div>
 
             </div>
 
 
-            <div class="row text-center">
-                <input type="submit" class="form-control" />
+            <div class="col-md-12 text-center">
+                <input type="submit" value="Save" class="form-control"  />
             </div>
 
-
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
+           }
     </div>
 
 </div>
@@ -180,4 +233,116 @@
     <script src="~/Scripts/ckeditor/ckeditor.js"></script>
 
     @Scripts.Render("~/Scripts/Custom/ProWorldz.UserPost.js")
+
+    <script>
+        var viewModel = {};
+        viewModel.IsVisaHolder = ko.observable();
+        viewModel.IsForeignWorker = ko.observable();
+        viewModel.Year = ko.observable();
+        viewModel.Month = ko.observable();
+
+        viewModel.ResumePath = ko.observable();
+        viewModel.CoverLetterPath = ko.observable();
+        viewModel.ResumeContent = ko.observable();
+        viewModel.CoverLetterContent = ko.observable();
+
+
+        viewModel.IntrestedLocations = ko.observableArray([]);
+        viewModel.Locations = ko.observableArray([]);
+
+        viewModel.addNewLocations = function () {
+
+            viewModel.IntrestedLocations.push({ value: "" });
+        }
+        viewModel.addNewLocations();
+
+        viewModel.IntrestedCompanies = ko.observableArray([]);
+        viewModel.Companies = ko.observableArray([]);
+
+        viewModel.addNewCompanies = function () {
+
+            viewModel.IntrestedCompanies.push({ value: "" });
+        }
+        viewModel.addNewCompanies();
+
+        viewModel.Intrests = ko.observableArray([]);
+        viewModel.AreaOfIntrests = ko.observableArray([]);
+        viewModel.addNewIntrests = function () {
+
+            viewModel.AreaOfIntrests.push({ value: "" });
+        }
+        viewModel.addNewIntrests();
+
+        viewModel.Hobby = ko.observableArray([]);
+        viewModel.Hobbies = ko.observableArray([]);
+
+        viewModel.addNewHobbies = function () {
+
+            viewModel.Hobby.push({ value: "" });
+        }
+        viewModel.addNewHobbies();
+
+
+        viewModel.submitResume = function () {
+            debugger;
+
+            viewModel.ResumeContent(CKEDITOR.instances['editor1'].getData())
+            viewModel.CoverLetterContent(CKEDITOR.instances['editor2'].getData())
+            viewModel.ResumePath($("#resumePath").val())
+            viewModel.CoverLetterPath($("#coverPath").val());
+
+            $.each(viewModel.Hobby(), function (index, data) {
+                debugger;
+                viewModel.Hobbies.push(data.value);
+            })
+
+            $.each(viewModel.IntrestedLocations(), function (index, data) {
+                debugger;
+                viewModel.Locations.push(data.value);
+            })
+
+            $.each(viewModel.IntrestedCompanies(), function (index, data) {
+                debugger;
+                viewModel.Companies.push(data.value);
+            })
+
+            $.each(viewModel.AreaOfIntrests(), function (index, data) {
+                debugger;
+                viewModel.Intrests.push(data.value);
+            })
+
+            $.ajax({
+                url: '/Account/UploadResume',
+                type: 'POST',
+                contentType: 'application/json',
+                data: ko.toJSON(viewModel),
+                dataType: 'json',
+                success: function (status) {
+                    alert("success");
+                }, error: function (status) {
+                    alert("err");
+                }
+            });
+        }
+
+        viewModel.resumeData = ko.observable({
+            dataURL: ko.observable()
+        });
+
+        viewModel.resumeData().dataURL.subscribe(function (dataURL) {
+            alert("from resume")
+            // dataURL has changed do something with it!
+        });
+
+        viewModel.coverData = ko.observable({
+            dataURL: ko.observable()
+        });
+
+        viewModel.coverData().dataURL.subscribe(function (dataURL) {
+            alert("from cover")
+            // dataURL has changed do something with it!
+        });
+
+        ko.applyBindings(viewModel, document.getElementById('dvResume'));
+    </script>
 }

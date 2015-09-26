@@ -15,6 +15,8 @@ using ProWorldz.BL.BusinessModel;
 using ProWorldz.Web.Utils;
 using System.Net.Mail;
 using System.Net;
+using System.IO;
+using ProWorldz.BL.Enum;
 
 namespace ProWorldz.Web.Controllers
 {
@@ -33,7 +35,101 @@ namespace ProWorldz.Web.Controllers
         public ActionResult Resume()
         {
             UserResumeModel Model = new UserResumeModel();
+            Model.SucessMessage = (TempData["Success"] != null ? TempData["Success"].ToString() : string.Empty).ToString();
+            Model.ErrorMessage = (TempData["Error"] != null ? TempData["Error"].ToString() : string.Empty).ToString();
             return View(Model);
+        }
+       
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult UploadResume(UserResumeBM Model, FormCollection Collection, HttpPostedFileBase ResumeFile, HttpPostedFileBase CoverLetterFile) 
+        {
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            Model.IsVisaHolder = Collection["visa"].ToString()=="Y"?true:false;
+            Model.IsForeignWorker = Collection["Foreign"].ToString() == "Y" ? true : false;
+            Model.Year = Collection["Year"].ToString();
+            Model.Month = Collection["Month"].ToString();
+         
+
+            Model.ResumeContent = Collection["ResumeContent"].ToString();
+            Model.CoverLetterContent = Collection["CoverContent"].ToString();
+
+
+            Model.Locations = Collection["Location"].ToString().Split(',').ToList();
+            Model.Companies = Collection["Company"].ToString().Split(',').ToList();
+            Model.Intrests = Collection["Intrest"].ToString().Split(',').ToList();
+            Model.Hobbies = Collection["Hobby"].ToString().Split(',').ToList();
+
+       
+
+
+           
+
+            UserResumeBL userResumeBL = new UserResumeBL();
+            Model.UserId = CurrentUser.Id;
+             int UserResumeId=    userResumeBL.Create(Model);
+
+             if (ResumeFile != null)
+             {
+                 string ImageName = System.IO.Path.GetFileName(ResumeFile.FileName);
+                 if (!Directory.Exists(Server.MapPath("~/Document/Resume")))
+                 {
+                     Directory.CreateDirectory(Server.MapPath("~/Document/Resume"));
+                 }
+                 string physicalPath = Server.MapPath("~/Document/Resume/" + ImageName);
+                 ResumeFile.SaveAs(physicalPath);
+             }
+             if (CoverLetterFile != null)
+             {
+                 string ImageName = System.IO.Path.GetFileName(CoverLetterFile.FileName);
+                 if (!Directory.Exists(Server.MapPath("~/Document/CoverLetter")))
+                 {
+                     Directory.CreateDirectory(Server.MapPath("~/Document/CoverLetter"));
+                 }
+                 string physicalPath = Server.MapPath("~/Document/CoverLetter/" + ImageName);
+                 CoverLetterFile.SaveAs(physicalPath);
+             }
+           
+             MasterModuleTypeDataBL masterModuleTypeDataBM = new MasterModuleTypeDataBL();
+
+             foreach (string item in Model.Locations) 
+             {
+                 MasterModuleTypeDataBM LocationObject = new MasterModuleTypeDataBM();
+                 LocationObject.ModuleTypeId = (int)ModuleTypeEnum.Location;
+                 LocationObject.ModuleId = UserResumeId;
+                 LocationObject.Data = item;
+                 masterModuleTypeDataBM.Create(LocationObject);
+             }
+
+             foreach (string item in Model.Companies)
+             {
+                 MasterModuleTypeDataBM LocationObject = new MasterModuleTypeDataBM();
+                 LocationObject.ModuleTypeId = (int)ModuleTypeEnum.Companies;
+                 LocationObject.ModuleId = UserResumeId;
+                 LocationObject.Data = item;
+                 masterModuleTypeDataBM.Create(LocationObject);
+             }
+
+
+             foreach (string item in Model.Intrests)
+             {
+                 MasterModuleTypeDataBM LocationObject = new MasterModuleTypeDataBM();
+                 LocationObject.ModuleTypeId = (int)ModuleTypeEnum.Intrest;
+                 LocationObject.ModuleId = UserResumeId;
+                 LocationObject.Data = item;
+                 masterModuleTypeDataBM.Create(LocationObject);
+             }
+
+             foreach (string item in Model.Hobbies)
+             {
+                 MasterModuleTypeDataBM LocationObject = new MasterModuleTypeDataBM();
+                 LocationObject.ModuleTypeId = (int)ModuleTypeEnum.Hobbies;
+                 LocationObject.ModuleId = UserResumeId;
+                 LocationObject.Data = item;
+                 masterModuleTypeDataBM.Create(LocationObject);
+             }
+             TempData["Success"] = "Record Saved Successfully.";
+            return RedirectToAction("Resume");
         }
         public ActionResult Test()
         {
