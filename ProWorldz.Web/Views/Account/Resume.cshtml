@@ -18,213 +18,240 @@
     </h3>
     <br />
     <div class="panel panel-default">
-           @using (Html.BeginForm("UploadResume", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("UploadResume", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Having Visa</label>
+            <div class="panel-body">
+                <div class="form-group margin-none">
+                    <div class="col-sm-offset-12 pull-right">
+                        <button type="submit" class="btn btn-primary">Save</button>
+
+                        
+                    </div>
                 </div>
-                <div class="col-md-9">
+
+                <div class="clear-fix"></div>
+                <div class="row">
                     <div class="col-md-3">
-                       
-                        <input type="radio" value="Y" name="visa" checked="checked"  />
+                        <label>Having Visa</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="col-md-3">
+
+                            <input type="radio" value="Y" name="visa" checked="checked" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>Yes</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="radio" value="N" name="visa" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>No</label>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Intrest in Foreign</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="col-md-3">
+                            <input type="radio" value="Y" checked="checked" name="Foreign" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>Yes</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="radio" value="N" name="Foreign" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>No</label>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Total Exp</label>
                     </div>
                     <div class="col-md-1">
-                        <label>Yes</label>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="radio" value="N" name="visa"  />
+
+                        <select class="dropdown form-control" name="Year" data-bind="value: Year">
+
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+
                     </div>
                     <div class="col-md-1">
-                        <label>No</label>
-                    </div>
-                </div>
-            </div>
-            <br />
-
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Intrest in Foreign</label>
-                </div>
-                <div class="col-md-9">
-                    <div class="col-md-3">
-                        <input type="radio" value="Y" checked="checked"  name="Foreign"  />
+                        <label>Year</label>
                     </div>
                     <div class="col-md-1">
-                        <label>Yes</label>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="radio" value="N" name="Foreign"  />
+                        <select class="dropdown form-control" name="Month" data-bind="value: Month">
+
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+
                     </div>
                     <div class="col-md-1">
-                        <label>No</label>
+                        <label>Month</label>
                     </div>
                 </div>
-            </div>
-            <br />
+                <br />
 
+                <br />
 
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Total Exp</label>
+                <div data-bind="foreach: viewModel.IntrestedLocations">
+                    <div class="form-group">
+                        <span class="col-sm-3 control-label">Locations</span>
+
+                        <div class="col-sm-7">
+                            <input type="text" name="Location" class="form-control" placeholder="Location" data-bind="value: value" />
+                        </div>
+
+                        <div class="col-sm-2">
+                            <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewLocations" title="Add More"></i>
+                            <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+
+                        </div>
+                    </div>
+                    <br />
+                    <div class="clear-fix"></div>
                 </div>
-                <div class="col-md-1">
 
-                    <select class="dropdown form-control" name="Year" data-bind="value: Year">
+                <br />
 
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>
+                <div data-bind="foreach: viewModel.IntrestedCompanies">
+                    <div class="form-group">
+                        <span class="col-sm-3 control-label">Companies</span>
+
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" name="Company" placeholder="company" data-bind="value: value" />
+                        </div>
+
+                        <div class="col-sm-2">
+                            <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewCompanies" title="Add More"></i>
+                            <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+
+                        </div>
+                    </div>
+                    <br />
+                    <div class="clear-fix"></div>
 
                 </div>
-                <div class="col-md-1">
-                    <label>Year</label>
+
+
+                <br />
+
+
+                <div data-bind="foreach: viewModel.AreaOfIntrests">
+                    <div class="form-group">
+                        <span class="col-sm-3 control-label">Intrests</span>
+
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" name="Intrest" placeholder="Intrests" data-bind="value: value" />
+                        </div>
+
+                        <div class="col-sm-2">
+                            <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewIntrests" title="Add More"></i>
+                            <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+
+                        </div>
+                    </div>
+                    <br />
+                    <div class="clear-fix"></div>
                 </div>
-                <div class="col-md-1">
-                    <select class="dropdown form-control" name="Month" data-bind="value: Month">
+                <br />
 
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>
 
+                <div data-bind="foreach: viewModel.Hobby">
+                    <div class="form-group">
+                        <span class="col-sm-3 control-label">Hobbies</span>
+
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" name="Hobby" placeholder="Hobby" data-bind="value: value" />
+                        </div>
+
+                        <div class="col-sm-2">
+                            <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewHobbies" title="Add More"></i>
+                            <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+
+                        </div>
+                    </div>
+                    <br />
+                    <div class="clear-fix"></div>
                 </div>
-                <div class="col-md-1">
-                    <label>Month</label>
-                </div>
-            </div>
-            <br />
-          
-            <br />
+                <br />
 
-            <div data-bind="foreach: viewModel.IntrestedLocations">
-                <div class="form-group">
-                    <span class="col-sm-3 control-label" >Locations</span>
-
-                    <div class="col-sm-7">
-                        <input type="text" name="Location" class="form-control" placeholder="Location"  data-bind="value: value" />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Upload Resume </label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="file" class="form-control" id="resumePath" name="ResumeFile" data-bind="fileInput: resumeData" />
                     </div>
 
-                    <div class="col-sm-2">
-                        <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewLocations" title="Add More"></i>
-                        <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
-
-                    </div>
                 </div>
-            </div>
-
-            <br />
-
-            <div data-bind="foreach: viewModel.IntrestedCompanies">
-                <div class="form-group">
-                    <span class="col-sm-3 control-label" >Companies</span>
-
-                    <div class="col-sm-7">
-                        <input type="text" class="form-control" name="Company" placeholder="company" data-bind="value: value" />
+                <br />
+                <div class="row text-center"><span><strong>----OR----</strong></span></div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Paste Resume </label>
+                    </div>
+                    <div class="col-md-7">
+                        <textarea class="form-control" id="editor1" data-bind="value: ResumeContent" name="ResumeContent" placeholder="Paste Your Resume Here........" rows="5"></textarea>
                     </div>
 
-                    <div class="col-sm-2">
-                        <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewCompanies" title="Add More"></i>
-                        <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
-
-                    </div>
                 </div>
-            </div>
-         
 
-            <br />
-     
+                <br />
 
-             <div data-bind="foreach: viewModel.AreaOfIntrests">
-                <div class="form-group">
-                    <span class="col-sm-3 control-label" >Intrests</span>
 
-                    <div class="col-sm-7">
-                        <input type="text" class="form-control" name="Intrest" placeholder="Intrests" data-bind="value: value" />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Upload Cover</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="file" class="form-control" id="coverPath" name="CoverLetterFile" data-bind="fileInput: coverData" />
                     </div>
 
-                    <div class="col-sm-2">
-                        <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewIntrests" title="Add More"></i>
-                        <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
-
-                    </div>
                 </div>
-            </div>
-            <br />
-       
+                   <br />
+                <div class="row text-center"><span><strong>----OR----</strong></span></div>
+                <br />
 
-            <div data-bind="foreach: viewModel.Hobby">
-                <div class="form-group">
-                    <span class="col-sm-3 control-label">Hobbies</span>
-
-                    <div class="col-sm-7">
-                        <input type="text" class="form-control" name="Hobby" placeholder="Hobby" data-bind="value: value" />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Paste Cover </label>
+                    </div>
+                    <div class="col-md-7">
+                        <textarea class="form-control" id="editor2" data-bind="value: CoverLetterContent" name="CoverContent" placeholder="Paste Your Cover Here........" rows="5"></textarea>
                     </div>
 
-                    <div class="col-sm-2">
-                        <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewHobbies" title="Add More"></i>
-                        <i class="fa fa-fw fa-minus-circle" title="Remove"></i>
+                </div>
+                <br />
+                <br />
+                <div class="clear-fix"></div>
+                <div class="form-group margin-none">
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary">Save</button>
 
+                        
                     </div>
                 </div>
+
+                <br />
+                <br />
+                <br />
+                <br />
             </div>
-            <br />
-
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Upload Resume </label>
-                </div>
-                <div class="col-md-7">
-                    <input type="file" class="form-control" id="resumePath" name="ResumeFile" data-bind="fileInput: resumeData" />
-                </div>
-
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Paste Resume </label>
-                </div>
-                <div class="col-md-7">
-                    <textarea class="form-control" id="editor1"  data-bind="value: ResumeContent" name="ResumeContent" placeholder="Paste Your Resume Here........" rows="5"></textarea>
-                </div>
-
-            </div>
-
-            <br />
-
-
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Upload Cover</label>
-                </div>
-                <div class="col-md-7">
-                    <input type="file" class="form-control" id="coverPath" name="CoverLetterFile" data-bind="fileInput: coverData" />
-                </div>
-
-            </div>
-            <br />
-
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Paste Cover </label>
-                </div>
-                <div class="col-md-7">
-                    <textarea class="form-control" id="editor2" data-bind="value: CoverLetterContent" name="CoverContent" placeholder="Paste Your Cover Here........" rows="5"></textarea>
-                </div>
-
-            </div>
-
-
-            <div class="col-md-12 text-center">
-                <input type="submit" value="Save" class="form-control"  />
-            </div>
-
-            <br />
-            <br />
-            <br />
-            <br />
-        </div>
-           }
+        }
     </div>
 
 </div>
