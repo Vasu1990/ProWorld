@@ -18,10 +18,15 @@ namespace ProWorldz.BL.BusinessLayer
             uow = new UnitOfWork();
         }
 
-        public void Create(UserResumeBM model)
+        public int Create(UserResumeBM model)
         {
-            uow.UserResumeRepository.Add(ConvertToDM(model));
+         
+
+
+            UserResume tech = ConvertToDM(model);
+            uow.UserResumeRepository.Add(tech);
             uow.Save();
+            return tech.Id;
         }
 
 

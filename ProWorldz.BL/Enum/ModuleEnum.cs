@@ -11,4 +11,12 @@ namespace ProWorldz.BL.Enum
         Url = 1,
         FilePath = 1
     }
+
+  public enum ModuleTypeEnum
+  {
+      Companies = 1,
+      Location = 2,
+      Intrest=3,
+      Hobbies=4
+  }
 }

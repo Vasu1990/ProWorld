@@ -18,6 +18,10 @@ namespace ProWorldz.BL.BusinessModel
 
         public string TotalExperience { get; set; }
 
+        public string Year { get; set; }
+
+        public string Month { get; set; }
+
         public string ResumePath { get; set; }
 
         public string CoverLetterPath { get; set; }
@@ -25,5 +29,13 @@ namespace ProWorldz.BL.BusinessModel
         public string ResumeContent { get; set; }
 
         public string CoverLetterContent { get; set; }
+
+        public List<string> Locations { get; set; }
+
+        public List<string> Companies { get; set; }
+
+        public List<string> Intrests { get; set; }
+
+        public List<string> Hobbies { get; set; }
     }
 }
