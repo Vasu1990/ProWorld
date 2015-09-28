@@ -95,14 +95,14 @@
                                 </div>
 
                                 <div class="col-sm-2">  <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewUrlRow" title="Add More"></i>
-                                    <input type="button" value="Remove" class="btn btn-danger" data-bind="click: viewModel.removeUrlRow" />
+                                  <i class="fa fa-fw fa-minus-circle" title="Remove" data-bind="click: viewModel.removeUrlRow"></i>
+                                        
                                 </div>
                             </div>
+                             <br />
+                             <div class="clear-fix"></div>
                         </div>
-                        <br />
-                     
-                        <br />
-                        <br />
+                       
 
                          <div data-bind="foreach: viewModel.FileRows">
                             <div class="form-group">
@@ -113,9 +113,12 @@
                                 </div>
 
                                 <div class="col-sm-2">  <i class="fa fa-fw fa-plus-circle" data-bind="click: viewModel.addNewFileRow" title="Add More"></i>
-                                    <input type="button" value="Remove" class="btn btn-danger" data-bind="click: viewModel.removeFileRow" />
+                                    
+                                    <i class="fa fa-fw fa-minus-circle" title="Remove" data-bind="click: viewModel.removeFileRow"></i>
                                 </div>
                             </div>
+                             <br />
+                             <div class="clear-fix"></div>
                         </div>
                        
                         <br />

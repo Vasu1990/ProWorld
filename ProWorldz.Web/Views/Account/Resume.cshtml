@@ -25,7 +25,7 @@
                     <div class="col-sm-offset-12 pull-right">
                         <button type="submit" class="btn btn-primary">Save</button>
 
-                        
+
                     </div>
                 </div>
 
@@ -35,19 +35,21 @@
                         <label>Having Visa</label>
                     </div>
                     <div class="col-md-9">
-                        <div class="col-md-3">
 
-                            <input type="radio" value="Y" name="visa" checked="checked" />
+
+                        <div class="col-md-4">
+                            <div class="radio radio-primary">
+                                <input type="radio" value="Y" name="visa" id="rdFrd" checked>
+                                <label for="rdFrd">Yes</label>
+                            </div>
                         </div>
-                        <div class="col-md-1">
-                            <label>Yes</label>
+                        <div class="col-md-4">
+                            <div class="radio radio-primary">
+                                <input type="radio" value="N" name="visa" id="rdComm">
+                                <label for="rdComm">No</label>
+                            </div>
                         </div>
-                        <div class="col-md-3">
-                            <input type="radio" value="N" name="visa" />
-                        </div>
-                        <div class="col-md-1">
-                            <label>No</label>
-                        </div>
+
                     </div>
                 </div>
                 <br />
@@ -57,18 +59,25 @@
                         <label>Intrest in Foreign</label>
                     </div>
                     <div class="col-md-9">
-                        <div class="col-md-3">
-                            <input type="radio" value="Y" checked="checked" name="Foreign" />
+
+
+                        <div class="col-md-4">
+                            <div class="radio radio-primary">
+                                <input type="radio" value="Y" name="Foreign" id="rdForeign" checked>
+                                <label for="rdForeign">Yes</label>
+                            </div>
                         </div>
-                        <div class="col-md-1">
-                            <label>Yes</label>
+                        <div class="col-md-4">
+                            <div class="radio radio-primary">
+                                <input type="radio" value="N" name="Foreign" id="rdNotForeign">
+                                <label for="rdNotForeign">No</label>
+                            </div>
                         </div>
-                        <div class="col-md-3">
-                            <input type="radio" value="N" name="Foreign" />
-                        </div>
-                        <div class="col-md-1">
-                            <label>No</label>
-                        </div>
+
+
+
+
+
                     </div>
                 </div>
                 <br />
@@ -108,7 +117,7 @@
 
                 <div data-bind="foreach: viewModel.IntrestedLocations">
                     <div class="form-group">
-                        <span class="col-sm-3 control-label">Locations</span>
+                        <span class="col-sm-3 control-label"><strong>Locations</strong></span>
 
                         <div class="col-sm-7">
                             <input type="text" name="Location" class="form-control" placeholder="Location" data-bind="value: value" />
@@ -128,7 +137,7 @@
 
                 <div data-bind="foreach: viewModel.IntrestedCompanies">
                     <div class="form-group">
-                        <span class="col-sm-3 control-label">Companies</span>
+                        <span class="col-sm-3 control-label"><strong>Companies</strong></span>
 
                         <div class="col-sm-7">
                             <input type="text" class="form-control" name="Company" placeholder="company" data-bind="value: value" />
@@ -151,7 +160,7 @@
 
                 <div data-bind="foreach: viewModel.AreaOfIntrests">
                     <div class="form-group">
-                        <span class="col-sm-3 control-label">Intrests</span>
+                        <span class="col-sm-3 control-label"><strong>Intrests</strong></span>
 
                         <div class="col-sm-7">
                             <input type="text" class="form-control" name="Intrest" placeholder="Intrests" data-bind="value: value" />
@@ -171,7 +180,7 @@
 
                 <div data-bind="foreach: viewModel.Hobby">
                     <div class="form-group">
-                        <span class="col-sm-3 control-label">Hobbies</span>
+                        <span class="col-sm-3 control-label"><strong>Hobbies</strong></span>
 
                         <div class="col-sm-7">
                             <input type="text" class="form-control" name="Hobby" placeholder="Hobby" data-bind="value: value" />
@@ -222,7 +231,7 @@
                     </div>
 
                 </div>
-                   <br />
+                <br />
                 <div class="row text-center"><span><strong>----OR----</strong></span></div>
                 <br />
 
@@ -242,7 +251,7 @@
                     <div class="col-md-12 text-center">
                         <button type="submit" class="btn btn-primary">Save</button>
 
-                        
+
                     </div>
                 </div>
 
@@ -262,6 +271,7 @@
     @Scripts.Render("~/Scripts/Custom/ProWorldz.UserPost.js")
 
     <script>
+
         var viewModel = {};
         viewModel.IsVisaHolder = ko.observable();
         viewModel.IsForeignWorker = ko.observable();
@@ -371,5 +381,6 @@
         });
 
         ko.applyBindings(viewModel, document.getElementById('dvResume'));
+        CKEDITOR.replace('editor2');
     </script>
 }
