@@ -223,67 +223,68 @@
     </header>
 
 
-    <div id="body">
+<div id="body">
+    
+    <div class="col-md-1"></div>
+    <!--Main content-->
+    <div class="col-md-10" style="padding: 0 30px">
+        @RenderBody()
+    </div>
+    <div class="col-md-1"></div>
+    <!--Sidebar chat-->
+    @*<div class="col-md-2">
+                <div class="sidebar sidebar-chat left sidebar-size-2 sidebar-offset-2 chat-skin-white sidebar-visible-desktop" id="sidebar-chat">
+                    <div class="split-vertical">
+                        <div class="chat-search">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
 
-        <!--Main content-->
-        <div class="col-md-10" style="padding: 0 30px">
-            @RenderBody()
-        </div>
+                        <ul class="chat-filter nav nav-pills">
+                            <li class="active"><a href="#" data-target="li">All</a></li>
+                            <li class=""><a href="#" data-target=".online">Online</a></li>
+                            <li class=""><a href="#" data-target=".offline">Offline</a></li>
 
-        <!--Sidebar chat-->
-        <div class="col-md-2">
-            <div class="sidebar sidebar-chat left sidebar-size-2 sidebar-offset-2 chat-skin-white sidebar-visible-desktop" id="sidebar-chat">
-                <div class="split-vertical">
-                    <div class="chat-search">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
+                        </ul>
+                        <div class="split-vertical-body navbarUser">
+                            <div class="split-vertical-cell" style="min-height: 775px">
+                                <div data-scrollable="" tabindex="1" style="overflow-y: hidden; outline: none;">
+                                    <ul class="chat-contacts">
+                                        <span data-bind="foreach:allFriendsInfo">
 
-                    <ul class="chat-filter nav nav-pills">
-                        <li class="active"><a href="#" data-target="li">All</a></li>
-                        <li class=""><a href="#" data-target=".online">Online</a></li>
-                        <li class=""><a href="#" data-target=".offline">Offline</a></li>
+                                            <li data-bind="css:LayoutVM.isOnline($data),click:LayoutVM.CreateChatBox" data-user-id="1" style="display: list-item;">
+                                                <a href="#">
+                                                    <div class="media">
+                                                        <div class="pull-left">
+                                                            <span class="status"></span>
+                                                            <img data-bind="attr:{src: FriendImage}" class="media-object img-circle img-responsive user-avatar-mini">
+                                                        </div>
+                                                        <div class="media-body" style="padding-left: 10px;">
 
-                    </ul>
-                    <div class="split-vertical-body navbarUser">
-                        <div class="split-vertical-cell" style="min-height: 775px">
-                            <div data-scrollable="" tabindex="1" style="overflow-y: hidden; outline: none;">
-                                <ul class="chat-contacts">
-                                    <span data-bind="foreach:allFriendsInfo">
-
-                                        <li data-bind="css:LayoutVM.isOnline($data),click:LayoutVM.CreateChatBox" data-user-id="1" style="display: list-item;">
-                                            <a href="#">
-                                                <div class="media">
-                                                    <div class="pull-left">
-                                                        <span class="status"></span>
-                                                        <img data-bind="attr:{src: FriendImage}" class="media-object img-circle img-responsive user-avatar-mini">
+                                                            <div class="contact-name" data-bind="text:FriendName"></div>
+                                                            <small data-bind="text:$root.isOnline($data)"></small>
+                                                        </div>
                                                     </div>
-                                                    <div class="media-body" style="padding-left: 10px;">
-
-                                                        <div class="contact-name" data-bind="text:FriendName"></div>
-                                                        <small data-bind="text:$root.isOnline($data)"></small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </span>
-                                </ul>
+                                                </a>
+                                            </li>
+                                        </span>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div id="ascrail2001" class="nicescroll-rails" style="width: 5px; z-index: 2; cursor: default; position: absolute; top: 86px; left: 195px; height: 247px; opacity: 0;">
+                        <div style="position: relative; top: 0px; float: right; width: 5px; height: 79px; border: 0px; border-radius: 5px; background-color: rgb(52, 152, 219); background-clip: padding-box;"></div>
+                    </div>
                 </div>
-                <div id="ascrail2001" class="nicescroll-rails" style="width: 5px; z-index: 2; cursor: default; position: absolute; top: 86px; left: 195px; height: 247px; opacity: 0;">
-                    <div style="position: relative; top: 0px; float: right; width: 5px; height: 79px; border: 0px; border-radius: 5px; background-color: rgb(52, 152, 219); background-clip: padding-box;"></div>
-                </div>
-            </div>
 
-        </div>
+            </div>*@
 
-    </div>
+</div>
 
     <footer class="footer navbarUser">
         <strong>Proworldz</strong> © Copyright 2015
         <!--template for chat box-->
-        <div data-bind="visible:chatObjectArray().length > 0">
+        @*<div data-bind="visible:chatObjectArray().length > 0">
 
             <ul data-bind="foreach:chatObjectArray" class="item post-container" id="chatBoxContainer" style="position: absolute;left: 0; top: -268px; line-height: 34px;list-style:none">
 
@@ -344,7 +345,7 @@
 
                 </li>
             </ul>
-        </div>
+        </div>*@
 
     </footer>
 
@@ -374,8 +375,8 @@
     <script src="~/Scripts/moment.js"></script>
     <script src="~/Scripts/Custom/ProWorldz.Utility.js"></script>
 
-    <script src="~/Scripts/jquery.signalR-2.2.0.js"></script>
-    <script src="~/signalr/hubs"></script>
+    @*<script src="~/Scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="~/signalr/hubs"></script>*@
 
 
 
