@@ -42,7 +42,7 @@ namespace ProWorldz.Web.Controllers
         {
             PostCommentModel model = new PostCommentModel();
             UserPostBL blObj = new UserPostBL();
-            model.UserPostList = blObj.GetUserPost();
+            model.UserPostList = blObj.GetUserPost().OrderByDescending(p=>p.CreationDate).ToList();
 
             model.User = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             return View(model);

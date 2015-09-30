@@ -8,7 +8,7 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{687458FB-D3F2-4DEF-9441-0796C6C94D8B}</ProjectGuid>
-    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProWorldz.Web</RootNamespace>
@@ -262,6 +262,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Client\ClientAreaRegistration.cs" />
     <Compile Include="Areas\Client\Controllers\ClientHomeController.cs" />
+    <Compile Include="Areas\Employer\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Employer\EmployerAreaRegistration.cs" />
     <Compile Include="Areas\Site\Controllers\HomeController.cs" />
     <Compile Include="Areas\Site\SiteAreaRegistration.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
@@ -285,6 +287,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Areas\Employer\Content\css\bootstrap.min.css" />
+    <Content Include="Areas\Employer\Content\css\jslider.css" />
+    <Content Include="Areas\Employer\Content\css\jslider.round.css" />
+    <Content Include="Areas\Employer\Content\css\owl.carousel.css" />
+    <Content Include="Areas\Employer\Content\css\owl.theme.css" />
+    <Content Include="Areas\Employer\Content\css\owl.transitions.css" />
+    <Content Include="Areas\Employer\Content\css\style.css" />
+    <Content Include="Areas\Employer\Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Employer\Scripts\draggable-0.1.js" />
+    <Content Include="Areas\Employer\Scripts\job-board.js" />
+    <Content Include="Areas\Employer\Scripts\jquery.dependClass-0.1.js" />
+    <Content Include="Areas\Employer\Scripts\jquery.easytabs.min.js" />
+    <Content Include="Areas\Employer\Scripts\jquery.numberformatter-1.2.3.js" />
+    <Content Include="Areas\Employer\Scripts\jquery.slider.js" />
+    <Content Include="Areas\Employer\Scripts\jshashtable-2.1_src.js" />
+    <Content Include="Areas\Employer\Scripts\modernizr.custom.49511.js" />
+    <Content Include="Areas\Employer\Scripts\owl.carousel.js" />
+    <Content Include="Areas\Employer\Scripts\tmpl.js" />
     <Content Include="Areas\Site\.gitignore" />
     <Content Include="Areas\Site\Content\theme\css\awesomefont-style-css.css" />
     <Content Include="Areas\Site\Content\theme\css\font-awesome.min.css" />
@@ -956,6 +976,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Areas\Employer\Views\Web.config" />
+    <Content Include="Areas\Employer\Views\Account\Index.cshtml" />
     <None Include="Properties\PublishProfiles\ProWorld_Published_Code.pubxml" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
@@ -1342,6 +1364,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Client\Models\" />
     <Folder Include="Areas\Client\Views\Shared\" />
+    <Folder Include="Areas\Employer\Models\" />
+    <Folder Include="Areas\Employer\Views\Shared\" />
     <Folder Include="Areas\Site\Content\Custom\images\" />
     <Folder Include="Areas\Site\Content\Custom\js\" />
     <Folder Include="Areas\Site\Models\" />

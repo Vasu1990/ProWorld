@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
+    <Compile Include="Models\Employer.cs" />
     <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Community.cs" />

@@ -6,7 +6,7 @@
     var editCommentControls = {};
     var postCommentButton = {};
     var commentTextBox = {};
-    var CommentToBeUpdted = {};
+    var CommentToBeUpdted = {}; UserPostList
     
 
     function SetGlobalElements(clickedEditIcon) {
