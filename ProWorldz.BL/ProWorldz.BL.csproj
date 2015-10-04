@@ -70,6 +70,7 @@
     <Compile Include="BusinessLayer\CommonBL.cs" />
     <Compile Include="BusinessLayer\CommunityBL.cs" />
     <Compile Include="BusinessLayer\CountryBL.cs" />
+    <Compile Include="BusinessLayer\EmployerBL.cs" />
     <Compile Include="BusinessLayer\FriendBL.cs" />
     <Compile Include="BusinessLayer\LatestTechnologyBL.cs" />
     <Compile Include="BusinessLayer\LatestTutorialsBL.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="BusinessModel\ContactUsBM.cs" />
     <Compile Include="BusinessModel\CityBM.cs" />
     <Compile Include="BusinessModel\CommunityBM.cs" />
+    <Compile Include="BusinessModel\EmployerBM.cs" />
     <Compile Include="BusinessModel\LatestTechnologyBM.cs" />
     <Compile Include="BusinessModel\LatestTutorialsBM.cs" />
     <Compile Include="BusinessModel\Lkp_FriendShipStatusBM.cs" />

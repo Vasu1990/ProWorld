@@ -978,6 +978,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\Employer\Views\Web.config" />
     <Content Include="Areas\Employer\Views\Account\Index.cshtml" />
+    <Content Include="Areas\Employer\Views\_ViewStart.cshtml" />
     <None Include="Properties\PublishProfiles\ProWorld_Published_Code.pubxml" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />

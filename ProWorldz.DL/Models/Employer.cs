@@ -38,7 +38,7 @@ namespace ProWorldz.DL.Models
 
        public string Designation { get; set; }
 
-       public bool IsDeleted { get; set; }
+      
         [MaxLength(20)]
        public int UserPhoneNumber { get; set; }
 

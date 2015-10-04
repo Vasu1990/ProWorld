@@ -49,6 +49,18 @@ namespace ProWorldz.DL.UOW
         private IRepository<UserResume> userResumeRepository { get; set; }
         private IRepository<MasterModuleTypeData> masterModuleTypeDataRepository { get; set; }
 
+        private IRepository<Employer> employerRepository { get; set; }
+
+        public IRepository<Employer> EmployerRepository
+        {
+            get
+            {
+                if (employerRepository == null)
+                    employerRepository = new GenericRepository<Employer>(Context);
+                return employerRepository;
+            }
+        }
+
         public IRepository<UserResume> UserResumeRepository
         {
             get

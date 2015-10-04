@@ -49,7 +49,7 @@ namespace ProWorldz.DL
 
 
 
-
+        public DbSet<Employer> Employer { get; set; }
         public DbSet<MasterContent> MasterContent { get; set; }
 
         public DbSet<MasterFilePath> MasterFilePath { get; set; }
