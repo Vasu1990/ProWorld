@@ -264,6 +264,7 @@
     <Compile Include="Areas\Client\Controllers\ClientHomeController.cs" />
     <Compile Include="Areas\Employer\Controllers\AccountController.cs" />
     <Compile Include="Areas\Employer\EmployerAreaRegistration.cs" />
+    <Compile Include="Areas\Employer\Models\RegisterModel.cs" />
     <Compile Include="Areas\Site\Controllers\HomeController.cs" />
     <Compile Include="Areas\Site\SiteAreaRegistration.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
@@ -979,6 +980,8 @@
     <Content Include="Areas\Employer\Views\Web.config" />
     <Content Include="Areas\Employer\Views\Account\Index.cshtml" />
     <Content Include="Areas\Employer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Employer\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Employer\Views\Account\Register.cshtml" />
     <None Include="Properties\PublishProfiles\ProWorld_Published_Code.pubxml" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
@@ -1365,8 +1368,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Client\Models\" />
     <Folder Include="Areas\Client\Views\Shared\" />
-    <Folder Include="Areas\Employer\Models\" />
-    <Folder Include="Areas\Employer\Views\Shared\" />
     <Folder Include="Areas\Site\Content\Custom\images\" />
     <Folder Include="Areas\Site\Content\Custom\js\" />
     <Folder Include="Areas\Site\Models\" />

@@ -77,6 +77,8 @@ namespace ProWorldz.BL.BusinessLayer
 
                 Designation = model.Designation,
 
+                IndustryId=model.IndustryId,
+
 
                 IsDeleted = model.IsDeleted,
 
@@ -111,6 +113,8 @@ namespace ProWorldz.BL.BusinessLayer
 
                 Website = model.Website,
 
+                IndustryId = model.IndustryId,
+                
                 Description = model.Description,
 
                 Path = model.Path,
