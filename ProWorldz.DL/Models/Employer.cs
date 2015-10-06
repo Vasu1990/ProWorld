@@ -16,7 +16,7 @@ namespace ProWorldz.DL.Models
 
        public string Password { get; set; }
 
-       public int CountryId { get; set; }
+       public Nullable<int> CountryId { get; set; }
        [MaxLength(100)]
        public string CompanyName { get; set; }
 
@@ -26,21 +26,24 @@ namespace ProWorldz.DL.Models
 
        public string Path { get; set; }
 
-       public int LocationId { get; set; }
+       public Nullable<int> LocationId { get; set; }
+
+
+       public Nullable<int> IndustryId { get; set; }
 
        public string CompanyExtentionNumber { get; set; }
 
        public string Address { get; set; }
-        [MaxLength(20)]
-       public int CompanyContactNumber { get; set; }
+
+       public Nullable<int> CompanyContactNumber { get; set; }
         [MaxLength(100)]
        public string Username { get; set; }
 
        public string Designation { get; set; }
 
-      
-        [MaxLength(20)]
-       public int UserPhoneNumber { get; set; }
+
+
+       public Nullable<int> UserPhoneNumber { get; set; }
 
 
     }

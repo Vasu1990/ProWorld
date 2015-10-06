@@ -14,7 +14,7 @@ namespace ProWorldz.BL.BusinessModel
 
         public string Password { get; set; }
 
-        public int CountryId { get; set; }
+        public Nullable<int> CountryId { get; set; }
       
         public string CompanyName { get; set; }
 
@@ -24,21 +24,23 @@ namespace ProWorldz.BL.BusinessModel
 
         public string Path { get; set; }
 
-        public int LocationId { get; set; }
+        public Nullable<int> LocationId { get; set; }
+
+        public Nullable<int> IndustryId { get; set; }
 
         public string CompanyExtentionNumber { get; set; }
 
         public string Address { get; set; }
-      
-        public int CompanyContactNumber { get; set; }
+
+        public Nullable<int> CompanyContactNumber { get; set; }
      
         public string Username { get; set; }
 
         public string Designation { get; set; }
 
-       
-     
-        public int UserPhoneNumber { get; set; }
+
+
+        public Nullable<int> UserPhoneNumber { get; set; }
 
         public bool Active { get; set; }
 
