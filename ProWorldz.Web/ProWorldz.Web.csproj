@@ -263,6 +263,7 @@
     <Compile Include="Areas\Client\ClientAreaRegistration.cs" />
     <Compile Include="Areas\Client\Controllers\ClientHomeController.cs" />
     <Compile Include="Areas\Employer\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Employer\Controllers\JobController.cs" />
     <Compile Include="Areas\Employer\EmployerAreaRegistration.cs" />
     <Compile Include="Areas\Employer\Models\RegisterModel.cs" />
     <Compile Include="Areas\Site\Controllers\HomeController.cs" />
@@ -295,6 +296,7 @@
     <Content Include="Areas\Employer\Content\css\owl.theme.css" />
     <Content Include="Areas\Employer\Content\css\owl.transitions.css" />
     <Content Include="Areas\Employer\Content\css\style.css" />
+    <Content Include="Areas\Employer\Content\Images\down-arrow.png" />
     <Content Include="Areas\Employer\Scripts\bootstrap.min.js" />
     <Content Include="Areas\Employer\Scripts\draggable-0.1.js" />
     <Content Include="Areas\Employer\Scripts\job-board.js" />
@@ -982,6 +984,7 @@
     <Content Include="Areas\Employer\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Employer\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Employer\Views\Account\Register.cshtml" />
+    <Content Include="Areas\Employer\Views\Job\JobPost.cshtml" />
     <None Include="Properties\PublishProfiles\ProWorld_Published_Code.pubxml" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />

@@ -1,0 +1,71 @@
+SESSION TIMEOUT ERROR INCREASE SESSION TIME
+CREATE SEED METHOD FOR MASTER DATA
+
+login screen
+	forgot password link not working
+	change logo
+Register
+	success msg when success
+	dropdown cascading not working for city with country
+	remove layout page
+	check uniqueness for email
+	DOB date update default format(later)
+	
+Navbar
+	link proworld to home
+	accept popover fix
+	user image change to current user
+	user name change to current user
+Dashboard
+   header
+	friend count update
+	job applied count
+	community binding	
+	date format
+   remove link
+	timeline 
+	about
+	friends
+	add link to website
+Post
+	date format
+	remove html from post
+	commenting
+	create page to show full post(later)
+	show trimmed content in post(later)
+	redirect to profile on ink click
+	change call to show user posts show posts of user also currently showing only users posts
+	show posts from 
+Chat
+	refresh user status realtime(polling/SignalR)(later)
+	logout user from db if window cut or session timeout
+	adjust multiple chat boxes on page(later)
+UserPost
+	add radio buttons to share with community or friends
+	Delete/Edit User post in table (later)
+Profile
+	pencil click not redirecting on first click 
+	profile completnes % (future)
+	Community binding wrong
+	apply list binding for multiple qualifications(later)
+Friend
+	redirect to friend profile on name click
+	image not showing for friends
+	add friend button not working
+Change password
+	ask for old passsword confirm then change(later)
+Edit Profile
+	cascaded dropdown for city with country
+	date format error
+	chnage icons for tabs
+
+	
+
+
+	
+	
+	
+	
+	
+	
+

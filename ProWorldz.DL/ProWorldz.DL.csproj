@@ -99,6 +99,7 @@
     <Compile Include="Models\Community.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Degree.cs" />
+    <Compile Include="Models\Job.cs" />
     <Compile Include="Models\LatestTechnology.cs" />
     <Compile Include="Models\LatestTutorials.cs" />
     <Compile Include="Models\Lkp_FriendShipStatus.cs" />

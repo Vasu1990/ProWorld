@@ -94,7 +94,7 @@
 									</ul>
 								</li>
 								<li><a  href="#">JOB SEARCH</a></li>
-								<li><a  href="post-job.html">POST A JOB</a></li>
+								<li><a  href="/Employer/Job/JobPost">POST A JOB</a></li>
 								<li><a  href="post-resume.html">POST A RESUME</a></li>
 								<li><a  href="#">PRICING</a></li>
 								<li><a  href="short-codes.html">SHORTCODE</a></li>
@@ -177,6 +177,8 @@
 		</div><!-- Footer -->
 	</div><!-- end main wrapper -->
 
+
+     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -208,6 +210,15 @@
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	<!-- Map -->
 <script src="~/Areas/Employer/Scripts/job-board.js"></script>
+
+        <script>
+            var proWorld = window.proWorld || {}; //global namespace
+    </script>
+    @Scripts.Render("~/Scripts/Custom/Utility/Proworldz.AjaxHelpers.js")
+
+
+    @RenderSection("scripts", required: false)
+
 	
 
   </body>
