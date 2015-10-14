@@ -71,7 +71,7 @@ namespace ProWorldz.BL.BusinessLayer
 
                 SubCommunityId=model.SubCommunityId,
 
-                EducationQualificaation=model.EducationQualificaation,
+                EducationQualification=model.EducationQualification,
 
                 ExpYear=model.ExpYear,
 
@@ -81,7 +81,7 @@ namespace ProWorldz.BL.BusinessLayer
 
                 SalaryLakhs=model.SalaryLakhs,
 
-                SalaryMonths=model.SalaryMonths,
+                SalaryThousands = model.SalaryThousands,
 
                 JobDescription=model.JobDescription,
 
@@ -138,7 +138,7 @@ namespace ProWorldz.BL.BusinessLayer
 
                 SubCommunityId = model.SubCommunityId,
 
-                EducationQualificaation = model.EducationQualificaation,
+                EducationQualification = model.EducationQualification,
 
                 ExpYear = model.ExpYear,
 
@@ -148,7 +148,7 @@ namespace ProWorldz.BL.BusinessLayer
 
                 SalaryLakhs = model.SalaryLakhs,
 
-                SalaryMonths = model.SalaryMonths,
+                SalaryThousands = model.SalaryThousands,
 
                 JobDescription = model.JobDescription,
 
