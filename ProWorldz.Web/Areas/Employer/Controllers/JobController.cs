@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProWorldz.BL.BusinessModel;
+using ProWorldz.Web.Areas.Employer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +15,14 @@ namespace ProWorldz.Web.Areas.Employer.Controllers
 
         public ActionResult JobPost()
         {
-            return View();
+            JobModel Model = new JobModel();
+            return View(Model);
+        }
+        
+        public JsonResult PostJob(JobBM Model)
+        {
+           
+            return Json("",JsonRequestBehavior.AllowGet);
         }
 
     }

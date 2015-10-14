@@ -197,11 +197,11 @@
 
 	<!-- Form Slider -->
         <script src="~/Areas/Employer/Scripts/jshashtable-2.1_src.js"></script>
-<script src="~/Areas/Employer/Scripts/jquery.numberformatter-1.2.3.js"></script>
+        <script src="~/Areas/Employer/Scripts/jquery.numberformatter-1.2.3.js"></script>
         <script src="~/Areas/Employer/Scripts/tmpl.js"></script>
 
-<script src="~/Areas/Employer/Scripts/jquery.dependClass-0.1.js"></script>
-<script src="~/Areas/Employer/Scripts/draggable-0.1.js"></script>
+    <script src="~/Areas/Employer/Scripts/jquery.dependClass-0.1.js"></script>
+    <script src="~/Areas/Employer/Scripts/draggable-0.1.js"></script>
         <script src="~/Areas/Employer/Scripts/jquery.slider.js"></script>
 	
 	<!-- Form Slider -->
@@ -217,9 +217,13 @@
     @Scripts.Render("~/Scripts/Custom/Utility/Proworldz.AjaxHelpers.js")
 
 
-    @RenderSection("scripts", required: false)
 
-	
+
+
+      <script src="~/Scripts/knockout-3.3.0.js"></script>
+      <script src="~/Scripts/knockout.mapping-latest.debug.js"></script>
+      <script src="~/Scripts/knockout.mapping-latest.js"></script>
+      @RenderSection("scripts", required: false)
 
   </body>
 

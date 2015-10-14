@@ -18,6 +18,7 @@ namespace ProWorldz.DL.Models
         public string Headline { get; set; }
 
 
+        public string Designation { get; set; }
 
         public string JobRole { get; set; }
 
@@ -35,7 +36,7 @@ namespace ProWorldz.DL.Models
 
         public Nullable<int> SubCommunityId { get; set; }
 
-        public string EducationQualificaation { get; set; }
+        public string EducationQualification { get; set; }
 
         public string ExpYear { get; set; }
 
@@ -45,7 +46,7 @@ namespace ProWorldz.DL.Models
 
         public string SalaryLakhs { get; set; }
 
-        public string SalaryMonths { get; set; }
+        public string SalaryThousands { get; set; }
 
         public string JobDescription { get; set; }
 
