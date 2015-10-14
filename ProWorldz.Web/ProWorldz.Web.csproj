@@ -298,6 +298,7 @@
     <Content Include="Areas\Employer\Content\css\style.css" />
     <Content Include="Areas\Employer\Content\Images\down-arrow.png" />
     <Content Include="Areas\Employer\Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Employer\Scripts\Custom\employer.job.js" />
     <Content Include="Areas\Employer\Scripts\draggable-0.1.js" />
     <Content Include="Areas\Employer\Scripts\job-board.js" />
     <Content Include="Areas\Employer\Scripts\jquery.dependClass-0.1.js" />
