@@ -60,8 +60,8 @@
 							<li class="item"><a href="#" target="blank"><i class="fa fa-google-plus"></i></a></li>
 						</ul>
 						<ul class="media-top-2 clearfix">
-							<li><a href="#" class="btn btn-default btn-blue btn-sm">REGISTER</a></li>
-							<li><a href="#" class="btn btn-default btn-green btn-sm" >LOG IN</a></li>
+							<li><a href="/Employer/Account/Register" class="btn btn-default btn-blue btn-sm">REGISTER</a></li>
+							<li><a href="/Employer/Account/Login" class="btn btn-default btn-green btn-sm" >LOG IN</a></li>
 						</ul>
 						<div class="clearfix"></div>
 					</div>
@@ -70,34 +70,25 @@
 			<div class="container"><!-- container -->
 				<div class="row">
 					<div class="col-md-4"><!-- logo -->
-						<a href="index.html" title="Job Board" rel="home">
+                        <div class="container">
+                            <h3>Proworld</h3>
+                        </div>
+						@*<a href="index.html" title="Job Board" rel="home">
 							<img class="main-logo" src="images/logo.png" alt="job board" />
-						</a>
+						</a>*@
 					</div><!-- logo -->
 					<div class="col-md-8 main-nav"><!-- Main Navigation -->
 						<a id="touch-menu" class="mobile-menu" href="#"><i class="fa fa-bars fa-2x"></i></a>
 						<nav>
 							<ul class="menu">
-								<li><a href="index.html">HOME</a>
+								<li><a href="#">HOME</a>
 									<ul class="sub-menu">
-										<li><a href="about.html">About Page</a></li>
-										<li><a href="blog.html">Blog Page</a></li>
-										<li><a href="detail-blog.html">Single Blog Page</a></li>
-										<li><a href="job-detail.html">Single Job Page</a></li>
-										<li><a href="homepage-joblisting.html">Job Listing</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="register.html">Register Page</a></li>
-										<li><a href="signin.html">Login Page</a></li>
-										<li><a href="short-codes.html">Short Code</a></li>
-										<li><a  href="post-job.html">Post a Job</a></li>
-										<li><a  href="post-resume.html">Post a Resume</a></li>
+										
 									</ul>
 								</li>
-								<li><a  href="#">JOB SEARCH</a></li>
+								
 								<li><a  href="/Employer/Job/JobPost">POST A JOB</a></li>
-								<li><a  href="post-resume.html">POST A RESUME</a></li>
-								<li><a  href="#">PRICING</a></li>
-								<li><a  href="short-codes.html">SHORTCODE</a></li>
+								
 							</ul>
 						</nav>
 					</div><!-- Main Navigation -->
@@ -214,10 +205,10 @@
         <script>
             var proWorld = window.proWorld || {}; //global namespace
     </script>
-    @Scripts.Render("~/Scripts/Custom/Utility/Proworldz.AjaxHelpers.js")
+   @* @Scripts.Render("~/Scripts/Custom/Utility/Proworldz.AjaxHelpers.js")*@
 
 
-
+      <script src="~/Scripts/Custom/Utility/Proworldz.AjaxHelpers.js"></script>
 
 
       <script src="~/Scripts/knockout-3.3.0.js"></script>

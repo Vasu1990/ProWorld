@@ -14,7 +14,10 @@ namespace ProWorldz.Web.Areas.Employer.Controllers
     {
         //
         // GET: /Employer/Account/
-
+        public ActionResult Login()
+        {
+            return View();
+        }
         public ActionResult Index()
         {
             return View();

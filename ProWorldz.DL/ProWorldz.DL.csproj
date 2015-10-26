@@ -91,13 +91,9 @@
     <Compile Include="Migrations\201510052016514_changeDT.Designer.cs">
       <DependentUpon>201510052016514_changeDT.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510140936495_job.cs" />
-    <Compile Include="Migrations\201510140936495_job.Designer.cs">
-      <DependentUpon>201510140936495_job.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510141417320_changeDataType.cs" />
-    <Compile Include="Migrations\201510141417320_changeDataType.Designer.cs">
-      <DependentUpon>201510141417320_changeDataType.cs</DependentUpon>
+    <Compile Include="Migrations\201510141928047_NewJobField.cs" />
+    <Compile Include="Migrations\201510141928047_NewJobField.Designer.cs">
+      <DependentUpon>201510141928047_NewJobField.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
@@ -162,11 +158,8 @@
     <EmbeddedResource Include="Migrations\201510052016514_changeDT.resx">
       <DependentUpon>201510052016514_changeDT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510140936495_job.resx">
-      <DependentUpon>201510140936495_job.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510141417320_changeDataType.resx">
-      <DependentUpon>201510141417320_changeDataType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510141928047_NewJobField.resx">
+      <DependentUpon>201510141928047_NewJobField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
