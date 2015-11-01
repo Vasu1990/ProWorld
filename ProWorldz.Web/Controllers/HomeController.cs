@@ -28,6 +28,24 @@ namespace ProWorldz.Web.Controllers
             }
         }
 
+
+        public ActionResult UserProfile(int Id=0)
+        {
+            ViewBag.Id = Id;
+            return View();
+
+        }
+        [HttpGet]
+        public JsonResult GetUserProfileData(int Id)
+        {
+            LatestTutorialsBL latestTutorialsBL = new BL.BusinessLayer.LatestTutorialsBL();
+            LatestTechnologyBL latestTechnologyBL=new BL.BusinessLayer.LatestTechnologyBL();
+            List<UserPostBM> UserPostList = UserPostBL.GetUserPost().Where(j => j.UserId == Id).ToList();
+            List<LatestTechnologyBM> LatestTechnologyList = latestTechnologyBL.GetLatestTechnology().Where(b => b.UserId == Id).ToList();
+            List<LatestTutorialsBM> LatestTutorialList = latestTutorialsBL.GetLatestTutorials().Where(b => b.UserId == Id).ToList();
+            return Json("");
+        }
+
         UserVideoBL UserVideoBL = new UserVideoBL();
 
         [HttpGet]

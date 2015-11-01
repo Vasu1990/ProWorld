@@ -1,0 +1,97 @@
+﻿<div class="row">
+      <div class="cover profile">
+        <div class="wrapper">
+            <div class="row dashboard-info">
+                <div class="col-md-6">
+                    <div class="margin-bottom7">
+                        <i class="fa fa-envelope-o fa-fw"></i>
+                        <span data-bind="text:User.Email"></span>
+                    </div>
+                    <div class="margin-bottom7">
+                        <i class="fa fa-birthday-cake fa-fw"></i>
+                        <span data-bind="text: moment(User.DOB()).format('LL')"></span>
+                    </div>
+                    <div class="margin-bottom7">
+                        <i class="fa fa-book fa-fw"></i>
+                        <span data-bind="text:User.CommunityName"></span>
+                    </div>
+                    <div class="margin-bottom7">
+                        <i class="fa fa-book fa-fw"></i>
+                        <span data-bind="text:User.SubCommunityName"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    
+
+                </div>
+            </div>
+
+        </div>
+        <div class="cover-info">
+            <div class="avatar">
+                <img class="media-object img-circle img-responsive user-avatar-mini" src="" style="background-position: -105px 207px;">
+              
+            </div>
+            <div class="name">
+                <a href="/Account/Profile" style="color: black;" data-bind="text:User.Name"></a>
+            </div>
+            <ul class="cover-nav">
+                <li>
+                    <a href="/Site"><i class="fa fa-fw icon-ship-wheel"></i> WebSite</a>
+                </li>
+             
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-8 col-md-offset-1 col-lg-offset-2">
+        @*<h4 class="page-section-heading">Default Icon &amp; Text</h4>*@
+        <!-- Tabbable Widget -->
+        <div class="tabbable">
+            <!-- Tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab"><i class="fa fa-fw fa-home"></i>Comments</a>
+                </li>
+                <li><a href="#profile" data-toggle="tab"><i class="fa fa-fw fa-user"></i>Tutorials</a>
+                </li>
+                <li><a href="#messages" data-toggle="tab"><i class="fa fa-fw fa-envelope"></i>Technology</a>
+                </li>
+                <li><a href="#settings" data-toggle="tab"><i class="fa fa-fw fa-cog"></i>Portfolio</a>
+                </li>
+
+                <li><a href="#resume" data-toggle="tab"><i class="fa fa-fw fa-cog"></i>Resume</a>
+                </li>
+            </ul>
+            <!-- // END Tabs -->
+            <!-- Panes -->
+            <div class="tab-content">
+                <div id="home" class="tab-pane active">
+                    Lorem ipsum 
+                                           
+                </div>
+                <div id="profile" class="tab-pane">
+                    Adipisci commodi 
+                                           
+                </div>
+                <div id="messages" class="tab-pane">
+                    Ab accusamus
+                                           
+                </div>
+                <div id="settings" class="tab-pane">
+                    Aliquam 
+                                           
+                </div>
+
+                <div id="resume" class="tab-pane">
+                    Aliquam 
+                                           
+                </div>
+            </div>
+            <!-- // END Panes -->
+        </div>
+        <!-- // END Tabbable Widget -->
+       
+    </div>
+</div>
+
+
+$()
