@@ -35,15 +35,32 @@ namespace ProWorldz.Web.Controllers
             return View();
 
         }
+
+        
         [HttpGet]
         public JsonResult GetUserProfileData(int Id)
         {
-            LatestTutorialsBL latestTutorialsBL = new BL.BusinessLayer.LatestTutorialsBL();
-            LatestTechnologyBL latestTechnologyBL=new BL.BusinessLayer.LatestTechnologyBL();
-            List<UserPostBM> UserPostList = UserPostBL.GetUserPost().Where(j => j.UserId == Id).ToList();
-            List<LatestTechnologyBM> LatestTechnologyList = latestTechnologyBL.GetLatestTechnology().Where(b => b.UserId == Id).ToList();
-            List<LatestTutorialsBM> LatestTutorialList = latestTutorialsBL.GetLatestTutorials().Where(b => b.UserId == Id).ToList();
-            return Json("");
+            LatestTechnologyBL latestTechnologyBL=new LatestTechnologyBL();
+            LatestTutorialsBL latestTutorialsBL=new LatestTutorialsBL();
+            UserBM user = UserBL.GetUserById(Id);
+            List<UserPostBM> postList = UserPostBL.GetUserPost().Where(a => a.UserId == Id).ToList();
+            List<LatestTechnologyBM> lstTechnology = latestTechnologyBL.GetTechnologyByUserId(Id);
+            List<LatestTutorialsBM> lstTutorials = latestTutorialsBL.GetTechnologyByUserId(Id);
+            UserGeneralInformationBM generalInfo = UserGeneralInformationBL.GetGeneralInformationByUserId(Id);
+            UserPersonalInformationBM personalInfo = UserPersonalInformationBL.GetPersonalInformationByUserId(Id);
+            List<UserQualificatinBM> userQualificationList = UserQualificationBL.GetUserQualificatinByUserId(Id);
+            List<UserProfessionalQualificationBM> userProfessionalList = UserProfessionalQualificationBL.GetProfessionalQualificationByUserId(Id);
+            UserProfileModel Model = new UserProfileModel();
+
+            Model.User = user;
+            Model.UserPostList = postList;
+            Model.LatestTechnologyBMList = lstTechnology;
+            Model.LatestTutorialsBMList = lstTutorials;
+            Model.UserGeneralInformation = generalInfo;
+            Model.UserPersonalInformationBM = personalInfo;
+            Model.UserQualificatinBM = userQualificationList;
+            Model.UserProfessionalQualificationBM = userProfessionalList;
+            return Json(Model);
         }
 
         UserVideoBL UserVideoBL = new UserVideoBL();
