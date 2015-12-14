@@ -1,72 +1,452 @@
 ﻿@section styles{
     @Styles.Render("~/Content/themes/custom/Proworldz.dashboard.css")
 }
-<div id="dashBoardWrapper">
-    <div class="cover profile">
-        <div class="wrapper">
-            <div class="row dashboard-info">
-                <div class="col-md-6">
-                    <div class="margin-bottom7">
-                        <i class="fa fa-envelope-o fa-fw"></i>
-                        <span data-bind="text:User.Email"></span>
-                    </div>
-                    <div class="margin-bottom7">
-                        <i class="fa fa-birthday-cake fa-fw"></i>
-                        <span data-bind="text: moment(User.DOB()).format('LL')"></span>
-                    </div>
-                    <div class="margin-bottom7">
-                        <i class="fa fa-book fa-fw"></i>
-                        <span data-bind="text:User.CommunityName"></span>
-                    </div>
-                    <div class="margin-bottom7">
-                        <i class="fa fa-book fa-fw"></i>
-                        <span data-bind="text:User.SubCommunityName"></span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12 text-center div-count-circle">
-                            <div class="col-md-4  circle-text">
-                                <i class="fa fa-fw  fa-group"></i>Friends
-                                <br />
-                                <a href="#" class="dashboard-count-circle">0</a>
-                            </div>
-                            <div class="col-md-4  circle-text">
-                                <i class="fa fa-suitcase"></i>Jobs Applied
-                                <br />
-                                <a href="#" class="dashboard-count-circle">0</a>
-                            </div>
-                            <div class="col-md-4  circle-text">
-                                <i class="fa fa-envelope-square"></i>Your Posts
-                                <br />
-                                <a href="#" class="dashboard-count-circle" data-bind="text:UserPostList().length"></a>
+
+
+
+
+
+<div class="container" id="dvUserProfile">
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab"><i class="fa fa-fw fa-picture-o"></i>Upload Pic</a>
+            </li>
+
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="home">
+
+                <label data-bind="text: UserName"></label>
+                <div class="clearfix"></div>
+                <img style="height: 100px" src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
+
+                <p class="pull-right">
+
+                    <button class="btn btn-default">Block</button>
+                    <button class="btn btn-primary">Share Contact Detail</button>
+                    <button class="btn btn-success">Follow</button>
+
+                </p>
+
+            </div>
+            <div class="tab-pane fade" id="profile">
+                <div class="timeline-block">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img src="images/people/50/guy-2.jpg" class="media-object">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
+                                    <a href="#">Jonathan</a>
+                                    <span>on 15th January, 2014</span>
+                                </div>
                             </div>
                         </div>
+                        <div class="panel-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis perspiciatis praesentium quaerat repudiandae soluta? Cum doloribus esse et eum facilis impedit officiis omnis optio, placeat, quia quo reprehenderit sunt velit? Asperiores cumque deserunt eveniet hic reprehenderit sit, ut voluptatum?</p>
+                        </div>
+                        <div class="view-all-comments">
+                            <a href="#">
+                                <i class="fa fa-comments-o"></i>View all
+                                            </a>
+                            <span>10 comments</span>
+                        </div>
+                        <ul class="comments">
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img src="images/people/50/guy-5.jpg" class="media-object">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <div class="pull-right dropdown" data-show-hover="li">
+                                        <a href="#" data-toggle="dropdown" class="toggle-button">
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Edit</a>
+                                            </li>
+                                            <li><a href="#">Delete</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="comment-author pull-left">Bill D.</a>
+                                    <span>Hi Mary, Nice Party</span>
+                                    <div class="comment-date">21st September</div>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img src="images/people/50/woman-5.jpg" class="media-object">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <div class="pull-right dropdown" data-show-hover="li">
+                                        <a href="#" data-toggle="dropdown" class="toggle-button">
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Edit</a>
+                                            </li>
+                                            <li><a href="#">Delete</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="comment-author pull-left">Mary</a>
+                                    <span>Thanks Bill</span>
+                                    <div class="comment-date">2 days</div>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img src="images/people/50/guy-5.jpg" class="media-object">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <div class="pull-right dropdown" data-show-hover="li">
+                                        <a href="#" data-toggle="dropdown" class="toggle-button">
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Edit</a>
+                                            </li>
+                                            <li><a href="#">Delete</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="comment-author pull-left">Bill D.</a>
+                                    <span>What time did it finish?</span>
+                                    <div class="comment-date">14 min</div>
+                                </div>
+                            </li>
+                            <li class="comment-form">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <a href="#" class="btn btn-default"><i class="fa fa-photo"></i></a>
+                                    </span>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-
                 </div>
             </div>
+            <div class="tab-pane fade" id="dropdown1">
+                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+            </div>
+            <div class="tab-pane fade" id="dropdown2">
+                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- <div class="col-md-12"><div class="col-md-12"> -->
+        <h4 class="page-section-heading">Edit Details</h4>
+        <!-- Tabbable Widget -->
+        <div class="tabbable tabs-vertical tabs-left">
+            <!-- Tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#home4" data-toggle="tab"><i class="fa fa-fw fa-home"></i>Comments</a>
+                </li>
+                <li><a href="#profile4" data-toggle="tab"><i class="fa fa-fw fa-user"></i>Latest Tutorials</a>
+                </li>
+                <li><a href="#messages4" data-toggle="tab"><i class="fa fa-fw fa-envelope"></i>Latest Technology</a>
+                </li>
+                <li><a href="#Portfolio" data-toggle="tab"><i class="fa fa-fw fa-envelope"></i>Portfolio</a>
+                </li>
 
-        </div>
-        <div class="cover-info">
-            <div class="avatar">
-                <img class="media-object img-circle img-responsive user-avatar-mini" src="" style="background-position: -105px 207px;">
-                @*<img data-bind="attr: { src: User.ImageUrl}" alt="people">*@
-            </div>
-            <div class="name">
-                <a href="/Account/Profile" style="color: black;" data-bind="text:User.Name"></a>
-            </div>
-            <ul class="cover-nav">
-                <li>
-                    <a href="/Site"><i class="fa fa-fw icon-ship-wheel"></i>WebSite</a>
+                <li><a href="#Resume" data-toggle="tab"><i class="fa fa-fw fa-envelope"></i>Resume</a>
                 </li>
-                @* <li>
-                    <a href="user-public-profile.html"><i class="fa fa-fw icon-user-1"></i> About</a>
-                </li>
-                <li>
-                    <a href="user-public-users.html"><i class="fa fa-fw fa-users"></i> Friends</a>
-                </li>*@
             </ul>
+            <!-- // END Tabs -->
+            <!-- Panes -->
+            <div class="tab-content">
+                <div id="home4" class="tab-pane active">
+                    <div class="timeline-block">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img style="height: 100px;" src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" class="media-object">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
+                                        <a href="#">Amit Kumar</a>
+                                        <span>on 15th January, 2014</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p>Java is a awesome technology</p>
+                            </div>
+                            <div class="view-all-comments">
+                                <a href="#">
+                                    <i class="fa fa-comments-o"></i>View all
+                                            </a>
+                                <span>10 comments</span>
+                            </div>
+                            <ul class="comments">
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img src="images/people/50/guy-5.jpg" class="media-object">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="pull-right dropdown" data-show-hover="li">
+                                            <a href="#" data-toggle="dropdown" class="toggle-button">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Edit</a>
+                                                </li>
+                                                <li><a href="#">Delete</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="#" class="comment-author pull-left">Bill D.</a>
+                                        <span>Hi Mary, Nice Party</span>
+                                        <div class="comment-date">21st September</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img src="images/people/50/woman-5.jpg" class="media-object">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="pull-right dropdown" data-show-hover="li">
+                                            <a href="#" data-toggle="dropdown" class="toggle-button">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Edit</a>
+                                                </li>
+                                                <li><a href="#">Delete</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="#" class="comment-author pull-left">Mary</a>
+                                        <span>Thanks Bill</span>
+                                        <div class="comment-date">2 days</div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img src="images/people/50/guy-5.jpg" class="media-object">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="pull-right dropdown" data-show-hover="li">
+                                            <a href="#" data-toggle="dropdown" class="toggle-button">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Edit</a>
+                                                </li>
+                                                <li><a href="#">Delete</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="#" class="comment-author pull-left">Bill D.</a>
+                                        <span>What time did it finish?</span>
+                                        <div class="comment-date">14 min</div>
+                                    </div>
+                                </li>
+                                <li class="comment-form">
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <a href="#" class="btn btn-default"><i class="fa fa-photo"></i></a>
+                                        </span>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="profile4" class="tab-pane">
+                    Adipisci commodi consequuntur ducimus enim est, et facilis nostrum nulla officiis pariatur quasi reiciendis, sed sunt. Accusantium aut autem consequatur cupiditate delectus dolore dolorem doloribus ducimus ex harum, illo impedit ipsa iusto maiores, minus nesciunt, perspiciatis placeat quae quibusdam quis repellat repudiandae rerum sed sequi suscipit temporibus veniam vitae. Alias debitis earum incidunt nostrum veniam, voluptas. A consequatur consequuntur distinctio dolores ex excepturi id, iusto maxime numquam quae qui unde voluptates! Accusamus ad aut, blanditiis debitis deleniti eius eum facere ipsam laboriosam laborum magnam nesciunt odio quas repellendus rerum sequi, sit. Architecto ex hic necessitatibus, officia perferendis quae quidem sapiente.
+                                           
+                </div>
+                <div id="messages4" class="tab-pane">
+                    Ab accusamus aperiam consequatur ducimus ea eos est, non omnis porro possimus praesentium, provident quam quibusdam quidem quo suscipit voluptate? Aperiam, dolorum eaque labore natus placeat sint totam. Cupiditate eos explicabo fugiat labore natus officia quidem sed ullam veniam voluptatibus. Consequatur, ducimus id, iste modi nesciunt nostrum obcaecati odit porro quaerat quibusdam quisquam, sequi similique vero. Adipisci aliquid at aut culpa cumque distinctio earum esse eveniet excepturi exercitationem harum illum in iste laudantium mollitia, nulla numquam perferendis perspiciatis porro qui, quo quod ratione similique suscipit temporibus ullam voluptas voluptates! Aperiam atque dolor excepturi illum in, magnam nemo quidem tempora vitae.
+                                           
+                </div>
+
+                <div id="Portfolio" class="tab-pane">
+                    Ab accusamus aperiam consequatur ducimus ea eos est, non omnis porro possimus praesentium, provident quam quibusdam quidem quo suscipit voluptate? Aperiam, dolorum eaque labore natus placeat sint totam. Cupiditate eos explicabo fugiat labore natus officia quidem sed ullam veniam voluptatibus. Consequatur, ducimus id, iste modi nesciunt nostrum obcaecati odit porro quaerat quibusdam quisquam, sequi similique vero. Adipisci aliquid at aut culpa cumque distinctio earum esse eveniet excepturi exercitationem harum illum in iste laudantium mollitia, nulla numquam perferendis perspiciatis porro qui, quo quod ratione similique suscipit temporibus ullam voluptas voluptates! Aperiam atque dolor excepturi illum in, magnam nemo quidem tempora vitae.
+                                           
+                </div>
+
+                <div id="Resume" class="tab-pane">
+                    Ab accusamus aperiam consequatur ducimus ea eos est, non omnis porro possimus praesentium, provident quam quibusdam quidem quo suscipit voluptate? Aperiam, dolorum eaque labore natus placeat sint totam. Cupiditate eos explicabo fugiat labore natus officia quidem sed ullam veniam voluptatibus. Consequatur, ducimus id, iste modi nesciunt nostrum obcaecati odit porro quaerat quibusdam quisquam, sequi similique vero. Adipisci aliquid at aut culpa cumque distinctio earum esse eveniet excepturi exercitationem harum illum in iste laudantium mollitia, nulla numquam perferendis perspiciatis porro qui, quo quod ratione similique suscipit temporibus ullam voluptas voluptates! Aperiam atque dolor excepturi illum in, magnam nemo quidem tempora vitae.
+                                           
+                </div>
+            </div>
+            <!-- // END Panes -->
+        </div>
+        <!-- // END Tabbable Widget -->
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading panel-heading-gray">
+                <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                <i class="fa fa-fw fa-info-circle"></i>About
+                                   
+            </div>
+            <div class="panel-body">
+                <ul class="list-unstyled profile-about margin-none">
+                    <li class="padding-v-5">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <span class="text-muted">Date of Birth</span>
+                            </div>
+                            <div class="col-sm-8">12 January 1990</div>
+                        </div>
+                    </li>
+                    <li class="padding-v-5">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <span class="text-muted">Job</span>
+                            </div>
+                            <div class="col-sm-8">Specialist</div>
+                        </div>
+                    </li>
+                    <li class="padding-v-5">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <span class="text-muted">Gender</span>
+                            </div>
+                            <div class="col-sm-8">Male</div>
+                        </div>
+                    </li>
+                    <li class="padding-v-5">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <span class="text-muted">Lives in</span>
+                            </div>
+                            <div class="col-sm-8">Miami, FL, USA</div>
+                        </div>
+                    </li>
+                    <li class="padding-v-5">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <span class="text-muted">Credits</span>
+                            </div>
+                            <div class="col-sm-8">249</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading panel-heading-gray">
+                <div class="pull-right">
+                    <a href="#" class="btn btn-primary btn-xs">Add <i class="fa fa-plus"></i></a>
+                </div>
+                <i class="icon-user-1"></i>Friends
+                                   
+            </div>
+            <div class="panel-body">
+                <ul class="img-grid">
+                    <li>
+                        <a href="#">
+                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="#">
+                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
+</div>
+
+
+@section scripts{
+    debugger;
+
+    
+   
+  
+    <script>
+        var UserId = 0;
+        var viewModel = {};
+        viewModel.UserName = ko.observable();
+      
+        $(document).ready(function () {
+           // alert("I  am from ready")
+             UserId = '@ViewBag.Id';
+
+            console.log("ID:----" + UserId)
+
+            viewModel.LoadUserData = function () {
+
+                proWorld.AjaxHelper.GetCall('/Home/LoadUserProfileDetail/' + UserId, onSuccess);
+
+                function onSuccess(result) {
+                    viewModel.UserName(result.User.Name);
+                    console.log(result)
+                }
+            }
+            viewModel.LoadUserData();
+
+            
+        })
+     //   console.log("viewmodel" + viewModel.User.Name)
+        ko.applyBindings(viewModel, document.getElementById('dvUserProfile'))
+    </script>
+
+     @* <script src="~/Scripts/Custom/Proworld.UserProfile.js"></script>*@
+}

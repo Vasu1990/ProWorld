@@ -180,11 +180,11 @@ namespace ProWorldz.Web.Controllers
         }
         public new ActionResult Profile()
         {
-            ViewProfileModel Model = new ViewProfileModel();
+            //ViewProfileModel Model = new ViewProfileModel();
 
-            Model.SucessMessage = (TempData["Success"] != null ? TempData["Success"].ToString() : string.Empty).ToString();
-            Model.ErrorMessage = (TempData["Error"] != null ? TempData["Error"].ToString() : string.Empty).ToString();
-            return View(Model);
+            //Model.SucessMessage = (TempData["Success"] != null ? TempData["Success"].ToString() : string.Empty).ToString();
+            //Model.ErrorMessage = (TempData["Error"] != null ? TempData["Error"].ToString() : string.Empty).ToString();
+            return View();
         }
         public ActionResult EditProfile()
         {

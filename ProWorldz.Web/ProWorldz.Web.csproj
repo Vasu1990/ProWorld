@@ -860,6 +860,7 @@
     <Content Include="Images\finallogo.png" />
     <Content Include="Images\No-Image.jpg" />
     <Content Include="Images\plusIcon.png" />
+    <Content Include="Scripts\Custom\Proworld.UserProfile.js" />
     <Content Include="Scripts\Custom\ProWorldz.Friend.js" />
     <Content Include="Scripts\Custom\ProWorldz.People.js" />
     <Content Include="Scripts\Custom\Utility\Proworldz.AjaxHelpers.js" />

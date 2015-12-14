@@ -25,6 +25,8 @@ namespace ProWorldz.Web.Models
     {
         public UserBM User { get; set; }
 
+        public List<FriendBM> FriendList { get; set; }
+
         public List<UserPostBM> UserPostList { get; set; }
 
         public List<LatestTechnologyBM> LatestTechnologyBMList { get; set; }

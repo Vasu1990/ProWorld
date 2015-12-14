@@ -347,5 +347,29 @@ namespace ProWorldz.Web.Controllers
 
         }
 
+
+        public JsonResult LoadUserProfileDetail(int Id)
+        {
+            LatestTechnologyBL latestTechnologyBL=new BL.BusinessLayer.LatestTechnologyBL();
+            UserPostBL userPostBL = new BL.BusinessLayer.UserPostBL();
+            FriendBL friendBL = new FriendBL();
+
+            
+            LatestTutorialsBL LatestTutorialsBL=new BL.BusinessLayer.LatestTutorialsBL();
+            UserProfileModel Model = new UserProfileModel();
+            Model.User = UserBL.GetUserById(Id);
+            Model.UserGeneralInformation = UserGeneralInformationBL.GetGeneralInformationByUserId(Id);
+            Model.UserPersonalInformationBM = UserPersonalInformationBL.GetPersonalInformationByUserId(Id);
+            Model.LatestTechnologyBMList = latestTechnologyBL.GetTechnologyByUserId(Id);
+            Model.LatestTutorialsBMList = LatestTutorialsBL.GetTechnologyByUserId(Id);
+            Model.UserPostList = userPostBL.GetUserPost().Where(a => a.UserId == Id).ToList();
+            Model.FriendList = friendBL.GetAllFriends(Id);
+
+            Model.UserProfessionalQualificationBM = UserProfessionalQualificationBL.GetProfessionalQualificationByUserId(Id);
+
+            return Json(Model, JsonRequestBehavior.AllowGet);
+
+        }
+
     }
 }
