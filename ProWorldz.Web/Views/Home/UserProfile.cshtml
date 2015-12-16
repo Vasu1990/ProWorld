@@ -18,7 +18,7 @@
 
                 <label data-bind="text: UserName"></label>
                 <div class="clearfix"></div>
-                <img style="height: 100px" src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
+                <img style="height: 100px" data-bind="attr: { src:Image }" alt="image" />
 
                 <p class="pull-right">
 
@@ -52,7 +52,7 @@
                         <div class="view-all-comments">
                             <a href="#">
                                 <i class="fa fa-comments-o"></i>View all
-                                            </a>
+                            </a>
                             <span>10 comments</span>
                         </div>
                         <ul class="comments">
@@ -169,35 +169,42 @@
             <div class="tab-content">
                 <div id="home4" class="tab-pane active">
                     <div class="timeline-block">
-                        <div class="panel panel-default">
+                        <div class="panel panel-default" data-bind="foreach: postList">
+
+
                             <div class="panel-heading">
                                 <div class="media">
                                     <div class="media-left">
                                         <a href="#">
-                                            <img style="height: 100px;" src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" class="media-object">
+                                            <img style="height: 100px;" data-bind="attr:{src:ImageUrl}" class="media-object">
                                         </a>
                                     </div>
                                     <div class="media-body">
                                         <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
-                                        <a href="#">Amit Kumar</a>
-                                        <span>on 15th January, 2014</span>
+
+                                        <a href="#" data-bind="html:Subject"></a>
+
+                                        <span data-bind="text :moment(CreationDate).format('L')"></span>
+                                        <div class="clearfix"></div>
+                                        <span data-bind="text:UserName"></span>
+
                                     </div>
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <p>Java is a awesome technology</p>
+                                <p data-bind="html:Post"></p>
                             </div>
                             <div class="view-all-comments">
                                 <a href="#">
                                     <i class="fa fa-comments-o"></i>View all
-                                            </a>
-                                <span>10 comments</span>
+                                </a>
+                                <span data-bind="text:UserComments.length"></span><span>Comments</span>
                             </div>
                             <ul class="comments">
-                                <li class="media">
+                                <li class="media" data-bind="foreach:UserComments">
                                     <div class="media-left">
                                         <a href="#">
-                                            <img src="images/people/50/guy-5.jpg" class="media-object">
+                                            <img data-bind="attr:{src:ImageUrl}" style="height: 50px;" class="media-object">
                                         </a>
                                     </div>
                                     <div class="media-body">
@@ -212,57 +219,16 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <a href="#" class="comment-author pull-left">Bill D.</a>
-                                        <span>Hi Mary, Nice Party</span>
-                                        <div class="comment-date">21st September</div>
+
+                                        <span data-bind="text:Comment"></span>
+                                        <div class="clearfix"></div>
+                                        <span>On : </span>
+                                        <div class="comment-date" data-bind="text:moment(CreationDate).format('L')"></div>
+                                        <a href="#" class="comment-author pull-left" data-bind="text:UserName"></a>
                                     </div>
                                 </li>
-                                <li class="media">
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img src="images/people/50/woman-5.jpg" class="media-object">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="pull-right dropdown" data-show-hover="li">
-                                            <a href="#" data-toggle="dropdown" class="toggle-button">
-                                                <i class="fa fa-pencil"></i>
-                                            </a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Edit</a>
-                                                </li>
-                                                <li><a href="#">Delete</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <a href="#" class="comment-author pull-left">Mary</a>
-                                        <span>Thanks Bill</span>
-                                        <div class="comment-date">2 days</div>
-                                    </div>
-                                </li>
-                                <li class="media">
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img src="images/people/50/guy-5.jpg" class="media-object">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="pull-right dropdown" data-show-hover="li">
-                                            <a href="#" data-toggle="dropdown" class="toggle-button">
-                                                <i class="fa fa-pencil"></i>
-                                            </a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Edit</a>
-                                                </li>
-                                                <li><a href="#">Delete</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <a href="#" class="comment-author pull-left">Bill D.</a>
-                                        <span>What time did it finish?</span>
-                                        <div class="comment-date">14 min</div>
-                                    </div>
-                                </li>
+
+
                                 <li class="comment-form">
                                     <div class="input-group">
                                         <span class="input-group-btn">
@@ -276,12 +242,53 @@
                     </div>
                 </div>
                 <div id="profile4" class="tab-pane">
-                    Adipisci commodi consequuntur ducimus enim est, et facilis nostrum nulla officiis pariatur quasi reiciendis, sed sunt. Accusantium aut autem consequatur cupiditate delectus dolore dolorem doloribus ducimus ex harum, illo impedit ipsa iusto maiores, minus nesciunt, perspiciatis placeat quae quibusdam quis repellat repudiandae rerum sed sequi suscipit temporibus veniam vitae. Alias debitis earum incidunt nostrum veniam, voluptas. A consequatur consequuntur distinctio dolores ex excepturi id, iusto maxime numquam quae qui unde voluptates! Accusamus ad aut, blanditiis debitis deleniti eius eum facere ipsam laboriosam laborum magnam nesciunt odio quas repellendus rerum sequi, sit. Architecto ex hic necessitatibus, officia perferendis quae quidem sapiente.
-                                           
+                    <table class="table table-bordered table-hover table-responsive table-striped">
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Topic</th>
+                                <th>URL</th>
+                                <th>VideoURL</th>
+                                <th>Content</th>
+
+                            </tr>
+
+                        </thead>
+                        <tbody data-bind="foreach:LatestTechnologyList">
+                            <tr >
+                                <td data-bind="html:Tag"></td>
+                                <td data-bind="html:Topic"></td>
+                                <td data-bind="html:Url"></td>
+                                <td data-bind="html:VideoUrl"></td>
+                                <td data-bind="html:Content"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </div>
                 <div id="messages4" class="tab-pane">
-                    Ab accusamus aperiam consequatur ducimus ea eos est, non omnis porro possimus praesentium, provident quam quibusdam quidem quo suscipit voluptate? Aperiam, dolorum eaque labore natus placeat sint totam. Cupiditate eos explicabo fugiat labore natus officia quidem sed ullam veniam voluptatibus. Consequatur, ducimus id, iste modi nesciunt nostrum obcaecati odit porro quaerat quibusdam quisquam, sequi similique vero. Adipisci aliquid at aut culpa cumque distinctio earum esse eveniet excepturi exercitationem harum illum in iste laudantium mollitia, nulla numquam perferendis perspiciatis porro qui, quo quod ratione similique suscipit temporibus ullam voluptas voluptates! Aperiam atque dolor excepturi illum in, magnam nemo quidem tempora vitae.
-                                           
+                    <table class="table table-bordered table-hover table-responsive table-striped">
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Topic</th>
+                                <th>URL</th>
+                                <th>VideoURL</th>
+                                <th>Content</th>
+                            </tr>
+
+                        </thead>
+                        <tbody data-bind="foreach:LatestTutorialList">
+                            <tr>
+                                <td data-bind="html:Tag"></td>
+                                <td data-bind="html:Topic"></td>
+                                <td data-bind="html:Url"></td>
+                                <td data-bind="html:VideoUrl"></td>
+                                <td data-bind="html:Content"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </div>
 
                 <div id="Portfolio" class="tab-pane">
@@ -298,119 +305,7 @@
         </div>
         <!-- // END Tabbable Widget -->
     </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading panel-heading-gray">
-                <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-pencil"></i></a>
-                <i class="fa fa-fw fa-info-circle"></i>About
-                                   
-            </div>
-            <div class="panel-body">
-                <ul class="list-unstyled profile-about margin-none">
-                    <li class="padding-v-5">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <span class="text-muted">Date of Birth</span>
-                            </div>
-                            <div class="col-sm-8">12 January 1990</div>
-                        </div>
-                    </li>
-                    <li class="padding-v-5">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <span class="text-muted">Job</span>
-                            </div>
-                            <div class="col-sm-8">Specialist</div>
-                        </div>
-                    </li>
-                    <li class="padding-v-5">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <span class="text-muted">Gender</span>
-                            </div>
-                            <div class="col-sm-8">Male</div>
-                        </div>
-                    </li>
-                    <li class="padding-v-5">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <span class="text-muted">Lives in</span>
-                            </div>
-                            <div class="col-sm-8">Miami, FL, USA</div>
-                        </div>
-                    </li>
-                    <li class="padding-v-5">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <span class="text-muted">Credits</span>
-                            </div>
-                            <div class="col-sm-8">249</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading panel-heading-gray">
-                <div class="pull-right">
-                    <a href="#" class="btn btn-primary btn-xs">Add <i class="fa fa-plus"></i></a>
-                </div>
-                <i class="icon-user-1"></i>Friends
-                                   
-            </div>
-            <div class="panel-body">
-                <ul class="img-grid">
-                    <li>
-                        <a href="#">
-                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
-                        </a>
-                    </li>
-                    <li class="clearfix">
-                        <a href="#">
-                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image" />
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 
@@ -424,12 +319,16 @@
         var UserId = 0;
         var viewModel = {};
         viewModel.UserName = ko.observable();
-      
-        $(document).ready(function () {
-           // alert("I  am from ready")
-             UserId = '@ViewBag.Id';
+        viewModel.Image = ko.observable();
+        viewModel.postList = ko.observableArray([]);
+        viewModel.LatestTechnologyList = ko.observableArray([]);
 
-            console.log("ID:----" + UserId)
+        viewModel.LatestTutorialList = ko.observableArray([]);
+        $(document).ready(function () {
+            // alert("I  am from ready")
+            UserId = '@ViewBag.Id';
+
+            // console.log("ID:----" + UserId)
 
             viewModel.LoadUserData = function () {
 
@@ -437,16 +336,26 @@
 
                 function onSuccess(result) {
                     viewModel.UserName(result.User.Name);
+                    viewModel.Image(result.UserGeneralInformation.Image);
+                    $.each(result.UserPostList, function (index, value) {
+                        viewModel.postList.push(value);
+                    })
+                    $.each(result.LatestTechnologyBMList, function (index, value) {
+                        viewModel.LatestTechnologyList.push(value);
+                    })
+                    $.each(result.LatestTutorialsBMList, function (index, value) {
+                        viewModel.LatestTutorialList.push(value);
+                    })
                     console.log(result)
                 }
             }
             viewModel.LoadUserData();
+            console.log(viewModel.postList)
 
-            
         })
-     //   console.log("viewmodel" + viewModel.User.Name)
+
         ko.applyBindings(viewModel, document.getElementById('dvUserProfile'))
     </script>
 
-     @* <script src="~/Scripts/Custom/Proworld.UserProfile.js"></script>*@
+    @* <script src="~/Scripts/Custom/Proworld.UserProfile.js"></script>*@
 }
