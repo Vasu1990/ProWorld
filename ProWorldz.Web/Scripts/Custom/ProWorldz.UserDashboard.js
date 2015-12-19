@@ -154,6 +154,8 @@
         return CommentCreator() === CurrentUser();
     }
 
+
+
     ko.applyBindings(dashVM, $("#dashBoardWrapper")[0]);
 
 })(UserDashboardVM)

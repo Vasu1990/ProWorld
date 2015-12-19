@@ -31,7 +31,7 @@ namespace ProWorldz.Web.Controllers
 
         public ActionResult UserProfile(int Id=0)
         {
-            ViewBag.Id = Id;
+            ViewBag.UserId = Id;
             return View();
 
         }
@@ -73,13 +73,16 @@ namespace ProWorldz.Web.Controllers
         }
 
         [Authorize]
-        public ActionResult Dashboard()
+        public ActionResult Dashboard(int Id=0)
         {
             PostCommentModel model = new PostCommentModel();
             UserPostBL blObj = new UserPostBL();
-            model.UserPostList = blObj.GetUserPost().OrderByDescending(p=>p.CreationDate).ToList();
+            model.UserPostList = blObj.GetUserPost().OrderByDescending(p=>p.CreationDate).Take(10).ToList();
+            ViewBag.Id = Id;
 
-            model.User = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            UserBL userBL = new BL.BusinessLayer.UserBL();
+            model.User = Id == 0 ? SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User) : userBL.GetUserById(Id);
+            model.User.Image = UserGeneralInformationBL.GetGeneralInformationByUserId(model.User.Id) != null ? UserGeneralInformationBL.GetGeneralInformationByUserId(model.User.Id).Image : string.Empty;
             return View(model);
 
         }

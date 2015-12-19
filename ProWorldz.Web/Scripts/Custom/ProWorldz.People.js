@@ -63,6 +63,7 @@
             TotalFriends = totalCount;
             proWorld.AjaxHelper.AjaxPostCall("/Home/People", _data, OnSuccessGetFriends);
             function OnSuccessGetFriends(responseData) {
+                debugger;
                 var result = {
                     Data: responseData, //data to be bound to the table
                     TotalRecords: TotalFriends, //this should be returned in your result as total no of records that exists

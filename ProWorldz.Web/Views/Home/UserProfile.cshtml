@@ -1,157 +1,24 @@
 ﻿@section styles{
     @Styles.Render("~/Content/themes/custom/Proworldz.dashboard.css")
 }
+@{
+   //  Layout = null;
+}
 
 
 
 
+<div id="dvUserProfile">
 
-<div class="container" id="dvUserProfile">
-    <div class="tabbable">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#home" data-toggle="tab"><i class="fa fa-fw fa-picture-o"></i>Upload Pic</a>
-            </li>
-
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane fade active in" id="home">
-
-                <label data-bind="text: UserName"></label>
-                <div class="clearfix"></div>
-                <img style="height: 100px" data-bind="attr: { src:Image }" alt="image" />
-
-                <p class="pull-right">
-
-                    <button class="btn btn-default">Block</button>
-                    <button class="btn btn-primary">Share Contact Detail</button>
-                    <button class="btn btn-success">Follow</button>
-
-                </p>
-
-            </div>
-            <div class="tab-pane fade" id="profile">
-                <div class="timeline-block">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img src="images/people/50/guy-2.jpg" class="media-object">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
-                                    <a href="#">Jonathan</a>
-                                    <span>on 15th January, 2014</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis perspiciatis praesentium quaerat repudiandae soluta? Cum doloribus esse et eum facilis impedit officiis omnis optio, placeat, quia quo reprehenderit sunt velit? Asperiores cumque deserunt eveniet hic reprehenderit sit, ut voluptatum?</p>
-                        </div>
-                        <div class="view-all-comments">
-                            <a href="#">
-                                <i class="fa fa-comments-o"></i>View all
-                            </a>
-                            <span>10 comments</span>
-                        </div>
-                        <ul class="comments">
-                            <li class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img src="images/people/50/guy-5.jpg" class="media-object">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <div class="pull-right dropdown" data-show-hover="li">
-                                        <a href="#" data-toggle="dropdown" class="toggle-button">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Edit</a>
-                                            </li>
-                                            <li><a href="#">Delete</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <a href="#" class="comment-author pull-left">Bill D.</a>
-                                    <span>Hi Mary, Nice Party</span>
-                                    <div class="comment-date">21st September</div>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img src="images/people/50/woman-5.jpg" class="media-object">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <div class="pull-right dropdown" data-show-hover="li">
-                                        <a href="#" data-toggle="dropdown" class="toggle-button">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Edit</a>
-                                            </li>
-                                            <li><a href="#">Delete</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <a href="#" class="comment-author pull-left">Mary</a>
-                                    <span>Thanks Bill</span>
-                                    <div class="comment-date">2 days</div>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img src="images/people/50/guy-5.jpg" class="media-object">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <div class="pull-right dropdown" data-show-hover="li">
-                                        <a href="#" data-toggle="dropdown" class="toggle-button">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Edit</a>
-                                            </li>
-                                            <li><a href="#">Delete</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <a href="#" class="comment-author pull-left">Bill D.</a>
-                                    <span>What time did it finish?</span>
-                                    <div class="comment-date">14 min</div>
-                                </div>
-                            </li>
-                            <li class="comment-form">
-                                <div class="input-group">
-                                    <span class="input-group-btn">
-                                        <a href="#" class="btn btn-default"><i class="fa fa-photo"></i></a>
-                                    </span>
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="dropdown1">
-                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-            </div>
-            <div class="tab-pane fade" id="dropdown2">
-                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
-            </div>
-        </div>
-    </div>
     <div class="row">
         <!-- <div class="col-md-12"><div class="col-md-12"> -->
-        <h4 class="page-section-heading">Edit Details</h4>
+        @*<h4 class="page-section-heading">Edit Details</h4>*@
         <!-- Tabbable Widget -->
         <div class="tabbable tabs-vertical tabs-left">
             <!-- Tabs -->
             <ul class="nav nav-tabs">
+
+
                 <li class="active"><a href="#home4" data-toggle="tab"><i class="fa fa-fw fa-home"></i>Comments</a>
                 </li>
                 <li><a href="#profile4" data-toggle="tab"><i class="fa fa-fw fa-user"></i>Latest Tutorials</a>
@@ -167,9 +34,14 @@
             <!-- // END Tabs -->
             <!-- Panes -->
             <div class="tab-content">
+
+
+
+
+
                 <div id="home4" class="tab-pane active">
                     <div class="timeline-block">
-                        <div class="panel panel-default" data-bind="foreach: postList">
+                        <div class="panel panel-default" data-bind="foreach: postsList">
 
 
                             <div class="panel-heading">
@@ -255,7 +127,7 @@
 
                         </thead>
                         <tbody data-bind="foreach:LatestTechnologyList">
-                            <tr >
+                            <tr>
                                 <td data-bind="html:Tag"></td>
                                 <td data-bind="html:Topic"></td>
                                 <td data-bind="html:Url"></td>
@@ -292,12 +164,12 @@
                 </div>
 
                 <div id="Portfolio" class="tab-pane">
-                    Ab accusamus aperiam consequatur ducimus ea eos est, non omnis porro possimus praesentium, provident quam quibusdam quidem quo suscipit voluptate? Aperiam, dolorum eaque labore natus placeat sint totam. Cupiditate eos explicabo fugiat labore natus officia quidem sed ullam veniam voluptatibus. Consequatur, ducimus id, iste modi nesciunt nostrum obcaecati odit porro quaerat quibusdam quisquam, sequi similique vero. Adipisci aliquid at aut culpa cumque distinctio earum esse eveniet excepturi exercitationem harum illum in iste laudantium mollitia, nulla numquam perferendis perspiciatis porro qui, quo quod ratione similique suscipit temporibus ullam voluptas voluptates! Aperiam atque dolor excepturi illum in, magnam nemo quidem tempora vitae.
+                    Content Coming soon.
                                            
                 </div>
 
                 <div id="Resume" class="tab-pane">
-                    Ab accusamus aperiam consequatur ducimus ea eos est, non omnis porro possimus praesentium, provident quam quibusdam quidem quo suscipit voluptate? Aperiam, dolorum eaque labore natus placeat sint totam. Cupiditate eos explicabo fugiat labore natus officia quidem sed ullam veniam voluptatibus. Consequatur, ducimus id, iste modi nesciunt nostrum obcaecati odit porro quaerat quibusdam quisquam, sequi similique vero. Adipisci aliquid at aut culpa cumque distinctio earum esse eveniet excepturi exercitationem harum illum in iste laudantium mollitia, nulla numquam perferendis perspiciatis porro qui, quo quod ratione similique suscipit temporibus ullam voluptas voluptates! Aperiam atque dolor excepturi illum in, magnam nemo quidem tempora vitae.
+                    Content Coming soon.
                                            
                 </div>
             </div>
@@ -309,36 +181,40 @@
 </div>
 
 
-@section scripts{
-    debugger;
+
 
     
    
-  
+  @section scripts{
     <script>
         var UserId = 0;
         var viewModel = {};
         viewModel.UserName = ko.observable();
         viewModel.Image = ko.observable();
-        viewModel.postList = ko.observableArray([]);
+        viewModel.postsList = ko.observableArray([]);
         viewModel.LatestTechnologyList = ko.observableArray([]);
 
         viewModel.LatestTutorialList = ko.observableArray([]);
-        $(document).ready(function () {
-            // alert("I  am from ready")
-            UserId = '@ViewBag.Id';
+        // alert("I  am from ready")
+        UserId = '@ViewBag.UserId';
 
-            // console.log("ID:----" + UserId)
+             // console.log("ID:----" + UserId)
+
+         $(document).ready(function () {
+          
 
             viewModel.LoadUserData = function () {
 
                 proWorld.AjaxHelper.GetCall('/Home/LoadUserProfileDetail/' + UserId, onSuccess);
 
                 function onSuccess(result) {
-                    viewModel.UserName(result.User.Name);
-                    viewModel.Image(result.UserGeneralInformation.Image);
+                    debugger;
+                    if (result.User != null)
+                        viewModel.UserName(result.User.Name);
+                    if (result.UserGeneralInformation != null)
+                        viewModel.Image(result.UserGeneralInformation.Image);
                     $.each(result.UserPostList, function (index, value) {
-                        viewModel.postList.push(value);
+                        viewModel.postsList.push(value);
                     })
                     $.each(result.LatestTechnologyBMList, function (index, value) {
                         viewModel.LatestTechnologyList.push(value);
@@ -355,6 +231,8 @@
         })
 
         ko.applyBindings(viewModel, document.getElementById('dvUserProfile'))
+    
+       
     </script>
 
     @* <script src="~/Scripts/Custom/Proworld.UserProfile.js"></script>*@

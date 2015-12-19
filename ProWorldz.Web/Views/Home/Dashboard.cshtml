@@ -4,7 +4,7 @@
 
 @section styles{
     @Styles.Render("~/Content/themes/custom/Proworldz.dashboard.css")
-    }
+}
 <div id="dashBoardWrapper">
     <div class="cover profile">
         <div class="wrapper">
@@ -34,13 +34,14 @@
                                 <i class="fa fa-fw  fa-group"></i>Friends
                                 <br />
                                 <a href="#" class="dashboard-count-circle">0</a>
-                            </div><div class="col-md-4  circle-text">
-                                <i class="fa fa-suitcase"></i>    Jobs Applied
+                            </div>
+                            <div class="col-md-4  circle-text">
+                                <i class="fa fa-suitcase"></i>Jobs Applied
                                 <br />
                                 <a href="#" class="dashboard-count-circle">0</a>
                             </div>
                             <div class="col-md-4  circle-text">
-                                <i class="fa fa-envelope-square"></i>    Your Posts
+                                <i class="fa fa-envelope-square"></i>Your Posts
                                 <br />
                                 <a href="#" class="dashboard-count-circle" data-bind="text:UserPostList().length"></a>
                             </div>
@@ -53,7 +54,7 @@
         </div>
         <div class="cover-info">
             <div class="avatar">
-                <img class="media-object img-circle img-responsive user-avatar-mini" src="" style="background-position: -105px 207px;">
+                <img class="media-object img-circle img-responsive user-avatar-mini" data-bind="attr: { src: User.Image()}" src="" style="background-position: -105px 207px;">
                 @*<img data-bind="attr: { src: User.ImageUrl}" alt="people">*@
             </div>
             <div class="name">
@@ -61,21 +62,36 @@
             </div>
             <ul class="cover-nav">
                 <li>
-                    <a href="/Site"><i class="fa fa-fw icon-ship-wheel"></i> WebSite</a>
+                    <a href="/Site"><i class="fa fa-fw icon-ship-wheel"></i>WebSite</a>
                 </li>
-               @* <li>
-                    <a href="user-public-profile.html"><i class="fa fa-fw icon-user-1"></i> About</a>
-                </li>
-                <li>
-                    <a href="user-public-users.html"><i class="fa fa-fw fa-users"></i> Friends</a>
-                </li>*@
+                @if (ViewBag.Id != 0)
+                { 
+                    <li>
+                        <a href="#" onclick="showHideUserPosts();"><i class="fa fa-fw icon-user-1"></i>User Posts</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showHideUserInfo();"><i class="fa fa-fw icon-user-1"></i>User Info</a>
+                    </li>
+                    
+                     
+
+               
+                    <li style="margin-left: 200px;">
+                        <br />
+                        <button class="btn btn-default">Block</button>
+                        <button class="btn btn-primary">Share Contact Detail</button>
+                        <button class="btn btn-success">Follow</button>
+                    </li>
+                }
+
+
             </ul>
         </div>
     </div>
-    <div class="timeline row post-container-wrapper" data-toggle="isotope">
+    <div class="timeline row post-container-wrapper" data-toggle="isotope" id="dvUserPosts">
 
         <div data-bind="foreach:UserPostList">
-            
+
             <div class="col-xs-12 col-md-6 col-lg-6 item post-container">
                 <div class="timeline-block">
                     <div class="panel panel-default">
@@ -83,11 +99,11 @@
                             <div class="media">
                                 <div class="media-left">
                                     <span>
-                                        <img style="height:50px;width:50px" data-bind="attr: { src: ImageUrl}" class="media-object">
+                                        <img style="height: 50px; width: 50px" data-bind="attr: { src: ImageUrl}" class="media-object">
                                     </span>
                                 </div>
                                 <div class="media-body">
-                          
+
                                     <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
                                     <a href="#" data-bind="text:UserName"></a>
                                     on <span data-bind="text: moment(CreationDate()).format('LL')"></span>
@@ -106,21 +122,21 @@
                             </a>
 
                             <span data-bind="if:UserComments().length == 1">
-                                <span data-bind="text:UserComments().length"></span> comment
+                                <span data-bind="text:UserComments().length"></span>comment
                             </span>
                             <span data-bind="if:UserComments().length > 1">
-                                <span data-bind="text:UserComments().length"></span> comments
+                                <span data-bind="text:UserComments().length"></span>comments
                             </span>
-                          
-                            
+
+
                         </div>
                         <ul class="comments">
-                            <li data-bind="foreach:UserComments" data-container="comment-box">   
+                            <li data-bind="foreach:UserComments" data-container="comment-box">
                                 <ul class="comment-box">
                                     <li class="media" data-container="comment-strip">
                                         <div class="media-left">
                                             <span>
-                                                <img style="height:50px;width:50px" data-bind="attr:{src:ImageUrl}" class="media-object">
+                                                <img style="height: 50px; width: 50px" data-bind="attr:{src:ImageUrl}" class="media-object">
                                             </span>
                                         </div>
                                         <div class="media-body">
@@ -141,16 +157,16 @@
                                 </ul>
                             </li>
 
-                            <li class="comment-form" >
+                            <li class="comment-form">
                                 <div class="input-group">
-                                    <input type="text"  class="txtUserComment form-control" placeholder="Type your comment here.."/>
-                                    
+                                    <input type="text" class="txtUserComment form-control" placeholder="Type your comment here.." />
+
                                     <div class="input-group-btn" data-control="post-comment-control" data-bind="click:UserDashboardVM.PostComment">
                                         <span class=" btn btn-default">
                                             <i class="fa fa-paper-plane"></i>
                                         </span>
                                     </div>
-                                    <div class="input-group-btn hidden" data-control="edit-comment-controls" >
+                                    <div class="input-group-btn hidden" data-control="edit-comment-controls">
                                         <span class=" btn btn-default" data-bind="click:$root.EditComment">
                                             <i class="fa fa-check"></i>
                                         </span>
@@ -170,7 +186,13 @@
 
 
     </div>
+
+
     @*<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>*@
+</div>
+
+<div id="dvUserInfo">
+    @{Html.RenderAction("UserProfile", "Home", new { Id = ViewBag.Id });}
 </div>
 
 
@@ -179,6 +201,21 @@
     <script src="~/Scripts/moment.js"></script>
     <script>
         var UserDashboardVM = ko.mapping.fromJS(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model)));
-        </script>
+
+        function showHideUserInfo() {
+            $("#dvUserPosts").hide();
+            $("#dvUserInfo").show();
+        }
+
+        function showHideUserPosts() {
+            $("#dvUserPosts").show();
+            $("#dvUserInfo").hide();
+        }
+
+    </script>
     @Scripts.Render("~/Scripts/Custom/ProWorldz.UserDashboard.js")
+
+
+    
+
 }
