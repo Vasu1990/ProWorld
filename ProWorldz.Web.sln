@@ -3,18 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2013 for Web
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWorldz.Web", "ProWorldz.Web\ProWorldz.Web.csproj", "{687458FB-D3F2-4DEF-9441-0796C6C94D8B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWorldz.DL", "ProWorldz.DL\ProWorldz.DL.csproj", "{BCFC03E3-B3D2-4954-90B9-F3331B0FCB25}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWorldz.BL", "ProWorldz.BL\ProWorldz.BL.csproj", "{F21DB6CC-69BE-414D-BD63-3915428D738F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{64B20036-ECA9-4EDA-83A0-68384A43F709}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWorldz.Web", "ProWorldz.Web\ProWorldz.Web.csproj", "{687458FB-D3F2-4DEF-9441-0796C6C94D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWorldz.DL", "ProWorldz.DL\ProWorldz.DL.csproj", "{BCFC03E3-B3D2-4954-90B9-F3331B0FCB25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWorldz.BL", "ProWorldz.BL\ProWorldz.BL.csproj", "{F21DB6CC-69BE-414D-BD63-3915428D738F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
