@@ -1,15 +1,33 @@
 ﻿@model ProWorldz.Web.Models.ProfileModel
 @{
     ViewBag.Title = "Home Page";
-    
+
 }
 @section Styles{
     <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 }
+<style type="text/css">
+    .btnbgGreen {
+        background-color: #1c7d74 !important;
+    }
+</style>
 <h2 class="title">
     <i class="fa fa-fw fa-edit"></i>
     Edit Profile
 </h2>
+<div class="row">
+    <div class="col-md-12" id="divMessage" onclick="hideMessage(this);">
+        @if (Model != null && !string.IsNullOrEmpty(Model.SucessMessage))
+        {
+            <div class="alert alert-success" role="alert">@Model.SucessMessage</div>
+        }
+        @if (Model != null && !string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="alert alert-success" role="alert">@Model.ErrorMessage</div>
+        }
+    </div>
+</div>
+
 <div id="content">
 
     <div class="lock-container">
@@ -30,21 +48,26 @@
     <div class="tabbable tabs-vertical tabs-left">
         <!-- Tabs -->
         <ul class="nav nav-tabs" tabindex="6" style="overflow: hidden; outline: none;">
-            <li id="liGeneral" class="active"><a href="#home4" data-toggle="tab"><i class="fa fa-fw fa-home"></i>General Information</a>
+            <li id="liGeneral" class="active">
+                <a href="#home4" data-toggle="tab"><i class="fa fa-fw fa-home"></i>General Information</a>
             </li>
-            <li id="liCommunity"><a href="#profile4" data-toggle="tab"><i class="fa fa-fw fa-user"></i>Personal Info</a>
+            <li id="liCommunity">
+                <a href="#profile4" data-toggle="tab"><i class="fa fa-fw fa-user"></i>Personal Info</a>
             </li>
-            <li id="liProfessional"><a href="#messages4" data-toggle="tab" onclick="return showProfessionalData();"><i class="fa fa-fw fa-envelope"></i>Professional Info</a>
+            <li id="liProfessional">
+                <a href="#messages4" data-toggle="tab" onclick="return showProfessionalData();"><i class="fa fa-fw fa-envelope"></i>Professional Info</a>
             </li>
 
-            <li id="liQualification"><a href="#Qualification" data-toggle="tab" onclick="return showQualificationData();"><i class="fa fa-pencil fa-fw"></i>Qualification Info</a>
+            <li id="liQualification">
+                <a href="#Qualification" data-toggle="tab" onclick="return showQualificationData();"><i class="fa fa-pencil fa-fw"></i>Qualification Info</a>
             </li>
 
             <li id="liVideo">
                 <a href="#UserVideo" data-toggle="tab"><i class="fa fa-fw fa-camera-retro"></i>Video & Portfolio</a>
             </li>
 
-              <li id="liResume"><a href="/Account/Resume"><i class="fa fa-pencil fa-fw"></i>Upload Resume</a>
+            <li id="liResume">
+                <a href="/Account/Resume"><i class="fa fa-pencil fa-fw"></i>Upload Resume</a>
             </li>
         </ul>
         <!-- // END Tabs -->
@@ -53,14 +76,16 @@
             <div id="home4" class="tab-pane active">
                 @using (Html.BeginForm("UpdateGeneralInformation", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-                         
+
                     <form class="form-horizontal" role="form">
 
                         @Html.HiddenFor(m => m.UserGeneralInformationModel.Id)
+
+
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Image</label>
                             <div class="col-sm-9">
-                                <input type="file"  class="form-control" name="file" id="file"  value="@Model.UserGeneralInformationModel.Image" />
+                                <input type="file" class="form-control" name="file" id="file" value="@Model.UserGeneralInformationModel.Image" />
 
                                 <img src="@Model.UserGeneralInformationModel.Image" style="height:100px;width:100px" alt="Bill" class="img-circle" />
                                 <br />
@@ -68,12 +93,10 @@
                             </div>
                         </div>
 
+                      
                         <br />
                         <br />
-                        <br />
-                        <br />
-                        <br />
-                        <div class="form-group">
+                        <div class="form-group" style="display:none">
                             <label class="col-sm-3 control-label">Father Name</label>
                             <div class="col-sm-9">
                                 @Html.TextBoxFor(x => x.UserGeneralInformationModel.FatherName, new { @class = "form-control", @placeholder = "Father Name" })
@@ -86,13 +109,26 @@
                         <br />
 
                         <br />
+
                         <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Martial Status</label>
+                            <div class="col-sm-9">
+              
+                                @Html.DropDownListFor(x => x.UserGeneralInformationModel.Status, new SelectList(new List<SelectListItem>()
+    {
+        new SelectListItem() { Text= "Single", Value = "S",Selected = true },
+        new SelectListItem() { Text= "Married", Value = "M" }
+    }, "Value", "Text", Model.UserGeneralInformationModel.Status), new { @class = "dropdown form-control" })
+                               
+                            </div>
+                        </div>
+                        @*<div class="form-group">
                             <label class="col-sm-3 control-label">Martial Status</label>
                             <div class="col-sm-9">
                                 @Html.TextBoxFor(x => x.UserGeneralInformationModel.Status, new { @class = "form-control", @placeholder = "Martial Status" })
                                 @Html.ValidationMessageFor(model => model.UserGeneralInformationModel.Status)
                             </div>
-                        </div>
+                        </div>*@
                         <br />
                         <br />
 
@@ -107,26 +143,22 @@
                         <br />
                         <br />
 
-                        <div class="form-group">
+                        <div class="form-group" style="display:none">
                             <label class="col-sm-3 control-label">Address 1</label>
                             <div class="col-sm-9">
                                 @Html.TextAreaFor(model => model.UserGeneralInformationModel.Address1, new { @class = "form-control", @placeholder = "Address 1" })
 
                             </div>
                         </div>
-                        <br />
-                        <br />
-                        <br />
-                        <div class="form-group">
+
+                        <div class="form-group" style="display:none">
                             <label class="col-sm-3 control-label">Address 2</label>
                             <div class="col-sm-9">
                                 @Html.TextAreaFor(model => model.UserPersonalInformationModel.Address2, new { @class = "form-control", @placeholder = "Address 2" })
                             </div>
                         </div>
 
-                        <br />
-                        <br />
-                        <br />
+
                         <div class="form-group margin-none">
                             <div class="col-sm-offset-3 col-sm-9">
                                 <button type="submit" class="btn btn-primary">Update</button>
@@ -208,59 +240,71 @@
             <div id="messages4" class="tab-pane">
                 @using (Html.BeginForm("UserProfessionalQualification", "Account", FormMethod.Post))
                 {
-                        
-                    <input type="button" class="btn btn-primary" value="Add More" onclick="return moreProfessionalDetail();" />
+
+                    <input type="button" class="btn btn-primary btnbgGreen" value="Add More" onclick="return moreProfessionalDetail();" />
                     <form class="form-horizontal" role="form">
+                        
                         <div id="dvProfessional" style="display: none">
-                            @Html.HiddenFor(m => m.UserProfessionalQualificationModel.Id)
+                            @Html.HiddenFor(m => m.UserProfessionalQualificationModel.Id, new { @id = "hdProfessionalQualificationId" })
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Company Name</label>
                                 <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.CompanyName, new { @class = "form-control", @placeholder = "Company Name" })
+                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.CompanyName, new { @class = "form-control", @placeholder = "Company Name", @id = "txtCompanyName" })
                                     @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.CompanyName)
                                 </div>
                             </div>
+                          
                             <br />
                             <br />
-                            <br />
-
-
-
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Start date</label>
                                 <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.StartDate, new { @id = "datepicker", @class = "form-control form_date", @placeholder = "Start Date" })
+                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.StartDate, new { @id = "datepicker", @class = "form-control form_date", @placeholder = "Start Date", })
                                     @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.StartDate)
                                 </div>
                             </div>
                             <br />
-                            <br />
-                            <br />
+
+
+                          
+
                             <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Is Current Job</label>
+                                <div class="col-sm-9">
+                                    @Html.CheckBoxFor(model => model.UserProfessionalQualificationModel.IsCurrentJob, new { @id = "chkJobCheckbox", @class = "form-control", onchange = "changeJobCheckbox()" })
+                                    
+                                  
+                                 
+                                </div>
+                            </div>
+                          
+                            <br />
+
+                            <div class="form-group" id="dvEndDate">
                                 <label for="inputEmail3" class="col-sm-3 control-label">End Date</label>
                                 <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.EndDate, new { @class = "form-control form_date", @placeholder = "End Date" })
+                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.EndDate, new { @class = "form-control form_date", @placeholder = "End Date",@id="txtEndDate" })
                                     @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.EndDate)
                                 </div>
                             </div>
-                            <br />
+                           
                             <br />
                             <br />
                             <div class="form-group">
+                              
                                 <label for="inputEmail3" class="col-sm-3 control-label">Salary</label>
                                 <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.Salary, new { @class = "form-control", @placeholder = "Salary" })
+                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.Salary, new { @class = "form-control", @placeholder = "Salary",@id="txtSalary" })
                                     @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.Salary)
                                 </div>
                             </div>
                             <br />
                             <br />
-                            <br />
-                            <br />
+                          
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Industry Type</label>
                                 <div class="col-sm-9">
-                                    @Html.DropDownListFor(x => x.UserProfessionalQualificationModel.IndustryTypeId, new SelectList(@Model.IndustryList, "Id", "Name", Model.UserProfessionalQualificationModel.IndustryTypeId), "- - Select - -", new { @class = "dropdown form-control" })
+                                    @Html.DropDownListFor(x => x.UserProfessionalQualificationModel.IndustryTypeId, new SelectList(@Model.IndustryList, "Id", "Name", Model.UserProfessionalQualificationModel.IndustryTypeId), "- - Select - -", new { @class = "dropdown form-control", @id = "ddlIndustryType" })
                                     @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.IndustryTypeId)
                                 </div>
                             </div>
@@ -274,9 +318,9 @@
                                         <option value="">- - Select - -</option>
                                         <option value="1">QA</option>
                                         <option value="2">Developer</option>
-                                        <option value="2">Manager</option>
-                                        <option value="2">COO</option>
-                                        <option value="2">PM</option>
+                                        <option value="3">Manager</option>
+                                        <option value="4">COO</option>
+                                        <option value="5">PM</option>
                                     </select>
                                 </div>
                             </div>
@@ -287,7 +331,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Role</label>
                                 <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.UserRole, new { @class = "form-control", @placeholder = "UserRole" })
+                                    @Html.TextAreaFor(model => model.UserProfessionalQualificationModel.UserRole, new { @class = "form-control", @placeholder = "UserRole",@id="txtUserRole" })
                                     @Html.ValidationMessageFor(model => model.UserProfessionalQualificationModel.UserRole)
                                 </div>
                             </div>
@@ -299,7 +343,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Skill</label>
                                 <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.Skill, new { @class = "form-control", @placeholder = "Skill" })
+                                    @Html.TextBoxFor(model => model.UserProfessionalQualificationModel.Skill, new { @class = "form-control", @placeholder = "Skill", @id = "txtSkill" })
 
                                 </div>
                             </div>
@@ -325,11 +369,11 @@
                                 <th>End Date</th>
                                 <th>Salary</th>
                                 <th>Role</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
 
-                        <tbody>
-                        </tbody>
+                        <tbody></tbody>
                     </table>
                 }
             </div>
@@ -338,7 +382,7 @@
                 @using (Html.BeginForm("UserQualification", "Account", FormMethod.Post))
                 {
                     @Html.HiddenFor(m => m.UserQualificatinModel.Id)
-                    <input type="button" class="btn btn-primary" value="Add More" onclick="return moreQualificationDetail();" />
+                    <input type="button" class="btn btn-primary btnbgGreen" value="Add More" onclick="return moreQualificationDetail();" />
                     <form class="form-horizontal" role="form">
                         <div id="dvQualification" style="display: none">
                             <div class="form-group">
@@ -356,6 +400,18 @@
                                 <div class="col-sm-9">
                                     @Html.DropDownListFor(x => x.UserQualificatinModel.Degree, new SelectList(@Model.DegreeList, "Id", "Name", Model.UserQualificatinModel.Degree), "- - Select - -", new { @class = "dropdown form-control" })
                                     @Html.ValidationMessageFor(model => model.UserQualificatinModel.Degree)
+                                </div>
+                            </div>
+
+                            <br />
+                            <br />
+                            <br />
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Specialization</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.UserQualificatinModel.Specialization, new { @class = "form-control", @placeholder = "Specialization" })
+
                                 </div>
                             </div>
 
@@ -410,12 +466,12 @@
                             </div>
                         </div>
                     </form>
-                            
-                            
+
+
                     <br />
                     <br />
                     <br />
-                        
+
                     <table data-toggle="data-table" class="table" id="tblQualification">
                         <thead>
                             <tr>
@@ -423,14 +479,13 @@
                                 <th>Start Date </th>
                                 <th>End Date</th>
                                 <th>Percentage</th>
-
+                                <th>Action</th>
                             </tr>
                         </thead>
 
-                        <tbody>
-                        </tbody>
+                        <tbody></tbody>
                     </table>
-                            
+
                 }
             </div>
 
@@ -565,6 +620,21 @@
     <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript">
 
+        function changeJobCheckbox() {
+            debugger;
+            var val = $("#chkJobCheckbox").is(":checked");
+            if (val) {
+               
+                //$("#txtEndDate").attr("disabled", "disabled");
+                $("#txtEndDate").val("")
+                $("#dvEndDate").hide();
+            } else {
+                $("#dvEndDate").show();
+                $("#txtEndDate").val("")
+                //$("#txtEndDate").removeAttr("disabled");
+            }
+        }
+
         function LoadCommunity(Id) {
 
             $.get('/Account/GetCommunityByCountry/' + Id, function (data) {
@@ -630,17 +700,17 @@
             $("#tblProfessional> tbody").html("");
             $.get('/Account/GetProfessionalData', function (data) {
 
-                debugger;
+              
                 console.log(data)
                 $(data).each(function (index, value) {
-
+                    debugger;
                     var b = value.StartDate.split('(');
                     var d = b[1].split(')')[0];
                     var startDate = new Date(parseInt(d));
                     var displaystartDate = (startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' + startDate.getFullYear()
 
 
-                    var u = value.StartDate.split('(');
+                    var u = value.EndDate.split('(');
                     var k = u[1].split(')')[0];
                     var endDate = new Date(parseInt(k));
                     var displayendDate = (endDate.getMonth() + 1) + '/' + endDate.getDate() + '/' + endDate.getFullYear()
@@ -653,12 +723,31 @@
           '<td>' + displayendDate + '</td>' +
             '<td>' + value.Salary + '</td>' +
               '<td>' + value.UserRole + '</td>' +
-
+              '<td><input type="submit" class="btn btn-primary btnbgGreen" value="Edit" onclick="GetProfessionalDataById(' + value.Id + ')" /> &nbsp; <input type="button" class="btn btn-primary btnbgGreen" value="Delete" onclick="DeleteProfessionalDataById(' + value.Id + ')" /></td>' +
 
           '</tr>');
                     $("#tblProfessional tbody:last").append($row);
 
                 })
+            })
+        }
+        function GetProfessionalDataById(Id) {
+            debugger;
+            $.get('/Account/GetProfessionalDataById/' + Id, function (data) {
+               
+
+           
+
+                moreProfessionalDetail();
+                $("#hdProfessionalQualificationId").val(data.Id)
+                $("#txtCompanyName").val(data.CompanyName)
+                $("#datepicker").val(data.StartDate)
+                $("#txtEndDate").val(data.EndDate)
+                $("#txtSalary").val(data.Salary)
+                $("#ddlIndustryType").val(data.IndustryTypeId)
+                $("#UserTypeId").val(data.Designation)
+                $("#txtSkill").val(data.Skill)
+                $("#txtUserRole").val(data.UserRole)
             })
         }
 
@@ -685,7 +774,7 @@
           '<td>' + displaystartDate + '</td>' +
           '<td>' + displayendDate + '</td>' +
             '<td>' + value.Percentage + '</td>' +
-
+            '<td><input type="submit" class="btn btn-primary btnbgGreen" value="Edit" /> &nbsp; <input type="button" class="btn btn-primary btnbgGreen" value="Delete" /></td>' +
 
 
           '</tr>');
@@ -719,7 +808,7 @@
                         break;
 
                 }
-             //   tabNumber == "1" ? $("#liGeneral a").trigger("click") : "2" ? $("#liCommunity a").trigger("click") : "3" ? $("#liProfessional a").trigger("click") : "4" ? $("#liQualification a").trigger("click") : "5" ? $("#liVideo a").trigger("click") : "";
+                //   tabNumber == "1" ? $("#liGeneral a").trigger("click") : "2" ? $("#liCommunity a").trigger("click") : "3" ? $("#liProfessional a").trigger("click") : "4" ? $("#liQualification a").trigger("click") : "5" ? $("#liVideo a").trigger("click") : "";
             }
 
             if ('@Model.SucessMessage' != "")
@@ -727,23 +816,24 @@
             if ('@Model.ErrorMessage' != "")
                 bootbox.alert('@Model.ErrorMessage')
         })
-    function hideMessage(data) {
-        $(data).hide("slow")
+        function hideMessage(data) {
+            $(data).hide("slow")
 
-    }
-    $('.form_date').datetimepicker({
-        format: "dd MM yyyy",
-        startDate: "2000-02-14",
-        language: 'fr',
-        weekStart: 1,
-        todayBtn: 1,
-        autoclose: 1,
-        todayHighlight: 1,
-        startView: 2,
-        minView: 2,
-        forceParse: 0,
-        showMeridian: 0
-    });
+        }
+        $('.form_date').datetimepicker({
+            format: "dd MM yyyy",
+            startDate: "2000-02-14",
+            language: 'fr',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            showMeridian: 0
+        });
+
     </script>
 }
 

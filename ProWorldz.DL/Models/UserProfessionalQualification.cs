@@ -34,7 +34,7 @@ namespace ProWorldz.DL.Models
 
           public string Skill { get; set; }
 
-         
+          public bool IsCurrentJob { get; set; }
          
          public virtual User User { get; set; }
 

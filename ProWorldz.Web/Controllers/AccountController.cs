@@ -249,67 +249,75 @@ namespace ProWorldz.Web.Controllers
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             if (CurrentUser != null)
             {
-                if (Model.UserGeneralInformationModel.Id == 0)
+                try
                 {
-                    if (file != null)
+                    if (Model.UserGeneralInformationModel.Id == 0)
                     {
-                        UserGeneralInformationBL UserGeneralInformationBL = new BL.BusinessLayer.UserGeneralInformationBL();
+                        if (file != null)
+                        {
+                            UserGeneralInformationBL UserGeneralInformationBL = new BL.BusinessLayer.UserGeneralInformationBL();
 
-                        string ImageName = System.IO.Path.GetFileName(file.FileName);
-                        string physicalPath = Server.MapPath("~/Images/" + ImageName);
-                        file.SaveAs(physicalPath);
-                        UserGeneralInformationBM UserGeneralInformation = new UserGeneralInformationBM();
+                            string ImageName = System.IO.Path.GetFileName(file.FileName);
+                            string physicalPath = Server.MapPath("~/Images/" + ImageName);
+                            file.SaveAs(physicalPath);
+                            UserGeneralInformationBM UserGeneralInformation = new UserGeneralInformationBM();
 
-                        UserGeneralInformation.Image = "/Images/" + ImageName;
+                            UserGeneralInformation.Image = "/Images/" + ImageName;
 
-                        UserGeneralInformation.PhoneNumber = Model.UserGeneralInformationModel.PhoneNumber;
-                        UserGeneralInformation.Address1 = Model.UserGeneralInformationModel.Address1;
-                        UserGeneralInformation.Address2 = Model.UserGeneralInformationModel.Address2;
-                        UserGeneralInformation.FatherName = Model.UserGeneralInformationModel.FatherName;
-                        UserGeneralInformation.Status = Model.UserGeneralInformationModel.Status;
-                        UserGeneralInformation.UserId = CurrentUser.Id;
-                        UserGeneralInformation.CreatedBy = CurrentUser.Id;
-                        UserGeneralInformation.CreationDate = DateTime.Now;
-                        UserGeneralInformationBL.Create(UserGeneralInformation);
+                            UserGeneralInformation.PhoneNumber = Model.UserGeneralInformationModel.PhoneNumber;
+                            UserGeneralInformation.Address1 = Model.UserGeneralInformationModel.Address1;
+                            UserGeneralInformation.Address2 = Model.UserGeneralInformationModel.Address2;
+                            UserGeneralInformation.FatherName = Model.UserGeneralInformationModel.FatherName;
+                            UserGeneralInformation.Status = Model.UserGeneralInformationModel.Status;
+                            UserGeneralInformation.UserId = CurrentUser.Id;
+                            UserGeneralInformation.CreatedBy = CurrentUser.Id;
+                            UserGeneralInformation.CreationDate = DateTime.Now;
+                            UserGeneralInformationBL.Create(UserGeneralInformation);
+                            //  TempData["Success"] = "Record saved Successfully.";
+                            TempData["Success"] = "Record saved Successfully.";
+
+                        }
+                    }
+                    else
+                    {
+                        //update code
+                        UserGeneralInformationBM UserGeneralInformationBM = UserGeneralInformationBL.GetGeneralInformationByUserId(CurrentUser.Id);
+                        UserGeneralInformationBM.CommunityId = Model.UserGeneralInformationModel.CommunityId;
+                        UserGeneralInformationBM.SubCommunityId = Model.UserGeneralInformationModel.SubCommunityId;
+                        // UserGeneralInformationBM.Image = "/Images/" + ImageName;
+                        if (file != null)
+                        {
+
+                            string ImageName = System.IO.Path.GetFileName(file.FileName);
+                            string physicalPath = Server.MapPath("~/Images/" + ImageName);
+                            file.SaveAs(physicalPath);
+                            UserGeneralInformationBM.Image = "/Images/" + ImageName;
+                        }
+                        UserGeneralInformationBM.PhoneNumber = Model.UserGeneralInformationModel.PhoneNumber;
+                        UserGeneralInformationBM.Address1 = Model.UserGeneralInformationModel.Address1;
+                        UserGeneralInformationBM.Address2 = Model.UserGeneralInformationModel.Address2;
+                        UserGeneralInformationBM.FatherName = Model.UserGeneralInformationModel.FatherName;
+                        UserGeneralInformationBM.Status = Model.UserGeneralInformationModel.Status;
+                        UserGeneralInformationBM.UserId = CurrentUser.Id;
+                        UserGeneralInformationBM.ModifiedBy = CurrentUser.Id;
+                        UserGeneralInformationBM.ModificationDate = DateTime.Now;
+                        UserGeneralInformationBL.Update(UserGeneralInformationBM);
+
                         TempData["Success"] = "Record saved Successfully.";
-
-
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    //update code
-                    UserGeneralInformationBM UserGeneralInformationBM = UserGeneralInformationBL.GetGeneralInformationByUserId(CurrentUser.Id);
-                    UserGeneralInformationBM.CommunityId = Model.UserGeneralInformationModel.CommunityId;
-                    UserGeneralInformationBM.SubCommunityId = Model.UserGeneralInformationModel.SubCommunityId;
-                    // UserGeneralInformationBM.Image = "/Images/" + ImageName;
-                    if (file != null)
-                    {
-
-                        string ImageName = System.IO.Path.GetFileName(file.FileName);
-                        string physicalPath = Server.MapPath("~/Images/" + ImageName);
-                        file.SaveAs(physicalPath);
-                        UserGeneralInformationBM.Image = "/Images/" + ImageName;
-                    }
-                    UserGeneralInformationBM.PhoneNumber = Model.UserGeneralInformationModel.PhoneNumber;
-                    UserGeneralInformationBM.Address1 = Model.UserGeneralInformationModel.Address1;
-                    UserGeneralInformationBM.Address2 = Model.UserGeneralInformationModel.Address2;
-                    UserGeneralInformationBM.FatherName = Model.UserGeneralInformationModel.FatherName;
-                    UserGeneralInformationBM.Status = Model.UserGeneralInformationModel.Status;
-                    UserGeneralInformationBM.UserId = CurrentUser.Id;
-                    UserGeneralInformationBM.ModifiedBy = CurrentUser.Id;
-                    UserGeneralInformationBM.ModificationDate = DateTime.Now;
-                    UserGeneralInformationBL.Update(UserGeneralInformationBM);
-
-
+                    TempData["Error"] = "An Error Occured.";
                 }
+                
             }
             else
             {
                 TempData["Error"] = "Please Login.";
             }
 
-            return RedirectToAction("Profile");
+            return RedirectToAction("EditProfile");
         }
 
 
@@ -342,7 +350,7 @@ namespace ProWorldz.Web.Controllers
                 TempData["Error"] = "Please Login.";
             }
 
-            return RedirectToAction("Profile");
+            return RedirectToAction("EditProfile");
         }
 
         public ActionResult UserVideo(ProfileModel Model)
@@ -398,7 +406,7 @@ namespace ProWorldz.Web.Controllers
                 TempData["Error"] = "Please Login.";
             }
 
-            return RedirectToAction("Profile");
+            return RedirectToAction("EditProfile");
         }
         public ActionResult UserProfessionalQualification(ProfileModel Model, FormCollection collection)
         {
@@ -409,6 +417,7 @@ namespace ProWorldz.Web.Controllers
                 UserProfessionalQualificationBM UserProfessionalQualificationBM = new UserProfessionalQualificationBM();
                 if (Model.UserProfessionalQualificationModel.Id == 0)
                 {
+                    UserProfessionalQualificationBM.IsCurrentJob = Model.UserProfessionalQualificationModel.IsCurrentJob;
                     UserProfessionalQualificationBM.CompanyName = Model.UserProfessionalQualificationModel.CompanyName;
                     UserProfessionalQualificationBM.StartDate = Model.UserProfessionalQualificationModel.StartDate;
                     UserProfessionalQualificationBM.EndDate = Model.UserProfessionalQualificationModel.EndDate;
@@ -426,20 +435,25 @@ namespace ProWorldz.Web.Controllers
                 }
                 else
                 {
-                    UserProfessionalQualificationBM = UserProfessionalQualificationBL.GetProfessionalQualificationById(Model.UserProfessionalQualificationModel.Id);
-                    UserProfessionalQualificationBM.CompanyName = Model.UserProfessionalQualificationModel.CompanyName;
-                    UserProfessionalQualificationBM.StartDate = Model.UserProfessionalQualificationModel.StartDate;
-                    UserProfessionalQualificationBM.EndDate = Model.UserProfessionalQualificationModel.EndDate;
-                    UserProfessionalQualificationBM.Designation = Convert.ToInt32(collection["DesignationType"].ToString());//Note remove DS
-                    UserProfessionalQualificationBM.Salary = Model.UserProfessionalQualificationModel.Salary;
-                    UserProfessionalQualificationBM.UserRole = Model.UserProfessionalQualificationModel.UserRole;
-                    UserProfessionalQualificationBM.Skill = Model.UserProfessionalQualificationModel.Skill;
-                    UserProfessionalQualificationBM.IndustryTypeId = Model.UserProfessionalQualificationModel.IndustryTypeId;
-                    UserProfessionalQualificationBM.UserId = CurrentUser.Id;
-                    UserProfessionalQualificationBM.CreatedBy = CurrentUser.Id;
-                    UserProfessionalQualificationBM.CreationDate = DateTime.Now;
+                    UserProfessionalQualificationBM UserProfessionalQualificationBMupdate = new UserProfessionalQualificationBM();
+                    UserProfessionalQualificationBMupdate = UserProfessionalQualificationBL.GetProfessionalQualificationById(Model.UserProfessionalQualificationModel.Id);
 
-                    UserProfessionalQualificationBL.Update(UserProfessionalQualificationBM);
+                    //UserProfessionalQualificationBMupdate.Id = Model.UserProfessionalQualificationModel.Id;
+                    UserProfessionalQualificationBMupdate.IsCurrentJob = Model.UserProfessionalQualificationModel.IsCurrentJob;
+                    UserProfessionalQualificationBMupdate = UserProfessionalQualificationBL.GetProfessionalQualificationById(Model.UserProfessionalQualificationModel.Id);
+                    UserProfessionalQualificationBMupdate.CompanyName = Model.UserProfessionalQualificationModel.CompanyName;
+                    UserProfessionalQualificationBMupdate.StartDate = Model.UserProfessionalQualificationModel.StartDate;
+                    UserProfessionalQualificationBMupdate.EndDate = Model.UserProfessionalQualificationModel.EndDate;
+                    UserProfessionalQualificationBMupdate.Designation = Convert.ToInt32(collection["DesignationType"].ToString());//Note remove DS
+                    UserProfessionalQualificationBMupdate.Salary = Model.UserProfessionalQualificationModel.Salary;
+                    UserProfessionalQualificationBMupdate.UserRole = Model.UserProfessionalQualificationModel.UserRole;
+                    UserProfessionalQualificationBMupdate.Skill = Model.UserProfessionalQualificationModel.Skill;
+                    UserProfessionalQualificationBMupdate.IndustryTypeId = Model.UserProfessionalQualificationModel.IndustryTypeId;
+                    UserProfessionalQualificationBMupdate.UserId = CurrentUser.Id;
+                    UserProfessionalQualificationBMupdate.CreatedBy = CurrentUser.Id;
+                    UserProfessionalQualificationBMupdate.CreationDate = DateTime.Now;
+
+                    UserProfessionalQualificationBL.Update(UserProfessionalQualificationBMupdate);
                     TempData["Success"] = "Record saved Successfully.";
                 }
 
@@ -449,9 +463,43 @@ namespace ProWorldz.Web.Controllers
                 TempData["Error"] = "Please Login.";
             }
 
-            return RedirectToAction("Profile");
+            return RedirectToAction("EditProfile");
         }
+        public JsonResult GetProfessionalDataById(int Id)
+        {
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            UserProfessionalQualificationBM UserProfessionalQualificationBM = new UserProfessionalQualificationBM();
+            if (CurrentUser != null)
+            {
+                UserProfessionalQualificationBM = UserProfessionalQualificationBL.GetProfessionalQualification().Where(a => a.UserId == CurrentUser.Id && a.Id == Id).FirstOrDefault();
 
+            }
+            else
+            {
+
+                UserProfessionalQualificationBM = null;
+
+            }
+            return Json(UserProfessionalQualificationBM, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult DeleteProfessionalDataById(int Id)
+        {
+            UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            UserProfessionalQualificationBM UserProfessionalQualificationBM = new UserProfessionalQualificationBM();
+             
+            if (CurrentUser != null)
+            {
+                UserProfessionalQualificationBM = UserProfessionalQualificationBL.GetProfessionalQualification().Where(a => a.UserId == CurrentUser.Id && a.Id == Id).FirstOrDefault();
+               
+            }
+            else
+            {
+
+                UserProfessionalQualificationBM = null;
+
+            }
+            return Json(UserProfessionalQualificationBM, JsonRequestBehavior.AllowGet);
+        }
         public JsonResult GetProfessionalData()
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
@@ -503,7 +551,7 @@ namespace ProWorldz.Web.Controllers
                 UserQualificatinBM.Description = Model.UserQualificatinModel.Description;
                 UserQualificatinBM.StartDate = Model.UserQualificatinModel.StartDate;
                 UserQualificatinBM.EndDate = Model.UserQualificatinModel.EndDate;
-
+                UserQualificatinBM.Specialization = Model.UserQualificatinModel.Specialization;
                 UserQualificatinBM.UserId = CurrentUser.Id;
                 UserQualificatinBM.CreatedBy = CurrentUser.Id;
                 UserQualificatinBM.CreationDate = DateTime.Now;
@@ -516,7 +564,7 @@ namespace ProWorldz.Web.Controllers
                 TempData["Error"] = "Please Login.";
             }
 
-            return RedirectToAction("Profile");
+            return RedirectToAction("EditProfile");
         }
 
 

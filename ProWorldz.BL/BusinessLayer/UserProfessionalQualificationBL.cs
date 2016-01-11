@@ -63,7 +63,7 @@ namespace ProWorldz.BL.BusinessLayer
                 UserId = model.UserId,
                 CompanyName = model.CompanyName,
                 StartDate = model.StartDate == DateTime.MinValue ? DateTime.Now.Date : model.StartDate,
-                EndDate = model.EndDate == DateTime.MinValue ? DateTime.Now.Date : model.StartDate,
+                EndDate = model.EndDate == DateTime.MinValue ? DateTime.Now.Date : model.EndDate,
                 Designation = model.Designation,
                 Salary = model.Salary,
                 CurrentIndustry = model.IndustryTypeId,
@@ -73,7 +73,11 @@ namespace ProWorldz.BL.BusinessLayer
                 UserRole=model.UserRole,
                 Skill=model.Skill,
                 ModifiedBy = model.ModifiedBy,
-                ModificationDate = model.ModificationDate
+                ModificationDate = model.ModificationDate,
+                IsCurrentJob = model.IsCurrentJob,
+                IsDeleted = model.IsDeleted,
+                Active=model.Active
+
             };
         }
 
@@ -88,7 +92,7 @@ namespace ProWorldz.BL.BusinessLayer
                 UserId = model.UserId,
                 CompanyName = model.CompanyName,
                 StartDate = model.StartDate == DateTime.MinValue ? DateTime.Now.Date : model.StartDate,
-                EndDate = model.EndDate == DateTime.MinValue ? DateTime.Now.Date : model.StartDate,
+                EndDate = model.EndDate == DateTime.MinValue ? DateTime.Now.Date : model.EndDate,
                 Designation = model.Designation,
                 Salary = model.Salary,
                 IndustryTypeId = model.CurrentIndustry,
@@ -98,7 +102,10 @@ namespace ProWorldz.BL.BusinessLayer
                 CreationDate = model.CreationDate,
                 IsCurrentEmployee = model.IsCurrentEmployee,
                 ModifiedBy = model.ModifiedBy,
-                ModificationDate = model.ModificationDate
+                ModificationDate = model.ModificationDate,
+                 IsCurrentJob = model.IsCurrentJob,
+                 IsDeleted=model.IsDeleted,
+                Active = model.Active
 
 
             };

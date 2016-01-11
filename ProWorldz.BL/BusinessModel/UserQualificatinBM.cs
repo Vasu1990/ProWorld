@@ -22,6 +22,9 @@ namespace ProWorldz.BL.BusinessModel
         public DateTime StartDate { get; set; }
 
 
+        public string Specialization { get; set; }
+
+
         public DateTime EndDate { get; set; }
         [Required]
         public string Percentage { get; set; }

@@ -67,7 +67,8 @@ namespace ProWorldz.BL.BusinessLayer
                 StartDate=model.StartDate,
                 EndDate=model.EndDate,
                 ModifiedBy = model.ModifiedBy,
-                ModificationDate = model.ModificationDate
+                ModificationDate = model.ModificationDate,
+                Specialization = model.Specialization
             };
         }
 
@@ -89,8 +90,8 @@ namespace ProWorldz.BL.BusinessLayer
                 StartDate = model.StartDate,
                 EndDate = model.EndDate,
                 ModifiedBy = model.ModifiedBy,
-                ModificationDate = model.ModificationDate
-
+                ModificationDate = model.ModificationDate,
+                Specialization=model.Specialization
             };
         }
     }

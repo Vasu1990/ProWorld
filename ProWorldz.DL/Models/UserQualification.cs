@@ -36,7 +36,7 @@ namespace ProWorldz.DL.Models
         public virtual User User { get; set; }
 
 
-
+        public string Specialization { get; set; }
      
 
     }
