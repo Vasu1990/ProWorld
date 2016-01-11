@@ -190,10 +190,12 @@
 
     @*<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>*@
 </div>
-
+@if (ViewBag.Id != 0) 
+{ 
 <div id="dvUserInfo">
     @{Html.RenderAction("UserProfile", "Home", new { Id = ViewBag.Id });}
 </div>
+}
 
 
 
