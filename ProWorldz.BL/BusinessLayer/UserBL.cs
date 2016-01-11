@@ -131,7 +131,8 @@ namespace ProWorldz.BL.BusinessLayer
                 IsOnline = model.IsOnline,
               CountryName=countryBL.GetCountryById(model.CountryId).Name,
               StateName=stateBL.GetStateById(model.StateId).Name,
-              CityName=cityBL.GetCityById(model.CityId).Name
+              CityName=cityBL.GetCityById(model.CityId).Name,
+          //    Image=userGeneralInformationBL.GetGeneralInformationByUserId(model.Id) != null ? userGeneralInformationBL.GetGeneralInformationByUserId(model.Id).Image : string.Empty
               
 
 

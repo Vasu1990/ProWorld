@@ -1119,7 +1119,7 @@ nav{
 	box-shadow:none;
 }
 .post-job-form select, .post-resume-form select{
-	background: #FFF url('images/down-arrow.png') no-repeat right;
+	background: #FFF url('/Areas/Employer/Content/Images/down-arrow.png') no-repeat right;
     appearance:none;
     -webkit-appearance:none;
     -moz-appearance: none;

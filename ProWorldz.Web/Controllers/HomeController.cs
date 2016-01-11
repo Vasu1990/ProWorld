@@ -28,6 +28,41 @@ namespace ProWorldz.Web.Controllers
             }
         }
 
+
+        public ActionResult UserProfile(int Id=0)
+        {
+            ViewBag.UserId = Id;
+            return View();
+
+        }
+
+        
+        [HttpGet]
+        public JsonResult GetUserProfileData(int Id)
+        {
+            LatestTechnologyBL latestTechnologyBL=new LatestTechnologyBL();
+            LatestTutorialsBL latestTutorialsBL=new LatestTutorialsBL();
+            UserBM user = UserBL.GetUserById(Id);
+            List<UserPostBM> postList = UserPostBL.GetUserPost().Where(a => a.UserId == Id).ToList();
+            List<LatestTechnologyBM> lstTechnology = latestTechnologyBL.GetTechnologyByUserId(Id);
+            List<LatestTutorialsBM> lstTutorials = latestTutorialsBL.GetTechnologyByUserId(Id);
+            UserGeneralInformationBM generalInfo = UserGeneralInformationBL.GetGeneralInformationByUserId(Id);
+            UserPersonalInformationBM personalInfo = UserPersonalInformationBL.GetPersonalInformationByUserId(Id);
+            List<UserQualificatinBM> userQualificationList = UserQualificationBL.GetUserQualificatinByUserId(Id);
+            List<UserProfessionalQualificationBM> userProfessionalList = UserProfessionalQualificationBL.GetProfessionalQualificationByUserId(Id);
+            UserProfileModel Model = new UserProfileModel();
+
+            Model.User = user;
+            Model.UserPostList = postList;
+            Model.LatestTechnologyBMList = lstTechnology;
+            Model.LatestTutorialsBMList = lstTutorials;
+            Model.UserGeneralInformation = generalInfo;
+            Model.UserPersonalInformationBM = personalInfo;
+            Model.UserQualificatinBM = userQualificationList;
+            Model.UserProfessionalQualificationBM = userProfessionalList;
+            return Json(Model);
+        }
+
         UserVideoBL UserVideoBL = new UserVideoBL();
 
         [HttpGet]
@@ -38,13 +73,16 @@ namespace ProWorldz.Web.Controllers
         }
 
         [Authorize]
-        public ActionResult Dashboard()
+        public ActionResult Dashboard(int Id=0)
         {
             PostCommentModel model = new PostCommentModel();
             UserPostBL blObj = new UserPostBL();
-            model.UserPostList = blObj.GetUserPost().OrderByDescending(p=>p.CreationDate).ToList();
+            model.UserPostList = blObj.GetUserPost().OrderByDescending(p=>p.CreationDate).Take(10).ToList();
+            ViewBag.Id = Id;
 
-            model.User = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            UserBL userBL = new BL.BusinessLayer.UserBL();
+            model.User = Id == 0 ? SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User) : userBL.GetUserById(Id);
+            model.User.Image = UserGeneralInformationBL.GetGeneralInformationByUserId(model.User.Id) != null ? UserGeneralInformationBL.GetGeneralInformationByUserId(model.User.Id).Image : string.Empty;
             return View(model);
 
         }
@@ -309,6 +347,30 @@ namespace ProWorldz.Web.Controllers
             UserBM User = UserBL.GetUsers().Where(p => p.Email == email).FirstOrDefault();
             bool IsExist = User != null ? true : false;
             return Json(IsExist, JsonRequestBehavior.AllowGet);
+
+        }
+
+
+        public JsonResult LoadUserProfileDetail(int Id)
+        {
+            LatestTechnologyBL latestTechnologyBL=new BL.BusinessLayer.LatestTechnologyBL();
+            UserPostBL userPostBL = new BL.BusinessLayer.UserPostBL();
+            FriendBL friendBL = new FriendBL();
+
+            
+            LatestTutorialsBL LatestTutorialsBL=new BL.BusinessLayer.LatestTutorialsBL();
+            UserProfileModel Model = new UserProfileModel();
+            Model.User = UserBL.GetUserById(Id);
+            Model.UserGeneralInformation = UserGeneralInformationBL.GetGeneralInformationByUserId(Id);
+            Model.UserPersonalInformationBM = UserPersonalInformationBL.GetPersonalInformationByUserId(Id);
+            Model.LatestTechnologyBMList = latestTechnologyBL.GetTechnologyByUserId(Id);
+            Model.LatestTutorialsBMList = LatestTutorialsBL.GetTechnologyByUserId(Id);
+            Model.UserPostList = userPostBL.GetUserPost().Where(a => a.UserId == Id).ToList();
+            Model.FriendList = friendBL.GetAllFriends(Id);
+
+            Model.UserProfessionalQualificationBM = UserProfessionalQualificationBL.GetProfessionalQualificationByUserId(Id);
+
+            return Json(Model, JsonRequestBehavior.AllowGet);
 
         }
 

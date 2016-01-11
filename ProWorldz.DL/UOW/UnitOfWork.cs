@@ -51,6 +51,20 @@ namespace ProWorldz.DL.UOW
 
         private IRepository<Employer> employerRepository { get; set; }
 
+        private IRepository<Job> jobRepository { get; set; }
+
+        public IRepository<Job> JobRepository
+        {
+            get
+            {
+                if (jobRepository == null)
+                    jobRepository = new GenericRepository<Job>(Context);
+                return jobRepository;
+            }
+        }
+
+
+
         public IRepository<Employer> EmployerRepository
         {
             get

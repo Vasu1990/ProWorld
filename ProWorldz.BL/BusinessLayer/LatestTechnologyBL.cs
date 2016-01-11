@@ -38,7 +38,10 @@ namespace ProWorldz.BL.BusinessLayer
         {
             return ConvertToBM(uow.LatestTechnologyRepository.GetByID(id));
         }
-
+        public List<LatestTechnologyBM> GetTechnologyByUserId(int id)
+        {
+            return uow.LatestTechnologyRepository.Find(a=>a.UserId==id).ConvertAll<LatestTechnologyBM>(new Converter<LatestTechnology, LatestTechnologyBM>(ConvertToBM));
+        }
 
         public void Update(LatestTechnologyBM model)
         {

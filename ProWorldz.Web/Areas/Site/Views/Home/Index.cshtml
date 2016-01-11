@@ -1,5 +1,609 @@
-﻿    <!-- Parallax Container -->
-<div id="layerslider">
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Job Board</title>
+    <!-- Bootstrap -->
+    <link href="~/Areas/Site/Content/JobBoard/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+
+    <!-- Main Style -->
+    <link href="~/Areas/Site/Content/JobBoard/css/style.css" rel="stylesheet" />
+
+    <!-- Main Style -->
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Nunito:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700' rel='stylesheet' type='text/css'>
+
+    <link href="~/Areas/Site/Content/JobBoard/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- fonts -->
+
+    <!-- Owl Carousel -->
+    <link href="~/Areas/Site/Content/JobBoard/css/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Areas/Site/Content/JobBoard/css/owl.theme.css" rel="stylesheet" />
+    <link href="~/Areas/Site/Content/JobBoard/css/owl.transitions.css" rel="stylesheet" />
+
+
+
+    <!-- Owl Carousel -->
+
+    <!-- Form Slider -->
+    <link href="~/Areas/Site/Content/JobBoard/css/jslider.css" rel="stylesheet" />
+    <link href="~/Areas/Site/Content/JobBoard/css/jslider.round.css" rel="stylesheet" />
+
+    <!-- Form Slider -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="wrapper">
+        <!-- start main wrapper -->
+        <div id="header">
+            <!-- start main header -->
+            <div class="top-line">&nbsp;</div>
+            <div class="top">
+                <!-- top -->
+                <div class="container">
+
+                    <div class="media-top-right">
+
+                        <ul class="media-top-2 clearfix">
+                            <li><a href="/Account/Register" class="btn btn-default btn-blue btn-sm">REGISTER</a></li>
+                            <li><a href="/Account/Login" class="btn btn-default btn-green btn-sm">LOG IN</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- top -->
+            <div class="container">
+                <!-- container -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- logo -->
+                        
+                            <!-- start job finder -->
+                            <div class="container">
+                                <h3>Proworld</h3>
+                            </div>
+                       
+                    </div>
+                    <!-- logo -->
+                    <div class="col-md-8 main-nav">
+                        <!-- Main Navigation -->
+                        <a id="touch-menu" class="mobile-menu" href="#"><i class="fa fa-bars fa-2x"></i></a>
+                        <nav>
+                            <ul class="menu">
+                                <li><a href="/Site/Home">HOME</a>
+
+                                </li>
+                                <li><a href="/Site/Home/Services">Service</a></li>
+                                <li><a href="/Site/Home/Blog">BLOG</a></li>
+                                <li><a href="/Site/Home/About">About US</a></li>
+                                <li><a href="/Site/Home/ContactUs">Contact Us</a></li>
+
+                                 <li><a href="/Employer/Account/Register">Employer Section</a></li>
+
+
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Main Navigation -->
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- container -->
+        </div>
+        <!-- end main header -->
+
+        <div class="main-slider">
+            <!-- start main-headline section -->
+            <div class="slider-nav">
+                <a class="slider-prev"><i class="fa fa-chevron-circle-left"></i></a>
+                <a class="slider-next"><i class="fa fa-chevron-circle-right"></i></a>
+            </div>
+            <div>
+                <div class="item-slide">
+
+                    <img src="~/Areas/Site/Content/JobBoard/Images/dummy-slide-1.jpg" class="img-responsive" alt="dummy-slide" />
+                </div>
+              
+            </div>
+        </div>
+        <!-- end main-headline section -->
+
+
+        <div class="headline container">
+            <!-- start headline section -->
+            <div class="row">
+                <div class="col-md-6 align-right">
+                    <h4>Easiest Way To Find Your Dream Job</h4>
+
+                    <div class="row">
+
+
+                        <input type="text" class="input-job" placeholder="Field">
+
+
+
+                        <input type="text" class="input-job" placeholder="Location">
+                    </div>
+
+                    <p><a href="" class="btn btn-default btn-yellow">Find a Job</a></p>
+                </div>
+                <div class="col-md-6 align-left">
+                    <h4>Hire Skilled People, best of them</h4>
+                    <div class="row">
+
+
+                        <input type="text" class="input-job" placeholder="Field">
+
+
+
+                        <input type="text" class="input-job" placeholder="Location">
+                    </div>
+                    <p><a href="" class="btn btn-default btn-light">Post a Job</a></p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- end headline section -->
+
+        
+        <!-- end Recent Job -->
+        <div class="job-status">
+            <div class="container">
+                <h1>Jobs Stats Updates</h1>
+                <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.
+                </p>
+
+                <div class="counter clearfix">
+                    <div class="counter-container">
+                        <div class="counter-value">125</div>
+                        <div class="line"></div>
+                        <p>job posted</p>
+                    </div>
+
+
+                    <div class="counter-container">
+                        <div class="counter-value">50</div>
+                        <div class="line"></div>
+                        <p>possition Filled</p>
+                    </div>
+
+                    <div class="counter-container">
+                        <div class="counter-value">75</div>
+                        <div class="line"></div>
+                        <p>Companies</p>
+                    </div>
+
+                    <div class="counter-container">
+                        <div class="counter-value">85</div>
+                        <div class="line"></div>
+                        <p>Members</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="step-to">
+            <div class="container">
+                <h1>Easiest Way To Use</h1>
+                <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas mo
+                </p>
+
+                <div class="step-spacer"></div>
+                <div id="step-image">
+                    <div class="step-by-container">
+                        <div class="step-by">
+                            First Step
+							<div class="step-by-inner">
+                                <div class="step-by-inner-img">
+                                    <img src="images/step-icon-1.png" alt="step" />
+                                </div>
+                            </div>
+                            <h5>Register with us</h5>
+                        </div>
+
+                        <div class="step-by">
+                            Second Step
+							<div class="step-by-inner">
+                                <div class="step-by-inner-img">
+                                    <img src="images/step-icon-2.png" alt="step" />
+                                </div>
+                            </div>
+                            <h5>Create your profile</h5>
+                        </div>
+
+                        <div class="step-by">
+                            Third Step
+							<div class="step-by-inner">
+                                <div class="step-by-inner-img">
+                                    <img src="images/step-icon-3.png" alt="step" />
+                                </div>
+                            </div>
+                            <h5>Upload your resume</h5>
+                        </div>
+
+                        <div class="step-by">
+                            Now it's our turn
+							<div class="step-by-inner">
+                                <div class="step-by-inner-img">
+                                    <img src="images/step-icon-4.png" alt="step" />
+                                </div>
+                            </div>
+                            <h5>Now take rest :)</h5>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="step-spacer"></div>
+            </div>
+        </div>
+        <div class="testimony">
+            <div class="container">
+                <h1>What People Say About Us</h1>
+                <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas mo
+                </p>
+
+            </div>
+            <div id="sync2" class="owl-carousel">
+                <div class="testimony-image">
+                    <img src="~/Areas/Site/Content/JobBoard/Images//testimony-image-1.jpg" class="img-responsive" alt="testimony" />
+                </div>
+                <div class="testimony-image">
+                    <img src="~/Areas/Site/Content/JobBoard/Images//testimony-image-2.jpg" class="img-responsive" alt="testimony" />
+                </div>
+                <div class="testimony-image">
+                    <img src="~/Areas/Site/Content/JobBoard/Images//testimony-image-3.jpg" class="img-responsive" alt="testimony" />
+                </div>
+                <div class="testimony-image">
+                    <img src="~/Areas/Site/Content/JobBoard/Images//testimony-image-4.jpg" class="img-responsive" alt="testimony" />
+                </div>
+                <div class="testimony-image">
+                    <img src="~/Areas/Site/Content/JobBoard/Images//testimony-image-5.jpg" class="img-responsive" alt="testimony" />
+                </div>
+                <div class="testimony-image">
+                    <img src="~/Areas/Site/Content/JobBoard/Images//testimony-image-6.jpg" class="img-responsive" alt="testimony" />
+                </div>
+                <div class="testimony-image">
+                    <img src="~/Areas/Site/Content/JobBoard/Images//testimony-image-7.jpg" class="img-responsive" alt="testimony" />
+                </div>
+                <div class="testimony-image">
+                    <img src="~/Areas/Site/Content/JobBoard/Images//testimony-image-8.jpg" class="img-responsive" alt="testimony" />
+                </div>
+                <div class="testimony-image">
+                    <img src="~/Areas/Site/Content/JobBoard/Images//testimony-image-9.jpg" class="img-responsive" alt="testimony" />
+                </div>
+                <div class="testimony-image">
+                    <img src="~/Areas/Site/Content/JobBoard/Images//testimony-image-10.jpg" class="img-responsive" alt="testimony" />
+                </div>
+
+            </div>
+
+            <div id="sync1" class="owl-carousel">
+                <div class="testimony-content container">
+                    <p>
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum .
+						
+                    </p>
+                    <p>
+                        John Grasin, CEO, IT-Planet
+                    </p>
+                    <div class="media-testimony">
+                        <a href="" target="blank"><i class="fa fa-twitter twit"></i></a>
+                        <a href="" target="blank"><i class="fa fa-linkedin linkedin"></i></a>
+                        <a href="" target="blank"><i class="fa fa-facebook fb"></i></a>
+                    </div>
+                </div>
+                <div class="testimony-content container">
+                    <p>
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum .
+						
+                    </p>
+                    <p>
+                        John Grasin, CEO, IT-Planet
+                    </p>
+                    <div class="media-testimony">
+                        <a href="" target="blank"><i class="fa fa-twitter twit"></i></a>
+                        <a href="" target="blank"><i class="fa fa-linkedin linkedin"></i></a>
+                        <a href="" target="blank"><i class="fa fa-facebook fb"></i></a>
+                    </div>
+                </div>
+                <div class="testimony-content container">
+                    <p>
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum .
+						
+                    </p>
+                    <p>
+                        John Grasin, CEO, IT-Planet
+                    </p>
+                    <div class="media-testimony">
+                        <a href="" target="blank"><i class="fa fa-twitter twit"></i></a>
+                        <a href="" target="blank"><i class="fa fa-linkedin linkedin"></i></a>
+                        <a href="" target="blank"><i class="fa fa-facebook fb"></i></a>
+                    </div>
+                </div>
+                <div class="testimony-content container">
+                    <p>
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum .
+						
+                    </p>
+                    <p>
+                        John Grasin, CEO, IT-Planet
+                    </p>
+                    <div class="media-testimony">
+                        <a href="" target="blank"><i class="fa fa-twitter twit"></i></a>
+                        <a href="" target="blank"><i class="fa fa-linkedin linkedin"></i></a>
+                        <a href="" target="blank"><i class="fa fa-facebook fb"></i></a>
+                    </div>
+                </div>
+                <div class="testimony-content container">
+                    <p>
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.
+						
+                    </p>
+                    <p>
+                        John Grasin, CEO, IT-Planet
+                    </p>
+                    <div class="media-testimony">
+                        <a href="" target="blank"><i class="fa fa-twitter twit"></i></a>
+                        <a href="" target="blank"><i class="fa fa-linkedin linkedin"></i></a>
+                        <a href="" target="blank"><i class="fa fa-facebook fb"></i></a>
+                    </div>
+                </div>
+                <div class="testimony-content container">
+                    <p>
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
+						
+                    </p>
+                    <p>
+                        John Grasin, CEO, IT-Planet
+                    </p>
+                    <div class="media-testimony">
+                        <a href="" target="blank"><i class="fa fa-twitter twit"></i></a>
+                        <a href="" target="blank"><i class="fa fa-linkedin linkedin"></i></a>
+                        <a href="" target="blank"><i class="fa fa-facebook fb"></i></a>
+                    </div>
+                </div>
+                <div class="testimony-content container">
+                    <p>
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum .
+						
+                    </p>
+                    <p>
+                        John Grasin, CEO, IT-Planet
+                    </p>
+                    <div class="media-testimony">
+                        <a href="" target="blank"><i class="fa fa-twitter twit"></i></a>
+                        <a href="" target="blank"><i class="fa fa-linkedin linkedin"></i></a>
+                        <a href="" target="blank"><i class="fa fa-facebook fb"></i></a>
+                    </div>
+                </div>
+                <div class="testimony-content container">
+                    <p>
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum . At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum .
+						
+                    </p>
+                    <p>
+                        John Grasin, CEO, IT-Planet
+                    </p>
+                    <div class="media-testimony">
+                        <a href="" target="blank"><i class="fa fa-twitter twit"></i></a>
+                        <a href="" target="blank"><i class="fa fa-linkedin linkedin"></i></a>
+                        <a href="" target="blank"><i class="fa fa-facebook fb"></i></a>
+                    </div>
+                </div>
+                <div class="testimony-content container">
+                    <p>
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.	
+                    </p>
+                    <p>
+                        John Grasin, CEO, IT-Planet
+                    </p>
+                    <div class="media-testimony">
+                        <a href="" target="blank"><i class="fa fa-twitter twit"></i></a>
+                        <a href="" target="blank"><i class="fa fa-linkedin linkedin"></i></a>
+                        <a href="" target="blank"><i class="fa fa-facebook fb"></i></a>
+                    </div>
+                </div>
+                <div class="testimony-content container">
+                    <p>
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+						
+                    </p>
+                    <p>
+                        John Grasin, CEO, IT-Planet
+                    </p>
+                    <div class="media-testimony">
+                        <a href="" target="blank"><i class="fa fa-twitter twit"></i></a>
+                        <a href="" target="blank"><i class="fa fa-linkedin linkedin"></i></a>
+                        <a href="" target="blank"><i class="fa fa-facebook fb"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="company-post">
+            <div class="container">
+
+                <h1>Companies Who Have Posted Jobs</h1>
+                <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.
+                </p>
+
+                <div id="company-post-list" class="owl-carousel company-post">
+                    <div class="company">
+                        <img src="~/Areas/Site/Content/JobBoard/Images//company-1.png" class="img-responsive" alt="company-post" />
+                    </div>
+                    <div class="company">
+                        <img src="~/Areas/Site/Content/JobBoard/Images//company-2.png" class="img-responsive" alt="company-post" />
+                    </div>
+                    <div class="company">
+                        <img src="~/Areas/Site/Content/JobBoard/Images//company-3.png" class="img-responsive" alt="company-post" />
+                    </div>
+                    <div class="company">
+                        <img src="~/Areas/Site/Content/JobBoard/Images//company-4.png" class="img-responsive" alt="company-post" />
+                    </div>
+                    <div class="company">
+                        <img src="~/Areas/Site/Content/JobBoard/Images//company-5.png" class="img-responsive" alt="company-post" />
+                    </div>
+
+                    <div class="company">
+                        <img src="~/Areas/Site/Content/JobBoard/Images//company-1.png" class="img-responsive" alt="company-post" />
+                    </div>
+                    <div class="company">
+                        <img src="~/Areas/Site/Content/JobBoard/Images//company-2.png" class="img-responsive" alt="company-post" />
+                    </div>
+                    <div class="company">
+                        <img src="~/Areas/Site/Content/JobBoard/Images//company-3.png" class="img-responsive" alt="company-post" />
+                    </div>
+                    <div class="company">
+                        <img src="~/Areas/Site/Content/JobBoard/Images//company-4.png" class="img-responsive" alt="company-post" />
+                    </div>
+                    <div class="company">
+                        <img src="~/Areas/Site/Content/JobBoard/Images//company-5.png" class="img-responsive" alt="company-post" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <!-- Footer -->
+            <div class="container">
+                <!-- Container -->
+                <div class="row">
+                    <div class="col-md-3 footer-widget">
+                        <!-- Text Widget -->
+                        <h6 class="widget-title">Saepe eveniet ut et voluptates</h6>
+                        <div class="textwidget">
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+                        </div>
+                    </div>
+                    <!-- Text Widget -->
+
+                    <div class="col-md-2 footer-widget">
+                        <!-- Footer Menu Widget -->
+                        <h6 class="widget-title">Useful Links</h6>
+                        <div class="footer-widget-nav">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Post A Job</a></li>
+                                <li><a href="#">Post A Resume</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Features</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Footer Menu Widget -->
+
+                    <div class="col-md-4 footer-widget">
+                        <!-- Recent Tweet Widget -->
+                        <h6 class="widget-title">Recent Tweets</h6>
+                        <div class="recent-twitt">
+                            <p>
+                                Just released Lotus Flower, a Flexible Multi-Purpose Shop Theme <a href="">http://t.co/0dyw2cdli5</a>
+                            </p>
+                            <div class="hastag">#Themeforest #WordPress 04:29 AM Oct 31</div>
+                            <p>
+                                Just released Lotus Flower, a Flexible Multi-Purpose Shop Theme <a href="">http://t.co/0dyw2cdli5</a>
+                            </p>
+                            <div class="hastag">#Themeforest #WordPress 04:29 AM Oct 31</div>
+                        </div>
+                    </div>
+                    <!-- Recent Tweet Widget -->
+
+                    <div class="col-md-3 footer-widget">
+                        <!-- News Leter Widget -->
+                        <h6 class="widget-title">Singn For news Letter</h6>
+                        <div class="textwidget">
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus</p>
+                        </div>
+
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="email" class="input-newstler">
+                            </div>
+                            <button type="button" class="btn-newstler">Sign Up</button>
+                        </form>
+                        <a href="" target="blank"><i class="media-footer footer-twitt"></i></a>
+                        <a href="" target="blank"><i class="media-footer footer-fb"></i></a>
+                        <a href="" target="blank"><i class="media-footer footer-linkedin"></i></a>
+                        <a href="" target="blank"><i class="media-footer footer-yahoo"></i></a>
+                        <a href="" target="blank"><i class="media-footer footer-blog"></i></a>
+                        <a href="" target="blank"><i class="media-footer footer-rss"></i></a>
+                    </div>
+                    <!-- News Leter Widget -->
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="footer-credits">
+                    <!-- Footer credits -->
+                    2014 © <a href="http://themeforest.net/user/minimalthemes">Minimal Themes</a>. All Rights Reserved.
+                </div>
+                <!-- Footer credits -->
+
+            </div>
+            <!-- Container -->
+        </div>
+        <!-- Footer -->
+    </div>
+    <!-- end main wrapper -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <script src="~/Areas/Site/Content/JobBoard/Script/bootstrap.min.js"></script>
+    <!-- Tabs -->
+    <script src="~/Areas/Site/Content/JobBoard/Script/jquery.easytabs.min.js"></script>
+    <script src="~/Areas/Site/Content/JobBoard/Script/modernizr.custom.49511.js"></script>
+
+    <!-- Tabs -->
+
+    <!-- Owl Carousel -->
+    <script src="~/Areas/Site/Content/JobBoard/Script/owl.carousel.js"></script>
+
+    <!-- Owl Carousel -->
+
+    <!-- Form Slider -->
+    <script src="~/Areas/Site/Content/JobBoard/Script/jshashtable-2.1_src.js"></script>
+    <script src="~/Areas/Site/Content/JobBoard/Script/jquery.numberformatter-1.2.3.js"></script>
+    <script src="~/Areas/Site/Content/JobBoard/Script/tmpl.js"></script>
+    <script src="~/Areas/Site/Content/JobBoard/Script/jquery.dependClass-0.1.js"></script>
+    <script src="~/Areas/Site/Content/JobBoard/Script/draggable-0.1.js"></script>
+    <script src="~/Areas/Site/Content/JobBoard/Script/jquery.slider.js"></script>
+
+    <!-- Form Slider -->
+
+    <!-- Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <!-- Map -->
+    <script src="~/Areas/Site/Content/JobBoard/Script/job-board.js"></script>
+
+
+</body>
+</html>
+
+
+@*<div id="layerslider">
     <!--Script for slider-->
     <script type="text/javascript">var lsjQuery = jQuery;</script>
     <script type="text/javascript">
@@ -219,4 +823,4 @@
             </div>
         </div>
     </div>
-</section>
+</section>*@

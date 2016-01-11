@@ -34,6 +34,8 @@ namespace ProWorldz.DL
         public DbSet<UserGeneralInfomation> UserGeneralInfomation { get; set; }
         public DbSet<UserVideo> UserVideo { get; set; }
 
+        public DbSet<Job> Job { get; set; }
+
         public DbSet<UserProfessionalQualification> UserProfessionalQualification { get; set; }
 
         public DbSet<IndustryType> IndustryType { get; set; }

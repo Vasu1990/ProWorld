@@ -1,0 +1,239 @@
+﻿@section styles{
+    @Styles.Render("~/Content/themes/custom/Proworldz.dashboard.css")
+}
+@{
+   //  Layout = null;
+}
+
+
+
+
+<div id="dvUserProfile">
+
+    <div class="row">
+        <!-- <div class="col-md-12"><div class="col-md-12"> -->
+        @*<h4 class="page-section-heading">Edit Details</h4>*@
+        <!-- Tabbable Widget -->
+        <div class="tabbable tabs-vertical tabs-left">
+            <!-- Tabs -->
+            <ul class="nav nav-tabs">
+
+
+                <li class="active"><a href="#home4" data-toggle="tab"><i class="fa fa-fw fa-home"></i>Comments</a>
+                </li>
+                <li><a href="#profile4" data-toggle="tab"><i class="fa fa-fw fa-user"></i>Latest Tutorials</a>
+                </li>
+                <li><a href="#messages4" data-toggle="tab"><i class="fa fa-fw fa-envelope"></i>Latest Technology</a>
+                </li>
+                <li><a href="#Portfolio" data-toggle="tab"><i class="fa fa-fw fa-envelope"></i>Portfolio</a>
+                </li>
+
+                <li><a href="#Resume" data-toggle="tab"><i class="fa fa-fw fa-envelope"></i>Resume</a>
+                </li>
+            </ul>
+            <!-- // END Tabs -->
+            <!-- Panes -->
+            <div class="tab-content">
+
+
+
+
+
+                <div id="home4" class="tab-pane active">
+                    <div class="timeline-block">
+                        <div class="panel panel-default" data-bind="foreach: postsList">
+
+
+                            <div class="panel-heading">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img style="height: 100px;" data-bind="attr:{src:ImageUrl}" class="media-object">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
+
+                                        <a href="#" data-bind="html:Subject"></a>
+
+                                        <span data-bind="text :moment(CreationDate).format('L')"></span>
+                                        <div class="clearfix"></div>
+                                        <span data-bind="text:UserName"></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p data-bind="html:Post"></p>
+                            </div>
+                            <div class="view-all-comments">
+                                <a href="#">
+                                    <i class="fa fa-comments-o"></i>View all
+                                </a>
+                                <span data-bind="text:UserComments.length"></span><span>Comments</span>
+                            </div>
+                            <ul class="comments">
+                                <li class="media" data-bind="foreach:UserComments">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img data-bind="attr:{src:ImageUrl}" style="height: 50px;" class="media-object">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="pull-right dropdown" data-show-hover="li">
+                                            <a href="#" data-toggle="dropdown" class="toggle-button">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Edit</a>
+                                                </li>
+                                                <li><a href="#">Delete</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <span data-bind="text:Comment"></span>
+                                        <div class="clearfix"></div>
+                                        <span>On : </span>
+                                        <div class="comment-date" data-bind="text:moment(CreationDate).format('L')"></div>
+                                        <a href="#" class="comment-author pull-left" data-bind="text:UserName"></a>
+                                    </div>
+                                </li>
+
+
+                                <li class="comment-form">
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <a href="#" class="btn btn-default"><i class="fa fa-photo"></i></a>
+                                        </span>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="profile4" class="tab-pane">
+                    <table class="table table-bordered table-hover table-responsive table-striped">
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Topic</th>
+                                <th>URL</th>
+                                <th>VideoURL</th>
+                                <th>Content</th>
+
+                            </tr>
+
+                        </thead>
+                        <tbody data-bind="foreach:LatestTechnologyList">
+                            <tr>
+                                <td data-bind="html:Tag"></td>
+                                <td data-bind="html:Topic"></td>
+                                <td data-bind="html:Url"></td>
+                                <td data-bind="html:VideoUrl"></td>
+                                <td data-bind="html:Content"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="messages4" class="tab-pane">
+                    <table class="table table-bordered table-hover table-responsive table-striped">
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Topic</th>
+                                <th>URL</th>
+                                <th>VideoURL</th>
+                                <th>Content</th>
+                            </tr>
+
+                        </thead>
+                        <tbody data-bind="foreach:LatestTutorialList">
+                            <tr>
+                                <td data-bind="html:Tag"></td>
+                                <td data-bind="html:Topic"></td>
+                                <td data-bind="html:Url"></td>
+                                <td data-bind="html:VideoUrl"></td>
+                                <td data-bind="html:Content"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div id="Portfolio" class="tab-pane">
+                    Content Coming soon.
+                                           
+                </div>
+
+                <div id="Resume" class="tab-pane">
+                    Content Coming soon.
+                                           
+                </div>
+            </div>
+            <!-- // END Panes -->
+        </div>
+        <!-- // END Tabbable Widget -->
+    </div>
+
+</div>
+
+
+
+
+    
+   
+  @section scripts{
+    <script>
+        var UserId = 0;
+        var viewModel = {};
+        viewModel.UserName = ko.observable();
+        viewModel.Image = ko.observable();
+        viewModel.postsList = ko.observableArray([]);
+        viewModel.LatestTechnologyList = ko.observableArray([]);
+
+        viewModel.LatestTutorialList = ko.observableArray([]);
+        // alert("I  am from ready")
+        UserId = '@ViewBag.UserId';
+
+             // console.log("ID:----" + UserId)
+
+         $(document).ready(function () {
+          
+
+            viewModel.LoadUserData = function () {
+
+                proWorld.AjaxHelper.GetCall('/Home/LoadUserProfileDetail/' + UserId, onSuccess);
+
+                function onSuccess(result) {
+                    debugger;
+                    if (result.User != null)
+                        viewModel.UserName(result.User.Name);
+                    if (result.UserGeneralInformation != null)
+                        viewModel.Image(result.UserGeneralInformation.Image);
+                    $.each(result.UserPostList, function (index, value) {
+                        viewModel.postsList.push(value);
+                    })
+                    $.each(result.LatestTechnologyBMList, function (index, value) {
+                        viewModel.LatestTechnologyList.push(value);
+                    })
+                    $.each(result.LatestTutorialsBMList, function (index, value) {
+                        viewModel.LatestTutorialList.push(value);
+                    })
+                    console.log(result)
+                }
+            }
+            viewModel.LoadUserData();
+            console.log(viewModel.postList)
+
+        })
+
+        ko.applyBindings(viewModel, document.getElementById('dvUserProfile'))
+    
+       
+    </script>
+
+    @* <script src="~/Scripts/Custom/Proworld.UserProfile.js"></script>*@
+}

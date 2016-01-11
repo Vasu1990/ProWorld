@@ -91,6 +91,10 @@
     <Compile Include="Migrations\201510052016514_changeDT.Designer.cs">
       <DependentUpon>201510052016514_changeDT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510141928047_NewJobField.cs" />
+    <Compile Include="Migrations\201510141928047_NewJobField.Designer.cs">
+      <DependentUpon>201510141928047_NewJobField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
     <Compile Include="Models\Employer.cs" />
@@ -99,6 +103,7 @@
     <Compile Include="Models\Community.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Degree.cs" />
+    <Compile Include="Models\Job.cs" />
     <Compile Include="Models\LatestTechnology.cs" />
     <Compile Include="Models\LatestTutorials.cs" />
     <Compile Include="Models\Lkp_FriendShipStatus.cs" />
@@ -152,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510052016514_changeDT.resx">
       <DependentUpon>201510052016514_changeDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510141928047_NewJobField.resx">
+      <DependentUpon>201510141928047_NewJobField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

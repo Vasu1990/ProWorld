@@ -6,7 +6,8 @@
     var editCommentControls = {};
     var postCommentButton = {};
     var commentTextBox = {};
-    var CommentToBeUpdted = {}; UserPostList
+    var CommentToBeUpdted = {};
+    //UserPostList
     
 
     function SetGlobalElements(clickedEditIcon) {
@@ -152,6 +153,8 @@
     dashVM.IsCommentOwner = function (CommentCreator,CurrentUser) {
         return CommentCreator() === CurrentUser();
     }
+
+
 
     ko.applyBindings(dashVM, $("#dashBoardWrapper")[0]);
 

@@ -269,7 +269,9 @@
     <Compile Include="Areas\Client\ClientAreaRegistration.cs" />
     <Compile Include="Areas\Client\Controllers\ClientHomeController.cs" />
     <Compile Include="Areas\Employer\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Employer\Controllers\JobController.cs" />
     <Compile Include="Areas\Employer\EmployerAreaRegistration.cs" />
+    <Compile Include="Areas\Employer\Models\JobModel.cs" />
     <Compile Include="Areas\Employer\Models\RegisterModel.cs" />
     <Compile Include="Areas\Site\Controllers\HomeController.cs" />
     <Compile Include="Areas\Site\SiteAreaRegistration.cs" />
@@ -301,7 +303,9 @@
     <Content Include="Areas\Employer\Content\css\owl.theme.css" />
     <Content Include="Areas\Employer\Content\css\owl.transitions.css" />
     <Content Include="Areas\Employer\Content\css\style.css" />
+    <Content Include="Areas\Employer\Content\Images\down-arrow.png" />
     <Content Include="Areas\Employer\Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Employer\Scripts\Custom\employer.job.js" />
     <Content Include="Areas\Employer\Scripts\draggable-0.1.js" />
     <Content Include="Areas\Employer\Scripts\job-board.js" />
     <Content Include="Areas\Employer\Scripts\jquery.dependClass-0.1.js" />
@@ -313,6 +317,52 @@
     <Content Include="Areas\Employer\Scripts\owl.carousel.js" />
     <Content Include="Areas\Employer\Scripts\tmpl.js" />
     <Content Include="Areas\Site\.gitignore" />
+    <Content Include="Areas\Site\Content\JobBoard\css\bootstrap.min.css" />
+    <Content Include="Areas\Site\Content\JobBoard\css\jslider.css" />
+    <Content Include="Areas\Site\Content\JobBoard\css\jslider.round.css" />
+    <Content Include="Areas\Site\Content\JobBoard\css\owl.carousel.css" />
+    <Content Include="Areas\Site\Content\JobBoard\css\owl.theme.css" />
+    <Content Include="Areas\Site\Content\JobBoard\css\owl.transitions.css" />
+    <Content Include="Areas\Site\Content\JobBoard\css\style.css" />
+    <Content Include="Areas\Site\Content\JobBoard\font-awesome\css\font-awesome.css" />
+    <Content Include="Areas\Site\Content\JobBoard\font-awesome\fonts\fontawesome-webfont.eot-v=4.0.3.htm" />
+    <Content Include="Areas\Site\Content\JobBoard\font-awesome\fonts\fontawesome-webfont.svg-v=4.0.3.htm" />
+    <Content Include="Areas\Site\Content\JobBoard\font-awesome\fonts\fontawesome-webfont.ttf-v=4.0.3.htm" />
+    <Content Include="Areas\Site\Content\JobBoard\font-awesome\fonts\fontawesome-webfont.woff-v=4.0.3.htm" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\company-1-post.png" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\company-1.png" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\company-2-post.png" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\company-2.png" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\company-3-post.png" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\company-3.png" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\company-4.png" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\company-5.png" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\dummy-about.png" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\dummy-job-open-1.png" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\dummy-job-open-2.png" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\dummy-slide-1.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\dummy-slide-2.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\testimony-image-1.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\testimony-image-10.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\testimony-image-2.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\testimony-image-3.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\testimony-image-4.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\testimony-image-5.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\testimony-image-6.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\testimony-image-7.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\testimony-image-8.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Images\testimony-image-9.jpg" />
+    <Content Include="Areas\Site\Content\JobBoard\Script\bootstrap.min.js" />
+    <Content Include="Areas\Site\Content\JobBoard\Script\draggable-0.1.js" />
+    <Content Include="Areas\Site\Content\JobBoard\Script\job-board.js" />
+    <Content Include="Areas\Site\Content\JobBoard\Script\jquery.dependClass-0.1.js" />
+    <Content Include="Areas\Site\Content\JobBoard\Script\jquery.easytabs.min.js" />
+    <Content Include="Areas\Site\Content\JobBoard\Script\jquery.numberformatter-1.2.3.js" />
+    <Content Include="Areas\Site\Content\JobBoard\Script\jquery.slider.js" />
+    <Content Include="Areas\Site\Content\JobBoard\Script\jshashtable-2.1_src.js" />
+    <Content Include="Areas\Site\Content\JobBoard\Script\modernizr.custom.49511.js" />
+    <Content Include="Areas\Site\Content\JobBoard\Script\owl.carousel.js" />
+    <Content Include="Areas\Site\Content\JobBoard\Script\tmpl.js" />
     <Content Include="Areas\Site\Content\theme\css\awesomefont-style-css.css" />
     <Content Include="Areas\Site\Content\theme\css\font-awesome.min.css" />
     <Content Include="Areas\Site\Content\theme\css\ls-google-fonts-css.css" />
@@ -738,6 +788,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -804,9 +856,11 @@
     <Content Include="Content\themes\custom\Proworldz.dashboard.css" />
     <Content Include="Content\themes\custom\Proworldz.site.css" />
     <Content Include="Content\themes\custom\Proworldz.login.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Images\finallogo.png" />
     <Content Include="Images\No-Image.jpg" />
     <Content Include="Images\plusIcon.png" />
+    <Content Include="Scripts\Custom\Proworld.UserProfile.js" />
     <Content Include="Scripts\Custom\ProWorldz.Friend.js" />
     <Content Include="Scripts\Custom\ProWorldz.People.js" />
     <Content Include="Scripts\Custom\Utility\Proworldz.AjaxHelpers.js" />
@@ -983,11 +1037,21 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Areas\Employer\Views\Web.config" />
     <Content Include="Areas\Employer\Views\Account\Index.cshtml" />
     <Content Include="Areas\Employer\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Employer\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Employer\Views\Account\Register.cshtml" />
+    <Content Include="Areas\Employer\Views\Job\JobPost.cshtml" />
+    <Content Include="Areas\Site\Content\JobBoard\font-awesome\fonts\fontawesome-webfont.eot#iefix-v=4.0.3" />
+    <Content Include="Areas\Site\Content\JobBoard\font-awesome\fonts\fontawesome-webfont.eot-v=4.0.3" />
+    <Content Include="Areas\Site\Content\JobBoard\font-awesome\fonts\fontawesome-webfont.ttf-v=4.0.3" />
+    <Content Include="Areas\Site\Content\JobBoard\font-awesome\fonts\fontawesome-webfont.woff-v=4.0.3" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Areas\Employer\Views\Account\Login.cshtml" />
     <None Include="Properties\PublishProfiles\ProWorld_Published_Code.pubxml" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
@@ -1303,6 +1367,8 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\knockout-3.3.0.debug.js" />
     <Content Include="Scripts\knockout-3.3.0.js" />
     <Content Include="Scripts\knockout.mapping-latest.debug.js" />
@@ -1369,6 +1435,7 @@
     <Content Include="Views\LatestTutorials\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutRegister.cshtml" />
     <Content Include="Views\Account\Resume.cshtml" />
+    <Content Include="Views\Home\UserProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

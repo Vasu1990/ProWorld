@@ -1,0 +1,217 @@
+﻿@model ProWorldz.Web.Areas.Employer.Models.JobModel
+
+<div class="container" id="dvJobPost">
+    <div class="spacer-1">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="post-job-form">
+
+                <h3>Post Job</h3>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="email">Job Headline</label>
+                        <input type="email" class="form-control input" data-bind="value:Job.Headline,valueUpdate: 'afterkeydown'" />
+                       
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="email">Job Role</label>
+                        <input type="email" class="form-control input" data-bind="value:Job.JobRole" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="email">Job Skills</label>
+                        <input type="email" class="form-control input" data-bind="value:Job.JobSkill" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="email">Job Function</label>
+                        <input type="email" class="form-control input" data-bind="value:Job.JobFunction" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="email">Designation</label>
+                        <input type="email" class="form-control input" data-bind="value:Job.Designation" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="jobregion">Country</label>
+                        <select class="form-control" data-bind="options: CountryList, optionsText: 'Name',optionsValue: 'Name', value: Job.CountryId,optionsCaption: 'Choose...'"></select>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="jobregion">State</label>
+                        <select class="form-control" data-bind="options: StateList, optionsText: 'Name',optionsValue:'Name', value: Job.StateId,optionsCaption: 'Choose...'"></select>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="jobregion">City</label>
+                        <select class="form-control" data-bind="options: CityList, optionsText: 'Name',optionsValue:'Name', value: Job.CityId,optionsCaption: 'Choose...'"></select>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="jobregion">Community</label>
+                            <select class="form-control" data-bind="options: CommunityList, optionsText: 'Name',optionsValue:'Name', value: Job.CommunityId,optionsCaption: 'Choose...'"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="jobregion">Sub-Community</label>
+                            <select class="form-control" data-bind="options: SubCommunityList, optionsText: 'Name',optionsValue:'Name', value: Job.SubCommunityId,optionsCaption: 'Choose...'"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Educational Qualification</label>
+                        <input type="email" class="form-control input" data-bind="value:Job.EducationQualification" />
+                    </div>
+                </div>
+                <div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="jobregion"><strong>Experience</strong>&nbsp;&nbsp; Year</label>
+                            <select class="form-control" data-bind="value:Job.ExpYear">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="jobregion">Month</label>
+                            <select class="form-control" data-bind="value:Job.ExpMonth">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="jobregion">Industry</label>
+                        <select class="form-control" data-bind="options: IndustryList, optionsText: 'Name',optionsValue:'Name', value: Job.IndustryId,optionsCaption: 'Choose...'"></select>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="jobregion"><strong>Salary in</strong>&nbsp;&nbsp; Lakhs</label>
+                            <select class="form-control" data-bind="value:Job.SalaryLakhs">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="jobregion">Thousands</label>
+                            <select class="form-control" data-bind="value:Job.SalaryThousands">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Description</label>
+                        <textarea class="form-control textarea" data-bind="value:Job.JobDescription"></textarea>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+                    <label for="email">Posting Date</label>
+                    <input type="email" class="form-control input" data-bind="value:Job.PostingDate" />
+                </div>
+                <div class="col-md-3">
+                    <label for="email">Exp. Date of Advertisement</label>
+                    <input type="email" class="form-control input"  />
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control input" data-bind="value:Job.Email" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="email">Contact Person</label>
+                        <input type="email" class="form-control input" data-bind="value:Job.ContactPerson" />
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="jobregion">Employment Type</label>
+                        <select class="form-control" data-bind="value:Job.EmployementType">
+                            <option value="Permanent">Permanent</option>
+                            <option value="Part">Part Time</option>
+                          
+                        </select>
+                    </div>
+                </div>
+
+
+
+                <div class="clear-fix"></div>
+                <div class="form-group col-md-12 text-center">
+                    <button class="btn btn-default btn-green" data-bind="click: JobPostVM.JobPost">POST JOB</button>
+                </div>
+
+            </div>
+            <div class="spacer-2">&nbsp;</div>
+        </div>
+
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/moment.js"></script>
+    <script>
+
+        var JobPostVM;
+        JobPostVM = ko.mapping.fromJS(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model)));
+
+
+
+    </script>
+    <script src="~/Areas/Employer/Scripts/Custom/employer.job.js"></script>
+   @* @Scripts.Render("~/Areas/Employer/Scripts/Custom/employer.job.js")*@
+
+}
