@@ -1348,6 +1348,7 @@
     <Content Include="Scripts\DatatableScripts\knockout.bindings.dataTables.js" />
     <Content Include="Scripts\DatatableScripts\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\DatatableScripts\knockout.mapping-latest.js" />
+    <None Include="Properties\PublishProfiles\Test.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
