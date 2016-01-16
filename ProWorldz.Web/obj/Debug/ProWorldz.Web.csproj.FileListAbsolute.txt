@@ -667,6 +667,140 @@ C:\Users\Informatrix\Desktop\VasuPro\ProWorld\ProWorldz.Web\bin\zh-Hans\System.S
 C:\Users\Informatrix\Desktop\VasuPro\ProWorld\ProWorldz.Web\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\Informatrix\Desktop\VasuPro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.dll
 C:\Users\Informatrix\Desktop\VasuPro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.pdb
+F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csproj.App.config
+F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csprojResolveAssemblyReference.cache
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll.config
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.pdb
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Antlr3.Runtime.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.AspNet.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.Core.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\EntityFramework.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\EntityFramework.SqlServer.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.CSharp.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Data.Edm.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Data.OData.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Security.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Web.Infrastructure.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Newtonsoft.Json.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Owin.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.BL.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.ComponentModel.DataAnnotations.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Configuration.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Data.DataSetExtensions.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Data.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Drawing.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.EnterpriseServices.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Extensions.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Formatting.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Primitives.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.WebRequest.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Spatial.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Transactions.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Abstractions.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.ApplicationServices.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.DynamicData.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Entity.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Extensions.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Helpers.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.OData.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.WebHost.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Mvc.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Optimization.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Razor.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Routing.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Services.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Deployment.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Razor.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Xml.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Xml.Linq.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\WebGrease.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\WebMatrix.Data.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\WebMatrix.WebData.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.DL.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Org.Mentalis.Security.Cryptography.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Mono.Math.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.BL.pdb
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Antlr3.Runtime.pdb
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.AspNet.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.Core.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\EntityFramework.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\EntityFramework.SqlServer.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Data.Edm.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Data.OData.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Security.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Newtonsoft.Json.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Extensions.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Formatting.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Primitives.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Spatial.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Helpers.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.OData.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.WebHost.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Mvc.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Optimization.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Razor.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Deployment.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Razor.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\WebMatrix.Data.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\WebMatrix.WebData.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.DL.pdb
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Org.Mentalis.Security.Cryptography.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Mono.Math.xml
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\de\Microsoft.Data.Edm.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\es\Microsoft.Data.Edm.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\fr\Microsoft.Data.Edm.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\it\Microsoft.Data.Edm.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ja\Microsoft.Data.Edm.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ko\Microsoft.Data.Edm.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ru\Microsoft.Data.Edm.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\de\Microsoft.Data.OData.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\es\Microsoft.Data.OData.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\fr\Microsoft.Data.OData.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\it\Microsoft.Data.OData.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ja\Microsoft.Data.OData.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ko\Microsoft.Data.OData.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ru\Microsoft.Data.OData.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\de\System.Spatial.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\es\System.Spatial.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\fr\System.Spatial.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\it\System.Spatial.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ja\System.Spatial.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ko\System.Spatial.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ru\System.Spatial.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hans\System.Spatial.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hant\System.Spatial.resources.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.dll
+F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.pdb
 D:\Projects\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll.config
 D:\Projects\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll
 D:\Projects\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.pdb
@@ -801,271 +935,271 @@ D:\Projects\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csproj.App.config
 D:\Projects\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csprojResolveAssemblyReference.cache
 D:\Projects\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.dll
 D:\Projects\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.pdb
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll.config
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.pdb
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Antlr3.Runtime.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.AspNet.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.Core.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\EntityFramework.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\EntityFramework.SqlServer.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.Core.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.CSharp.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Data.Edm.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Data.OData.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Security.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Web.Infrastructure.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Web.WebPages.OAuth.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Newtonsoft.Json.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Owin.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ProWorldz.BL.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.ComponentModel.DataAnnotations.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Configuration.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Data.DataSetExtensions.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Data.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Drawing.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.EnterpriseServices.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Net.Http.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Net.Http.Extensions.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Net.Http.Formatting.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Net.Http.Primitives.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Net.Http.WebRequest.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Spatial.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Transactions.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Abstractions.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.ApplicationServices.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.DynamicData.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Entity.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Extensions.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Helpers.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Http.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Http.OData.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Http.WebHost.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Mvc.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Optimization.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Razor.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Routing.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Services.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Deployment.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Razor.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Xml.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Xml.Linq.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\WebGrease.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\WebMatrix.Data.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\WebMatrix.WebData.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ProWorldz.DL.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Org.Mentalis.Security.Cryptography.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Mono.Math.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ProWorldz.BL.pdb
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Antlr3.Runtime.pdb
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.AspNet.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.Core.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\EntityFramework.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\EntityFramework.SqlServer.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.Core.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Data.Edm.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Data.OData.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Security.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Microsoft.Web.WebPages.OAuth.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Newtonsoft.Json.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Net.Http.Extensions.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Net.Http.Formatting.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Net.Http.Primitives.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Spatial.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Helpers.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Http.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Http.OData.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Http.WebHost.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Mvc.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Optimization.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.Razor.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Deployment.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Razor.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\WebMatrix.Data.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\WebMatrix.WebData.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ProWorldz.DL.pdb
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Org.Mentalis.Security.Cryptography.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\Mono.Math.xml
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\de\Microsoft.Data.Edm.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\es\Microsoft.Data.Edm.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\fr\Microsoft.Data.Edm.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\it\Microsoft.Data.Edm.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ja\Microsoft.Data.Edm.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ko\Microsoft.Data.Edm.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ru\Microsoft.Data.Edm.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\de\Microsoft.Data.OData.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\es\Microsoft.Data.OData.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\fr\Microsoft.Data.OData.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\it\Microsoft.Data.OData.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ja\Microsoft.Data.OData.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ko\Microsoft.Data.OData.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ru\Microsoft.Data.OData.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\zh-Hans\Microsoft.Data.OData.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\zh-Hant\Microsoft.Data.OData.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\de\System.Spatial.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\es\System.Spatial.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\fr\System.Spatial.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\it\System.Spatial.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ja\System.Spatial.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ko\System.Spatial.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\ru\System.Spatial.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\zh-Hans\System.Spatial.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\bin\zh-Hant\System.Spatial.resources.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csproj.App.config
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csprojResolveAssemblyReference.cache
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.dll
-D:\NewVasuRepo\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.pdb
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll.config
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.pdb
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Antlr3.Runtime.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.AspNet.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.Core.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\EntityFramework.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\EntityFramework.SqlServer.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.Core.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.CSharp.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Data.Edm.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Data.OData.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Security.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Web.Infrastructure.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Web.WebPages.OAuth.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Newtonsoft.Json.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Owin.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.BL.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.ComponentModel.DataAnnotations.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Configuration.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Data.DataSetExtensions.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Data.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Drawing.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.EnterpriseServices.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Extensions.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Formatting.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Primitives.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.WebRequest.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Spatial.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Transactions.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Abstractions.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.ApplicationServices.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.DynamicData.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Entity.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Extensions.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Helpers.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.OData.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.WebHost.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Mvc.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Optimization.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Razor.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Routing.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Services.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Deployment.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Razor.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Xml.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Xml.Linq.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\WebGrease.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\WebMatrix.Data.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\WebMatrix.WebData.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.DL.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Org.Mentalis.Security.Cryptography.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Mono.Math.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.BL.pdb
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Antlr3.Runtime.pdb
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.AspNet.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.Core.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\EntityFramework.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\EntityFramework.SqlServer.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.Core.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Data.Edm.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Data.OData.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Security.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Microsoft.Web.WebPages.OAuth.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Newtonsoft.Json.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Extensions.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Formatting.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Net.Http.Primitives.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Spatial.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Helpers.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.OData.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Http.WebHost.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Mvc.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Optimization.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.Razor.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Deployment.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Razor.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\WebMatrix.Data.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\WebMatrix.WebData.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ProWorldz.DL.pdb
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Org.Mentalis.Security.Cryptography.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\Mono.Math.xml
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\de\Microsoft.Data.Edm.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\es\Microsoft.Data.Edm.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\fr\Microsoft.Data.Edm.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\it\Microsoft.Data.Edm.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ja\Microsoft.Data.Edm.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ko\Microsoft.Data.Edm.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ru\Microsoft.Data.Edm.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\de\Microsoft.Data.OData.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\es\Microsoft.Data.OData.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\fr\Microsoft.Data.OData.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\it\Microsoft.Data.OData.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ja\Microsoft.Data.OData.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ko\Microsoft.Data.OData.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ru\Microsoft.Data.OData.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hans\Microsoft.Data.OData.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hant\Microsoft.Data.OData.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\de\System.Spatial.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\es\System.Spatial.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\fr\System.Spatial.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\it\System.Spatial.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ja\System.Spatial.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ko\System.Spatial.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\ru\System.Spatial.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hans\System.Spatial.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\bin\zh-Hant\System.Spatial.resources.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csproj.App.config
-F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csprojResolveAssemblyReference.cache
-F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.dll
-F:\4 AUG pro\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.pdb
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll.config
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.pdb
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Antlr3.Runtime.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.Core.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\EntityFramework.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\EntityFramework.SqlServer.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.CSharp.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Data.Edm.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Data.OData.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Security.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Newtonsoft.Json.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Owin.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.BL.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Configuration.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Data.DataSetExtensions.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Data.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Drawing.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.EnterpriseServices.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Extensions.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Formatting.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Primitives.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.WebRequest.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Spatial.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Transactions.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Abstractions.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.ApplicationServices.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.DynamicData.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Entity.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Extensions.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Helpers.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.OData.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.WebHost.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Mvc.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Optimization.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Razor.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Routing.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Services.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Deployment.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Razor.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Xml.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Xml.Linq.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\WebGrease.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\WebMatrix.Data.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\WebMatrix.WebData.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.DL.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Mono.Math.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.BL.pdb
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Antlr3.Runtime.pdb
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.Core.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\EntityFramework.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\EntityFramework.SqlServer.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Data.Edm.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Data.OData.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Security.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Newtonsoft.Json.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Extensions.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Formatting.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Primitives.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Spatial.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Helpers.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.OData.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.WebHost.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Mvc.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Optimization.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Razor.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Deployment.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Razor.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\WebMatrix.Data.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\WebMatrix.WebData.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.DL.pdb
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Mono.Math.xml
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\de\Microsoft.Data.Edm.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\es\Microsoft.Data.Edm.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\it\Microsoft.Data.Edm.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\de\Microsoft.Data.OData.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\es\Microsoft.Data.OData.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\fr\Microsoft.Data.OData.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\it\Microsoft.Data.OData.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ja\Microsoft.Data.OData.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ko\Microsoft.Data.OData.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ru\Microsoft.Data.OData.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\de\System.Spatial.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\es\System.Spatial.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\fr\System.Spatial.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\it\System.Spatial.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ja\System.Spatial.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ko\System.Spatial.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ru\System.Spatial.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hans\System.Spatial.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hant\System.Spatial.resources.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csproj.App.config
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csprojResolveAssemblyReference.cache
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.dll
+D:\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.pdb
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll.config
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.Web.pdb
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Antlr3.Runtime.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.Core.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\EntityFramework.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\EntityFramework.SqlServer.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.CSharp.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Data.Edm.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Data.OData.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Security.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Newtonsoft.Json.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Owin.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.BL.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Configuration.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Data.DataSetExtensions.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Data.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Drawing.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.EnterpriseServices.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Extensions.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Formatting.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Primitives.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.WebRequest.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Spatial.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Transactions.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Abstractions.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.ApplicationServices.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.DynamicData.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Entity.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Extensions.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Helpers.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.OData.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.WebHost.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Mvc.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Optimization.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Razor.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Routing.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Services.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Razor.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Xml.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Xml.Linq.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\WebGrease.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\WebMatrix.Data.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\WebMatrix.WebData.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.DL.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Mono.Math.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.BL.pdb
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Antlr3.Runtime.pdb
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.Core.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\EntityFramework.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\EntityFramework.SqlServer.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Data.Edm.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Data.OData.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Owin.Security.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Newtonsoft.Json.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Extensions.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Formatting.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Net.Http.Primitives.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Spatial.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Helpers.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.OData.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Http.WebHost.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Mvc.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Optimization.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.Razor.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\System.Web.WebPages.Razor.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\WebMatrix.Data.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\WebMatrix.WebData.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ProWorldz.DL.pdb
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\Mono.Math.xml
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\de\Microsoft.Data.OData.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\es\Microsoft.Data.OData.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\it\Microsoft.Data.OData.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\de\System.Spatial.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\es\System.Spatial.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\fr\System.Spatial.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\it\System.Spatial.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ja\System.Spatial.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ko\System.Spatial.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\ru\System.Spatial.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hans\System.Spatial.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\bin\zh-Hant\System.Spatial.resources.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csproj.App.config
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.csprojResolveAssemblyReference.cache
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.dll
+D:\Proworld_Archive\proworld06Sept\ProWorld\ProWorld\ProWorldz.Web\obj\Debug\ProWorldz.Web.pdb

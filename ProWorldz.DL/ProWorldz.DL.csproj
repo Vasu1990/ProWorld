@@ -95,6 +95,10 @@
     <Compile Include="Migrations\201510141928047_NewJobField.Designer.cs">
       <DependentUpon>201510141928047_NewJobField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601111832309_IsCurrent.cs" />
+    <Compile Include="Migrations\201601111832309_IsCurrent.Designer.cs">
+      <DependentUpon>201601111832309_IsCurrent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
     <Compile Include="Models\Employer.cs" />
@@ -160,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510141928047_NewJobField.resx">
       <DependentUpon>201510141928047_NewJobField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601111832309_IsCurrent.resx">
+      <DependentUpon>201601111832309_IsCurrent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

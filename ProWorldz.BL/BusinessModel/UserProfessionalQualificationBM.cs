@@ -32,6 +32,12 @@ namespace ProWorldz.BL.BusinessModel
 
         public string Skill { get; set; }
 
+      //  public string Specialization { get; set; }
+
+        public bool IsCurrentJob { get; set; }
+
+
+
         public UserProfessionalQualificationBM()
         {
             StartDate = DateTime.Now.Date;
