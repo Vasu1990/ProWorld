@@ -373,6 +373,27 @@ namespace ProWorldz.Web.Controllers
             return Json(Model, JsonRequestBehavior.AllowGet);
 
         }
+       
+        public JsonResult UserBlock(int Id)
+        {
+            UserBlockBL UserBlockBL = new UserBlockBL();
+            UserBlockBM UserBlockBM = new UserBlockBM();
+             UserBM userObj = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+             if (userObj != null)
+             {
+                 UserBlockBM.CurrentUserId = userObj.Id;
+                 UserBlockBM.ShareUserId = Id;
+                 UserBlockBM.IsBlock = true;
+                 UserBlockBM.CreationDate = DateTime.Now;
+                 UserBlockBM.CreatedBy = userObj.Id;
+                 UserBlockBL.Create(UserBlockBM);
+                 return Json("User Block Successfully.", JsonRequestBehavior.AllowGet);
+             }
+             else
+             {
+                 return Json("Error-Please Login.", JsonRequestBehavior.AllowGet);
+             }
+        }
 
     }
 }

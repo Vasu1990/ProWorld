@@ -78,9 +78,9 @@
                
                     <li style="margin-left: 200px;">
                         <br />
-                        <button class="btn btn-default">Block</button>
-                        <button class="btn btn-primary">Share Contact Detail</button>
-                        <button class="btn btn-success">Follow</button>
+                        <button class="btn btn-default" onclick="UserBlock();">Block</button>
+                        <button class="btn btn-primary" onclick="ShareContactDetail();">Share Contact Detail</button>
+                        <button class="btn btn-success" onclick="UserFollow();">Follow</button>
                     </li>
                 }
 
@@ -212,6 +212,14 @@
         function showHideUserPosts() {
             $("#dvUserPosts").show();
             $("#dvUserInfo").hide();
+        }
+
+        function UserBlock() {
+            var Id = '@ViewBag.Id';
+            $.get('/Home/UserBlock/' + Id, function (data) {
+                debugger;
+                alert(data)
+            })
         }
 
     </script>

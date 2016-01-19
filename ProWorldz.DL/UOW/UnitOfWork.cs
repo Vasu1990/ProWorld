@@ -53,6 +53,30 @@ namespace ProWorldz.DL.UOW
 
         private IRepository<Job> jobRepository { get; set; }
 
+        private IRepository<UserBlock> userBlockRepository { get; set; }
+
+        private IRepository<ShareContactDetail> shareContactDetailRepository { get; set; }
+
+        public IRepository<UserBlock> UserBlockRepository
+        {
+            get
+            {
+                if (userBlockRepository == null)
+                    userBlockRepository = new GenericRepository<UserBlock>(Context);
+                return userBlockRepository;
+            }
+        }
+
+        public IRepository<ShareContactDetail> ShareContactDetailRepository
+        {
+            get
+            {
+                if (shareContactDetailRepository == null)
+                    shareContactDetailRepository = new GenericRepository<ShareContactDetail>(Context);
+                return shareContactDetailRepository;
+            }
+        }
+
         public IRepository<Job> JobRepository
         {
             get

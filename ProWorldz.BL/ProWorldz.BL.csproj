@@ -79,8 +79,10 @@
     <Compile Include="BusinessLayer\MasterFilePathBL.cs" />
     <Compile Include="BusinessLayer\MasterModuleTypeDataBL.cs" />
     <Compile Include="BusinessLayer\MasterUrlBL.cs" />
+    <Compile Include="BusinessLayer\ShareContactDetailBL.cs" />
     <Compile Include="BusinessLayer\StateBL.cs" />
     <Compile Include="BusinessLayer\UserBL.cs" />
+    <Compile Include="BusinessLayer\UserBlockBL.cs" />
     <Compile Include="BusinessLayer\UserGeneralInformationBL.cs" />
     <Compile Include="BusinessLayer\UserPersonalInformationBL.cs" />
     <Compile Include="BusinessLayer\UserPostBL.cs" />
@@ -107,7 +109,9 @@
     <Compile Include="BusinessModel\MasterModuleTypeDataBM.cs" />
     <Compile Include="BusinessModel\MasterUrlBM.cs" />
     <Compile Include="BusinessModel\PostBM.cs" />
+    <Compile Include="BusinessModel\ShareContactDetailBM.cs" />
     <Compile Include="BusinessModel\StateBM.cs" />
+    <Compile Include="BusinessModel\UserBlockBM.cs" />
     <Compile Include="BusinessModel\UserBM.cs" />
     <Compile Include="BusinessModel\UserGeneralInformationBM.cs" />
     <Compile Include="BusinessModel\UserPersonalInformationBM.cs" />

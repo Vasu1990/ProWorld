@@ -95,9 +95,13 @@
     <Compile Include="Migrations\201510141928047_NewJobField.Designer.cs">
       <DependentUpon>201510141928047_NewJobField.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601111832309_IsCurrent.cs" />
-    <Compile Include="Migrations\201601111832309_IsCurrent.Designer.cs">
-      <DependentUpon>201601111832309_IsCurrent.cs</DependentUpon>
+    <Compile Include="Migrations\201601161913115_AddIsCurrentJobField.cs" />
+    <Compile Include="Migrations\201601161913115_AddIsCurrentJobField.Designer.cs">
+      <DependentUpon>201601161913115_AddIsCurrentJobField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601191926553_UserBlockAndShareContactDetail.cs" />
+    <Compile Include="Migrations\201601191926553_UserBlockAndShareContactDetail.Designer.cs">
+      <DependentUpon>201601191926553_UserBlockAndShareContactDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
@@ -119,8 +123,10 @@
     <Compile Include="Models\MasterUrl.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostComment.cs" />
+    <Compile Include="Models\ShareContactDetail.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserBlock.cs" />
     <Compile Include="Models\UserGeneralInfomation.cs" />
     <Compile Include="Models\UserLanguage.cs" />
     <Compile Include="Models\UserPersonalInfomation.cs" />
@@ -165,8 +171,11 @@
     <EmbeddedResource Include="Migrations\201510141928047_NewJobField.resx">
       <DependentUpon>201510141928047_NewJobField.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601111832309_IsCurrent.resx">
-      <DependentUpon>201601111832309_IsCurrent.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601161913115_AddIsCurrentJobField.resx">
+      <DependentUpon>201601161913115_AddIsCurrentJobField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601191926553_UserBlockAndShareContactDetail.resx">
+      <DependentUpon>201601191926553_UserBlockAndShareContactDetail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

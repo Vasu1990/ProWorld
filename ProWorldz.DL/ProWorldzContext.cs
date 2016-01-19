@@ -60,6 +60,10 @@ namespace ProWorldz.DL
 
         public DbSet<UserResume> UserResume { get; set; }
         public DbSet<MasterModuleTypeData> MasterModuleTypeData { get; set; }
+
+
+        public DbSet<UserBlock> UserBlock { get; set; }
+        public DbSet<ShareContactDetail> ShareContactDetail { get; set; }
         
         
 
