@@ -22,26 +22,28 @@ namespace ProWorldz.Web.Controllers
         UserProfessionalQualificationBL UserProfessionalQualificationBL = new BL.BusinessLayer.UserProfessionalQualificationBL();
         UserQualificationBL UserQualificationBL = new BL.BusinessLayer.UserQualificationBL();
 
-        public UserBM CurrentUser { 
-            get{
+        public UserBM CurrentUser
+        {
+            get
+            {
                 return SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             }
         }
 
 
-        public ActionResult UserProfile(int Id=0)
+        public ActionResult UserProfile(int Id = 0)
         {
             ViewBag.UserId = Id;
             return View();
 
         }
 
-        
+
         [HttpGet]
         public JsonResult GetUserProfileData(int Id)
         {
-            LatestTechnologyBL latestTechnologyBL=new LatestTechnologyBL();
-            LatestTutorialsBL latestTutorialsBL=new LatestTutorialsBL();
+            LatestTechnologyBL latestTechnologyBL = new LatestTechnologyBL();
+            LatestTutorialsBL latestTutorialsBL = new LatestTutorialsBL();
             UserBM user = UserBL.GetUserById(Id);
             List<UserPostBM> postList = UserPostBL.GetUserPost().Where(a => a.UserId == Id).ToList();
             List<LatestTechnologyBM> lstTechnology = latestTechnologyBL.GetTechnologyByUserId(Id);
@@ -73,11 +75,11 @@ namespace ProWorldz.Web.Controllers
         }
 
         [Authorize]
-        public ActionResult Dashboard(int Id=0)
+        public ActionResult Dashboard(int Id = 0)
         {
             PostCommentModel model = new PostCommentModel();
             UserPostBL blObj = new UserPostBL();
-            model.UserPostList = blObj.GetUserPost().OrderByDescending(p=>p.CreationDate).Take(10).ToList();
+            model.UserPostList = blObj.GetUserPost().OrderByDescending(p => p.CreationDate).Take(10).ToList();
             ViewBag.Id = Id;
 
             UserBL userBL = new BL.BusinessLayer.UserBL();
@@ -147,7 +149,7 @@ namespace ProWorldz.Web.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult NewPost(PostCommentModel Model,FormCollection collection)
+        public ActionResult NewPost(PostCommentModel Model, FormCollection collection)
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             string type = collection["type"].ToString();
@@ -221,11 +223,11 @@ namespace ProWorldz.Web.Controllers
         {
             return View();
         }
-     
+
         [HttpPost]
         public JsonResult GetFriends(GlobalSearchText GlobalSearchText, int RecordsToTake, int RecordsToSkip, List<DataTableConfig> Columns)
         {
-            
+
 
             FriendBL frndBL = new FriendBL();
             List<FriendBM> lsFrndBM = new List<FriendBM>();
@@ -237,20 +239,20 @@ namespace ProWorldz.Web.Controllers
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
 
             lsFrndBM = frndBL.GetFriendListById(CurrentUser.Id, param);
-            
+
             return Json(lsFrndBM);
         }
         public JsonResult GetTotalFriendCount()
         {
             FriendBL frndBL = new FriendBL();
-            return Json(frndBL.GetFriendCountById(CurrentUser.Id),JsonRequestBehavior.AllowGet);
+            return Json(frndBL.GetFriendCountById(CurrentUser.Id), JsonRequestBehavior.AllowGet);
         }
 
         public void AddFriend(FriendBM frnd)
         {
             FriendBL frnbl = new FriendBL();
             List<FriendBM> lsFrndReq = new List<FriendBM>();
-            
+
             frnd.CreationDate = DateTime.Now;
             frnd.FriendShipStatusId = (int)FriendShipStatus.Pending;
             lsFrndReq.Add(frnd);
@@ -258,7 +260,7 @@ namespace ProWorldz.Web.Controllers
 
             //cast list to ienumearble call create Friend req
             frnbl.CreateFriendrequest(lsFrndReq);
-            
+
         }
 
         public void DeleteFriend(FriendBM frnd)
@@ -287,7 +289,7 @@ namespace ProWorldz.Web.Controllers
         public void ConfirmRequest(FriendBM frnd)
         {
             FriendBL frnbl = new FriendBL();
-            
+
 
             //cast list to ienumearble call create Friend req
             frnbl.ConfirmFriendRequest(frnd);
@@ -295,7 +297,7 @@ namespace ProWorldz.Web.Controllers
 
         public JsonResult GetUserCountByName(string SearchTable)
         {
-            string SearchBy = SearchTable == "" ?  SessionManager.InstanceCreator.Get<string>("SearchText").ToString() : SearchTable;
+            string SearchBy = SearchTable == "" ? SessionManager.InstanceCreator.Get<string>("SearchText").ToString() : SearchTable;
             FriendBL frndBL = new FriendBL();
             string _searchtext = SearchBy;
 
@@ -314,14 +316,14 @@ namespace ProWorldz.Web.Controllers
             List<FriendBM> people = new List<FriendBM>();
 
             string _searchtext = GlobalSearchText.value != null ? GlobalSearchText.value : SessionManager.InstanceCreator.Get<string>("SearchText").ToString();
-            
+
             FriendBL frnd = new FriendBL();
-                  DataTableParams param = new DataTableParams();
-                    param.RecordsToSkip = RecordsToSkip;
-                    param.RecordsToTake = RecordsToTake;
-                    param.SearchOptions = GlobalSearchText;
-                    param.ColumnConfiguration = Columns;
-                    people = frnd.GetUsersWithFriendStatus(_searchtext, CurrentUser.Id, param);
+            DataTableParams param = new DataTableParams();
+            param.RecordsToSkip = RecordsToSkip;
+            param.RecordsToTake = RecordsToTake;
+            param.SearchOptions = GlobalSearchText;
+            param.ColumnConfiguration = Columns;
+            people = frnd.GetUsersWithFriendStatus(_searchtext, CurrentUser.Id, param);
             return Json(people);
         }
 
@@ -329,8 +331,8 @@ namespace ProWorldz.Web.Controllers
         public JsonResult GetFriendequests()
         {
             FriendBL frnd = new FriendBL();
-            return Json(frnd.GetNewFriends(CurrentUser.Id),JsonRequestBehavior.AllowGet);
-            
+            return Json(frnd.GetNewFriends(CurrentUser.Id), JsonRequestBehavior.AllowGet);
+
         }
 
         [HttpGet]
@@ -341,7 +343,7 @@ namespace ProWorldz.Web.Controllers
 
         }
 
-        
+
         public JsonResult CheckMail(string email)
         {
             UserBM User = UserBL.GetUsers().Where(p => p.Email == email).FirstOrDefault();
@@ -353,12 +355,12 @@ namespace ProWorldz.Web.Controllers
 
         public JsonResult LoadUserProfileDetail(int Id)
         {
-            LatestTechnologyBL latestTechnologyBL=new BL.BusinessLayer.LatestTechnologyBL();
+            LatestTechnologyBL latestTechnologyBL = new BL.BusinessLayer.LatestTechnologyBL();
             UserPostBL userPostBL = new BL.BusinessLayer.UserPostBL();
             FriendBL friendBL = new FriendBL();
 
-            
-            LatestTutorialsBL LatestTutorialsBL=new BL.BusinessLayer.LatestTutorialsBL();
+
+            LatestTutorialsBL LatestTutorialsBL = new BL.BusinessLayer.LatestTutorialsBL();
             UserProfileModel Model = new UserProfileModel();
             Model.User = UserBL.GetUserById(Id);
             Model.UserGeneralInformation = UserGeneralInformationBL.GetGeneralInformationByUserId(Id);
@@ -373,26 +375,96 @@ namespace ProWorldz.Web.Controllers
             return Json(Model, JsonRequestBehavior.AllowGet);
 
         }
-       
+
         public JsonResult UserBlock(int Id)
         {
             UserBlockBL UserBlockBL = new UserBlockBL();
             UserBlockBM UserBlockBM = new UserBlockBM();
-             UserBM userObj = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
-             if (userObj != null)
-             {
-                 UserBlockBM.CurrentUserId = userObj.Id;
-                 UserBlockBM.ShareUserId = Id;
-                 UserBlockBM.IsBlock = true;
-                 UserBlockBM.CreationDate = DateTime.Now;
-                 UserBlockBM.CreatedBy = userObj.Id;
-                 UserBlockBL.Create(UserBlockBM);
-                 return Json("User Block Successfully.", JsonRequestBehavior.AllowGet);
-             }
-             else
-             {
-                 return Json("Error-Please Login.", JsonRequestBehavior.AllowGet);
-             }
+            UserBM userObj = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            if (userObj != null)
+            {
+                UserBlockBM = UserBlockBL.GetUserBlockByUserIdAndSharedUserId(userObj.Id, Id);
+                if (UserBlockBM == null)
+                {
+                    UserBlockBM.CurrentUserId = userObj.Id;
+                    UserBlockBM.ShareUserId = Id;
+                    UserBlockBM.IsBlock = true;
+                    UserBlockBM.CreationDate = DateTime.Now;
+                    UserBlockBM.CreatedBy = userObj.Id;
+                    UserBlockBL.Create(UserBlockBM);
+                    return Json("Changes Saved Successfully.", JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    if (UserBlockBM.IsBlock)
+                        UserBlockBM.IsBlock = false;
+                    else
+                        UserBlockBM.IsBlock = true;
+                    UserBlockBL.Update(UserBlockBM);
+                    return Json("Changes Saved Successfully.", JsonRequestBehavior.AllowGet);
+                }
+            }
+            else
+            {
+                return Json("Error-Please Login.", JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public JsonResult UserFollow(int Id)
+        {
+            UserBlockBL UserBlockBL = new UserBlockBL();
+            UserBlockBM UserBlockBM = new UserBlockBM();
+            UserBM userObj = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            if (userObj != null)
+            {
+                UserBlockBM = UserBlockBL.GetUserBlockByUserIdAndSharedUserId(userObj.Id, Id);
+                if (UserBlockBM == null)
+                {
+                    UserBlockBM.CurrentUserId = userObj.Id;
+                    UserBlockBM.ShareUserId = Id;
+                    UserBlockBM.IsFollow = true;
+                    UserBlockBM.CreationDate = DateTime.Now;
+                    UserBlockBM.CreatedBy = userObj.Id;
+                    UserBlockBL.Create(UserBlockBM);
+                    return Json("Changes Saved Successfully.", JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    if (UserBlockBM.IsFollow)
+                        UserBlockBM.IsFollow = false;
+                    else
+                        UserBlockBM.IsFollow = true;
+                    UserBlockBL.Update(UserBlockBM);
+                    return Json("Changes Saved Successfully.", JsonRequestBehavior.AllowGet);
+                }
+            }
+            else
+            {
+                return Json("Error-Please Login.", JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public JsonResult ShareContactDetail(int Id, string Message)
+        {
+            ShareContactDetailBL shareContactDetailBL = new ShareContactDetailBL();
+            ShareContactDetailBM shareContactDetailBM = new ShareContactDetailBM();
+            UserBM userObj = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+            if (userObj != null)
+            {
+                shareContactDetailBM.CurrentUserId = userObj.Id;
+                shareContactDetailBM.ShareUserId = Id;
+                shareContactDetailBM.Message = Message;
+                shareContactDetailBM.CreatedBy = userObj.Id;
+                shareContactDetailBM.CreationDate = DateTime.Now;
+                shareContactDetailBL.Create(shareContactDetailBM);
+                return Json("Changes Saved Successfully.", JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+
+                return Json("Error-Please Login.", JsonRequestBehavior.AllowGet);
+            }
+
         }
 
     }

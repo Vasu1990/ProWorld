@@ -79,7 +79,7 @@
                     <li style="margin-left: 200px;">
                         <br />
                         <button class="btn btn-default" onclick="UserBlock();">Block</button>
-                        <button class="btn btn-primary" onclick="ShareContactDetail();">Share Contact Detail</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Share Contact Detail</button>
                         <button class="btn btn-success" onclick="UserFollow();">Follow</button>
                     </li>
                 }
@@ -188,13 +188,44 @@
     </div>
 
 
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Share Detail</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Send Your Detail along with Message.</p>
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <label for="exampleInputFirstName">Message</label>
+                            <textarea class="form-control" rows="3" cols="5" placeholder="Message" id="txtMessage"></textarea>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="ShareContactDetail();">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     @*<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>*@
 </div>
-@if (ViewBag.Id != 0) 
+@if (ViewBag.Id != 0)
 { 
-<div id="dvUserInfo">
-    @{Html.RenderAction("UserProfile", "Home", new { Id = ViewBag.Id });}
-</div>
+    <div id="dvUserInfo">
+        @{Html.RenderAction("UserProfile", "Home", new { Id = ViewBag.Id });}
+    </div>
 }
 
 
@@ -222,10 +253,29 @@
             })
         }
 
+
+        function UserFollow() {
+            var Id = '@ViewBag.Id';
+            $.get('/Home/UserFollow/' + Id, function (data) {
+                debugger;
+                alert(data)
+            })
+        }
+        function ShareContactDetail() {
+            var Id = '@ViewBag.Id';
+            var Message = $("#txtMessage").val();
+            $.post('/Home/ShareContactDetail?Id=' + Id + '&Message=' + Message, function (data) {
+                debugger;
+                alert(data);
+                $("#myModal").modal('hide')
+                window.location.href = window.location.href;
+            })
+        }
+
     </script>
     @Scripts.Render("~/Scripts/Custom/ProWorldz.UserDashboard.js")
 
 
-    
+
 
 }

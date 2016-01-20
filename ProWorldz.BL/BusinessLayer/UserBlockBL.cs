@@ -28,6 +28,11 @@ namespace ProWorldz.BL.BusinessLayer
         {
             return uow.UserBlockRepository.GetAll().ConvertAll<UserBlockBM>(new Converter<UserBlock, UserBlockBM>(ConvertToBM));
         }
+
+        public UserBlockBM GetUserBlockByUserIdAndSharedUserId(int UserId,int ShareUserId)
+        {
+            return ConvertToBM(uow.UserBlockRepository.Find(a => a.CurrentUserId == UserId && a.ShareUserId == ShareUserId).FirstOrDefault());
+        }
         //public List<UserBlockBM> GetUserBlockByUserId(int Id)
         //{
         //    return uow.UserBlockRepository.Find(a => a.StateId == Id).ConvertAll<UserBlockBM>(new Converter<UserBlock, UserBlockBM>(ConvertToBM));
