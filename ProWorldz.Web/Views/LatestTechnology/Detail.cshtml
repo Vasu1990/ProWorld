@@ -1,7 +1,27 @@
-﻿
+﻿@model ProWorldz.Web.Models.LatestTechnologyModel
 @{
     ViewBag.Title = "Detail";
 }
 
-<h2>Detail</h2>
 
+
+<div class="row">
+    <div>
+        <h3 class="title cursor" id="createPost">
+
+            Tutorial Detail
+        </h3>
+    </div>
+
+    <div class="panel panel-default padding-All30">
+
+        @Model.Subject
+
+        @Model.Topic
+
+        @Html.Raw(Model.Content)
+    </div>
+
+
+
+</div>
