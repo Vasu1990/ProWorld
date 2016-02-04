@@ -1,0 +1,63 @@
+﻿@model ProWorldz.Web.Models.ShareContactDetailModel
+
+
+    
+<div class="row">
+    <div>
+        <h3 class="title cursor" id="createPost">
+            <i class="fa fa-fw fa-plus-circle"></i>
+            Buissness Card
+        </h3>
+
+
+      
+    </div>
+    
+
+    <div class="panel panel-default padding-All30">
+        <!-- Data table -->
+        <table data-toggle="data-table" class="table table-bordered table-hover table-responsive table-striped" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Community</th>
+                    <th>Sub-Community</th>
+
+                     <th>Message</th>
+                     <th>Email</th>
+                     <th>Phone</th>
+                     <th>Company</th>
+
+
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ShareContactDetailList)
+                {
+                    <tr>
+                        <td>@item.userBM.Name</td>
+                        <td>@item.userBM.CommunityName</td>
+                        <td>@item.userBM.SubCommunityName</td>
+                        <td>@item.Message</td>
+
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Company</td>
+                       
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+</div>
+@section scripts{
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    @Scripts.Render("~/Scripts/Custom/ProWorldz.UserPost.js")
+}
