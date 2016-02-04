@@ -1438,6 +1438,8 @@
     <Content Include="Views\Account\Resume.cshtml" />
     <Content Include="Views\Home\UserProfile.cshtml" />
     <Content Include="Views\Home\ShareDetail.cshtml" />
+    <Content Include="Views\LatestTechnology\Detail.cshtml" />
+    <Content Include="Views\LatestTutorials\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

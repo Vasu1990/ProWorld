@@ -36,6 +36,9 @@ namespace ProWorldz.DL.Models
 
         public bool IsActive { get; set; }
 
+        public int EarnPoint { get; set; }
+
+
         public virtual User User { get; set; }
     }
 }

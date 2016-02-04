@@ -26,13 +26,15 @@ namespace ProWorldz.DL.Models
 
         public string Topic { get; set; }
 
-       // public string Content { get; set; }
+        public string Content { get; set; }
 
-       // public string Url { get; set; }
+        public string Url { get; set; }
 
         public string VideoUrl { get; set; }
 
-       // public string FilePath { get; set; }
+        public string FilePath { get; set; }
+
+        public int EarnPoint { get; set; }
 
         public bool IsActive { get; set; }
 

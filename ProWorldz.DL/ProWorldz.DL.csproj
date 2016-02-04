@@ -103,9 +103,13 @@
     <Compile Include="Migrations\201601191926553_UserBlockAndShareContactDetail.Designer.cs">
       <DependentUpon>201601191926553_UserBlockAndShareContactDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601251816066_addPostField.cs" />
-    <Compile Include="Migrations\201601251816066_addPostField.Designer.cs">
-      <DependentUpon>201601251816066_addPostField.cs</DependentUpon>
+    <Compile Include="Migrations\201602040954109_newFields.cs" />
+    <Compile Include="Migrations\201602040954109_newFields.Designer.cs">
+      <DependentUpon>201602040954109_newFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602040957431_AddEarnPointField.cs" />
+    <Compile Include="Migrations\201602040957431_AddEarnPointField.Designer.cs">
+      <DependentUpon>201602040957431_AddEarnPointField.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
@@ -181,8 +185,11 @@
     <EmbeddedResource Include="Migrations\201601191926553_UserBlockAndShareContactDetail.resx">
       <DependentUpon>201601191926553_UserBlockAndShareContactDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601251816066_addPostField.resx">
-      <DependentUpon>201601251816066_addPostField.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602040954109_newFields.resx">
+      <DependentUpon>201602040954109_newFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602040957431_AddEarnPointField.resx">
+      <DependentUpon>201602040957431_AddEarnPointField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

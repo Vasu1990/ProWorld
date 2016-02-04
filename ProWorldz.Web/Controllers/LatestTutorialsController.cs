@@ -44,6 +44,7 @@ namespace ProWorldz.Web.Controllers
                 latestTutorialsBM.Tag = Model.LatestTutorialsBM.Tag;
                 latestTutorialsBM.Subject = Model.LatestTutorialsBM.Subject;
                 latestTutorialsBM.Topic = Model.LatestTutorialsBM.Topic;
+                latestTutorialsBM.EarnPoint = 1;
                 // latestTechnologyBM.Content = Model.latestTechnologyBM.Content;
                 // latestTechnologyBM.Url = Model.latestTechnologyBM.Url;
                 //latestTechnologyBM.VideoUrl = Model.latestTechnologyBM.VideoUrl;
@@ -93,6 +94,15 @@ namespace ProWorldz.Web.Controllers
                 TempData["Error"] = "Please Login.";
             }
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Detail(int Id)
+        {
+            LatestTutorialsModel Model = new LatestTutorialsModel();
+            LatestTutorialsBM latestTutorialsBM = new LatestTutorialsBM();
+            latestTutorialsBM = LatestTutorialsBL.GetTechnologyById(Id);
+            Model.LatestTutorialsBM = latestTutorialsBM;
+            return View(Model);
         }
 
     }

@@ -28,6 +28,33 @@ namespace ProWorldz.BL.BusinessLayer
         }
 
 
+
+        public int GetEarnPoints(int userId)
+        {
+            LatestTutorialsBL latestTutorialBL = new LatestTutorialsBL();
+
+            List<LatestTechnologyBM> LatestTechnologyList=new List<LatestTechnologyBM>();
+
+            List<LatestTutorialsBM> LatestTutorialsList = new List<LatestTutorialsBM>();
+
+            LatestTechnologyList = this.GetTechnologyByUserId(userId);
+
+
+
+            LatestTutorialsList = latestTutorialBL.GetTechnologyByUserId(userId);
+
+
+
+            int points = 0;
+            points = LatestTechnologyList.Sum(a => a.EarnPoint);
+
+            points+=LatestTutorialsList.Sum(a => a.EarnPoint);
+            return points;
+        }
+
+
+
+
         public List<LatestTechnologyBM> GetLatestTechnology()
         {
             return uow.LatestTechnologyRepository.GetAll().ConvertAll<LatestTechnologyBM>(new Converter<LatestTechnology, LatestTechnologyBM>(ConvertToBM));
@@ -75,6 +102,8 @@ namespace ProWorldz.BL.BusinessLayer
 
                 FilePath = model.FilePath,
 
+                EarnPoint=model.EarnPoint,
+
                 IsActive = model.IsActive
 
             };
@@ -103,6 +132,8 @@ namespace ProWorldz.BL.BusinessLayer
                 Url = model.Url,
 
                 VideoUrl = model.VideoUrl,
+
+                EarnPoint = model.EarnPoint,
 
                 FilePath = model.FilePath,
 

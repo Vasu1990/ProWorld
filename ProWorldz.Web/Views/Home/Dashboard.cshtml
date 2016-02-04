@@ -29,6 +29,10 @@
                             <i class="fa fa-book fa-fw"></i>
                             <span data-bind="text:User.SubCommunityName"></span>
                         </div>
+                        <div class="margin-bottom7">
+                           
+                            <span id="dvEarnPoints"></span>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="row">
@@ -243,6 +247,10 @@
     <script>
         var UserDashboardVM = ko.mapping.fromJS(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model)));
 
+
+        $(document).ready(function () {
+            EarnPoints();
+        })
         function showHideUserInfo() {
             $("#dvUserPosts").hide();
             $("#dvUserInfo").show();
@@ -277,6 +285,16 @@
                 alert(data);
                 $("#myModal").modal('hide')
                 window.location.href = window.location.href;
+            })
+        }
+
+
+        function EarnPoints() {
+          
+            $.get('/LatestTechnology/GetEarnPoints/', function (data) {
+              
+                alert(data)
+                document.getElementById('dvEarnPoints').innerHTML = 'Earn Points' + data;
             })
         }
 

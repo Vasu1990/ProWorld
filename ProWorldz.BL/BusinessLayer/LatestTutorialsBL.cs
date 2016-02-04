@@ -66,13 +66,15 @@ namespace ProWorldz.BL.BusinessLayer
 
                 Topic = model.Topic,
 
-               // Content = model.Content,
+                Content = model.Content,
 
-                //Url = model.Url,
+                Url = model.Url,
 
                 VideoUrl = model.VideoUrl,
 
-                //FilePath = model.FilePath,
+                FilePath = model.FilePath,
+
+                EarnPoint=model.EarnPoint,
 
                 IsActive = model.IsActive
 
@@ -97,13 +99,15 @@ namespace ProWorldz.BL.BusinessLayer
 
                 Topic = model.Topic,
 
-                //Content = model.Content,
+                Content = model.Content,
 
-                //Url = model.Url,
+                Url = model.Url,
 
                 VideoUrl = model.VideoUrl,
 
-                //FilePath = model.FilePath,
+                FilePath = model.FilePath,
+
+                EarnPoint = model.EarnPoint,
 
                 IsActive = model.IsActive
 

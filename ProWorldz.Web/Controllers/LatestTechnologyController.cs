@@ -44,6 +44,7 @@ namespace ProWorldz.Web.Controllers
                 latestTechnologyBM.Tag = Model.latestTechnologyBM.Tag;
                 latestTechnologyBM.Subject = Model.latestTechnologyBM.Subject;
                 latestTechnologyBM.Topic = Model.latestTechnologyBM.Topic;
+                latestTechnologyBM.EarnPoint = 1;
                 // latestTechnologyBM.Content = Model.latestTechnologyBM.Content;
                 // latestTechnologyBM.Url = Model.latestTechnologyBM.Url;
                 //latestTechnologyBM.VideoUrl = Model.latestTechnologyBM.VideoUrl;
@@ -93,6 +94,33 @@ namespace ProWorldz.Web.Controllers
                 TempData["Error"] = "Please Login.";
             }
             return RedirectToAction("Index");
+        }
+
+
+        [HttpGet]
+        public JsonResult GetEarnPoints()
+        {
+             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+
+             int EarnPoint = 0;
+
+             if (CurrentUser != null)
+             {
+                 EarnPoint = latestTechnologyBL.GetEarnPoints(CurrentUser.Id);
+             }
+             return Json(EarnPoint, JsonRequestBehavior.AllowGet);
+
+        }
+
+
+
+        public ActionResult Detail(int Id)
+        {
+            LatestTechnologyModel Model = new LatestTechnologyModel();
+            LatestTechnologyBM latestTechnologyBM = new LatestTechnologyBM();
+            latestTechnologyBM = latestTechnologyBL.GetTechnologyById(Id);
+            Model.latestTechnologyBM = latestTechnologyBM;
+            return View(Model);
         }
 
     }
