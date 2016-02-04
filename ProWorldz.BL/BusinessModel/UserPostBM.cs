@@ -22,6 +22,10 @@ namespace ProWorldz.BL.BusinessModel
 
         public int PostType { get; set; }
 
+        public string FilePath { get; set; }
+
+        public string FileUrl { get; set; }
+
         [Required]
         public string Post { get; set; }
         public string ImageUrl { get; set; }

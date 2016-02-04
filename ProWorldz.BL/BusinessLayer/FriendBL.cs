@@ -166,13 +166,16 @@ namespace ProWorldz.BL.BusinessLayer
 
         private FriendBM ConvertToFriendBM(UserBM model)
         {
-
+            UserGeneralInformationBL userGeneralInfoBL = new UserGeneralInformationBL();
+            UserGeneralInformationBM userGeneralInfoBM=new UserGeneralInformationBM();
+            userGeneralInfoBM=userGeneralInfoBL.GetGeneralInformationByUserId(model.Id);
             FriendBM frnd = new FriendBM();
 
             frnd.UserId = CurrentUser;
             frnd.FriendName = model.Name;
             frnd.FriendCommunity = model.CommunityName;
-            //     frnd.FriendImage = model.GeneralInfo.Image!=null?model.GeneralInfo.Image:"";
+            if (userGeneralInfoBM != null)
+                frnd.FriendImage = string.IsNullOrEmpty(userGeneralInfoBM.Image) ? null : userGeneralInfoBM.Image;
 
             var friend = uow.FriendRepository.Find(x => x.UserId == CurrentUser && x.FriendId == model.Id).FirstOrDefault();
             if (friend == null)

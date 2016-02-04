@@ -21,14 +21,14 @@
         </h3>
 
 
-        @using (Html.BeginForm("NewPost", "Home", FormMethod.Post))
+        @using (Html.BeginForm("NewPost", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <div class="panel panel-default" id="divPost">
                 <div class="panel-body">
                     <form class="form-horizontal" role="form">
 
 
-                       @* <div class="col-sm-6 col-md-4">
+                        @* <div class="col-sm-6 col-md-4">
                             <div class="radio">
                                 <input type="radio" name="radio1" id="radio11" value="option1" checked>
                                 <label for="radio11">Default</label>
@@ -94,7 +94,30 @@
                         <br />
                         <br />
                         <br />
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Url</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.UserPost.FileUrl, new { @class = "form-control", @placeholder = "Url" })
+
+                            </div>
+                        </div>
+
+
                         <br />
+                        <br />
+                        <br />
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">File</label>
+                            <div class="col-sm-9">
+                                <input type="file" class="form-control" name="file" id="file" value="@Model.UserPost.FilePath" />
+
+
+                            </div>
+                        </div>
+
+
                         <br />
                         <br />
                         <div class="form-group margin-none">
@@ -137,6 +160,9 @@
             </tbody>
         </table>
     </div>
+
+
+
 
 
 

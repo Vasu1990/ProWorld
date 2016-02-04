@@ -7,51 +7,56 @@
 }
 <div id="dashBoardWrapper">
     <div class="cover profile">
-        <div class="wrapper">
-            <div class="row dashboard-info">
-                <div class="col-md-6">
-                    <div class="margin-bottom7">
-                        <i class="fa fa-envelope-o fa-fw"></i>
-                        <span data-bind="text:User.Email"></span>
-                    </div>
-                    <div class="margin-bottom7">
-                        <i class="fa fa-birthday-cake fa-fw"></i>
-                        <span data-bind="text: moment(User.DOB()).format('LL')"></span>
-                    </div>
-                    <div class="margin-bottom7">
-                        <i class="fa fa-book fa-fw"></i>
-                        <span data-bind="text:User.CommunityName"></span>
-                    </div>
-                    <div class="margin-bottom7">
-                        <i class="fa fa-book fa-fw"></i>
-                        <span data-bind="text:User.SubCommunityName"></span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12 text-center div-count-circle">
-                            <div class="col-md-4  circle-text">
-                                <i class="fa fa-fw  fa-group"></i>Friends
-                                <br />
-                                <a href="#" class="dashboard-count-circle">0</a>
-                            </div>
-                            <div class="col-md-4  circle-text">
-                                <i class="fa fa-suitcase"></i>Jobs Applied
-                                <br />
-                                <a href="#" class="dashboard-count-circle">0</a>
-                            </div>
-                            <div class="col-md-4  circle-text">
-                                <i class="fa fa-envelope-square"></i>Your Posts
-                                <br />
-                                <a href="#" class="dashboard-count-circle" data-bind="text:UserPostList().length"></a>
-                            </div>
+        
+            <div class="wrapper">
+                <div class="row dashboard-info">
+                    @if (ViewBag.Id == 0)
+        { 
+                    <div class="col-md-6">
+                        <div class="margin-bottom7">
+                            <i class="fa fa-envelope-o fa-fw"></i>
+                            <span data-bind="text:User.Email"></span>
+                        </div>
+                        <div class="margin-bottom7">
+                            <i class="fa fa-birthday-cake fa-fw"></i>
+                            <span data-bind="text: moment(User.DOB()).format('LL')"></span>
+                        </div>
+                        <div class="margin-bottom7">
+                            <i class="fa fa-book fa-fw"></i>
+                            <span data-bind="text:User.CommunityName"></span>
+                        </div>
+                        <div class="margin-bottom7">
+                            <i class="fa fa-book fa-fw"></i>
+                            <span data-bind="text:User.SubCommunityName"></span>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12 text-center div-count-circle">
+                                <div class="col-md-4  circle-text">
+                                    <i class="fa fa-fw  fa-group"></i>Friends
+                                <br />
+                                    <a href="#" class="dashboard-count-circle">0</a>
+                                </div>
+                                <div class="col-md-4  circle-text">
+                                    <i class="fa fa-suitcase"></i>Jobs Applied
+                                <br />
+                                    <a href="#" class="dashboard-count-circle">0</a>
+                                </div>
+                                <div class="col-md-4  circle-text">
+                                    <i class="fa fa-envelope-square"></i>Your Posts
+                                <br />
+                                    <a href="#" class="dashboard-count-circle" data-bind="text:UserPostList().length"></a>
+                                </div>
+                            </div>
+                        </div>
 
+                    </div>
+                    }
                 </div>
-            </div>
 
-        </div>
+            </div>
+        
         <div class="cover-info">
             <div class="avatar">
                 <img class="media-object img-circle img-responsive user-avatar-mini" data-bind="attr: { src: User.Image()}" src="" style="background-position: -105px 207px;">
@@ -62,7 +67,7 @@
             </div>
             <ul class="cover-nav">
                 <li>
-                    <a href="/Site"><i class="fa fa-fw icon-ship-wheel"></i>WebSite</a>
+                    <a href="/"><i class="fa fa-fw icon-ship-wheel"></i>Home</a>
                 </li>
                 @if (ViewBag.Id != 0)
                 { 
@@ -114,6 +119,9 @@
                             <div class="boxed">
                                 <h4 class="post-header" data-bind="text:Subject"></h4>
                                 <p class="post-text" data-bind="html:Post"></p>
+                                @*<h3 data-bind="text:FileUrl,visible: FileUrl"></h3>*@
+                                <a target="_blank" data-bind="attr: {href:FileUrl},text:FileUrl,visible: FileUrl"></a>
+                                <a target="_blank" data-bind="attr: {href:FilePath},text:FilePath,visible: FilePath"></a>
                             </div>
                         </div>
                         <div class="view-all-comments">
@@ -221,12 +229,12 @@
 
     @*<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>*@
 </div>
-@if (ViewBag.Id != 0)
+@*@if (ViewBag.Id != 0)
 { 
     <div id="dvUserInfo">
         @{Html.RenderAction("UserProfile", "Home", new { Id = ViewBag.Id });}
     </div>
-}
+}*@
 
 
 

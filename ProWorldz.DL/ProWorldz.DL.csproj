@@ -103,6 +103,10 @@
     <Compile Include="Migrations\201601191926553_UserBlockAndShareContactDetail.Designer.cs">
       <DependentUpon>201601191926553_UserBlockAndShareContactDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601251816066_addPostField.cs" />
+    <Compile Include="Migrations\201601251816066_addPostField.Designer.cs">
+      <DependentUpon>201601251816066_addPostField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseClass.cs" />
     <Compile Include="Models\Employer.cs" />
@@ -176,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601191926553_UserBlockAndShareContactDetail.resx">
       <DependentUpon>201601191926553_UserBlockAndShareContactDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601251816066_addPostField.resx">
+      <DependentUpon>201601251816066_addPostField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

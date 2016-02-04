@@ -16,6 +16,14 @@ namespace ProWorldz.BL.BusinessModel
 
         public string Message { get; set; }
 
+        public string Email { get; set; }
+
+        public string Phone { get; set; }
+
+        public string Company { get; set; }
+
+        public string Designation { get; set; }
+
         public System.DateTime CreationDate { get; set; }
 
         public Nullable<System.DateTime> ModificationDate { get; set; }
@@ -25,5 +33,7 @@ namespace ProWorldz.BL.BusinessModel
         public Nullable<int> ModifiedBy { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public UserBM userBM { get; set; }
     }
 }

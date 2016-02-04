@@ -1437,6 +1437,7 @@
     <Content Include="Views\Shared\_LayoutRegister.cshtml" />
     <Content Include="Views\Account\Resume.cshtml" />
     <Content Include="Views\Home\UserProfile.cshtml" />
+    <Content Include="Views\Home\ShareDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

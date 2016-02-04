@@ -69,8 +69,36 @@
                             </div>
                         </div>
                         <br />
+
+                        <div class="row">
+                           
+                            <div class="col-md-3"></div>
+                            <div class="col-md-9">
+
+                                <div class="col-md-4">
+                                    <div class="radio radio-primary">
+                                        <input type="radio" name="type" value="1" id="rdFrd">
+                                        <label for="rdFrd">Add Content</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="radio radio-primary">
+                                        <input type="radio" name="type" value="2" id="rdComm">
+                                        <label for="rdComm">Add URL</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="radio radio-primary">
+                                        <input type="radio" name="type" value="3" id="rdFile">
+                                        <label for="rdFile">Attach File</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear-fix"></div>
+                            </div>
                         <br />
-                       <div class="form-group">
+                       <div class="form-group" style="display:none" id="dvContent">
                             <label class="col-sm-3 control-label">Content</label>
                             <div class="col-sm-9 margin-bottom10">
                                 @Html.TextAreaFor(model => model.latestTechnologyBM.Content, new { @class = "form-control", @name = "Content", Id = "editor1", placeholder = "Type Your Post Here........", @rows = "5" })
@@ -86,7 +114,7 @@
 
                        
                         <br />
-                        <div data-bind="foreach: viewModel.UrlRows">
+                        <div data-bind="foreach: viewModel.UrlRows"  style="display:none" id="dvUrl">
                             <div class="form-group">
                                 <span class="col-sm-3 control-label" data-bind="text: value"></span>
                                 
@@ -104,7 +132,7 @@
                         </div>
                        
 
-                         <div data-bind="foreach: viewModel.FileRows">
+                         <div data-bind="foreach: viewModel.FileRows"  style="display:none" id="dvFile">
                             <div class="form-group">
                                 <span class="col-sm-3 control-label" data-bind="text: value"></span>
                                 
@@ -178,7 +206,25 @@
         function addContent() {
 
         }
-
+        $(document).ready(function () {
+            $('input[type=radio][name=type]').change(function () {
+                if (this.value == '1') {
+                    $("#dvContent").show();
+                    $("#dvUrl").hide();
+                    $("#dvFile").hide();
+                }
+                else if (this.value == '2') {
+                    $("#dvContent").hide();
+                    $("#dvUrl").show();
+                    $("#dvFile").hide();
+                }
+                else if (this.value == '3') {
+                    $("#dvContent").hide();
+                    $("#dvUrl").hide();
+                    $("#dvFile").show();
+                }
+            });
+        });
         function addUrl() {
             $($("#txtUrl").parent().parent()).append('<br><br><br><div class="col-sm-12"><div class="col-sm-3"></div><div class="col-sm-8"><input type="text" name="url" class="form-control" /></div><div class="col-sm-1"> <img src="/Images/plusIcon.png" style="height:20px;width:20px" onclick="addUrl();" /></div></div><br>')
         }

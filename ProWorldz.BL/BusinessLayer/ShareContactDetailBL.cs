@@ -37,6 +37,11 @@ namespace ProWorldz.BL.BusinessLayer
         }
 
 
+        public List<ShareContactDetailBM> GetShareContactDetailByCurrentUserId(int CurrentUserId)
+        {
+            return uow.ShareContactDetailRepository.Find(a => a.ShareUserId == CurrentUserId).ToList().ConvertAll<ShareContactDetailBM>(new Converter<ShareContactDetail, ShareContactDetailBM>(ConvertToBM));
+        }
+
         public void Update(ShareContactDetailBM model)
         {
             uow.ShareContactDetailRepository.Update(ConvertToDM(model));
@@ -61,9 +66,23 @@ namespace ProWorldz.BL.BusinessLayer
 
             };
         }
+       // UserBL userBL = new UserBL();
 
+        UserGeneralInformationBL userGeneralInfoBL = new UserGeneralInformationBL();
+        UserBL userBL = new UserBL();
+
+        UserProfessionalQualificationBL userProfessionalQualificationBL = new UserProfessionalQualificationBL();
         private ShareContactDetailBM ConvertToBM(ShareContactDetail model)
         {
+            UserGeneralInformationBM usergeneralInfoBM = new UserGeneralInformationBM();
+            UserProfessionalQualificationBM userProfessionalBM = new UserProfessionalQualificationBM();
+
+            UserBM userBM=new UserBM();
+
+            userBM=userBL.GetUserById(model.ShareUserId);
+
+            usergeneralInfoBM = userGeneralInfoBL.GetGeneralInformationByUserId(model.ShareUserId);
+            userProfessionalBM = userProfessionalQualificationBL.GetProfessionalQualificationByUserId(model.ShareUserId).FirstOrDefault();
             return new ShareContactDetailBM()
             {
               
@@ -76,8 +95,13 @@ namespace ProWorldz.BL.BusinessLayer
               ModificationDate=model.ModificationDate,
               ModifiedBy=model.ModifiedBy,
              
-              IsDeleted=model.IsDeleted
+             Email=userBM!=null? userBM.Email:"",
+            Phone=usergeneralInfoBM !=null ?  usergeneralInfoBM.PhoneNumber :"",
+            Company=userProfessionalBM !=null ?userProfessionalBM.CompanyName:"",
+            //  Designation = userProfessionalBM != null ? userProfessionalBM.Designation : "",
 
+              IsDeleted=model.IsDeleted,
+              userBM = userBL.GetUserById(model.CurrentUserId)
 
             };
         }

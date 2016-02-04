@@ -22,6 +22,10 @@ namespace ProWorldz.DL.Models
 
         public int PostType { get; set; }
 
+        public string FilePath { get; set; }
+
+        public string FileUrl { get; set; }
+
         public virtual User User { get; set; }
            
         public virtual List<UserPostComment> UserComments { get; set; }

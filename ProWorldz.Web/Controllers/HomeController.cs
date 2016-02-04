@@ -141,6 +141,7 @@ namespace ProWorldz.Web.Controllers
         public ActionResult UserPost()
         {
             PostCommentModel Model = new PostCommentModel();
+            Model.UserPost = new UserPostBM();
             Model.UserPostList = UserPostBL.GetUserPost();
             Model.SucessMessage = (TempData["Success"] != null ? TempData["Success"].ToString() : string.Empty).ToString();
             Model.ErrorMessage = (TempData["Error"] != null ? TempData["Error"].ToString() : string.Empty).ToString();
@@ -149,7 +150,7 @@ namespace ProWorldz.Web.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult NewPost(PostCommentModel Model, FormCollection collection)
+        public ActionResult NewPost(PostCommentModel Model, HttpPostedFileBase file, FormCollection collection)
         {
             UserBM CurrentUser = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
             string type = collection["type"].ToString();
@@ -159,6 +160,14 @@ namespace ProWorldz.Web.Controllers
                 UserPostBM UserPostBM = new UserPostBM();
                 UserPostBM.Post = Model.UserPost.Post;
                 UserPostBM.Subject = Model.UserPost.Subject;
+                UserPostBM.FileUrl=Model.UserPost.FileUrl;
+                 if (file != null)
+                 {
+                      string ImageName = System.IO.Path.GetFileName(file.FileName);
+                       string physicalPath = Server.MapPath("~/Images/" + ImageName);
+                       file.SaveAs(physicalPath);
+                      UserPostBM.FilePath = "/Images/" + ImageName;
+                 }
                 UserPostBM.UserId = CurrentUser.Id;
                 if (!string.IsNullOrEmpty(type))
                     UserPostBM.PostType = Convert.ToInt32(type);
@@ -465,6 +474,22 @@ namespace ProWorldz.Web.Controllers
                 return Json("Error-Please Login.", JsonRequestBehavior.AllowGet);
             }
 
+        }
+
+
+
+        public ActionResult ShareDetail()
+        {
+            ShareContactDetailBL shareContactDetailBL = new ShareContactDetailBL();
+            ShareContactDetailModel Model = new ShareContactDetailModel();
+            List<ShareContactDetailBM> ShareUserDetailList = new List<ShareContactDetailBM>();
+             UserBM userObj = SessionManager.InstanceCreator.Get<UserBM>(SessionKey.User);
+             if (userObj != null)
+             {
+                ShareUserDetailList= shareContactDetailBL.GetShareContactDetailByCurrentUserId(userObj.Id);
+             }
+             Model.ShareContactDetailList = ShareUserDetailList;
+             return View(Model);
         }
 
     }
